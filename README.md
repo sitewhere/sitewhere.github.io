@@ -1,2 +1,2 @@
-# sitewhere.github.io
-SiteWhere GitHub Pages Documentation
+# SiteWhere Documentation
+This project contains documentation for the SiteWhere platform.
