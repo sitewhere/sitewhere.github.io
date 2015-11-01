@@ -1,5 +1,6 @@
 ---
-title: SiteWhere Documentation
+title: Contents
+layout: default
 ---
 
 SiteWhere Documentation
