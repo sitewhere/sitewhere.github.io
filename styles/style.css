@@ -1,0 +1,36 @@
+body {
+	line-height: 1.8em;
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	margin-top: 25px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	font-size: 33px;
+	padding-top: 25px;
+	border-top: 1px solid #ddd;
+}
+
+h3 {
+	font-size: 26px;
+	margin-bottom: 20px;
+}
+
+.sidebar-header {
+	border: 1px solid #ccc;
+	margin-top: 20px;
+	width: 275px;
+	padding: 15px;
+	-webkit-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+	-moz-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+	box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+}
+
+.header-logo {
+	max-width: 250px;
+}

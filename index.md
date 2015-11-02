@@ -1,6 +1,7 @@
 ---
 title: Contents
 layout: default
+sidebar: sidebar.html
 ---
 
 SiteWhere Documentation
