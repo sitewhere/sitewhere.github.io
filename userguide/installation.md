@@ -32,7 +32,7 @@ SiteWhere configuration uses a local MongoDB instance configured with the defaul
 SiteWhere also supports many flavors of HBase for building large distributed device event datastores.
 Rather than setting up an HBase cluster from scratch, it is often easier to use one from a provider such
 as [Cloudera](http://www.cloudera.com) or [Hortonworks](http://hortonworks.com/) that simplifies the process.
-The default SiteWhere configuration files include setting that will work with Hortonworks HDP.
+The default SiteWhere configuration files include settings that will work with Hortonworks HDP.
 
 ## Using an Existing Tomcat Instance
 SiteWhere may be installed as a web archive in an existing Tomcat instance rather than 

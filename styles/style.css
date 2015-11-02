@@ -1,15 +1,16 @@
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
-		sans-serif;
+	font-family: Tahoma, Arial, sans-serif;
 	line-height: 1.8em;
 	font-size: 16px;
 }
 
 h1 {
+	font-family: Arial, Tahoma, sans-serif;
 	font-size: 40px;
 }
 
 h2 {
+	font-family: Arial, Tahoma, sans-serif;
 	margin-top: 25px;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
@@ -19,12 +20,30 @@ h2 {
 }
 
 h3 {
-	font-size: 26px;
-	margin-bottom: 20px;
+	font-family: Arial, Tahoma, sans-serif;
+	font-size: 24px;
+	margin-top: 30px;
+	margin-bottom: 15px;
 }
 
-img {
+h4 {
+	font-family: Arial, Tahoma, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+#content img {
 	width: 100%;
+	padding: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border: 1px solid #aaa;
+	-webkit-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+	-moz-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+	box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+	border: 1px solid #aaa;
 }
 
 @media screen and (max-width: 992px) {
