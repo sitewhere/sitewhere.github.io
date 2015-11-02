@@ -1,4 +1,6 @@
 body {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+		sans-serif;
 	line-height: 1.8em;
 	font-size: 16px;
 }
@@ -21,10 +23,24 @@ h3 {
 	margin-bottom: 20px;
 }
 
+img {
+	width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+	#sidenav {
+		display: none;
+	}
+}
+
+.sidebar {
+	width: 310px;
+}
+
 .sidebar-header {
 	border: 1px solid #ccc;
 	margin-top: 20px;
-	width: 275px;
+	width: 280px;
 	padding: 15px;
 	-webkit-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
 	-moz-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
@@ -32,5 +48,5 @@ h3 {
 }
 
 .header-logo {
-	max-width: 250px;
+	max-width: 295px;
 }
