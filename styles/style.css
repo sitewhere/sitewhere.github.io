@@ -41,6 +41,24 @@ div.highlight {
 	overflow-y: auto;
 }
 
+table {
+	margin-right: 20px;
+}
+
+tbody tr {
+	border-top: 1px solid #eee;
+}
+
+th {
+	min-width: 200px;
+}
+
+td {
+	vertical-align: top;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 #content img {
 	width: 100%;
 	padding: 15px;
