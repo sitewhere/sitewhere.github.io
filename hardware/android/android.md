@@ -1,5 +1,5 @@
 ---
-title: Amazon EC2
+title: Android Libraries
 layout: default
 sidebar: sidebar.html
 ---
@@ -39,6 +39,51 @@ dynamic device registration, and event reporting based on real-time sensor readi
 > Make sure that you are using a version of the libraries that is compatible with your 
   SiteWhere instance. The *master* branch always contains the latest stable code, but
   there is a branch in the repository for each corresponding SiteWhere release.
+  
+## Introduction to Framework Concepts
+When the Android application starts, a main activity is launched to present an interface to the user. 
+The SiteWhere libraries provide classes that extend the base Android [Activity](http://developer.android.com/reference/android/app/Activity.html) class and allow you to 
+inherit many of the core interactions that a connected device needs to communicate with SiteWhere. 
+
+### Base Activities
+Currently, there are two base classes that provide different levels of functionality:
+
+#### [SiteWhereActivity](http://docs.sitewhere.org/current/android/framework/apidocs/com/sitewhere/android/SiteWhereActivity.html)
+Contains the base logic for connecting to an underlying message service (defaulting to MQTT) in order to send events to
+and receive commands from SiteWhere. This class only deals in sending binary data between the application
+and SiteWhere, so it will not work out-of-the-box since SiteWhere defaults to using messages encoded with
+Google Protocol Buffers. This base class is useful for implementing custom protocols between an Android
+application and SiteWhere.
+
+#### [SiteWhereProtobufActivity](http://docs.sitewhere.org/1.3.0/android/framework/apidocs/com/sitewhere/android/protobuf/SiteWhereProtobufActivity.html)
+Extends functionality from SiteWhereActivity to include support for encoding/decoding messages using the standard
+SiteWhere [proto](https://github.com/reveal-technologies/sitewhere/blob/master/sitewhere-protobuf/proto/sitewhere.proto)
+file. This base class offers methods that wrap common SiteWhere actions such as sending events to the server
+and receiving commands from the server. It also has basic support for round-trip self registration. Most 
+applications will use this base class unless they need to implement their own encoding scheme for messages.
+
+### Communication Services
+Note that, rather than directly referencing protocol specifics in the base activities, the framework instead
+defers to talking to a [Service](http://developer.android.com/reference/android/app/Service.html) via 
+interfaces. This adds a level of indirection that allows the messaging layer to be swapped without affecting
+the application code. The default service implementation is:
+
+#### [MqttService](http://docs.sitewhere.org/1.3.0/android/framework/apidocs/com/sitewhere/android/mqtt/MqttService.html)
+Provides connectivity to SiteWhere via an MQTT broker by using the 
+[Fuse MQTT Client](http://mqtt-client.fusesource.org/) over a TCP/IP connection. 
+Connectivity parameters for the MqttService are provided by a configuration object that
+is passed to the [Intent](http://developer.android.com/reference/android/content/Intent.html)
+used to start the service. The SiteWhere example application detects whether the configuration
+has been set and, in cases where it is missing, displays a connectivity wizard to set and verify the 
+values. The service automatically handles reconnecting if the network becomes inaccessible and provides
+hooks for notifying the parent application when SiteWhere connectivity changes. It is important to note that,
+since the MQTT functionality is running as a service, the connection to SiteWhere remains in place even when
+the application that started it is not running. The periodic *keep-alive* ping messages sent from client to
+MQTT broker have been configured to be sent infrequently to allow the network hardware on the device to 
+conserve power.
+
+> The MQTT library requires network access, so make sure to add the necessary permissions. The
+  Android manifest shown later in the document provides an example of doing this.
             		
 ## Getting Started with a New SiteWhere Android Project
 If you have not already done so, download and install the 
@@ -134,52 +179,6 @@ that if you open the **project.properties** file, there are now references to th
 </a>
 
 With the projects added, the SiteWhere Android framework elements may be used in your project.
-
-
-## Introduction to Framework Concepts
-When the Android application starts, a main activity is launched to present an interface to the user. 
-The SiteWhere libraries provide classes that extend the base Android [Activity](http://developer.android.com/reference/android/app/Activity.html) class and allow you to 
-inherit many of the core interactions that a connected device needs to communicate with SiteWhere. 
-
-### Base Activities
-Currently, there are two base classes that provide different levels of functionality:
-
-#### [SiteWhereActivity](http://docs.sitewhere.org/current/android/framework/apidocs/com/sitewhere/android/SiteWhereActivity.html)
-Contains the base logic for connecting to an underlying message service (defaulting to MQTT) in order to send events to
-and receive commands from SiteWhere. This class only deals in sending binary data between the application
-and SiteWhere, so it will not work out-of-the-box since SiteWhere defaults to using messages encoded with
-Google Protocol Buffers. This base class is useful for implementing custom protocols between an Android
-application and SiteWhere.
-
-#### [SiteWhereProtobufActivity](http://docs.sitewhere.org/1.3.0/android/framework/apidocs/com/sitewhere/android/protobuf/SiteWhereProtobufActivity.html)
-Extends functionality from SiteWhereActivity to include support for encoding/decoding messages using the standard
-SiteWhere [proto](https://github.com/reveal-technologies/sitewhere/blob/master/sitewhere-protobuf/proto/sitewhere.proto)
-file. This base class offers methods that wrap common SiteWhere actions such as sending events to the server
-and receiving commands from the server. It also has basic support for round-trip self registration. Most 
-applications will use this base class unless they need to implement their own encoding scheme for messages.
-
-### Communication Services
-Note that, rather than directly referencing protocol specifics in the base activities, the framework instead
-defers to talking to a [Service](http://developer.android.com/reference/android/app/Service.html) via 
-interfaces. This adds a level of indirection that allows the messaging layer to be swapped without affecting
-the application code. The default service implementation is:
-
-#### [MqttService](http://docs.sitewhere.org/1.3.0/android/framework/apidocs/com/sitewhere/android/mqtt/MqttService.html)
-Provides connectivity to SiteWhere via an MQTT broker by using the 
-[Fuse MQTT Client](http://mqtt-client.fusesource.org/) over a TCP/IP connection. 
-Connectivity parameters for the MqttService are provided by a configuration object that
-is passed to the [Intent](http://developer.android.com/reference/android/content/Intent.html)
-used to start the service. The SiteWhere example application detects whether the configuration
-has been set and, in cases where it is missing, displays a connectivity wizard to set and verify the 
-values. The service automatically handles reconnecting if the network becomes inaccessible and provides
-hooks for notifying the parent application when SiteWhere connectivity changes. It is important to note that,
-since the MQTT functionality is running as a service, the connection to SiteWhere remains in place even when
-the application that started it is not running. The periodic *keep-alive* ping messages sent from client to
-MQTT broker have been configured to be sent infrequently to allow the network hardware on the device to 
-conserve power.
-
-> The MQTT library requires network access, so make sure to add the necessary permissions. The
-  Android manifest shown later in the document provides an example of doing this.
 
 ## Building the Application
 Building a SiteWhere application is straightforward since most of the low-level details are taken
