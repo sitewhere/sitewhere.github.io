@@ -4,7 +4,7 @@ layout: default
 sidebar: sidebar.html
 ---
 
-# Using Mule AnyPoint Studio with SiteWhere
+# Mule AnyPoint Integration
 Mule is a world class enterprise service bus (ESB) that makes it easy to integrate various
 technologies without having to write a lot of code. Mule has the concept of *flows* that pull in
 data from inbound endpoints, perform processing and decision logic, and route the resulting
@@ -14,14 +14,14 @@ cloud technologies such as Salesforce.com, Amazon S3, DropBox, Twitter,
 Google Calendars, and GitHub. Again, for a full list, take a look at the 
 [connectors reference](http://www.mulesoft.org/connectors).
 
-## Installing AnyPoint Studio and the SiteWhere Plugin
+## Install AnyPoint Studio
 AnyPoint Studio is an Eclipse-based user interface that allows you to graphically create Mule flows and execute them
 locally. This makes it easy to assemble complex business logic and integration tasks in a short period of time. SiteWhere
 provides a plugin for AnyPoint Studio that allows your Mule flows to pull in SiteWhere data and integrate it with
 all of the other technologies Mule connects to. The rest of this document will help you get AnyPoint Studio and the
 SiteWhere plugin installed, then will explain how to use them.
 
-### Installing AnyPoint Studio
+### Download AnyPoint Studio
 Our first task is to get AnyPoint Studio installed. Since Studio is based on Eclipse, this is a very easy process.
 Basically we just download the archive and unpack it. First locate the latest version of AnyPoint Studio for your
 platform at:
@@ -40,7 +40,7 @@ In order to make sure that you have the very latest components, it's a good idea
 updates that have been published since your Mule Studio installation was released. If you click on
 **Help > Check for Updates** and then follow the wizard, the latest plugins will automatically be installed.
 
-### Install SiteWhere Connector
+## Install SiteWhere Connector
 Now that we have a base installation of Mule Studio, we need to install the SiteWhere Connector plugin.
 To install the SiteWhere components, click **Help > Install New Software...**, then click the **Add...** 
 button near the top of the page and enter **SiteWhere Components** in the **Name** field and 
@@ -64,7 +64,7 @@ to restart when it asks. When Mule Studio restarts click **Help > About Mule Stu
 **Installation Details**. There should be an entry for **Mule SiteWhere Connector Mule Studio Extension** in the list.
 If you see the entry, you are ready to start using SiteWhere with Mule!
 
-### Install Community Runtime
+## Install Community Edition Runtime
 Currently, SiteWhere does not work with the Mule EE runtime due to a conflict with the versions of Hazelcast used.
 It\'s not a problem though, since Studio allows you to download other Mule runtimes to execute against. Choose
 **Help > Install New Software** and use the dropdown near the top to choose **Mule ESB Runtimes for Studio**. 
@@ -77,39 +77,37 @@ After the tree appears, choose an entry for the **Community Runtimes** section a
 As with the SiteWhere plugin, follow the wizard and allow Mule Studio to restart. You should now be ready to start
 working with SiteWhere data in Mule!
    
-## Creating a Project
+## Create a Project
 Now that the SiteWhere plugin is installed, we can create a test project to demonstrate receiving events from a 
 running SiteWhere instance. To create a new project click **File > New > Mule Project**. Type **SiteWhereTest**
 as the project name and make sure to check the **CE** runtime, then leave the rest of fields with default values
 and click **Finish** to create the project (if you still have the welcome page up, you may have to close it to see
 the new project). The screen should look like the one below:
 
-.. image:: /_static/images/integration/mule/new-project.png
-   :width: 100%
-   :alt: New Mule Studio Project
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/new-project.png" data-lightbox="architecture" title="New Mule Studio Project">
+	<img src="{{ site.url }}/images/integration/mule/new-project.png"/>
+</a>
    
-### Adding a SiteWhere Configuration
+### Add a SiteWhere Configuration
 There is a global Mule flow element that controls SiteWhere configuration for a flow. In the flow editor (the large area
 in the middle of the IDE), click on the **Global Elements** tab and click the **Create** button on the right side. In the
 dialog, open the **Cloud Connectors** node and choose the **SiteWhere** entry, then click **OK**. You should now see
 the SiteWhere settings dialog filled in with the default values. In this tutorial, we are going to assume you are 
 running on a cloud instance of SiteWhere. If you are running on a local instance, you can leave the default values
-and everything should work. If you have not already done so, `start a cloud instance <../cloud/amazon_ec2.html>`_. 
+and everything should work. If you have not already done so, [start a cloud instance](/cloud/amazon_ec2.html). 
 To point to the cloud instance, update the **SiteWhere API URL** value to **http://sitewhere-aws/sitewhere/api/** and
 the Hazelcast **Remote Address** to **sitewhere-aws:5701**. The values should look like below:
 
-.. image:: /_static/images/integration/mule/sitewhere-config.png
-   :width: 100%
-   :alt: Set Up SiteWhere Configuration
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/sitewhere-config.png" data-lightbox="architecture" title="SiteWhere Configuration">
+	<img src="{{ site.url }}/images/integration/mule/sitewhere-config.png"/>
+</a>
   
 The values in the **REST** section determine how Mule Studio interacts with the SiteWhere REST services. The REST 
 services are used when data is submitted to SiteWhere or when information is needed from SiteWhere on demand. The values
 in the **Hazelcast** section determine how SiteWhere connects to the Hazelcast instance running on your remote server.
 Hazelcast is used for subscription-based actions like the event processing logic we will be using later in the tutorial. 
   
-### Creating an Event Processing Flow
+### Create an Event Processing Flow
 Now that we have the SiteWhere configuration out of the way, we just need to add the processing elements to our 
 flow to get the data we are interested in from SiteWhere. In this example, we want to subscribe to any *location*
 events being processed by SiteWhere. As devices report new location data, that data will be forwarded to Mule 
@@ -122,17 +120,11 @@ panel at the bottom of the editor. Change the name of the node from **SiteWhere 
 open the dropdown for **Config Reference** and choose **SiteWhere** (which is a reference to the configuration we created
 in the last step). Finally, choose **Subscribe locations** from the **Operation** dropdown and save your changes.
 
-.. note:: This version of the properties editor in Mule Studio is new and is more than a little clunky. You may have
-          to choose the operation from the dropdown a couple of times before it 'takes'. Also, you may have to click 
-          back in the main editor area before it allows you to save. This will improve as new versions of Studio are
-          released.
-          
 Your flow should now look like the one below:
 
-.. image:: /_static/images/integration/mule/first-node.png
-   :width: 100%
-   :alt: Add Inbound Endpoint
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/first-node.png" data-lightbox="architecture" title="Add Inbound Endpoint">
+	<img src="{{ site.url }}/images/integration/mule/first-node.png"/>
+</a>
   
 The next step is to show the information we are reading in so that we can tell the flow is working. By default, only
 very basic information for the SiteWhere event is sent over the wire. It doesn't include all of the details about the
@@ -145,10 +137,9 @@ and look at the properties panel at the bottom of the editor. Change the **Displ
 choose the existing configuration reference from the dropdown. Choose **Build context for event** as the operation.
 Now your flow should look like below:
 
-.. image:: /_static/images/integration/mule/add-build-context.png
-   :width: 100%
-   :alt: Load Event Context
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/add-build-context.png" data-lightbox="architecture" title="Load Event Context">
+	<img src="{{ site.url }}/images/integration/mule/add-build-context.png"/>
+</a>
   
 The final step in the process is to print out the *context* that has been created. SiteWhere has the concept of a
 context that holds device events, their device information, and current assignment all in one neat package called
@@ -159,14 +150,13 @@ properties editor at the bottom. Edit the **Display Name** to be **Print Context
 config reference. Finally, change the operation to **Log sitewhere context** and save the flow. It should now 
 look like the one below:
 
-.. image:: /_static/images/integration/mule/log-context.png
-   :width: 100%
-   :alt: Log Event Context
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/log-context.png" data-lightbox="architecture" title="Log Event Context">
+	<img src="{{ site.url }}/images/integration/mule/log-context.png"/>
+</a>
   
 That's it for our first flow! Now we can run it and see some data flow through the system.
   
-### Running Your Mule Flow
+### Run Your Mule Flow
 To run the flow you just created, look at the **Package Explorer** view on the left side of the editor. The 
 **sitewheretest.mflow** file should already be highlighted. Right click on the mflow file to open the context 
 menu and choose **Run As > Mule Application**. If all goes well, a console window should show up with the
@@ -175,36 +165,33 @@ console. You should see log messages to indicate the system has started and has 
 SiteWhere server (if not, make sure your cloud server is running and properly configured). The console window
 will look like the one below:
 
-.. image:: /_static/images/integration/mule/running-console.png
-   :width: 100%
-   :alt: Mule Console Output
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/running-console.png" data-lightbox="architecture" title="Mule Console Output">
+	<img src="{{ site.url }}/images/integration/mule/running-console.png"/>
+</a>
   
-### Testing with Sample Data
+### Test with Sample Data
 Next, we can send some sample data through the system to have it show up in SiteWhere. Normally, the data would
 come from a device connected to SiteWhere, but for the sake of simplicity for this tutorial, we will use emulated
 data. Luckliy, the SiteWhere admin console has a built-in emulator that can send in test data for any registered
 device. So the path of our test data will be:
 
-.. image:: /_static/images/integration/mule/flow-overview.png
-   :width: 100%
-   :alt: Emulator with Connection
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/flow-overview.png" data-lightbox="architecture" title="Emulator with Connection">
+	<img src="{{ site.url }}/images/integration/mule/flow-overview.png"/>
+</a>
   
 As you can see, we are bouncing data from our local desktop, to the cloud, and back via a subscription in Mule.
 
 To send a test message, first log in to the admin console application at URL:
 
-	http://sitewhere-aws/sitewhere/admin/
+> [http://sitewhere-aws/sitewhere/admin/](http://sitewhere-aws/sitewhere/admin/)
 	
 Click the **Login** button which will open the top-level **Sites** page. Click the *green arrow* at the right of the
 **Construction Site** entry. This will open the detail page for our make-believe contruction site. It will look 
 something like the page below (depending on which release is running in the cloud, the sample data may look different):
 
-.. image:: /_static/images/integration/mule/site-detail.png
-   :width: 100%
-   :alt: Site Detail Page
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/site-detail.png" data-lightbox="architecture" title="Site Detail Page">
+	<img src="{{ site.url }}/images/integration/mule/site-detail.png"/>
+</a>
   
 Now click the green arrow to the right of the first device assignment in the list, which will open the *View Assignment*
 page. At the top of the page there is an **Emulate Assignment** button. Click the button to open the assignment 
@@ -238,7 +225,8 @@ the newly added location. It will look something like the screen below:
    :alt: Console After Location Added
    :align: left
   
-## Recap
+
+## Next Steps
 In this tutorial we have installed Mule Studio and the SiteWhere plugin. We created a new Mule project and a flow
 that subscribes to location events that SiteWhere produces. We ran a live instance of the Mule server in Studio
 and, from an emulator in the SiteWhere admin console, created location information. The information was sent
@@ -247,7 +235,6 @@ verify that it was stored). The location event was then sent via Hazelcast to yo
 location events. The flow then asked SiteWhere for more event information and printed the complete event context
 out to the Mule log.
 
-## Next Steps
 This is only a simple example of event processing. In the real world, we would be talking to real devices over
 the SiteWhere provisioning engine. From a Mule perspective, the event processing side of things is no different
 for real device data than it was for the emulator. In Mule, we could take the location data and do interesting things

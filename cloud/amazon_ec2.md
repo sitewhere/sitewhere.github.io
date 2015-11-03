@@ -5,24 +5,17 @@ sidebar: sidebar.html
 ---
 
 # Running SiteWhere on Amazon EC2
-Amazon\'s [Elastic Compute Cloud (EC2)](http://aws.amazon.com/ec2/) provides an environnment for running virtual
+Amazon's [Elastic Compute Cloud (EC2)](http://aws.amazon.com/ec2/) provides an environnment for running virtual
 servers in the cloud. Server images are offered in the form of Amazon Machine Images (AMIs) which capture
 the state of a configured server so it can be started in the cloud as a virtual machine.
 
 ## Signing up for AWS/EC2
 If you do not already have an Amazon AWS account, you will need to create one in order to launch VMs in the cloud.
 Amazon virtual machines are not free, but they are also not very expensive if you don\'t leave them running 
-continuously. To create an account, navigate to:
-
-> [Amazon AWS Homepage](http://aws.amazon.com/)
-	
-and create a new account. Make sure that your account allows access to EC2. Once you have signed up for an account
-you should be able to navigate to:
-
-> [AWS Console](https://console.aws.amazon.com)
-	
-to open your AWS console. Click on the **EC2** link and the EC2 dashboard should open. It will look something like the
-image below:
+continuously. To create an account, navigate to [Amazon AWS Homepage](http://aws.amazon.com/) and create 
+a new account. Make sure that your account allows access to EC2. Once you have signed up for an account
+you should be able to navigate to the [AWS Console](https://console.aws.amazon.com). Click on the **EC2** link 
+and the EC2 dashboard should open. It will look something like the image below:
 
 <a href="{{ site.url }}/images/cloud/ec2-dashboard.png" data-lightbox="architecture" title="Amazon EC2 Dashboard">
 	<img src="{{ site.url }}/images/cloud/ec2-dashboard.png"/>

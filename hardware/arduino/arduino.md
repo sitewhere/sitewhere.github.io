@@ -2,9 +2,13 @@
 title: Arduino Libraries
 layout: default
 sidebar: sidebar.html
+prevLink: hardware/android/android.html
+prevTitle: Android Integration
+nextLink: index.html
+nextTitle: Index
 ---
 
-# SiteWhere Arduino Integration Libraries
+# Arduino Integration
 SiteWhere provides libraries that support many devices from the popular 
 [Arduino](http://www.arduino.cc/) platform, including full round-trip
 MQTT support for devices such as the [Mega 2560](http://arduino.cc/en/Main/arduinoBoardMega2560).
@@ -13,7 +17,7 @@ have very limited memory and can only support device events via the REST APIs. T
 will provide a comprehensive example of developing applications with full 
 round-trip capabilities.
 
-## Required Arduino Hardware
+## Prepare Arduino Hardware
 In order to interact with SiteWhere, a few pieces of hardware are required. They include:
 
 | Hardware             | Description                                                           |
@@ -22,7 +26,7 @@ In order to interact with SiteWhere, a few pieces of hardware are required. They
 | Network Hardware     | Any network hardware that supports the Arduino [Client](http://arduino.cc/en/Reference/ClientConstructor) interface should should work with the libraries. Components that implement the interface include the [Ethernet Shield](http://arduino.cc/en/Main/ArduinoEthernetShield) and [WiFi Shield](http://arduino.cc/en/Main/ArduinoWiFiShield). |
 | Maker Kit            | A kit that includes wires, sensors, actuators, and other components is needed for building anything more than the most basic projects. Many companies offer [starter kits](http://arduino.cc/en/Main/ArduinoStarterKit) with most of the commonly used components. |
 
-## Preparing the Development Environment
+## Set Up Development Environment
 Arduino offers an open source development environment that makes it easy to build and deploy
 code to Arduino devices. SiteWhere offers libraries that plug in to the development environment,
 simplifying the process of connecting to and interacting with a remote SiteWhere instance.
@@ -65,7 +69,7 @@ board with an Ethernet shield attached for network communications.
 	<img src="{{ site.url }}/images/hardware/arduino/arduino-boards.png"/>
 </a>
 
-## Starting with a Simple Example
+## Run an Example Project
 Much of the core code for a SiteWhere/Arduino project is the same regardless of whether you are
 creating a simple project or something more advanced. The code below provides an example of 
 configuring the various parameters for your device and how it connects to SiteWhere. It 

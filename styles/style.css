@@ -34,11 +34,34 @@ h4 {
 	margin-bottom: 10px;
 }
 
+div.toc-h1 {
+	margin-bottom: 4px;
+}
+
+div.toc-h1 a {
+	font-size: 18px;
+	color: #333;
+}
+
+div.toc-h2 a {
+	font-size: 14px;
+	color: #333;
+	margin-left: 12px;
+}
+
 div.highlight {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	max-height: 400px;
 	overflow-y: auto;
+}
+
+div.navlink i {
+	margin-right: 10px;
+}
+
+div.navlink a {
+	color: #333;
 }
 
 table {
@@ -76,6 +99,11 @@ td {
 	#sidenav {
 		display: none;
 	}
+}
+
+.section-dd {
+	width: 100%;
+	margin-top: 20px;
 }
 
 .sidebar {

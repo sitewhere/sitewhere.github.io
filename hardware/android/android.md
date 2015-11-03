@@ -2,15 +2,19 @@
 title: Android Libraries
 layout: default
 sidebar: sidebar.html
+prevLink: index.html
+prevTitle: Integration
+nextLink: hardware/arduino/arduino.html
+nextTitle: Arduino Integration
 ---
 
-# SiteWhere Android Integration Libraries
-SiteWhere supports rich integration with Google\'s [Android](http://www.android.com/) platform 
+# Android Integration
+SiteWhere supports rich integration with Google's [Android](http://www.android.com/) platform 
 including full round-trip device interactions over MQTT. The SiteWhere Android libraries 
 include a sample wizard for setting up connectivity by establishing a remote SiteWhere server 
 and MQTT broker to use.
 
-## Locating the SiteWhere Android Libraries
+## Locating SiteWhere Android Libraries
 The SiteWhere Android libraries are available on GitHub and have been released under the
 following path:
 
@@ -85,7 +89,7 @@ conserve power.
 > The MQTT library requires network access, so make sure to add the necessary permissions. The
   Android manifest shown later in the document provides an example of doing this.
             		
-## Getting Started with a New SiteWhere Android Project
+## Create a SiteWhere Android Project
 If you have not already done so, download and install the 
 [Android ADT Bundle](http://developer.android.com/sdk/installing/bundle.html) which includes
 the Android Eclipse development environment and SDK. The Android documentation includes detailed
@@ -180,7 +184,7 @@ that if you open the **project.properties** file, there are now references to th
 
 With the projects added, the SiteWhere Android framework elements may be used in your project.
 
-## Building the Application
+## Build the Android Application
 Building a SiteWhere application is straightforward since most of the low-level details are taken
 care of by the framework. Start by creating a base Java package for the code by clicking 
 the *src* folder and choosing **New > Package** from the menu. The package name should be the same as the
@@ -250,7 +254,7 @@ An example of what you might see is shown below:
 	<img src="{{ site.url }}/images/hardware/android/ddms-perspective.png"/>
 </a>
 
-## Automatic Device Registration
+## Registering Your Device
 One of the key actions taken in the example code is the call to **registerDevice()**:
 
 {% highlight java %}

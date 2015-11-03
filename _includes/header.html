@@ -9,11 +9,28 @@
 <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ site.url }}/styles/style.css">
 <link rel="stylesheet" type="text/css" href="{{ site.url }}/styles/highlight.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
 	href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/css/lightbox.min.css">
 
 <script type='text/javascript'>
+	/** Add table of contents */
+	function addContents() {
+		var html = "";
+		$("h1, h2, h3").each(function() {
+			if (this.tagName == 'H1') {
+				html += "<div class='toc-h1'><a href='#" +  this.id + "'>" + this.textContent + "</a></div>";
+			} else if (this.tagName == 'H2') {
+				html += "<div class='toc-h2'><a href='#" +  this.id + "'>" + this.textContent + "</a></div>";
+			}
+		});
+		$("#toc").html(html);
+	}
+
 	$(document).ready(function() {
+		addContents();
+
 		$("body").scrollspy({
 			target : "#sidebar",
 		})
@@ -32,6 +49,17 @@
 						<img src="{{ site.url }}/images/sitewhere.png" class="header-logo">
 					</div>
 					<div class="sidebar-header">{% include {{page.sidebar}} %}</div>
+					<div class="sidebar-header">
+						<div class="navlink">
+							<i class="fa fa-home"></i><a href="/index.html">Table of Contents</a>
+						</div>
+						<div class="navlink">
+							<i class="fa fa-arrow-left"></i><a href="/{{ page.prevLink }}">{{ page.prevTitle }}</a>
+						</div>
+						<div class="navlink">
+							<i class="fa fa-arrow-right"></i><a href="/{{ page.nextLink }}">{{ page.nextTitle }}</a>
+						</div>
+					</div>
 					<div class="sidebar-header sw-copyright">
 						Copyright 2009-2015 <strong>SiteWhere LLC.</strong>
 					</div>
