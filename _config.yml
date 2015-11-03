@@ -3,4 +3,4 @@ name: "SiteWhere Documentation"
 url: "http://localhost:4000"
 markdown: redcarpet
 redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "tables", "with_toc_data"]

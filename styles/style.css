@@ -60,10 +60,11 @@ td {
 }
 
 #content img {
-	width: 100%;
+	width: 95%;
 	padding: 15px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+	margin-left: 15px;
 	border: 1px solid #aaa;
 	-webkit-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
 	-moz-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
