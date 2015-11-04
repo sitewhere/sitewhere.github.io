@@ -235,7 +235,7 @@ In the **res/values** folder, edit the file named **strings.xml** and replace it
 {% include hardware/android/strings.xml %}
 {% endhighlight %}
 
-### Run the Application
+## Run the Application
 Now that all of the pieces are in place for a basic application, the next step is to execute the code.
 ADT allows you to execute applications in an emulator or directly on a device. Their developer guide to 
 [building in Eclipse](http://developer.android.com/tools/building/building-eclipse.html) gives details
@@ -254,7 +254,7 @@ An example of what you might see is shown below:
 	<img src="{{ site.url }}/images/hardware/android/ddms-perspective.png"/>
 </a>
 
-## Registering Your Device
+### Registering Your Device
 One of the key actions taken in the example code is the call to **registerDevice()**:
 
 {% highlight java %}
