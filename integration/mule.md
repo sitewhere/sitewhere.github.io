@@ -41,7 +41,7 @@ updates that have been published since your Mule Studio installation was release
 **Help > Check for Updates** and then follow the wizard, the latest plugins will automatically be installed.
 
 ## Install SiteWhere Connector
-Now that we have a base installation of Mule Studio, we need to install the SiteWhere Connector plugin.
+Now that we have a base installation of AnyPoint Studio, we need to install the SiteWhere Connector plugin.
 To install the SiteWhere components, click **Help > Install New Software...**, then click the **Add...** 
 button near the top of the page and enter **SiteWhere Components** in the **Name** field and 
 **http://updates.sitewhere.org/current** in the **Location** field. The screen should look like below:
@@ -66,7 +66,7 @@ If you see the entry, you are ready to start using SiteWhere with Mule!
 
 ## Install Community Edition Runtime
 Currently, SiteWhere does not work with the Mule EE runtime due to a conflict with the versions of Hazelcast used.
-It\'s not a problem though, since Studio allows you to download other Mule runtimes to execute against. Choose
+It's not a problem though, since Studio allows you to download other Mule runtimes to execute against. Choose
 **Help > Install New Software** and use the dropdown near the top to choose **Mule ESB Runtimes for Studio**. 
 After the tree appears, choose an entry for the **Community Runtimes** section as shown below:
 
@@ -77,7 +77,7 @@ After the tree appears, choose an entry for the **Community Runtimes** section a
 As with the SiteWhere plugin, follow the wizard and allow Mule Studio to restart. You should now be ready to start
 working with SiteWhere data in Mule!
    
-## Create a Project
+## Create a Mule Project
 Now that the SiteWhere plugin is installed, we can create a test project to demonstrate receiving events from a 
 running SiteWhere instance. To create a new project click **File > New > Mule Project**. Type **SiteWhereTest**
 as the project name and make sure to check the **CE** runtime, then leave the rest of fields with default values
@@ -156,7 +156,7 @@ look like the one below:
   
 That's it for our first flow! Now we can run it and see some data flow through the system.
   
-### Run Your Mule Flow
+## Run Your Mule Flow
 To run the flow you just created, look at the **Package Explorer** view on the left side of the editor. The 
 **sitewheretest.mflow** file should already be highlighted. Right click on the mflow file to open the context 
 menu and choose **Run As > Mule Application**. If all goes well, a console window should show up with the
@@ -199,20 +199,18 @@ emulator. By default, the emulator is not connected to SiteWhere. Clicking the *
 establish an MQTT connection from your browser to the MQTT broker running on our SiteWhere instance in the cloud. If
 the connection has been established, the button will turn green and its text will show as **Connected** as shown below:
 
-.. image:: /_static/images/integration/mule/emulator-connected.png
-   :width: 100%
-   :alt: Emulator with Connection
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/emulator-connected.png" data-lightbox="architecture" title="Emulator with Connection">
+	<img src="{{ site.url }}/images/integration/mule/emulator-connected.png"/>
+</a>
   
 Finally, we can add a new location to the list. Clicking **Refresh Locations** will center the map on the last known
 location of the device (it should already be centered there). Click the zoom button on the map a few times to zoom
 in on the point. Click on the point where you want to create the new location. A dialog will open with the new
 location information:
 
-.. image:: /_static/images/integration/mule/save-location.png
-   :width: 100%
-   :alt: Save New Location
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/save-location.png" data-lightbox="architecture" title="Save New Location">
+	<img src="{{ site.url }}/images/integration/mule/save-location.png"/>
+</a>
   
 Click **Create** and a new location should show up on the map (there is a slight delay because the call is async
 and the browser just waits a couple of seconds before refreshing the map). If you swap back from the browser to
@@ -220,12 +218,10 @@ your Mule Studio instance, you should notice new data has shown up in the consol
 a dump of the SiteWhere context including all device information, the current assignment, asset information, and
 the newly added location. It will look something like the screen below:
 
-.. image:: /_static/images/integration/mule/console-after-add1.png
-   :width: 100%
-   :alt: Console After Location Added
-   :align: left
+<a href="{{ site.url }}/images/integration/mule/console-after-add1.png" data-lightbox="architecture" title="Console After Location Added">
+	<img src="{{ site.url }}/images/integration/mule/console-after-add1.png"/>
+</a>
   
-
 ## Next Steps
 In this tutorial we have installed Mule Studio and the SiteWhere plugin. We created a new Mule project and a flow
 that subscribes to location events that SiteWhere produces. We ran a live instance of the Mule server in Studio

@@ -4,7 +4,7 @@ layout: default
 sidebar: sidebar.html
 ---
 
-# Running SiteWhere on Amazon EC2
+# SiteWhere on Amazon EC2
 Amazon's [Elastic Compute Cloud (EC2)](http://aws.amazon.com/ec2/) provides an environnment for running virtual
 servers in the cloud. Server images are offered in the form of Amazon Machine Images (AMIs) which capture
 the state of a configured server so it can be started in the cloud as a virtual machine.
