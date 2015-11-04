@@ -60,10 +60,17 @@ div.highlight pre {
 	background-color: #fcfcfc;
 	border: none;
 	margin: 0;
+	overflow-x: auto;
+	word-wrap: normal;
 }
 
 div.highlight pre code {
 	font-family: "Courier New";
+	white-space: pre;
+}
+
+div.highlight pre code * {
+	white-space: nowrap;
 }
 
 div.navlink i {
@@ -78,6 +85,7 @@ div.navlink a {
 table {
 	font-size: 16px;
 	margin-right: 20px;
+	margin-bottom: 20px;
 	width: 95%;
 }
 
@@ -102,6 +110,7 @@ td {
 	vertical-align: top;
 	padding-top: 8px;
 	padding-bottom: 8px;
+	padding-right: 15px;
 }
 
 #content img {

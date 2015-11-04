@@ -2,10 +2,10 @@
 title: Global Configuration
 layout: default
 sidebar: sidebar.html
-prevLink: index.html
-prevTitle: Integration
-nextLink: hardware/arduino/arduino.html
-nextTitle: Arduino Integration
+prevLink: userguide/global-configuration.html
+prevTitle: Global Configuration
+nextLink: userguide/tenant-configuration.html
+nextTitle: Tenant Configuration
 ---
 
 # {{page.title}}
@@ -23,7 +23,7 @@ A valid SiteWhere configuration is based on a standard Spring beans XML file wit
 that uses a schema specific to SiteWhere. The XML below is a partial configuration file illustrating some
 of the key features. 
 
-Notice the schema declarations and enclosing *<beans>* element at the top of the file. These are standard for a 
+Notice the schema declarations and enclosing **beans** element at the top of the file. These are standard for a 
 [Spring beans](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/beans.html) 
 configuration file. There is an **http://www.sitewhere.com/schema/sitewhere/ce** namespace declared and 
 pointed to the schema for the targeted release. Often a new SiteWhere release will add features to the 
@@ -83,126 +83,120 @@ SiteWhere schema. An example of a SiteWhere global configuration file is include
 SiteWhere configuration files often contain login credentials or other information that should not
 be shared with other users. Also, there are situations where settings for a system are 
 environment-specific (production vs. staging vs. development) and maintaining a separate configuration 
-for each creates extra work. Using Spring
-`property placeholders <http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/xsd-config.html#xsd-config-body-schemas-context-pphc>`_
-allows sensitive data to be moved into an external properties file and injected at runtime.
+for each creates extra work. Using Spring property placeholders allows sensitive data 
+to be moved into an external properties file and injected at runtime.
 In the following example, the hostname and port for the MongoDB datastore would be loaded from
 the **sitewhere.properties** file in the same directory as the main configuration file.
 
-.. code-block:: xml
-   :emphasize-lines: 1, 14
-   
-   <context:property-placeholder location="file:${catalina.home}/conf/sitewhere/sitewhere.properties" ignore-resource-not-found="true"/>
+{% highlight xml %}
+<context:property-placeholder location="file:${catalina.home}/conf/sitewhere/sitewhere.properties" 
+	ignore-resource-not-found="true"/>
 
-   <!-- ########################### -->
-   <!-- # SITEWHERE CONFIGURATION # -->
-   <!-- ########################### -->
-   <sw:configuration>
+	<sw:configuration>
       
-      <!-- ########################### -->
-      <!-- # DATASTORE CONFIGURATION # -->
-      <!-- ########################### -->
-      <sw:datastore>
+	<!-- ########################### -->
+	<!-- # DATASTORE CONFIGURATION # -->
+	<!-- ########################### -->
+	<sw:datastore>
       
-         <!-- Default MongoDB Datastore -->
-         <sw:mongo-datastore hostname="${mongo.host}" port="${mongo.port}" databaseName="sitewhere"/>
- 
+		<!-- Default MongoDB Datastore -->
+		<sw:mongo-datastore hostname="${mongo.host}" port="${mongo.port}" databaseName="sitewhere"/>
+{% endhighlight %}
+    
 The properties file would contain values for the placeholders as shown below:
 
-.. code-block:: properties
-
-   # SiteWhere configuration properties.
-   mongo.host=localhost
-   mongo.port=1234
+{% highlight jproperties %}
+# SiteWhere configuration properties.
+mongo.host=localhost
+mongo.port=1234
+{% endhighlight %}
 
 ## Global Datastore Configuration
-SiteWhere can use either `MongoDB <http://www.mongodb.org/>`_ or `Apache HBase <https://hbase.apache.org/>`_ for 
+SiteWhere can use either [MongoDB](http://www.mongodb.org/) or [Apache HBase](https://hbase.apache.org/) for 
 underlying data storage. Tenant datastores must use the same database type as is specified in the 
 global configuration.
 
 ### Configuring a MongoDB Datastore
-To use MongoDB as the global datastore, edit the SiteWhere configuration *<sw:datastore>* section
-and use the *<sw:mongo-datastore>* element as shown below:
+To use MongoDB as the global datastore, edit the SiteWhere configuration **datastore** section
+and use the **mongo-datastore** element as shown below:
 
-.. code-block:: xml
-   :emphasize-lines: 7
-
-   <!-- ################################## -->
-   <!-- # GLOBAL DATASTORE CONFIGURATION # -->
-   <!-- ################################## -->
-   <sw:datastore>
+{% highlight xml %}
+<sw:datastore>
    
-      <!-- MongoDB datastore used for global data model -->
-      <sw:mongo-datastore hostname="localhost" port="27017" databaseName="sitewhere"/>
+	<!-- MongoDB datastore used for global data model -->
+	<sw:mongo-datastore hostname="localhost" port="27017" databaseName="sitewhere"/>
       
-      <!-- Initializes users and tenant data if datastore is empty -->
-      <sw:default-user-model-initializer/>
+	<!-- Initializes users and tenant data if datastore is empty -->
+	<sw:default-user-model-initializer/>
 
-   </sw:datastore>
+</sw:datastore>
+{% endhighlight %}
 
 Note that the default settings assume a local MongoDB instance running on the default port and using a database
 named **sitewhere**.
 
-The following attributes may be specified for the *<sw:mongo-datastore>* element.
+The following attributes may be specified for the **mongo-datastore** element.
       
-+------------------------+----------+--------------------------------------------------+
-| Attribute              | Required | Description                                      |
-+========================+==========+==================================================+
-| hostname               | optional | Server hostname for MongoDB instance.            |
-|                        |          | Defaults to *localhost*.                         |
-+------------------------+----------+--------------------------------------------------+
-| port                   | optional | Server port for MongoDB instance.                |
-|                        |          | Defaults to *27017*.                             |
-+------------------------+----------+--------------------------------------------------+
-| databaseName           | optional | MongoDB database name for SiteWhere storage.     |
-|                        |          | Defaults to *sitewhere*.                         |
-+------------------------+----------+--------------------------------------------------+
+| Attribute               | Required | Description                                      
+|-------------------------|----------|--------------------------------------------------
+| hostname                | optional | Server hostname for MongoDB instance. Defaults to *localhost*.
+| port                    | optional | Server port for MongoDB instance. Defaults to *27017*.
+| databaseName            | optional | MongoDB database name for SiteWhere storage. Defaults to *sitewhere*.
 
 ### Configuring an HBase Datastore
-To use Apache HBase as the global datastore, edit the SiteWhere configuration  *<sw:datastore>* section 
-and use the *<sw:hbase-datastore>* element as shown below:
+To use Apache HBase as the global datastore, edit the SiteWhere configuration **datastore** section 
+and use the **hbase-datastore** element as shown below:
 
-.. code-block:: xml
-   :emphasize-lines: 7-8
+{% highlight xml %}
+<sw:datastore>
 
-   <!-- ################################## -->
-   <!-- # GLOBAL DATASTORE CONFIGURATION # -->
-   <!-- ################################## -->
-   <sw:datastore>
+	<!-- Default HBase Datastore -->
+	<sw:hbase-datastore quorum="sandbox.hortonworks.com" zookeeperZnodeParent="/hbase-unsecure"/>
 
-      <!-- Default HBase Datastore -->
-      <sw:hbase-datastore quorum="sandbox.hortonworks.com"
-         zookeeperZnodeParent="/hbase-unsecure"/>
+	<!-- Initializes users and tenant data if datastore is empty -->
+	<sw:default-user-model-initializer/>
 
-      <!-- Initializes users and tenant data if datastore is empty -->
-      <sw:default-user-model-initializer/>
-
-   </sw:datastore>
+</sw:datastore>
+{% endhighlight %}
 
 The above configuration may be used to connect to a Hortonworks HDP instance.
 
 The following attributes may be specified for the *<sw:hbase-datastore>* element.
       
-+--------------------------+----------+--------------------------------------------------+
-| Attribute                | Required | Description                                      |
-+==========================+==========+==================================================+
-| quorum                   | required | Server hostname for HBase ZooKeeper quorum.      |
-+--------------------------+----------+--------------------------------------------------+
-| zookeeperClientPort      | optional | ZooKeeper client port. Defaults to 2181.         |
-+--------------------------+----------+--------------------------------------------------+
-| zookeeperZnodeParent     | optional | ZooKeeper znode parent. Defaults to '/hbase'.    |
-+--------------------------+----------+--------------------------------------------------+
-| zookeeperZnodeRootServer | optional | ZooKeeper znode root server. Defaults to         |
-|                          |          | 'root-region-server'.                            |
-+--------------------------+----------+--------------------------------------------------+
+| Attribute                | Required | Description                                      
+|--------------------------|----------|--------------------------------------------------
+| quorum                   | required | Server hostname for HBase ZooKeeper quorum.
+| zookeeperClientPort      | optional | ZooKeeper client port. Defaults to *2181*.
+| zookeeperZnodeParent     | optional | ZooKeeper znode parent. Defaults to '/hbase'.
+| zookeeperZnodeRootServer | optional | ZooKeeper znode root server. Defaults to 'root-region-server'.
 
 ## Populating Sample Data
 In both MongoDB and HBase installations, SiteWhere will automatically create the underlying database if it does 
 not already exist. After that, each time that SiteWhere server starts up, it will check whether there is data 
-in the database and, if data initializers are configured, will prompt to populate 
-the database with sample data (for non-console startup, there are properties on the 
-model initializers in the configuration file that allow you to specify whether 
-to populate the sample data automatically). SiteWhere has an initializer that will
-create sample data for user and tenant data models. It can be configured by adding 
-*<sw:default-user-model-initializer/>* to the *<sw:datastore>* section as shown in
-the datastore examples above.
+in the database and, if data initializers are configured, will prompt to populate the database with 
+sample data. SiteWhere has an initializer that will create sample data for user and tenant data 
+models. It can be configured by adding **default-user-model-initializer** to the **datastore** 
+section as shown in the datastore examples above.
+
+## Configuring Logging
+SiteWhere uses [Apache Log4j](http://logging.apache.org/log4j/1.2/) for logging information about the running system.
+The logging output is configured by the **log4j.xml** file which is found in the lib folder of the default server
+distributions. For users running SiteWhere on their own application server instance, the default logging configuration
+file can be found on [GitHub](https://github.com/sitewhere/sitewhere/blob/master/sitewhere-core/config/log4j.xml).
+The file must be available on the server classpath in order to be used.
+
+The default logging configuration file logs to the console output and also creates a separate log file named
+**sitewhere.log** which contains the same content.
+
+### Enabling Server Debug Output
+By default, most debugging output is not logged for SiteWhere. To turn debugging on for all aspects of the server,
+scroll down to the following block:
+
+{% highlight xml %}
+<category name="com.sitewhere">
+	<priority value="INFO" />
+</category>
+{% endhighlight %}
+   
+Change the **INFO** value to **DEBUG** and restart the server. All debug information will be now be available. This is
+discouraged in production environments because logging takes system resources and will degrade performance.

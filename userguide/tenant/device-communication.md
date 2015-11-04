@@ -2,8 +2,8 @@
 title: Tenant Device Communication
 layout: default
 sidebar: sidebar.html
-prevLink: index.html
-prevTitle: Integration
+prevLink: userguide/tenant-configuration.html
+prevTitle: Tenant Configuration
 nextLink: hardware/arduino/arduino.html
 nextTitle: Arduino Integration
 ---
@@ -552,7 +552,7 @@ Note that on system startup, the event processor attempts to ping the Solr serve
 settings are correct. If the ping fails, the component will not be started.
 
 ### Sending Events to InitialState.com
-SiteWhere events can be forwarded to [IniitialState.com](https://www.initialstate.com/) to
+SiteWhere events can be forwarded to [InitialState.com](https://www.initialstate.com/) to
 allow them to be visualized using the advanced dashboarding features offered by the platform.
 To enable event forwarding, add the **initial-state-event-processor** element and
 specify the streaming access key made available when you create an InitialState account.
