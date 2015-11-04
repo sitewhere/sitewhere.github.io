@@ -1,33 +1,29 @@
 body {
-	font-family: Tahoma, Arial, sans-serif;
+	font-family: "Open Sans", Tahoma, Arial, sans-serif;
 	line-height: 1.8em;
 	font-size: 16px;
 }
 
 h1 {
-	font-family: Arial, Tahoma, sans-serif;
 	font-size: 40px;
 }
 
 h2 {
-	font-family: Arial, Tahoma, sans-serif;
 	margin-top: 25px;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
 	font-size: 33px;
 	padding-top: 25px;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #eee;
 }
 
 h3 {
-	font-family: Arial, Tahoma, sans-serif;
 	font-size: 24px;
 	margin-top: 30px;
 	margin-bottom: 15px;
 }
 
 h4 {
-	font-family: Arial, Tahoma, sans-serif;
 	font-size: 16px;
 	font-weight: bold;
 	margin-top: 25px;
@@ -39,12 +35,12 @@ div.toc-h1 {
 }
 
 div.toc-h1 a {
-	font-size: 18px;
+	font-size: 16px;
 	color: #333;
 }
 
 div.toc-h2 a {
-	font-size: 14px;
+	font-size: 12px;
 	color: #333;
 	margin-left: 12px;
 }
@@ -54,6 +50,20 @@ div.highlight {
 	margin-bottom: 30px;
 	max-height: 400px;
 	overflow-y: auto;
+	border: 1px solid #ddd;
+	-webkit-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+	-moz-box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+	box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.3);
+}
+
+div.highlight pre {
+	background-color: #fcfcfc;
+	border: none;
+	margin: 0;
+}
+
+div.highlight pre code {
+	font-family: "Courier New";
 }
 
 div.navlink i {
@@ -61,6 +71,7 @@ div.navlink i {
 }
 
 div.navlink a {
+	font-size: 16px;
 	color: #333;
 }
 
