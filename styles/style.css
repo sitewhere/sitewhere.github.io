@@ -76,21 +76,32 @@ div.navlink a {
 }
 
 table {
+	font-size: 16px;
 	margin-right: 20px;
+	width: 95%;
+}
+
+thead tr th:nth-of-type(1) {
+	width: 200px;
+}
+
+thead tr th:nth-of-type(2) {
+	min-width: 120px;
+}
+
+thead tr th:nth-of-type(3) {
+	min-width: 200px;
 }
 
 tbody tr {
 	border-top: 1px solid #eee;
 }
 
-th {
-	min-width: 200px;
-}
-
 td {
+	font-size: 14px;
 	vertical-align: top;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 #content img {
