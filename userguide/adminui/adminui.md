@@ -204,7 +204,7 @@ provide a schema that clearly defines where nested devices 'plug in' to the pare
 
 
 ### Device Specifications List
-Clicking on the **Specifications** tab in the navigation bar opens the device specifications
+Click on **Specifications** in the Devices dropdown in the navigation bar to open the device specifications
 list page. All existing device specifications are listed in alphabetical order as shown below:
 
 <a href="{{ site.url }}/images/userguide/adminui/spec-list.png" data-lightbox="architecture" title="Device Specification Liste">
@@ -332,8 +332,8 @@ can, in turn, send commands by way of a command destination that delivers comman
 physical device.
 
 ### Devices List
-Clicking on the **Devices** tab in the navigation bar opens the device list page. All existing devices 
-are listed with the ones most recently created at the top of the list:
+Choose **Devices** from the Devices dropdown in the navigation bar to open the device list page. 
+All existing devices are listed with the ones most recently created at the top of the list:
 
 <a href="{{ site.url }}/images/userguide/adminui/device-list.png" data-lightbox="architecture" title="Device List">
 	<img src="{{ site.url }}/images/userguide/adminui/device-list.png"/>
@@ -347,21 +347,15 @@ The following sections cover information needed to create or edit a device.
 #### Edit Device - Device Details Tab
 The **Device Details** tab includes basic information about a device.
 
-.. image:: /_static/images/userguide/device-edit-details.png
-   :width: 100%
-   :alt: Edit Device - Device Details
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-edit-details.png" data-lightbox="architecture" title="Edit Device - Device Details">
+	<img src="{{ site.url }}/images/userguide/adminui/device-edit-details.png"/>
+</a>
 
-+----------------------+--------------------------------------------------------+
-| Field                | Description                                            |
-+======================+========================================================+
-| Hardware Id          | Unique hardware identifier for the device. The         |
-|                      | identifier can be any string value.                    |
-+----------------------+--------------------------------------------------------+
-| Site                 | Specifies the site where the device will be deployed.  |
-+----------------------+--------------------------------------------------------+
-| Comments             | Extra information about the device.                    |
-+----------------------+--------------------------------------------------------+
+| Field                     | Description                                      
+|---------------------------|-------------------------------------------
+| Hardware Id               | Unique hardware identifier for the device. The identifier can be any string value.
+| Site                      | Specifies the site where the device will be deployed.
+| Comments                  | Extra information about the device.
 
 #### Edit Device - Specification Tab
 The **Specification** tab is used to choose the device specification that describes
@@ -369,10 +363,9 @@ the device. The specification is used to infer the type of device hardware,
 whether the device can contain nested devices, and which commands may be sent
 to control the device.
    
-.. image:: /_static/images/userguide/device-edit-spec.png
-   :width: 100%
-   :alt: Edit Device - Specification
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-edit-spec.png" data-lightbox="architecture" title="Edit Device - Specification">
+	<img src="{{ site.url }}/images/userguide/adminui/device-edit-spec.png"/>
+</a>
 
 #### Edit Device - Metadata Tab
 Each device can have arbitrary metadata attached to its primary data to provide
@@ -384,10 +377,9 @@ deliver commands to control the device. Metadata is stored as name/value pairs
 on the device definition and may include complex structures such as XML or JSON
 payloads.
    
-.. image:: /_static/images/userguide/device-edit-metadata.png
-   :width: 100%
-   :alt: Edit Device - Metadata
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-edit-metadata.png" data-lightbox="architecture" title="Edit Device - Metadata">
+	<img src="{{ site.url }}/images/userguide/adminui/device-edit-metadata.png"/>
+</a>
    
 ### Filtering the Device List
 SiteWhere is designed to manage and interact with a large number of devices, so it
@@ -395,8 +387,19 @@ is important to be able to target specific groups of devices based on criteria.
 On the device list page, clicking on the **Filter Results** button opens a
 dialog that allows criteria to be specified to narrow the list of results.
    
+#### Filter Devices - Sites Tab
+The sites tab allows devices to be filtered based on the site they are associated
+with. The two choices include:
+
+* Do not filter by site
+* Include only devices that are associated with a given site.
+   
+<a href="{{ site.url }}/images/userguide/adminui/device-filter-site.png" data-lightbox="architecture" title="Filter Device - Sites">
+	<img src="{{ site.url }}/images/userguide/adminui/device-filter-site.png"/>
+</a>
+   
 #### Filter Devices - Specifications Tab
-The first tab allows devices to be filtered based on the device specification
+The specifications tab allows devices to be filtered based on the device specification
 that they implement. The two choices include:
 
 * Do not filter by specification
@@ -408,10 +411,9 @@ toolbar, allowing a command to be executed as a batch operation for all of the
 devices that meet the criteria. Other criteria may be applied in addition to
 the specification to limit the scope of devices affected by the command.
    
-.. image:: /_static/images/userguide/device-filter-spec.png
-   :width: 100%
-   :alt: Filter Device - Specifications
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-filter-spec.png" data-lightbox="architecture" title="Filter Device - Specifications">
+	<img src="{{ site.url }}/images/userguide/adminui/device-filter-spec.png"/>
+</a>
    
 #### Filter Devices - Groups Tab
 The **Groups** tab allows search results to be limited based by whether devices
@@ -427,10 +429,9 @@ instance, you can choose a specification and a group to choose only devices of a
 given type in the group. You can then click **Batch Command** to send a command to
 only those devices.
    
-.. image:: /_static/images/userguide/device-filter-group.png
-   :width: 100%
-   :alt: Filter Device - Groups
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-filter-group.png" data-lightbox="architecture" title="Filter Device - Groups">
+	<img src="{{ site.url }}/images/userguide/adminui/device-filter-group.png"/>
+</a>
    
 #### Filter Devices - Created Date Tab
 The **Created Date** tab allows search results to be limited by the date a device
@@ -448,10 +449,9 @@ The created date filter criteria is applied in combination with other filters so
 for instance, you can choose devices in a group that implement a given specification
 and were created in the last week.
    
-.. image:: /_static/images/userguide/device-filter-createdate.png
-   :width: 100%
-   :alt: Filter Device - Created Date
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-filter-createdate.png" data-lightbox="architecture" title="Filter Device - Created Date">
+	<img src="{{ site.url }}/images/userguide/adminui/device-filter-createdate.png"/>
+</a>
    
 #### Filter Devices - Other Options
 The **Other Options** tab is a catch-all for other criteria that can be used to 
@@ -462,20 +462,20 @@ assigned. Choosing this option will return only unassigned devices. Examples of
 using this option include looking for devices of a given type that are not
 assigned yet or looking for devices in a group that are not assigned yet.
 
-.. image:: /_static/images/userguide/device-filter-other.png
-   :width: 100%
-   :alt: Filter Device - Other Options
-   :align: left
+**Note that excluding assigned devices will prevent being able to send a batch device command invocation because commands can only be sent to assigned devices.**
+
+<a href="{{ site.url }}/images/userguide/adminui/device-filter-other.png" data-lightbox="architecture" title="Filter Device - Other Options">
+	<img src="{{ site.url }}/images/userguide/adminui/device-filter-other.png"/>
+</a>
    
 ### Managing Devices - Device Detail
 From the device list page, clicking on the green arrow to the right of an entry opens
 the device detail page. As shown in the image below, the device detail page contains the 
 base device information including the current asset assignment if assigned.
 
-.. image:: /_static/images/userguide/device-details.png
-   :width: 100%
-   :alt: Device Details
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-details.png" data-lightbox="architecture" title="Device Details">
+	<img src="{{ site.url }}/images/userguide/adminui/device-details.png"/>
+</a>
 
 #### Device Details - Assignment History Tab
 The **Assignment History** tab shows the current and all previous asset assignments for
@@ -491,10 +491,9 @@ right of a given slot brings up a dialog to choose the device that will fill the
 Once a device has been assigned to a slot in a composite device, commands will be sent
 to the parent device rather than the nested device.
 
-.. image:: /_static/images/userguide/device-composition.png
-   :width: 100%
-   :alt: Device Details - Composition
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-composition.png" data-lightbox="architecture" title="Device Details - Composition">
+	<img src="{{ site.url }}/images/userguide/adminui/device-composition.png"/>
+</a>
 
 ## Managing Device Assignments
 Device assignments represent the association of a device with a site and (optionally) a 
@@ -507,38 +506,34 @@ be a separate event trail for each person the badge was assigned to.
 If a device does not have a current assignment, an **Assign Device** button will appear in
 the asset portion of the device entry as shown below:
 
-.. image:: /_static/images/userguide/device-assign.png
-   :width: 100%
-   :alt: Device Assignment - Assign a Device
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-assign.png" data-lightbox="architecture" title="Device Assignment - Assign a Device">
+	<img src="{{ site.url }}/images/userguide/adminui/device-assign.png"/>
+</a>
 
 Clicking the button opens a dialog that allows the device to be assigned. The
 **Assignment Details** tab shows the hardware id for the device that will
 be assigned.
 
-.. image:: /_static/images/userguide/device-assign-details.png
-   :width: 100%
-   :alt: Device Assignment - Assignment Details
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-assign-details.png" data-lightbox="architecture" title="Device Assignment - Assignment Details">
+	<img src="{{ site.url }}/images/userguide/adminui/device-assign-details.png"/>
+</a>
 
 Clicking the **Asset Association** tab allows an asset to be associated with the device.
 If the **Associate Asset** checkbox is left unchecked, the device will not be assigned to an asset.
 Otherwise, the list of asset providers is shown in a dropdown. Choose an asset provider and
 then choose an asset from the list for that provider.
 
-.. image:: /_static/images/userguide/device-assign-asset.png
-   :width: 100%
-   :alt: Device Assignment - Asset Association
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-assign-asset.png" data-lightbox="architecture" title="Device Assignment - Asset Association">
+	<img src="{{ site.url }}/images/userguide/adminui/device-assign-asset.png"/>
+</a>
    
 Clicking the **Metadata** tab allows metadata to be created for the assignment. An example of
 assignment metadata is a 'valid through' date for the badge. This can be used by the system to
 fire an alert if the badge is used beyond a given date.
 
-.. image:: /_static/images/userguide/device-assign-metadata.png
-   :width: 100%
-   :alt: Device Assignment - Metadata
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/device-assign-metadata.png" data-lightbox="architecture" title="Device Assignment - Metadata">
+	<img src="{{ site.url }}/images/userguide/adminui/device-assign-metadata.png"/>
+</a>
 
 Clicking the **Assign** button at the bottom of the dialog will create the assignment.
 
@@ -547,10 +542,9 @@ The assignment detail page can be accessed from the **Assignments** tab for a si
 the **Assignment History** tab in the device details page. In both cases, clicking on the
 green arrow at the right of the assignment entry navigates to the **View Assignment** page.
 
-.. image:: /_static/images/userguide/assignment-details.png
-   :width: 100%
-   :alt: Device Assignment - View Assignment
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/assignment-details.png" data-lightbox="architecture" title="Device Assignment - View Assignment">
+	<img src="{{ site.url }}/images/userguide/adminui/assignment-details.png"/>
+</a>
 
 The **View Assignment** page contains all of the event data related to the given assignment.
 The **Locations**, **Measurements**, **Alerts**, and **Command Invocations** tabs display
@@ -564,14 +558,22 @@ on the device specification for the device in the assignment. Each command has a
 parameters and the command dialog allows the parameters to be filled in before sending 
 the command. 
 
-.. image:: /_static/images/userguide/assignment-command-details.png
-   :width: 100%
-   :alt: Device Assignment - Invoke Device Command
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/assignment-command-details.png" data-lightbox="architecture" title="Device Assignment - Invoke Device Command">
+	<img src="{{ site.url }}/images/userguide/adminui/assignment-command-details.png"/>
+</a>
 
-Clicking the **Invoke** button will create a new command invocation event,
-saving the event for the assignment and sending the command to the device based on
-the server provisioning configuration.
+Clicking the **Schedule** tab allows the command to be executed on a schedule rather than
+invoking it immediately. A scheduled job will be added for the command and a new command
+invocation will be generated every time the schedule fires. The job can be cancelled by
+navigating to the **Scheduled Jobs** page and deleting the job.
+
+<a href="{{ site.url }}/images/userguide/adminui/assignment-command-schedule.png" data-lightbox="architecture" title="Device Assignment - Device Command Schedule">
+	<img src="{{ site.url }}/images/userguide/adminui/assignment-command-schedule.png"/>
+</a>
+
+If the command is not scheduled, clicking the **Invoke** button will immediately create 
+a new command invocation event, storing the event for the assignment and sending the 
+command to the device based on the server provisioning configuration.
 
 ## Managing Device Groups
 Device groups are used to create an association between related devices. A device can belong
@@ -582,13 +584,13 @@ get a list of devices that serve a given role or roles, then take actions such a
 commands or updating metadata.
 
 ### Devices Groups List
-Clicking on the **Device Groups** tab in the navigation bar opens the device groups list page. 
-All existing device groups are listed with the ones most recently created at the top of the list:
+Clicking on the **Device Groups** entry in the Devices dropdown in the navigation bar 
+opens the device groups list page. All existing device groups are listed with the ones 
+most recently created at the top of the list:
 
-.. image:: /_static/images/userguide/group-list.png
-   :width: 100%
-   :alt: Device Group List
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/group-list.png" data-lightbox="architecture" title="Device Group List">
+	<img src="{{ site.url }}/images/userguide/adminui/group-list.png"/>
+</a>
 
 ### Creating and Editing Device Groups
 To create a new device group, click on the **Add New Device Group** button at the top of the list
@@ -598,18 +600,14 @@ The following sections cover information needed to create or edit a device group
 #### Edit Device Group - Group Details Tab
 The **Group Details** tab includes basic information about a device group.
 
-.. image:: /_static/images/userguide/group-edit-details.png
-   :width: 100%
-   :alt: Edit Device Group - Group Details
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/group-edit-details.png" data-lightbox="architecture" title="Edit Device Group - Group Details">
+	<img src="{{ site.url }}/images/userguide/adminui/group-edit-details.png"/>
+</a>
 
-+----------------------+--------------------------------------------------------+
-| Field                | Description                                            |
-+======================+========================================================+
-| Group Name           | Short name that describes the function of the group.   |
-+----------------------+--------------------------------------------------------+
-| Description          | A longer description of the group.                     |
-+----------------------+--------------------------------------------------------+
+| Field                     | Description                                      
+|---------------------------|-------------------------------------------
+| Group Name                | Short name that describes the function of the group.
+| Description               | A longer description of the group.
 
 ##### Edit Device Group - Roles Tab
 The **Roles** tab allows a list of roles to be associated with a device group. Roles are used
@@ -617,24 +615,21 @@ to allow groups to be looked up in different contexts. For instance, a device gr
 have a list of temporary badges for tracking people. Another device group may contain the 
 list of badges that belong to employees on the first floor. Both groups may have a common
 role of 'badgeList'. Querying the SiteWhere services for groups with a role of 'badgeList'
-will return both groups. Future versions of SiteWhere will allow device commands to be targeted
-at device groups to allow for bulk operations. Currently, it is up to the application to
-query for groups, assemble a target list, and issue commands for each device.
+will return both groups. Batch command invocations allow device commands to be targeted
+at device groups to allow for bulk operations.
 
-.. image:: /_static/images/userguide/group-edit-roles.png
-   :width: 100%
-   :alt: Edit Device Group - Roles
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/group-edit-roles.png" data-lightbox="architecture" title="Edit Device Group - Roles">
+	<img src="{{ site.url }}/images/userguide/adminui/group-edit-roles.png"/>
+</a>
 
 ##### Edit Device Group - Metadata Tab
 The **Metadata** tab allows extra metadata to be associated with a group. The extra information
 will generally be application specific. For instance, a temporary badge group may have extra
 metadata for the building phone number or address where the badges are in use.
 
-.. image:: /_static/images/userguide/group-edit-metadata.png
-   :width: 100%
-   :alt: Edit Device Group - Metadata
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/group-edit-metadata.png" data-lightbox="architecture" title="Edit Device Group - Metadata">
+	<img src="{{ site.url }}/images/userguide/adminui/group-edit-metadata.png"/>
+</a>
 
 ## Managing Batch Operations
 Batch operations are actions that operate on multiple devices, executing asynchronously
