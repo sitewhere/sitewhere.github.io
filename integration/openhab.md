@@ -1,11 +1,11 @@
 ---
-title: OpenHAB Tutorial
+title: OpenHAB
 layout: default
 sidebar: sidebar.html
-prevLink: index.html
-prevTitle: Integration
-nextLink: hardware/arduino/arduino.html
-nextTitle: Arduino Integration
+prevLink: integration/mule.html
+prevTitle: Mule AnyPoint Platform
+nextLink: integration.html
+nextTitle: Integration
 ---
 
 # {{page.title}}

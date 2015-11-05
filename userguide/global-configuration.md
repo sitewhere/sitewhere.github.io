@@ -2,8 +2,8 @@
 title: Global Configuration
 layout: default
 sidebar: sidebar.html
-prevLink: userguide/global-configuration.html
-prevTitle: Global Configuration
+prevLink: userguide/installation.html
+prevTitle: Installing SiteWhere
 nextLink: userguide/tenant/tenant-configuration.html
 nextTitle: Tenant Configuration
 ---

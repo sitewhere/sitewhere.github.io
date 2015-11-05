@@ -2,6 +2,10 @@
 title: Amazon EC2
 layout: default
 sidebar: sidebar.html
+prevLink: cloud.html
+prevTitle: Cloud Deployment
+nextLink: cloud/juju.html
+nextTitle: Ubuntu Juju
 ---
 
 # SiteWhere on Amazon EC2

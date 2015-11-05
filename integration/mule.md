@@ -1,11 +1,15 @@
 ---
-title: Mule AnyPoint Integration
+title: Mule AnyPoint Platform
 layout: default
 sidebar: sidebar.html
+prevLink: integration.html
+prevTitle: Integration
+nextLink: integration/openhab.html
+nextTitle: OpenHAB
 ---
 
-# Mule AnyPoint Integration
-Mule is a world class enterprise service bus (ESB) that makes it easy to integrate various
+# {{page.title}}
+Mule AnyPoint is a world class integration platform that makes it easy to integrate various
 technologies without having to write a lot of code. Mule has the concept of *flows* that pull in
 data from inbound endpoints, perform processing and decision logic, and route the resulting
 data to outbound endpoints. The AnyPoint platform includes out-of-the-box support 

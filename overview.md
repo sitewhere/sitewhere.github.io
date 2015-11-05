@@ -2,7 +2,10 @@
 title: System Overview
 layout: default
 sidebar: combined-sidebar.html
-includeNavigation: false
+prevLink: userguide.html
+prevTitle: SiteWhere User Guide
+nextLink: architecture.html
+nextTitle: System Architecture
 ---
 
 # {{page.title}}

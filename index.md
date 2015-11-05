@@ -1,7 +1,7 @@
 ---
 title: SiteWhere 1.3.0 Documentation
 layout: default
-sidebar: global-sidebar.html
+sidebar: combined-sidebar.html
 includeNavigation: false
 ---
 
@@ -37,5 +37,5 @@ administrative application to configure a SiteWhere instance.
 [Running in the Cloud]({{ site.url }}/cloud.html) - Run a SiteWhere instance on one of the many supported
 cloud providers.
 
-[Connect to Other Services]({{ site.url }}/integration.html) - Integrate a SiteWhere instance with other
-external services such as CEP and analytics.
+[Integration Tutorials]({{ site.url }}/integration.html) - Integrate SiteWhere with external platforms 
+and services.
