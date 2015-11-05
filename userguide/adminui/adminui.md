@@ -645,10 +645,9 @@ a reasonable load is achieved when dealing with thousands or millions of devices
 Clicking the **Batch** tab in the navigation bar opens the batch list page.
 All batch operations are listed in reverse chronological order.
 
-.. image:: /_static/images/userguide/batch-list.png
-   :width: 100%
-   :alt: Batch List
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/batch-list.png" data-lightbox="architecture" title="Batch List">
+	<img src="{{ site.url }}/images/userguide/adminui/batch-list.png"/>
+</a>
 
 ### Batch Command Invocation Details
 Commands can be invoked as batch operations by navigating to the device list 
@@ -660,36 +659,91 @@ batch command has been executed, it will appear on the batch opearation list
 page. Clicking on the arrow to the right of the operation entry will 
 navigate to the batch command invocation details page as shown below:
 
-.. image:: /_static/images/userguide/batch-command-detail.png
-   :width: 100%
-   :alt: Batch Command Detail
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/batch-command-detail.png" data-lightbox="architecture" title="Batch Command Detail">
+	<img src="{{ site.url }}/images/userguide/adminui/batch-command-detail.png"/>
+</a>
 
 The banner at the top of the page incudes information about the batch command
 invocation. The command that was executed is shown along with the values passed
 for any arguments. The other fields are summarized in the table below:
 
-+----------------------+--------------------------------------------------------+
-| Field                | Description                                            |
-+======================+========================================================+
-| Token                | Unique token that identifies the batch.                |
-+----------------------+--------------------------------------------------------+
-| Operation            | Type of batch operation that was performed.            |
-+----------------------+--------------------------------------------------------+
-| Processing Status    | Indicates status of the batch operation as a whole.    |
-+----------------------+--------------------------------------------------------+
-| Created Date         | Date the batch operation was created.                  |
-+----------------------+--------------------------------------------------------+
-| Processing Started   | Date the batch operation started processing.           |
-+----------------------+--------------------------------------------------------+
-| Processing Finished  | Date the batch operation finished processing.          |
-+----------------------+--------------------------------------------------------+
+| Field                     | Description                                      
+|---------------------------|-------------------------------------------
+| Token                     | Unique token that identifies the batch.
+| Operation                 | Type of batch operation that was performed.
+| Processing Status         | Indicates status of the batch operation as a whole.
+| Created Date              | Date the batch operation was created.
+| Processing Started        | Date the batch operation started processing.
+| Processing Finished       | Date the batch operation finished processing.
 
 Below the header is a list of the batch operation elements. These correspond
 to the individual commands that were invoked on devices. Each entry indicates
 the hardware id of the affected device, the processing status (indicating whether
 a command invocation was created successfully), the processed date, and
 a link to the command invocation event that was generated. 
+
+## Managing Schedules
+Schedules allow SiteWhere functionality to be executed in the future or in 
+a recurring fashion. SiteWhere currently uses scheduling for command invocations
+and batch command invocations, but other areas of functionality will be added in 
+the future. Schedules are broken down into two basic types: simple and cron-based.
+
+Simple schedules specify a delay interval and number of times an operation is to be
+executed. An example of a simple schedule is 'fire a command to blink a device LED
+every minute and stop after twenty repetitions'.
+
+Cron schedules are more complex, but allow for advanced scheduling. They support
+conditions such as 'fire a command to update firmware at noon every third Monday of 
+the month except where that falls on a holiday in a given calendar'.
+The default SiteWhere schedule manager is based on the
+[Quartz](http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger)
+scheduler, so expressions should be Quartz-compatible.
+
+Both schedule types support start and end dates for determining the interval within
+which they are active.
+
+### Schedules List
+Clicking on the **Schedules** dropdown in the navigation bar and choosing Schedules
+opens the schedule list page. All existing schedules are shown in alphabetical order
+of schedule name.
+
+<a href="{{ site.url }}/images/userguide/adminui/schedule-list.png" data-lightbox="architecture" title="Schedule List">
+	<img src="{{ site.url }}/images/userguide/adminui/schedule-list.png"/>
+</a>
+
+### Creating and Editing Schedules
+To create a new schedule, click on the **Add New Schedule** button at the top of the list
+page. To change an existing schedule, click the edit icon at the right side of the entry.
+The following sections cover information needed to create or edit a schedule.
+
+#### Edit Schedule - Schedule Details Tab
+The **Schedule Details** tab includes information about a schedule.
+
+<a href="{{ site.url }}/images/userguide/adminui/schedule-create-simple.png" data-lightbox="architecture" title="Create Simple Schedule">
+	<img src="{{ site.url }}/images/userguide/adminui/schedule-create-simple.png"/>
+</a>
+
+The following fields are common to both simple and cron-based schedules:
+
+| Field                     | Description                                      
+|---------------------------|-------------------------------------------
+| Name                      | Schedule name that will be shown when choosing schedules.
+| Start Date                | Start of interval in which schedule will be active.
+| End Date                  | End of interval in which schedule will be active.
+| Type                      | Type of schedule. Either *simple* or *cron-based*.
+
+The following fields only apply to simple schedules:
+
+| Field                     | Description                                      
+|---------------------------|-------------------------------------------
+| Interval in milliseconds  | Number of milliseconds to wait between executions.
+| Repetitions               | Number of times to repeat. Zero indicates repeat forever.
+
+The following fields only apply to cron-based schedules:
+
+| Field                     | Description                                      
+|---------------------------|-------------------------------------------
+| Cron expression           | Cron expression that determines schedule.
 
 ## Managing Users
 SiteWhere users represent entities authorized to use the system. User credentials are used
