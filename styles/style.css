@@ -24,7 +24,14 @@ h3 {
 }
 
 h4 {
-	font-size: 16px;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+h5 {
+	font-size: 17px;
 	font-weight: bold;
 	margin-top: 25px;
 	margin-bottom: 10px;
@@ -111,6 +118,11 @@ td {
 	padding-top: 8px;
 	padding-bottom: 8px;
 	padding-right: 15px;
+}
+
+#toc {
+	max-height: 375px;
+	overflow-y: auto;
 }
 
 #content img {

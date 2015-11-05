@@ -2,7 +2,7 @@
 title: Tenant Device Communication
 layout: default
 sidebar: sidebar.html
-prevLink: userguide/tenant-configuration.html
+prevLink: userguide/tenant/tenant-configuration.html
 prevTitle: Tenant Configuration
 nextLink: hardware/arduino/arduino.html
 nextTitle: Arduino Integration
