@@ -4,8 +4,8 @@ layout: default
 sidebar: sidebar.html
 prevLink: userguide/global-configuration.html
 prevTitle: Global Configuration
-nextLink: userguide/tenant/tenant-configuration.html
-nextTitle: Tenant Configuration
+nextLink: userguide.html
+nextTitle: SiteWhere User Guide
 ---
 
 # {{page.title}}

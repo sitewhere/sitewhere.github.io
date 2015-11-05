@@ -1,7 +1,7 @@
 ---
 title: Multitenancy
 layout: default
-sidebar: userguide/sidebar-installation.html
+sidebar: sidebar.html
 ---
 
 # Multitienancy

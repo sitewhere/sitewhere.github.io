@@ -51,6 +51,7 @@
 						<img src="{{ site.url }}/images/sitewhere.png" class="header-logo">
 					</div>
 					<div class="sidebar-header">{% include {{page.sidebar}} %}</div>
+					{% if page.includeNavigation != false %}
 					<div class="sidebar-header">
 						<div class="navlink">
 							<i class="fa fa-home"></i><a href="/index.html">Table of Contents</a>
@@ -62,6 +63,7 @@
 							<i class="fa fa-arrow-right"></i><a href="/{{ page.nextLink }}">{{ page.nextTitle }}</a>
 						</div>
 					</div>
+					{% endif %}
 					<div class="sidebar-header sw-copyright">
 						Copyright 2009-2015 <strong>SiteWhere LLC.</strong>
 					</div>

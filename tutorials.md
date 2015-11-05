@@ -1,8 +1,9 @@
 ---
 title: Tutorials
 layout: default
-sidebar: sidebar.html
+sidebar: global-sidebar.html
+includeNavigation: false
 ---
 
-# Tutorials
+# {{page.title}}
 The following tutorials are provided to help you learn SiteWhere by real world examples.

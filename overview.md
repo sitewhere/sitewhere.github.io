@@ -1,10 +1,11 @@
 ---
 title: System Overview
 layout: default
-sidebar: userguide/sidebar-installation.html
+sidebar: combined-sidebar.html
+includeNavigation: false
 ---
 
-# System Overview
+# {{page.title}}
 This guide is intended to provide a high-level understanding of what SiteWhere does and how it
 is implemented.
 

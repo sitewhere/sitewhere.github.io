@@ -4,8 +4,8 @@ layout: default
 sidebar: sidebar.html
 prevLink: userguide/tenant/tenant-configuration.html
 prevTitle: Tenant Configuration
-nextLink: hardware/arduino/arduino.html
-nextTitle: Arduino Integration
+nextLink: userguide/adminui/adminui.html
+nextTitle: Administrative Application
 ---
 
 # {{page.title}}
@@ -153,7 +153,7 @@ and the event decoder should be configured based on the expected type of data.
 		</sw:web-socket-event-source>
 {% endhighlight %}
          
-Note that the payload type is 'string' and that the *<sw:groovy-string-event-decoder/>* decoder
+Note that the payload type is 'string' and that the **groovy-string-event-decoder** decoder
 expects a String input. If a binary decoder is configured for a String payload type or vice versa,
 the system will generate an error on startup.
 

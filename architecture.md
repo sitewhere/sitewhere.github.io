@@ -1,11 +1,11 @@
 ---
 title: System Architecture
 layout: default
-sidebar: userguide/sidebar-installation.html
+sidebar: combined-sidebar.html
+includeNavigation: false
 ---
 
-# SiteWhere System Architecture
-
+# {{page.title}}
 This document describes the components that make up SiteWhere and how they relate to each other.
 
 ## Architecture Diagram

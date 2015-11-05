@@ -1,10 +1,14 @@
 ---
 title: Installing SiteWhere
 layout: default
-sidebar: userguide/sidebar-installation.html
+sidebar: sidebar.html
+prevLink: userguide.html
+prevTitle: SiteWhere User Guide
+nextLink: userguide/global-configuration.html
+nextTitle: Global Configuration
 ---
 
-# Installation
+# {{page.title}}
 SiteWhere provides many options for installation depending on user requirements. There are options
 for running SiteWhere in the cloud, as a local server, installed within an existing Tomcat instance,
 or running as a virtual machine.

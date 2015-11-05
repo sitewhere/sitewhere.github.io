@@ -1,7 +1,8 @@
 ---
 title: Developer Guide
 layout: default
-sidebar: sidebar.html
+sidebar: combined-sidebar.html
+includeNavigation: false
 ---
 
 # Developer Guide
@@ -9,7 +10,7 @@ This manual covers the steps necessary for a developer to get started working wi
 SiteWhere source code. It addresses topics such as setting up a development environment, 
 downloading SiteWhere source code, and building SiteWhere artifacts.
 
-## Setting Up a Developement Environment
+## Install Development Environment
 Most of the core SiteWhere source code is written in [Java](http://www.oracle.com/technetwork/java/index.html) 
 and made available on on the SiteWhere [GitHub page](https://github.com/sitewhere). The easiest 
 path to get up and running is to use a development environment that has integrated support for the Git version 
@@ -37,7 +38,7 @@ repository. The following steps will guide you though locating and installing th
 7. Note the **Default repository folder** setting. This is where your git repositories will be created. 
    You can change the location if the default value isn\'t acceptable.
 
-## Importing SiteWhere Respository
+## Import SiteWhere Respository
 All of the core SiteWhere Java code is kept in a single GitHub repository. Previously, each module had its
 own repository, but they have since been combined. 
 
@@ -56,7 +57,7 @@ Once the repository has been loaded into Eclipse, it will automatically be compi
 result in errors due to missing library dependencies. In order to load the required libraries onto your local 
 machine, you will need to install Apache Maven.
  
-## Installing Maven and Building Projects
+## Install Maven and Build Projects
 In order to build the various projects and generate the deployable artifacts, you will need to 
 install and run [Apache Maven](http://maven.apache.org/). Version 3.0.5 was used for testing but any Maven 3 version 
 should work as well. Download Maven and install as per the instructions, then open a command prompt. Type the following:

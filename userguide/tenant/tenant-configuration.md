@@ -9,8 +9,10 @@ nextTitle: Tenant Device Communication
 ---
 
 # {{page.title}}
-In addition to the global configuration file, there is a per-tenant configuration file
-located at **conf/sitewhere/xxx-tenant.xml** (where **xxx** is the tenant id). Each tenant
+Each tenant has its own configuration file which inherits from the global configuration
+via Spring context inhertance. This allows globally defined beans to be accessed by the
+individial tenant configurations. The Spring XML configuration file for a tenant is
+located in **conf/sitewhere/xxx-tenant.xml** (where *xxx* is the tenant id). Each tenant
 has its own device data and configurable processing pipeline. The tenant configuration file
 uses Spring beans and a custom schema like the global configuration, but with a different
 schema targeted at tenant-specific features:
@@ -157,7 +159,7 @@ The following attributes may be specified for the **ehcache-device-management-ca
 ## Device Communication
 Each tenant may have its own requirements for device connectivity, so SiteWhere provides a capable
 and extensible device communication subsystem that can be customized on a per-tenant basis. See
-the device communication [configuration documentation](tenant/device-communication.html) for more
+the device communication [configuration documentation](device-communication.html) for more
 information.
 
 ## Asset Management
