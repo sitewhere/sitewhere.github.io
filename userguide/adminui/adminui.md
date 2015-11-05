@@ -752,13 +752,14 @@ When performing create/update operations on SiteWhere entities, the username of 
 authenticated user is stored to indicate who performed the action.
 
 ### Users List
-Clicking on the **Users** tab in the navigation bar opens the users list page. 
-All existing users are listed alphabetically by username.
+When logged in to the administrative application, clicking on the active user dropdown
+in the top-right corner will offer a choice of **Manage Users** if the current user
+has permissions to administer users. The users list page shows all existing users 
+ordered alphabetically by username.
 
-.. image:: /_static/images/userguide/users-list.png
-   :width: 100%
-   :alt: Users List
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/users-list.png" data-lightbox="architecture" title="Users List">
+	<img src="{{ site.url }}/images/userguide/adminui/users-list.png"/>
+</a>
 
 ### Creating and Editing Users
 To create a new user, click on the **Add New User** button at the top of the list.
@@ -767,38 +768,66 @@ To change an existing user, click the edit icon at the right side of the entry.
 #### Edit User - User Details Tab
 The **User Details** tab includes basic information about a user.
 
-.. image:: /_static/images/userguide/users-edit-details.png
-   :width: 100%
-   :alt: Edit User - User Details
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/users-edit-details.png" data-lightbox="architecture" title="Edit User - User Details">
+	<img src="{{ site.url }}/images/userguide/adminui/users-edit-details.png"/>
+</a>
 
-+----------------------+--------------------------------------------------------+
-| Field                | Description                                            |
-+======================+========================================================+
-| Username             | Unique alphanumeric identifier for a user.             |
-+----------------------+--------------------------------------------------------+
-| Password             | Password used to authenticate the user.                |
-+----------------------+--------------------------------------------------------+
-| Password (Confirm)   | Verifies that password was entered correctly.          |
-+----------------------+--------------------------------------------------------+
-| First Name           | First name of user.                                    |
-+----------------------+--------------------------------------------------------+
-| Last Name            | Last name (surname) of user.                           |
-+----------------------+--------------------------------------------------------+
-| Account Status       | Indicates if account is active, expired, or locked.    |
-+----------------------+--------------------------------------------------------+
+| Field                     | Description                                      
+|---------------------------|-------------------------------------------
+| Username                  | Unique alphanumeric identifier for a user.
+| Password                  | Password used to authenticate the user.
+| Password (Confirm)        | Verifies that password was entered correctly.
+| First Name                | First name of user.   
+| Last Name                 | Last name (surname) of user.    
+| Account Status            | Indicates if account is active, expired, or locked.     
 
 #### Edit User - Permissions Tab
 The **Permissions** tab allows user permissions to be specified. User permissions
-limit access to parts of the administrative application and certain REST service
-calls. The current list of permissions is just a placeholder for a more 
-comprehensive permissions system that will be added in the near future.
+limit access to parts of the system.
 
-.. image:: /_static/images/userguide/users-edit-permissions.png
-   :width: 100%
-   :alt: Edit User - Permissions
-   :align: left
+<a href="{{ site.url }}/images/userguide/adminui/users-edit-permissions.png" data-lightbox="architecture" title="Edit User - Permissions">
+	<img src="{{ site.url }}/images/userguide/adminui/users-edit-permissions.png"/>
+</a>
 
 #### Edit User - Metadata Tab
 The **Metadata** tab allows extra metadata to be associated with a user. 
+
+## Managing Tenants
+SiteWhere tenants allow multiple customers run side-by-side on a single SiteWhere instance.
+Each tenant has its own datastore and processing pipeline so that there is no intermingling
+of data. Each tenant has its own configuration that extends the global configuration
+allowing all facets to be customized on a per-tenant basis.
+
+At least one tenant is required in a SiteWhere instance. If using the sample data populated 
+from the global user model initializer, a tenant with id **default** will automatically be
+added.
+
+
+### Tenants List
+When logged in to the administrative application, clicking on the active user dropdown
+in the top-right corner will offer a choice of **Manage Tenants** if the current user
+has permission to administer tenants. The tenants list page shows all existing tenants 
+ordered alphabetically.
+
+<a href="{{ site.url }}/images/userguide/adminui/tenant-list.png" data-lightbox="architecture" title="Tenants List">
+	<img src="{{ site.url }}/images/userguide/adminui/tenant-list.png"/>
+</a>
+
+### Managing Tenants - Tenant Detail
+From the tenant list page, clicking on the green arrow to the right of a tenant opens
+the tenant detail page. The tenant detail page shows the status of the given tenant and
+other information based on that status.
+
+A tenant that is in a stopped state will have action buttons for editing, deleting, or
+starting the tenant. Changes can only be made to a tenant when it is in a stopped state.
+
+A tenant that is in a running state will have an action button for stopping it. No other
+operations can be performed while a tenant is running. The detail page also shows information
+about the active configuration for a running tenant. The information includes a tree view
+of the system components and their states. It also includes a view of the active configuration
+in XML format.
+
+<a href="{{ site.url }}/images/userguide/adminui/tenant-details.png" data-lightbox="architecture" title="Tenant Details">
+	<img src="{{ site.url }}/images/userguide/adminui/tenant-details.png"/>
+</a>
    
