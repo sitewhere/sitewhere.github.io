@@ -6,7 +6,7 @@ includeNavigation: false
 ---
 
 # SiteWhere Integration
-SiteWhere provides a lot of functionality out of the box, but one its most powerful features
+SiteWhere provides a lot of functionality out of the box, but one of its most powerful features
 is ease of integration with other platforms. Rather than reinventing the wheel, SiteWhere 
 leverages other proven systems to expand its abilities.
 
