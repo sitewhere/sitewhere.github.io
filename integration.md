@@ -15,16 +15,23 @@ SiteWhere provides software development kits for quickly integrating devices
 from popular hardware platforms. This allows users to focus on building applications
 rather than struggling with infrastructure.
 
-### Android Development Kit
+### [Android Development Kit]({{ site.url }}/hardware/android/android.html)
 SiteWhere has a complete end-to-end development kit for Android devices that allows
 connected applications to be quickly developed. Create your own SiteWhere/Android
 application by following the tutorial [here]({{ site.url }}/hardware/android/android.html);
 
-### Arduino Development Kit
+### [Arduino Development Kit]({{ site.url }}/hardware/arduino/arduino.html)
 SiteWhere provides libraries that allow Arduino devices to be quickly integrated
 with the system. The custom C libraries support MQTT interaction for devices that
 have enough memory to support it. More constrained devices can use REST for pushing
 data to SiteWhere. See the full tutorial [here]({{ site.url }}/hardware/arduino/arduino.html);
+
+### [Java Agent / Commands Tutorial]({{ site.url }}/tutorials/commands.html)
+SiteWhere provides an agent that can run on any Java-capable platform such as
+Raspberry Pi. By embedding the agent code, external systems or devices can quickly add
+SiteWhere connectivity. This [tutorial]({{ site.url }}/tutorials/commands.html) walks
+though the basics of SiteWhere device specifications and commands. It also covers downloading, 
+configuring, and running the Java agent.
 
 ## External Software Platforms
 SiteWhere can be configured as middleware to push and pull data from external
@@ -32,14 +39,14 @@ systems. This allows SiteWhere to integrate data captured by other systems,
 control devices proxied by other systems, or pass data along for other goals 
 such as CEP and analytics.
 
-### Mule AnyPoint Platform
+### [Mule AnyPoint Platform]({{ site.url }}/integration/mule.html)
 Mule AnyPoint is a world class ESB platform that makes it easy to integrate various
 technologies without having to write a lot of code. Integrating SiteWhere with Mule
 opens up a world of possibilities in working with your IoT data. Use the
 [integration guide]({{ site.url }}/integration/mule.html) to start integrating
 your SiteWhere data with Mule AnyPoint.
 
-### OpenHAB
+### [OpenHAB]({{ site.url }}/integration/openhab.html)
 SiteWhere supports integration with the popular [openHAB](http://www.openhab.org/) open
 home automation project. The SiteWhere openHAB plugin (available on the
 [downloads](http://www.sitewhere.org/downloads) page) allows SiteWhere to store
