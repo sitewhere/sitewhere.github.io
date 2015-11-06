@@ -2,8 +2,8 @@
 title: Android Libraries
 layout: default
 sidebar: sidebar.html
-prevLink: index.html
-prevTitle: Integration
+prevLink: integration.html
+prevTitle: SiteWhere Integration
 nextLink: hardware/arduino/arduino.html
 nextTitle: Arduino Integration
 ---

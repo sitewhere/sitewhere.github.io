@@ -4,8 +4,8 @@ layout: default
 sidebar: sidebar.html
 prevLink: hardware/android/android.html
 prevTitle: Android Integration
-nextLink: index.html
-nextTitle: Index
+nextLink: integration.html
+nextTitle: SiteWhere Integration
 ---
 
 # Arduino Integration
