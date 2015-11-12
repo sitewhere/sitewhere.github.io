@@ -15,7 +15,7 @@ data from inbound endpoints, perform processing and decision logic, and route th
 data to outbound endpoints. The AnyPoint platform includes out-of-the-box support 
 for *cloud connectors* which allow flows to integrate with many of the more useful 
 cloud technologies such as Salesforce.com, Amazon S3, DropBox, Twitter, 
-Google Calendars, and GitHub. Again, for a full list, take a look at the 
+Google Calendars, and GitHub. For a full list, take a look at the 
 [connectors reference](http://www.mulesoft.org/connectors).
 
 ## Install AnyPoint Studio
