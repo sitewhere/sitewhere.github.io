@@ -55,7 +55,7 @@ button near the top of the page and enter **SiteWhere Components** in the **Name
 </a>
    
 Click **OK** to add the new software site. Mule Studio will download information from the site and a 
-tree will appear for Mule Modules. Check the top checkbox to download the components. See the image below 
+tree will appear for the available components. Check the top checkbox to download the components. See the image below 
 for an example of what you should see:
 
 <a href="{{ site.url }}/images/integration/mule/sitewhere-plugin.png" data-lightbox="architecture" title="Choose SiteWhere Plugin">
@@ -65,14 +65,14 @@ for an example of what you should see:
 Keep clicking **Next** until you reach the end of the wizard. You will need to agree to the license agreement (CPAL) 
 and will need to ok a message about unsigned content. Click **Finish** to complete the wizard and allow Mule Studio 
 to restart when it asks. When Mule Studio restarts click **Help > About Mule Studio...**, then click 
-**Installation Details**. There should be an entry for **Mule SiteWhere Connector Mule Studio Extension** in the list.
+**Installation Details**. There should be an entry for **SiteWhere Connector (Mule 3.5.0+)** in the list.
 If you see the entry, you are ready to start using SiteWhere with Mule!
 
 ## Install Community Edition Runtime
 Currently, SiteWhere does not work with the Mule EE runtime due to a conflict with the versions of Hazelcast used.
 It's not a problem though, since Studio allows you to download other Mule runtimes to execute against. Choose
-**Help > Install New Software** and use the dropdown near the top to choose **Mule ESB Runtimes for Studio**. 
-After the tree appears, choose an entry for the **Community Runtimes** section as shown below:
+**Help > Install New Software** and use the dropdown near the top to choose **Mule ESB Runtimes for AnyPoint Studio**. 
+After the tree appears, choose an entry for the **AnyPoint Studio Community Runtimes** section as shown below:
 
 <a href="{{ site.url }}/images/integration/mule/community-runtime.png" data-lightbox="architecture" title="Install Community Runtime">
 	<img src="{{ site.url }}/images/integration/mule/community-runtime.png"/>
@@ -93,36 +93,38 @@ the new project). The screen should look like the one below:
 </a>
    
 ### Add a SiteWhere Configuration
-There is a global Mule flow element that controls SiteWhere configuration for a flow. In the flow editor (the large area
+There is a global element that controls SiteWhere configuration for a flow. In the flow editor (the large area
 in the middle of the IDE), click on the **Global Elements** tab and click the **Create** button on the right side. In the
-dialog, open the **Cloud Connectors** node and choose the **SiteWhere** entry, then click **OK**. You should now see
-the SiteWhere settings dialog filled in with the default values. In this tutorial, we are going to assume you are 
-running on a cloud instance of SiteWhere. If you are running on a local instance, you can leave the default values
-and everything should work. If you have not already done so, [start a cloud instance](/cloud/amazon_ec2.html). 
-To point to the cloud instance, update the **SiteWhere API URL** value to **http://sitewhere-aws/sitewhere/api/** and
-the Hazelcast **Remote Address** to **sitewhere-aws:5701**. The values should look like below:
+dialog, open the **Connector Configuration** node and choose the **SiteWhere: Configuration** entry, 
+then click **OK**. You should now see the SiteWhere settings dialog filled in with the default values. 
+In this tutorial, we are going to assume you are running on a local instance of SiteWhere. If you are 
+running on a [cloud instance](/cloud/amazon_ec2.html), update the **Hazelcast Url** to the correct cloud URL. 
+You will also need to enter the Hazelcast username and password based on the group name and password
+set in your **hazelcast.xml** configiration file. The default values are **sitewhere** / **sitewhere**.
+The values should look like below:
 
 <a href="{{ site.url }}/images/integration/mule/sitewhere-config.png" data-lightbox="architecture" title="SiteWhere Configuration">
 	<img src="{{ site.url }}/images/integration/mule/sitewhere-config.png"/>
 </a>
   
-The values in the **REST** section determine how Mule Studio interacts with the SiteWhere REST services. The REST 
-services are used when data is submitted to SiteWhere or when information is needed from SiteWhere on demand. The values
-in the **Hazelcast** section determine how SiteWhere connects to the Hazelcast instance running on your remote server.
-Hazelcast is used for subscription-based actions like the event processing logic we will be using later in the tutorial. 
+Once the settings have been updated, click the **Test Connection...** button at the bottom of the 
+dialog to verify that Studio can connect to SiteWhere. If the connection succeeds, your flow is ready
+to start interacting with SiteWhere data.
   
 ### Create an Event Processing Flow
-Now that we have the SiteWhere configuration out of the way, we just need to add the processing elements to our 
+Now that we have the SiteWhere configuration out of the way, we need to add the processing elements to our 
 flow to get the data we are interested in from SiteWhere. In this example, we want to subscribe to any *location*
 events being processed by SiteWhere. As devices report new location data, that data will be forwarded to Mule 
 after it has been saved to the datastore by SiteWhere.
 
 First, click on the **Message Flow** tab at the bottom of the editor to go back to the visual editor. On the palette at
-the right of the editor, open the **Cloud Connectors** drawer, find SiteWhere in the list, and drag-and-drop it out on
+the right of the editor, open the **Connectors** drawer, find SiteWhere in the list, and drag-and-drop it out on
 to the canvas. A new inbound endpoint will be added. Clicking on the new node should show its details in the properties
-panel at the bottom of the editor. Change the name of the node from **SiteWhere (Streaming)** to **Locations**, then
-open the dropdown for **Config Reference** and choose **SiteWhere** (which is a reference to the configuration we created
-in the last step). Finally, choose **Subscribe locations** from the **Operation** dropdown and save your changes.
+panel at the bottom of the editor. Change the display name of the node from **SiteWhere (Streaming)** 
+to **SiteWhere Locations**, then open the dropdown for **Connector Configuration** and 
+choose **SiteWhere_Configuration** (which is a reference to the configuration we created 
+in the last step). Finally, choose **Subscribe locations** from the **Operation** dropdown 
+and save your changes.
 
 Your flow should now look like the one below:
 
@@ -145,14 +147,14 @@ Now your flow should look like below:
 	<img src="{{ site.url }}/images/integration/mule/add-build-context.png"/>
 </a>
   
-The final step in the process is to print out the *context* that has been created. SiteWhere has the concept of a
-context that holds device events, their device information, and current assignment all in one neat package called
-a **SiteWhereContext**. We can print the context to the Mule Studio log by adding one more node to the flow.
+The final step in the process is to print out the context that has been created. SiteWhere has the concept of a
+conatiner that holds device events, their device information, and current assignment all in one neat package called
+a *SiteWhere context*. We can print the context to the AnyPoint Studio log by adding one more node to the flow.
 From the palette on the right of the editor drag another SiteWhere node out to the right of the **Device Info** node.
 If done correctly, there should now be three nodes connected in series. Click on the new node and look at the 
-properties editor at the bottom. Edit the **Display Name** to be **Print Context** and choose **SiteWhere** as the
-config reference. Finally, change the operation to **Log sitewhere context** and save the flow. It should now 
-look like the one below:
+properties editor at the bottom. Edit the **Display Name** to be **Log Context** and 
+choose **SiteWhere_Configuration** as the connector configuration. Finally, change the operation 
+to **Log sitewhere context** and save the flow. It should now look like the one below:
 
 <a href="{{ site.url }}/images/integration/mule/log-context.png" data-lightbox="architecture" title="Log Event Context">
 	<img src="{{ site.url }}/images/integration/mule/log-context.png"/>
@@ -174,24 +176,15 @@ will look like the one below:
 </a>
   
 ### Test with Sample Data
-Next, we can send some sample data through the system to have it show up in SiteWhere. Normally, the data would
-come from a device connected to SiteWhere, but for the sake of simplicity for this tutorial, we will use emulated
-data. Luckliy, the SiteWhere admin console has a built-in emulator that can send in test data for any registered
-device. So the path of our test data will be:
+Next, we can send some sample data through the system to have it show up in Studio. Normally, the data would
+come from a device connected to SiteWhere, but for the sake of simplicity in this tutorial, we will use emulated
+data. Luckliy, the SiteWhere [administrative application](../userguide/adminui/adminui.html) has a 
+built-in emulator that can send test data to any registered device.
 
-<a href="{{ site.url }}/images/integration/mule/flow-overview.png" data-lightbox="architecture" title="Emulator with Connection">
-	<img src="{{ site.url }}/images/integration/mule/flow-overview.png"/>
-</a>
-  
-As you can see, we are bouncing data from our local desktop, to the cloud, and back via a subscription in Mule.
-
-To send a test message, first log in to the admin console application at URL:
-
-> [http://sitewhere-aws/sitewhere/admin/](http://sitewhere-aws/sitewhere/admin/)
-	
-Click the **Login** button which will open the top-level **Sites** page. Click the *green arrow* at the right of the
-**Construction Site** entry. This will open the detail page for our make-believe contruction site. It will look 
-something like the page below (depending on which release is running in the cloud, the sample data may look different):
+Log in to the administrative application and click on the **Sites** tab. Click the green arrow at the right of the
+**Construction Site 1** entry (assuming you are using the default sample data). This will open the detail page 
+for our make-believe contruction site. It will look something like the page below (depending on which 
+release is running, the sample data may look different):
 
 <a href="{{ site.url }}/images/integration/mule/site-detail.png" data-lightbox="architecture" title="Site Detail Page">
 	<img src="{{ site.url }}/images/integration/mule/site-detail.png"/>
@@ -200,7 +193,7 @@ something like the page below (depending on which release is running in the clou
 Now click the green arrow to the right of the first device assignment in the list, which will open the *View Assignment*
 page. At the top of the page there is an **Emulate Assignment** button. Click the button to open the assignment 
 emulator. By default, the emulator is not connected to SiteWhere. Clicking the **Connect** button above the map will
-establish an MQTT connection from your browser to the MQTT broker running on our SiteWhere instance in the cloud. If
+establish an MQTT connection from your browser to the MQTT broker SiteWhere is using for event input. If
 the connection has been established, the button will turn green and its text will show as **Connected** as shown below:
 
 <a href="{{ site.url }}/images/integration/mule/emulator-connected.png" data-lightbox="architecture" title="Emulator with Connection">
@@ -217,28 +210,27 @@ location information:
 </a>
   
 Click **Create** and a new location should show up on the map (there is a slight delay because the call is async
-and the browser just waits a couple of seconds before refreshing the map). If you swap back from the browser to
+and the browser waits a couple of seconds before refreshing the map). If you swap back from the browser to
 your Mule Studio instance, you should notice new data has shown up in the console (and a lot of it). The data is
-a dump of the SiteWhere context including all device information, the current assignment, asset information, and
-the newly added location. It will look something like the screen below:
+a dump of the SiteWhere context including the current device assignment and the newly added location. 
+It will look something like the screen below:
 
 <a href="{{ site.url }}/images/integration/mule/console-after-add1.png" data-lightbox="architecture" title="Console After Location Added">
 	<img src="{{ site.url }}/images/integration/mule/console-after-add1.png"/>
 </a>
   
 ## Next Steps
-In this tutorial we have installed Mule Studio and the SiteWhere plugin. We created a new Mule project and a flow
+In this tutorial we have installed AnyPoint Studio and the SiteWhere plugin. We created a new Mule project and a flow
 that subscribes to location events that SiteWhere produces. We ran a live instance of the Mule server in Studio
 and, from an emulator in the SiteWhere admin console, created location information. The information was sent
-from your local machine via MQTT to SiteWhere which stored the location (you can look at the locations log to
+from th browser via MQTT to SiteWhere which stored the location (you can look at the locations log to
 verify that it was stored). The location event was then sent via Hazelcast to your Mule flow which subscribed to
-location events. The flow then asked SiteWhere for more event information and printed the complete event context
-out to the Mule log.
+location events. Finally, the flow printed the complete SiteWhere event context to the Mule log.
 
 This is only a simple example of event processing. In the real world, we would be talking to real devices over
-the SiteWhere provisioning engine. From a Mule perspective, the event processing side of things is no different
-for real device data than it was for the emulator. In Mule, we could take the location data and do interesting things
-with it. For instance, the SiteWhere connector contains a node that checks location data against *zones* that 
-you have created in the admin console. Based on whether the location data is inside or outside of a zone, Mule
-can take actions such as alerting or pretty much anything else you can imagine.
+the SiteWhere [communication engine](../userguide/tenant/device-communication.html). From a Mule perspective, 
+the event processing side of things is no differentfor real device data than it was for the emulator. 
+In Mule, we could take the location data and do interesting things with it. For instance, we can take the
+SiteWhere location data and forward it to SalesForce or another cloud provider. Integration with AnyPoint Studio
+opens hundreds of new possibilities for using your SiteWhere data!
 
