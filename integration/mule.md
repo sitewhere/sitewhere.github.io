@@ -13,7 +13,7 @@ Mule AnyPoint is a world class integration platform that makes it easy to integr
 technologies without having to write a lot of code. Mule has the concept of *flows* that pull in
 data from inbound endpoints, perform processing and decision logic, and route the resulting
 data to outbound endpoints. The AnyPoint platform includes out-of-the-box support 
-for *cloud connectors* which allow flows to integrate with many of the many powerful 
+for *cloud connectors* which allow flows to interact with many powerful 
 cloud technologies such as Salesforce.com, Amazon S3, DropBox, Twitter, 
 Google Calendars, and GitHub. For a full list, take a look at the 
 [connectors reference](http://www.mulesoft.org/connectors).
