@@ -4,8 +4,8 @@ layout: default
 sidebar: sidebar.html
 prevLink: integration/mule.html
 prevTitle: Mule AnyPoint Platform
-nextLink: integration.html
-nextTitle: Integration
+nextLink: spark.html
+nextTitle: Apache Spark
 ---
 
 # {{page.title}}
