@@ -55,9 +55,10 @@ from the SiteWhere REST services and administrative application. See the complet
 [tutorial]({{ site.url }}/integration/openhab.html) for an end-to-end example.
 
 ### [Apache Spark]({{ site.url }}/integration/spark.html)
-[Apache Spark Streaming](http://spark.apache.org/streaming/) is an extension of the open
-source Apache Spark platform that makes it easy to build scalable fault-tolerant 
-streaming applications. SiteWhere support includes a custom receiver that streams events  
-from a SiteWhere via Hazelcast. The event stream can then be manipulated via the standard
+[Apache Spark Streaming](http://spark.apache.org/streaming/) is an extension of the open 
+source [Apache Spark](http://spark.apache.org/) platform that makes it easy to build scalable fault-tolerant 
+streaming applications. SiteWhere support includes a custom receiver that streams events 
+from a SiteWhere instance via Hazelcast. The event stream can then be manipulated via the standard
 Spark Streaming APIs and used as the input for [machine learning](http://spark.apache.org/mllib/) 
-and [graph processing](http://spark.apache.org/graphx/) modules available in Spark.
+and [graph processing](http://spark.apache.org/graphx/) modules available in Spark. See the complete
+[tutorial]({{ site.url }}/integration/spark.html) for an example application.
