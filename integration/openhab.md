@@ -13,42 +13,55 @@ SiteWhere supports integration with the popular [openHAB](http://www.openhab.org
 home automation project. The SiteWhere openHAB plugin (available on the
 [downloads](http://www.sitewhere.org/downloads) page) allows openHAB data to 
 be stored to SiteWhere as if the openHAB system was a composite device. 
-SiteWhere (beginning with version 1.0.4) includes a device specification 
-for an openHAB virtual device, allowing commands to be sent back to openHAB as the
-result of SiteWhere processing.
+SiteWhere includes a device specification for an openHAB virtual device, 
+allowing commands to be sent back to openHAB as the result of processing.
 
-## Installing the Plugin
+## Install and Configure the Plugin
 Begin by installing openHAB as detailed in their [getting started](http://www.openhab.org/gettingstarted.html)
 guide. Install the runtime, addons, and demo application. Start the system and open the demo application
 to verify that the installation was successful.
 
 Download the [SiteWhere openHAB Addon](https://s3.amazonaws.com/sitewhere-openhab/org.openhab.persistence.sitewhere-1.7.0-SNAPSHOT.jar)
-and copy it into the openHAB addons folder. In the openHAB **configurations** folder, create a new folder named **sitewhere**.
-Copy the contents of the [sitewhere.json](https://s3.amazonaws.com/sitewhere-openhab/sitewhere.json) file into the
-**sitewhere** folder. This file is used to configure the SiteWhere addon and will look something like the
-content below:
+and copy it into the openHAB **addons** folder. In the openHAB **configurations** folder, edit the 
+**openhab_default.cfg** file and add the following section if it is not already there:
 
-{% highlight json %}
-{
-	"connection": {
-	"restApiUrl": "http://localhost:9090/sitewhere/api/",
-	"restApiUsername": "admin",
-	"restApiPassword": "password",
-	"mqttHost": "localhost",
-	"mqttPort": 1883
-},
-	"defaultHardwareId": "123-OPENHAB-234908324",
-	"mappings": [
-		{ "itemName": "yyy", "hardwareId": "123" },
-		{ "itemName": "zzz", "hardwareId": "456" }
-	]
-} 
+{% highlight text %}
+############################ SiteWhere Persistence Service #############################
+#
+# Unique hardware id of device that will receive events.
+# sitewhere:defaultHardwareId=123-OPENHAB-777908324
+#
+# Device specification token used if device is not already registered.
+# sitewhere:specificationToken=5a95f3f2-96f0-47f9-b98d-f5c081d01948
+#
+# MQTT broker hostname SiteWhere is listening to. 
+# sitewhere:mqttHost=localhost
+#
+# MQTT broker port SiteWhere is listening to. 
+# sitewhere:mqttPort=1883
 {% endhighlight %}
 
-   
-The **connection** section contains information on connecting to SiteWhere. Note that both SiteWhere and openHAB
-by default run on port 8080, so the port will need to be changed if both are running on the same machine. To
-change the port for SiteWhere, open the **conf/server.xml** file and look for the following:
+**Note that the SiteWhere Addon and configuration settings will be part of the openHAB distribution starting with 1.8.0**
+
+The following configuration values may be specified to change the default behavior:
+
+* **defaultHardwareId** - provides an association between the openHAB instance and a SiteWhere device. 
+Once connected, if no device exists in SiteWhere with the given hardware id, a new openHAB virtual device 
+will be registered under that id. All data sent from the openHAB instance will be recorded under the virtual 
+device. If more than one openHAB instance is connecting to SiteWhere, different hardware ids should be used 
+for each instance. SiteWhere can scale to support thousands or even millions of openHAB instances running 
+concurrently.
+* **specificationToken** - indicates the device specification to be used if a new device needs to be registered 
+with SiteWhere (if the hardware id does not exist). The default value corresponds to the *openHAB Virtual Device*
+specification included with the SiteWhere sample data. This specification includes the device commands used
+to trigger events on the openHAB bus from SiteWhere.
+* **mqttHost** - the host name for the MQTT broker SiteWhere is listening to.
+* **mqttPort** - the port number for the MQTT broker SiteWhere is listening to.
+
+## Update the Default SiteWhere Port 
+Before starting SiteWhere and openHAB on the same machine, it is important to note that both 
+run on port 8080 by default. The port for SiteWhere can be updated to avoid a conflict when
+binding. Open the **conf/server.xml** file and look for the following:
 
 {% highlight xml %}
 <Connector port="8080" protocol="HTTP/1.1"
@@ -56,25 +69,9 @@ change the port for SiteWhere, open the **conf/server.xml** file and look for th
 	redirectPort="8443" />
 {% endhighlight %}
 
-Change the port to another value such as 9090. Make sure that the **restApiUrl** in the openHAB configuration
-points to the correct port. The openHAB addon uses the SiteWhere REST APIs for some operations, but also uses 
-an MQTT connection to send a receive data. 
+Change the port to another value such as 9090.
 
-The MQTT values should be configured to point to the MQTT broker SiteWhere is connected to. All data sent between
-openHAB and SiteWhere is sent across the MQTT connections.
-
-The **defaultHardwareId** value provides an association between the openHAB instance and a SiteWhere device.
-Once connected, if no device exists in SiteWhere with the given hardware id, a new openHAB virtual device will
-be registered under that id. All data sent from the openHAB instance will be recorded under the virtual
-device. If more than one openHAB instance is connecting to SiteWhere, different hardware ids should be used for
-each instance. SiteWhere can scale to support thousands or even millions of openHAB instances running
-concurrently.
-
-The **mappings** section is not currently used, but future versions of the addon will allow items to be 
-mapped into devices within the top-level openHAB composite device. In the meantime, all data for an 
-openHAB instance shows up under a single SiteWhere device with extra metadata in the events to indicate
-which item generated the event.
-
+## Configure Event Persistence
 In order for openHAB to send all events to SiteWhere, add a file named **sitewhere.persist** in the
 **configurations/persistence** folder. This file is in the standard openHAB persistence format. The
 configuration below will send all events to SiteWhere:
@@ -98,7 +95,7 @@ configuration below will send all events to SiteWhere:
    }
 {% endhighlight %}
 
-## SiteWhere Configuration
+## Configure SiteWhere
 If using the default configuration file provided with SiteWhere, no changes are needed to
 connect to openHAB. The openHAB addon uses the 
 [SiteWhere Java agent](https://github.com/sitewhere/sitewhere-tools/tree/master/sitewhere-java-agent)
@@ -157,8 +154,8 @@ Based on the default data loaded the first time SiteWhere starts, there will be 
 UUID **5a95f3f2-96f0-47f9-b98d-f5c081d01948** for an openHAB virtual device. Note that the above
 configuration routes commands for that specification over MQTT as expected by the openHAB addon.
 
-## Testing the Installation
-Once the **sitewhere.json** configuration has been set up, start the openHAB server. Messages in
+## Test the Installation
+Once the openHAB addon and SiteWhere have been configured, start the openHAB server. Messages in
 the openHAB log should indicate that the agent was able to connect with SiteWhere as shown below:
 
 {% highlight text %}
