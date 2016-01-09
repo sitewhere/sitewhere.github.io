@@ -103,13 +103,14 @@ Most components of the system are configured at the per-tenant level. This allow
 of data and processing logic from one tenant to the next.
 
 ### Tenant Engines
-SiteWhere (starting with version 1.2.0) is designed as a multitenant system. That means that multiple IoT
+SiteWhere (starting with version 1.2.0) is designed as a multitenant system which means that multiple IoT
 applications can be served from a single SiteWhere instance. Each system tenant has a separate data store
 so data is not intermingled between tenants. Each tenant also has a separate processing pipeline that can
 be customized without affecting the processing of other tenants. When SiteWhere Server starts for the first
-time, a default tenant is created based on the default tenant configuration file found at
-**conf/sitewhere/sitewhere-tenant.xml**. The default configuration is copied to a tenant-specific
-configuration file located at **conf/sitewhere/xxx-tenant.xml** where **xxx** is the unique id for the tenant.
+time, a default tenant is created based on the default tenant folder found at **conf/sitewhere/tenant-template**. 
+The default folder structure including configuration is copied to a tenant-specific
+configuration folder located at **conf/sitewhere/tenants/xxx** where **xxx** is the unique id for the tenant.
+The tenant configuration file is named **sitewhere-tenant.xml** and is located in the root of the folder.
 Making changes to the configuration file for a tenant will alter the processing logic for just that tenant.
 New tenants can be added from the SiteWhere administrative application. Once created, tenants can be started
 and stopped dynamically without shutting down the entire server. For instance, to make configuration changes

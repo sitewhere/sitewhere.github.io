@@ -14,9 +14,11 @@ its configuration mechanism. When the SiteWhere server starts, one of the first 
 the core system components by loading the **conf/sitewhere/sitewhere-server.xml** file. This file
 acts as the global server configuration, specifying aspects of the system shared by all tenants such
 as the user datastore implementation and Hazelcast configuration. In addition to the global configuration,
-there is a per-tenant configuration in **conf/sitewhere/xxx-tenant.xml** (where **xxx** is the tenant id)
-which specifies details about how the tenant engine is to be configured. Most other SiteWhere features 
-such as device management and communication engine are configured in these tenant configuration files.
+there are folders for each tenant in **conf/sitewhere/tenants/xxx** (where **xxx** is the tenant id).
+The tenant configuration file **sitewhere-tenant.xml** is located in the tenant folder along with
+any tenant-specific resources that should not be shared with other tenants. The configuration
+is a Spring XML file that specifies details about how the tenant engine is to be configured. Most 
+features such as device management and communication engine are configured in these tenant configuration files.
 
 ## Spring Beans Configuration
 A valid SiteWhere configuration is based on a standard Spring beans XML file with an embedded section

@@ -12,10 +12,12 @@ nextTitle: Tenant Device Communication
 Each tenant has its own configuration file which inherits from the global configuration
 via Spring context inhertance. This allows globally defined beans to be accessed by the
 individial tenant configurations. The Spring XML configuration file for a tenant is
-located in **conf/sitewhere/xxx-tenant.xml** (where *xxx* is the tenant id). Each tenant
-has its own device data and configurable processing pipeline. The tenant configuration file
-uses Spring beans and a custom schema like the global configuration, but with a different
-schema targeted at tenant-specific features:
+located in **conf/sitewhere/tenants/xxx/sitewhere-tenant.xml** (where **xxx** is the 
+tenant id). Each tenant has its own device data and configurable processing pipeline. 
+The tenant configuration file uses Spring beans and a custom schema like the global 
+configuration, but with a different schema targeted at tenant-specific features:
+
+**NOTE: Tenant configuration changed in SiteWhere 1.5.0 to use a separate folder per tenant. Previous versions used a single file per tenant with all resources being shared.**
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -158,9 +160,22 @@ The following attributes may be specified for the **ehcache-device-management-ca
 
 ## Device Communication
 Each tenant may have its own requirements for device connectivity, so SiteWhere provides a capable
-and extensible device communication subsystem that can be customized on a per-tenant basis. See
-the device communication [configuration documentation](device-communication.html) for more
+and extensible device communication subsystem that can be customized on a per-tenant basis. Data
+can be ingested from many sources including MQTT topics, RabbitMQ queues via AMQP, WebSockets, direct
+socket connections and many other options. Commands can be sent back to devices using command 
+destinations including MQTT topics, Twilio SMS, and many other options. See the device communication 
+[documentation](device-communication.html) for more
 information.
+
+## Event Processing
+Each tenant may also have its own requirements for how device data is to be processed and integrated
+with other technologies. The event processing subsystem allows aspects of inbound event processing to 
+be customized including threading/queueing of inbound events and custom processing steps on inbound
+data (e.g. event storage, registration, metrics, etc). It also allows customization of outbound
+event processing (after events have been persisted) including threading/queueing and custom 
+outbound processor logic (e.g. broadcasting via Hazelcast, integration with Azure EventHub, indexing
+in Apache Solr, etc). See the event processing [documentation](event-processing.html) 
+for more information.
 
 ## Asset Management
 SiteWhere includes an asset management subsystem that provides a standardized way to reference assets from
