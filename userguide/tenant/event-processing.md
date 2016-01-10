@@ -28,8 +28,8 @@ events for processing. An inbound processing strategy must implement the
 [IInboundProcessingStrategy](http://docs.sitewhere.org/current/apidocs/com/sitewhere/spi/device/communication/IInboundProcessingStrategy.html)
 interface.
 
-### Default Inbound Processing Strategy
-The default inbound processing strategy for SiteWhere CE uses a bounded queue to hold events
+### Blocking Queue Inbound Processing Strategy
+This default inbound processing strategy for SiteWhere CE uses a bounded queue to hold events
 being delivered from event sources. It creates a thread pool that consumes the queue to 
 deliver events to the inbound processing chain. If events are delivered faster than the thread
 pool can process them, the queue will eventually start blocking the event receiver threads.
@@ -39,21 +39,21 @@ down the server may result in data loss. SiteWhere EE offers a more advanced inb
 strategy implementation with persistent queues and transactional semantics.
 
 {% highlight xml %}
-<sw:device-communication>
-
-    <!-- Inbound event sources would go here -->
+<sw:event-processing>
    
 	<!-- Inbound Processing Strategy -->
 	<sw:inbound-processing-strategy>
-		<sw:default-inbound-processing-strategy
-			numEventProcessorThreads="150" enableMonitoring="true" monitoringIntervalSec="1"/>
-	</sw:inbound-processing-strategy>
+		<sw:blocking-queue-inbound-processing-strategy
+			maxQueueSize="10000" numEventProcessorThreads="10" enableMonitoring="false"
+			monitoringIntervalSec="3"/>
+		</sw:inbound-processing-strategy>
 {% endhighlight %}
 
-The following attributes may be specified for the **default-inbound-processing-strategy** element.
+The following attributes may be specified for the **blocking-queue-inbound-processing-strategy** element.
       
 | Attribute                | Required | Description                                      
 |--------------------------|----------|--------------------------------------------------
+| maxQueueSize             | optional | Maximum number of items in queue before blocking. Defaults to *10000*.                  
 | numEventProcessorThreads | optional | Number of threads used to process incoming events. Defaults to *100*.                  
 | enableMonitoring         | optional | Enables monitoring of event processing in the log. Defaults to *false*.            
 | monitoringIntervalSec    | optional | Interval (in seconds) at which monitoring messages are posted. Defaults to *5*. 
@@ -75,7 +75,7 @@ takes care of persisting device events via the device management service provide
 processor is removed, events will not be stored. The default configuration is shown below:
 
 {% highlight xml %}
-<sw:device-communication>
+<sw:event-processing>
 					
 	<!-- Add processing logic to inbound events -->        
 	<sw:inbound-processing-chain>
@@ -93,7 +93,7 @@ devices requesting registration. If this processor is removed, registration requ
 The default configuration is shown below:
 
 {% highlight xml %}
-<sw:device-communication>
+<sw:event-processing>
        
 	<!-- Add processing logic to inbound events -->        
 	<sw:inbound-processing-chain>
@@ -111,7 +111,7 @@ handles streaming data from devices. If this processor is removed, stream creati
 for adding data to a stream will be ignored. The default configuration is shown below:
 
 {% highlight xml %}
-<sw:device-communication>
+<sw:event-processing>
                
 	<!-- Add processing logic to inbound events -->        
 	<sw:inbound-processing-chain>
@@ -132,7 +132,7 @@ other default processors for storage, registration, and stream processing are re
 the processing occurs in the subordinate instances.
 
 {% highlight xml %}
-<sw:device-communication>
+<sw:event-processing>
                
 	<!-- Add processing logic to inbound events -->        
 	<sw:inbound-processing-chain>
@@ -144,6 +144,40 @@ the processing occurs in the subordinate instances.
    
 	</sw:inbound-processing-chain>
 {% endhighlight %}
+
+## Outbound Processing Strategy
+The outbound processing strategy is responsible for post-processing events after they have been saved
+to the datastore. It is responsible for handling threading and reliably delivering
+events to the chain of outbound event processors. An inbound processing strategy must implement the 
+[IOutboundProcessingStrategy](http://docs.sitewhere.org/current/apidocs/com/sitewhere/spi/device/communication/IOutboundProcessingStrategy.html)
+interface.
+
+### Blocking Queue Outbound Processing Strategy
+This default outbound processing strategy for SiteWhere CE uses a bounded queue to hold events
+for post-processing after they have been stored. It creates a thread pool that consumes the queue to 
+deliver events to the inbound processing chain. If events are delivered faster than the thread
+pool can process them, the queue will eventually start blocking the threads for inbound processing.
+Increasing the number of threads for outbound event processing takes load from the queue but increases
+processing load on the core system. SiteWhere CE does not persist the outbound queue, so shutting 
+down the server may result in data loss. SiteWhere EE offers a more advanced outbound processing
+strategy implementation with persistent queues and transactional semantics.
+
+{% highlight xml %}
+<sw:event-processing>
+   
+	<!-- Outbound Processing Strategy -->
+	<sw:outbound-processing-strategy>
+		<sw:blocking-queue-outbound-processing-strategy
+			maxQueueSize="10000" numEventProcessorThreads="10"/>
+		</sw:outbound-processing-strategy>
+{% endhighlight %}
+
+The following attributes may be specified for the **blocking-queue-outbound-processing-strategy** element.
+      
+| Attribute                | Required | Description                                      
+|--------------------------|----------|--------------------------------------------------
+| maxQueueSize             | optional | Maximum number of items in queue before blocking. Defaults to *10000*.                  
+| numEventProcessorThreads | optional | Number of threads used to process incoming events. Defaults to *10*.                  
                 
 ## Outbound Processing Chain
 In the default provisioning implementation, each time an event is saved via the device management 
