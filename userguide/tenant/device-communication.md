@@ -53,6 +53,9 @@ The following attributes may be specified for the **mqtt-event-source** element.
 | sourceId             | required | Unique event source id.                          
 | hostname             | required | MQTT broker server hostname or IP address.       
 | port                 | required | MQTT broker server port.                         
+| protocol             | optional | Protocol used to connect (tcp or tls). Defaults to *tcp*.                         
+| trustStorePath       | optional | Path to trust store when connecting over tls.                         
+| trustStorePassword   | optional | Password for trust store when connecting over tls.                         
 | topic                | required | MQTT topic where devices will post events.       
 
 ### ActiveMQ Event Source

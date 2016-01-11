@@ -192,135 +192,18 @@ Hazelcast subscribers, allowing external clients to act on the events.
 **REST calls (or other calls that directly invoke the device management APIs) are processed by the
 outbound processing chain in the same manner as events from event sources.**
 
-### Command Delivery Event Processor
-By default, an instance of **command-delivery-event-processor** is configured in the outbound chain. This
-processor hands off device command invocations to the communication subsystem for processing. If this 
-processor is removed, device command invocations will be persisted, but will never be processed. The
-default configuration is shown below:
+### Available Event Processors
+* [Apache Solr Event Processor](event-processing.html#apache-solr-event-processor) - Sends events to the Apache Solr search engine for indexing.
+* [Azure Event Hub Event Processor](event-processing.html#azure-event-hub-event-processor) - Forwards events to an Azure EventHub for further processing.
+* [Command Delivery Event Processor](event-processing.html#command-delivery-event-processor) - Delivers command invocations to devices.
+* [Dweet.io Event Processor](event-processing.html#dweet-io-event-processor) - Forwards events to the Dweet.io cloud service.
+* [Hazelcast Event Processor](event-processing.html#hazelcast-event-processor) - Forwards events to Hazelcast topics for further processing.
+* [InitialState.com Event Processor](event-processing.html#initialstate-com-event-processor) - Sends events to InitialState.com for advanced visualization.
+* [MQTT Event Processor](event-processing.html#mqtt-event-processor) - Forwards matching events to an MQTT topic.
+* [Siddhi (CEP) Event Processor](event-processing.html#siddhi-cep-event-processor) - Performs complex event processing on events using WSO2 Siddhi.
+* [Zone Test Event Processor](event-processing.html#zone-test-event-processor) - Determines zone containment for location events and fires alerts as a result.
 
-{% highlight xml %}
-<sw:device-communication>
-					
-	<sw:outbound-processing-chain>
-      
-		<!-- Routes commands for outbound processing -->
-		<sw:command-delivery-event-processor/>
-				
-		<!-- Send outbound device events over Hazelcast -->
-		<sw:outbound-event-processor ref="hazelcastDeviceEventProcessor"/>
-	
-	</sw:outbound-processing-chain>
-{% endhighlight %}
-
-This example also shows the addition of a custom outbound event processor which references a Spring bean
-defined elsewhere in the configuration. Events will be passed to the custom processor after they have
-been processed by the provisioning processor.
-
-### Zone Test Event Processor
-The **zone-test-event-processor** outbound event processor is used to test location events against
-a list of predefined zones to verify if they fall within the zone boundaries. Each location event is
-tested against the conditions defined in the list of **zone-test** elements. The zone tests
-specify the unique token of the zone to test against (defined via the admin interface or REST services)
-and the test condition (inside or outside the zone). If the condition is met, a new alert event is 
-created based on the alert attributes in the test. The alert event can be processed like any other
-alert entering the system, allowing other outbound processing components to handle reaction to the
-zone condition.
-
-{% highlight xml %}
-<sw:device-communication>
-   
-	<sw:outbound-processing-chain>
-      
-		<!-- Routes commands for outbound processing -->
-		<sw:command-delivery-event-processor/>
-         
-		<!-- Performs zone checking for locations -->
-		<sw:zone-test-event-processor>
-			<sw:zone-test zoneToken="777fa4e5-bc2f-458b-9968-b598b2e2d2ca" condition="outside"
-				alertLevel="error" alertType="off.site" alertMessage="Asset has left the worksite."/>
-		</sw:zone-test-event-processor>
-{% endhighlight %}
- 
-In the example above, each location will be checked against the zone defined by the given zone token.
-If the location is outside the given zone (in this case the worksite where an asset is deployed), an
-alert is fired. The alert is an error of type 'off.site' an includes an alert message. If an asset 
-goes offsite, the alert event can be used for reactions such as firing an SMS message or sending 
-an audible alarm to a device on the worksite.
- 
-The following attributes may be specified for the **zone-test** element.
-      
-| Attribute                | Required | Description                                      
-|--------------------------|----------|--------------------------------------------------
-| zoneToken                | required | Unique token for zone to test.
-| condition                | required | Condition for test. Either *inside* or *outside*.
-| alertType                | required | Alert type for generated alert.
-| alertLevel               | optional | Alert level for generated alert. Defaults to *error*.
-| alertMessage             | required | Alert message for generated alert.
-
-### Sending Events to an Azure Event Hub
-The **azure-eventhub-event-processor** outbound event processor connects to an 
-[Azure Event Hub](http://azure.microsoft.com/en-us/services/event-hubs/) and forwards
-device events to it. The current implementation sends all events in JSON format. Future
-implementations will allow for filtering which events are sent and choosing the wire 
-format of the event data. An Azure Event Hub outbound event
-processor can be figured as shown below:
-
-{% highlight xml %}
-<sw:outbound-processing-chain>
-      
-	<sw:azure-eventhub-event-processor sasKey="{azure.sas.key}" sasName="default" 
-		serviceBusName="sitewhere.servicebus.windows.net" eventHubName="sitewhere"/>
-
-</sw:outbound-processing-chain>
-{% endhighlight %}
-   
-Note that a SAS name and key are required in order to connect to the Event Hub. See
-[this](https://msdn.microsoft.com/en-us/library/azure/dn170477.aspx) article to find
-more information about Shared Access Signatures.
-
-The following attributes may be specified for the **azure-eventhub-event-processor** element.
-      
-| Attribute                | Required | Description                                      
-|--------------------------|----------|--------------------------------------------------
-| serviceBusName           | required | Name of the service bus where the event hub is configured.
-| eventHubName             | required | Name of the event hub to connect to.
-| sasName                  | required | Name of SAS entity to connect with.
-| sasKey                   | required | Key for SAS entity to connect with.
-
-### Broadcasting Events via Hazelcast
-SiteWhere has support for broadcasting events over [Hazelcast](http://hazelcast.com/) topics, making it
-easy to share events with external agents. To enable Hazelcast broadcasting, first add the configuration
-information to the **globals** section in the global configuration file as shown below:
-
-{% highlight xml %}
-<sw:configuration>
-
-	<sw:globals>
-		<sw:hazelcast-configuration configFileLocation="${catalina.home}/conf/sitewhere/hazelcast.xml"/>
-	</sw:globals>
-{% endhighlight %}
-   
-Note that the *configFileLocation* attribute specifies full path to a Hazelcast configuration file.
-The configuration above is the default which assumes SiteWhere is running inside a Tomcat container.
-Once the configuration has been declared, it may be referenced as part of the outbound processing chain to
-enable broadcasting of events.
-
-{% highlight xml %}
-<sw:outbound-processing-chain>
-      
-	<!-- Routes commands for outbound processing -->
-	<sw:command-delivery-event-processor/>
-
-	<!-- Send outbound device events over Hazelcast -->
-	<sw:hazelcast-event-processor/>
-
-</sw:outbound-processing-chain>
-{% endhighlight %}
-   
-To consume events from the Hazelcast topics, listen on the topic names as defined in 
-[ISiteWhereHazelcast](http://docs.sitewhere.org/current/apidocs/com/sitewhere/spi/server/hazelcast/ISiteWhereHazelcast.html).
-
-### Sending Events to Apache Solr
+### Apache Solr Event Processor
 SiteWhere supports forwarding events to [Apache Solr](http://lucene.apache.org/solr/) to leverage
 the sophisticated search and analytics features it provides. The Solr outbound event processor uses
 the [Solrj](https://cwiki.apache.org/confluence/display/solr/Using+SolrJ) library to send each
@@ -356,7 +239,111 @@ add the outbound event processor to the chain, reference it as shown below:
 Note that on system startup, the event processor attempts to ping the Solr server to verify the 
 settings are correct. If the ping fails, the component will not be started.
 
-### Sending Events to InitialState.com
+### Azure Event Hub Event Processor
+The **azure-eventhub-event-processor** outbound event processor connects to an 
+[Azure Event Hub](http://azure.microsoft.com/en-us/services/event-hubs/) and forwards
+device events to it. The current implementation sends all events in JSON format. Future
+implementations will allow for filtering which events are sent and choosing the wire 
+format of the event data. An Azure Event Hub outbound event
+processor can be figured as shown below:
+
+{% highlight xml %}
+<sw:outbound-processing-chain>
+      
+	<sw:azure-eventhub-event-processor sasKey="{azure.sas.key}" sasName="default" 
+		serviceBusName="sitewhere.servicebus.windows.net" eventHubName="sitewhere"/>
+
+</sw:outbound-processing-chain>
+{% endhighlight %}
+   
+Note that a SAS name and key are required in order to connect to the Event Hub. See
+[this](https://msdn.microsoft.com/en-us/library/azure/dn170477.aspx) article to find
+more information about Shared Access Signatures.
+
+The following attributes may be specified for the **azure-eventhub-event-processor** element.
+      
+| Attribute                | Required | Description                                      
+|--------------------------|----------|--------------------------------------------------
+| serviceBusName           | required | Name of the service bus where the event hub is configured.
+| eventHubName             | required | Name of the event hub to connect to.
+| sasName                  | required | Name of SAS entity to connect with.
+| sasKey                   | required | Key for SAS entity to connect with.
+
+### Command Delivery Event Processor
+By default, an instance of **command-delivery-event-processor** is configured in the outbound chain. This
+processor hands off device command invocations to the communication subsystem for processing. If this 
+processor is removed, device command invocations will be persisted, but will never be processed. The
+default configuration is shown below:
+
+{% highlight xml %}
+<sw:device-communication>
+					
+	<sw:outbound-processing-chain>
+      
+		<!-- Routes commands for outbound processing -->
+		<sw:command-delivery-event-processor/>
+				
+		<!-- Send outbound device events over Hazelcast -->
+		<sw:outbound-event-processor ref="hazelcastDeviceEventProcessor"/>
+	
+	</sw:outbound-processing-chain>
+{% endhighlight %}
+
+This example also shows the addition of a custom outbound event processor which references a Spring bean
+defined elsewhere in the configuration. Events will be passed to the custom processor after they have
+been processed by the provisioning processor.
+
+### Dweet.io Event Processor
+Forwards SiteWhere events to the [Dweet.io](http://www.dweet.io) cloud service. For every assignment with
+forwarded events, there is a 'thing' name that corresponds to the assignment token. Data from Dweet.io can
+be used to integrate with other cloud services that use dweets as a data source. An example of the
+configuration is below:
+
+{% highlight xml %}
+<sw:device-communication>
+					
+	<sw:outbound-processing-chain>
+				
+		<!-- Foward events to dweet.io -->
+		<sw:dweet-io-event-processor/>
+	
+	</sw:outbound-processing-chain>
+{% endhighlight %}
+
+### Hazelcast Event Processor
+SiteWhere has support for broadcasting events over [Hazelcast](http://hazelcast.com/) topics, making it
+easy to share events with external agents. To enable Hazelcast broadcasting, first add the configuration
+information to the **globals** section in the global configuration file as shown below:
+
+{% highlight xml %}
+<sw:configuration>
+
+	<sw:globals>
+		<sw:hazelcast-configuration configFileLocation="${catalina.home}/conf/sitewhere/hazelcast.xml"/>
+	</sw:globals>
+{% endhighlight %}
+   
+Note that the *configFileLocation* attribute specifies full path to a Hazelcast configuration file.
+The configuration above is the default which assumes SiteWhere is running inside a Tomcat container.
+Once the configuration has been declared, it may be referenced as part of the outbound processing chain to
+enable broadcasting of events.
+
+{% highlight xml %}
+<sw:outbound-processing-chain>
+      
+	<!-- Routes commands for outbound processing -->
+	<sw:command-delivery-event-processor/>
+
+	<!-- Send outbound device events over Hazelcast -->
+	<sw:hazelcast-event-processor/>
+
+</sw:outbound-processing-chain>
+{% endhighlight %}
+   
+To consume events from the Hazelcast topics, listen on the topic names as defined in 
+[ISiteWhereHazelcast](http://docs.sitewhere.org/current/apidocs/com/sitewhere/spi/server/hazelcast/ISiteWhereHazelcast.html).
+
+### InitialState.com Event Processor
 SiteWhere events can be forwarded to [InitialState.com](https://www.initialstate.com/) to
 allow them to be visualized using the advanced dashboarding features offered by the platform.
 To enable event forwarding, add the **initial-state-event-processor** element and
@@ -381,8 +368,34 @@ The following attributes may be specified for the **initial-state-event-processo
 | Attribute                | Required | Description                                      
 |--------------------------|----------|--------------------------------------------------
 | streamingAccessKey       | required | Streaming access key copied from the website.
+  
+### MQTT Event Processor
+Events can be forwarded directly to an MQTT topic using the **mqtt-event-processor** element.
+The events are marshaled as JSON data and sent to the topic. By configuring the associated
+outbound event processor filters, only certain events can be forwarded.
+An example configuration is shown below:
+
+{% highlight xml %}
+<sw:outbound-processing-chain>
+      
+	<sw:mqtt-event-processor hostname="localhost" port="1883"
+		protocol="tcp" topic="interested.devices"></sw:mqtt-event-processor>
+
+</sw:outbound-processing-chain>
+{% endhighlight %}
+
+The following attributes may be specified for the **mqtt-event-processor** element.
+      
+| Attribute                | Required | Description                                      
+|--------------------------|----------|--------------------------------------------------
+| hostname                 | required | MQTT broker server hostname or IP address.       
+| port                     | required | MQTT broker server port.                         
+| protocol                 | optional | Protocol used to connect (tcp or tls). Defaults to *tcp*.                         
+| trustStorePath           | optional | Path to trust store when connecting over tls.                         
+| trustStorePassword       | optional | Password for trust store when connecting over tls.                         
+| topic                    | required | MQTT topic where events will be forwarded.       
    
-### Using Siddhi for Complex Event Processing (CEP)
+### Siddhi (CEP) Event Processor
 SiteWhere supports integration with [Siddhi](https://github.com/wso2/siddhi) for complex
 event processing. Adding a **siddhi-event-processor** to the outbound processing chain
 routes all SiteWhere events into Siddhi event streams for processing. The Spring XML configuration
@@ -429,17 +442,44 @@ stream results, any number of callbacks may be registered. The **stream-debugger
 all events for a given stream to the log. The **groovy-stream-processor** may be used to process stream events
 with a Groovy script.
 
-## Debugging Device Communication
-When developing solutions that use the device communication subsystem, it is often helpful 
-to see exactly what SiteWhere is doing to handle inbound and outbound data. To turn on 
-communication debugging, scroll down to the following block in
-the **lib/log4j.xml** file:
+### Zone Test Event Processor
+The **zone-test-event-processor** outbound event processor is used to test location events against
+a list of predefined zones to verify if they fall within the zone boundaries. Each location event is
+tested against the conditions defined in the list of **zone-test** elements. The zone tests
+specify the unique token of the zone to test against (defined via the admin interface or REST services)
+and the test condition (inside or outside the zone). If the condition is met, a new alert event is 
+created based on the alert attributes in the test. The alert event can be processed like any other
+alert entering the system, allowing other outbound processing components to handle reaction to the
+zone condition.
 
 {% highlight xml %}
 <sw:device-communication>
-<category name="com.sitewhere.device.communication">
-	<priority value="INFO" />
-</category>
-{% endhighlight %}
    
-Update the **INFO** value to **DEBUG** and restart the server to see more detailed communication information.
+	<sw:outbound-processing-chain>
+      
+		<!-- Routes commands for outbound processing -->
+		<sw:command-delivery-event-processor/>
+         
+		<!-- Performs zone checking for locations -->
+		<sw:zone-test-event-processor>
+			<sw:zone-test zoneToken="777fa4e5-bc2f-458b-9968-b598b2e2d2ca" condition="outside"
+				alertLevel="error" alertType="off.site" alertMessage="Asset has left the worksite."/>
+		</sw:zone-test-event-processor>
+{% endhighlight %}
+ 
+In the example above, each location will be checked against the zone defined by the given zone token.
+If the location is outside the given zone (in this case the worksite where an asset is deployed), an
+alert is fired. The alert is an error of type 'off.site' an includes an alert message. If an asset 
+goes offsite, the alert event can be used for reactions such as firing an SMS message or sending 
+an audible alarm to a device on the worksite.
+ 
+The following attributes may be specified for the **zone-test** element.
+      
+| Attribute                | Required | Description                                      
+|--------------------------|----------|--------------------------------------------------
+| zoneToken                | required | Unique token for zone to test.
+| condition                | required | Condition for test. Either *inside* or *outside*.
+| alertType                | required | Alert type for generated alert.
+| alertLevel               | optional | Alert level for generated alert. Defaults to *error*.
+| alertMessage             | required | Alert message for generated alert.
+
