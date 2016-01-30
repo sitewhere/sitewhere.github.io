@@ -76,7 +76,7 @@ Service Provider Interfaces (SPIs) for the data operations it needs to operate a
 implementations to comply with the required interfaces. The user management datastore is configured at
 the global level and is based on the following APIs:
 
-**[IUserManagement](http://docs.sitewhere.org/current/apidocs/com/sitewhere/spi/user/IUserManagement.html)**: 
+**[IUserManagement](http://documentation.sitewhere.org/javadoc/sitewhere-core-api/com/sitewhere/spi/user/IUserManagement.html)**: 
 Contains all of the core user management calls including CRUD methods for users, authorities, etc.
 
 When configuring a new SiteWhere server instance, you change settings in the core 
@@ -121,10 +121,10 @@ As with global datastores, tenant datastores configure SPI implementations that 
 tenant-level information such as device and asset management. Service provider interfaces implemented
 include:
 
-**[IDeviceManagement](http://docs.sitewhere.org/current/apidocs/com/sitewhere/spi/device/IDeviceManagement.html)**: 
+**[IDeviceManagement](http://documentation.sitewhere.org/javadoc/sitewhere-core-api/com/sitewhere/spi/device/IDeviceManagement.html)**: 
 Contains all of the core device management calls including CRUD methods for sites, specifications, devices, events, etc.
 
-**[IAssetManagement](http://docs.sitewhere.org/current/apidocs/com/sitewhere/spi/asset/IAssetManagement.html)**: 
+**[IAssetManagement](http://documentation.sitewhere.org/javadoc/sitewhere-core-api/com/sitewhere/spi/asset/IAssetManagement.html)**: 
 Contains all of the core asset management calls including CRUD methods for asset categories and assets.
 
 Tenant datastores are configured in the **conf/sitewhere/xxx-tenant.xml** configuration file (where **xxx** 
