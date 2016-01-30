@@ -25,7 +25,7 @@ core APIs.
 server APIs.
 
 [REST Services]({{ site.url }}/rest/) - Explore the available SiteWhere REST services including 
-detailed information about each method and usage examples.
+detailed usage examples.
 
 ## Using the System
 
