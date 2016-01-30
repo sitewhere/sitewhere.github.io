@@ -24,7 +24,7 @@ core APIs.
 [Server API Javadoc]({{ site.url }}/javadoc/sitewhere-server-api/) - Explore Javadoc for the SiteWhere
 server APIs.
 
-[REST Services]({{ site.url }}/rest/) - Explore the available SiteWhere REST services including 
+[REST Services]({{ site.url }}/rest/index.html) - Explore the available SiteWhere REST services including 
 detailed usage examples.
 
 ## Using the System
