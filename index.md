@@ -18,6 +18,15 @@ designed and implemented.
 [Developer Guide]({{ site.url }}/developer.html) - Download the latest SiteWhere code and build
 the system for yourself.
 
+[Core API Javadoc]({{ site.url }}/javadoc/sitewhere-core-api/) - Explore Javadoc for the SiteWhere
+core APIs.
+
+[Server API Javadoc]({{ site.url }}/javadoc/sitewhere-server-api/) - Explore Javadoc for the SiteWhere
+server APIs.
+
+[REST Services]({{ site.url }}/rest/) - Explore the available SiteWhere REST services including 
+detailed information about each method and usage examples.
+
 ## Using the System
 
 [Installation]({{ site.url }}/userguide/installation.html) - Install SiteWhere on a local machine
