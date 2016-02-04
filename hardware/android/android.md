@@ -18,7 +18,7 @@ and MQTT broker to use.
 The SiteWhere Android libraries are available on GitHub and have been released under the
 following path:
 
-> [https://github.com/reveal-technologies/sitewhere-android](https://github.com/reveal-technologies/sitewhere-android)
+> [https://github.com/sitewhere/sitewhere-android-sdk](https://github.com/sitewhere/sitewhere-android-sdk)
 	
 Android in SiteWhere is divided into three separate projects:
 
@@ -137,7 +137,7 @@ To import the SiteWhere Android library projects:
 - In the *Select Repository Source* panel, choose **Clone URI**. Click **Next**. 
 - In the *Source Git Respository* panel, enter the following URL: 
 
-> https://github.com/reveal-technologies/sitewhere-android
+> https://github.com/sitewhere/sitewhere-android-sdk
 
 The user interface should automatically fill in the other fields based on the URL as shown below:
 
