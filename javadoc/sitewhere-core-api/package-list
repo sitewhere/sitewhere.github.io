@@ -15,9 +15,12 @@ com.sitewhere.rest.model.device.communication
 com.sitewhere.rest.model.device.element
 com.sitewhere.rest.model.device.event
 com.sitewhere.rest.model.device.event.request
+com.sitewhere.rest.model.device.event.request.scripting
+com.sitewhere.rest.model.device.event.scripting
 com.sitewhere.rest.model.device.event.view
 com.sitewhere.rest.model.device.group
 com.sitewhere.rest.model.device.request
+com.sitewhere.rest.model.device.request.scripting
 com.sitewhere.rest.model.device.streaming
 com.sitewhere.rest.model.device.support
 com.sitewhere.rest.model.scheduling
