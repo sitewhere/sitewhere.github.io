@@ -32,6 +32,9 @@ detailed usage examples.
 [Installation]({{ site.url }}/userguide/installation.html) - Install SiteWhere on a local machine
 or in the cloud.
 
+[Sending and Receiving Device Data]({{ site.url }}/userguide/sending-data.html) - Connect devices and other
+agents to SiteWhere.
+
 [Global Configuration]({{ site.url }}/userguide/global-configuration.html) - Configure the global 
 aspects of SiteWhere that are common to all tenants.
 
