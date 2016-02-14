@@ -311,8 +311,8 @@ configuration is below:
 	</sw:outbound-processing-chain>
 {% endhighlight %}
 
-### Groovvy Event Processor
-This outbound processor allows events to be passed to a Groovy script which handles processing.
+### Groovy Event Processor
+This outbound processor allows events processed by a Groovy script.
 The script is given access to the event data and a builder object that allows new events to be
 created. This allows the script to impose conditional logic on the incoming stream of events and
 create new events in response. 
