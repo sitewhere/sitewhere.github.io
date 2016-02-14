@@ -197,6 +197,7 @@ outbound processing chain in the same manner as events from event sources.**
 * [Azure Event Hub Event Processor](event-processing.html#azure-event-hub-event-processor) - Forwards events to an Azure EventHub for further processing.
 * [Command Delivery Event Processor](event-processing.html#command-delivery-event-processor) - Delivers command invocations to devices.
 * [Dweet.io Event Processor](event-processing.html#dweet-io-event-processor) - Forwards events to the Dweet.io cloud service.
+* [Groovy Event Processor](event-processing.html#groovy-event-processor) - Delegates event processing to a Groovy script.
 * [Hazelcast Event Processor](event-processing.html#hazelcast-event-processor) - Forwards events to Hazelcast topics for further processing.
 * [InitialState.com Event Processor](event-processing.html#initialstate-com-event-processor) - Sends events to InitialState.com for advanced visualization.
 * [MQTT Event Processor](event-processing.html#mqtt-event-processor) - Forwards matching events to an MQTT topic.
@@ -309,6 +310,30 @@ configuration is below:
 	
 	</sw:outbound-processing-chain>
 {% endhighlight %}
+
+### Groovvy Event Processor
+This outbound processor allows events to be passed to a Groovy script which handles processing.
+The script is given access to the event data and a builder object that allows new events to be
+created. This allows the script to impose conditional logic on the incoming stream of events and
+create new events in response. 
+
+{% highlight xml %}
+<sw:device-communication>
+					
+	<sw:outbound-processing-chain>
+				
+		<!-- Process events using Groovy script -->
+		<sw:groovy-event-processor scriptPath="path/to/logic.groovy"/>
+	
+	</sw:outbound-processing-chain>
+{% endhighlight %}
+
+| Groovy Variable         | Description                                      
+|-------------------------|-------------------------------------------------------------
+| event                   | Wrapper with convenience methods and allowing access to the event itself
+| eventBuilder            | Builder interface for creating new events
+| hazelcast               | Handle to HazelcastInstance interface. Allows sharing of data across cluster
+| logger                  | Allows script to write to the SiteWhere log
 
 ### Hazelcast Event Processor
 SiteWhere has support for broadcasting events over [Hazelcast](http://hazelcast.com/) topics, making it
