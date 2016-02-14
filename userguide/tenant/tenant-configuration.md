@@ -80,6 +80,49 @@ The following attributes may be specified for the **mongo-tenant-datastore** ele
 | useBulkEventInserts     | optional | Indicates whether the bulk loading APIs should be used to increase event write performance. Defaults to *false*.                         
 | bulkInsertMaxChunkSize  | optional | Specifies the max number of events to queue before sending a batch via the bulk APIs. Defaults to *1000*.
 
+### MongoDB/InfluxDB Hybrid Tenant Datastore
+This tenant datastore option uses MongoDB for device management data, but stores event data
+in an [InfluxDB](https://influxdata.com/) time series database. Using this approach combines
+the ease of use provided by MongoDB with the scalable time series processing that InfluxDB
+is designed to provide. To use the hybrid MongoDB/InfluxDB option for the tenant datastore, 
+edit the tenant configuration **tenant-datastore** section and use the 
+**mongo-influxdb-tenant-datastore** element as shown below:
+
+{% highlight xml %}
+<!-- ########################### -->
+<!-- # DATASTORE CONFIGURATION # -->
+<!-- ########################### -->
+<sw:tenant-datastore>
+		
+	<!-- Hybrid MongoDB/InfluxDB Datastore -->
+	<sw:mongo-influxdb-tenant-datastore connectUrl="http://localhost:8086"
+		logLevel="basic" enableBatch="true" batchChunkSize="1000" batchIntervalMs="100"/>
+		
+	<!-- Improves performance by using Hazelcast for distributed caching -->
+	<sw:hazelcast-cache/>
+			
+	<!-- Initializes data model with sample data if datastore is empty -->
+	<sw:default-device-model-initializer/>
+	<sw:default-asset-model-initializer/>
+	<sw:default-schedule-model-initializer/>
+
+</sw:tenant-datastore>
+{% endhighlight %}
+
+The following attributes may be specified for the **mongo-influxdb-tenant-datastore** element.
+      
+| Attribute               | Required | Description                                      
+|-------------------------|----------|--------------------------------------------------
+| connectUrl              | optional | URL used to connect to the InfluxDB instance. Defaults to *http://localhost:8086*.
+| username                | optional | Username used to connect to InfluxDB. Defaults to *root*.
+| password                | optional | Password used to connect to InfluxDB. Defaults to *root*.
+| database                | optional | Database name used to connect to InfluxDB. Defaults to *sitewhere*.
+| retention               | optional | Retention period for SiteWhere events. Defaults to *default*.
+| enableBatch             | optional | Enables batch delivery of events from SiteWhere to InfluxDB. Defaults to *true*.
+| batchChunkSize          | optional | Maximum number of events to cache before flushing. Defaults to *2000*.
+| batchIntervalMs         | optional | Maximum number of milliseconds to wait before flushing. Defaults to *100*.
+| logLevel                | optional | Indicates the log level for InfluxDB operations. Choices are *none*, *basic*, *headers*, and *full*. Default is *none*                         
+
 ### HBase Tenant Datastore
 To use HBase as the tenant datastore, edit the tenant configuration **tenant-datastore** section 
 and use the **hbase-tenant-datastore** element as shown below:
