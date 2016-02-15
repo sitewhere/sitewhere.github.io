@@ -73,7 +73,7 @@ of the projects individually. The final result from the build process is a web a
 the SiteWhere **webapps** folder.
 
 To build a completely functional server (as you would find on the SiteWhere [downloads](http://www.sitewhere.org/downloads/)
-page, execute one of the following commands:
+page), execute one of the following commands:
 
 For a Windows installation run:
 
