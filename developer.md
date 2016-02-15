@@ -57,15 +57,34 @@ Once the repository has been loaded into Eclipse, it will automatically be compi
 result in errors due to missing library dependencies. In order to load the required libraries onto your local 
 machine, you will need to install Apache Maven.
  
-## Install Maven and Build Projects
-In order to build the various projects and generate the deployable artifacts, you will need to 
-install and run [Apache Maven](http://maven.apache.org/). Version 3.0.5 was used for testing but any Maven 3 version 
-should work as well. Download Maven and install as per the instructions, then open a command prompt. Type the following:
+## Install Gradle and Build Projects
+SiteWhere uses [Gradle](http://gradle.org/) to build project artifacts. The SiteWhere repository includes
+the [Gradle wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) so there is no need
+to install extra tools to build the artifacts. To build the web archive (WAR) file, run the following
+in the project root folder:
 
 {% highlight bash %}
-mvn clean install
+gradlew clean war
 {% endhighlight %}
 	
-The Maven build will clean any existing build artifacts, download all of the dependencies, and compile all
+The Gradle build will clean any existing build artifacts, download all of the dependencies, and compile all
 of the projects individually. The final result from the build process is a web archive (WAR) file in the 
-**deploy** directory that can be deployed in SiteWhere server.
+**sitewhere-web/build/libs** directory. The filename can be renamed to **sitewhere.war** and copied into
+the SiteWhere **webapps** folder.
+
+To build a completely functional server (as you would find on the SiteWhere [downloads](http://www.sitewhere.org/downloads/)
+page, execute one of the following commands:
+
+For a Windows installation run:
+
+{% highlight bash %}
+gradlew clean serverZip
+{% endhighlight %}
+
+For a Linux/Max installation run:
+
+{% highlight bash %}
+gradlew clean serverTar
+{% endhighlight %}
+
+The installable artifacts can be found in the **build/distributions** folder.
