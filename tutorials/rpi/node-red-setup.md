@@ -108,3 +108,8 @@ sudo node-red -v
 <a href="{{ site.url }}/images/tutorials/rpi/node-red-dht.png" data-lightbox="rpi" title="Node-RED with DHT Sensor Node">
 	<img src="{{ site.url }}/images/tutorials/rpi/node-red-dht.png"/>
 </a>
+
+## Conclusion
+With Node-RED and the SiteWhere nodes installed, you can now start to build flows that allow devices 
+to register with SiteWhere, send events, and process commands. This setup will provide a base 
+configuration for other tutorials around SiteWhere/Node-RED integration.
