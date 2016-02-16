@@ -35,14 +35,14 @@ Starting from an empty flow:
 * Drag a SiteWhere *register* node from the palette at the left and drop it on the canvas. 
 * Drag an *mqtt* node from the *output* group in the palette and drop it next to the *register* node. 
   Connect the outbound port of the *register* node to the inbound port on the *mqtt* node. 
-* Drag an *inject* node from the input group and place it to the left of the SiteWhere *register* node. 
+* Drag an *inject* node from the *input* group and place it to the left of the SiteWhere *register* node. 
   Connect the output of the *inject* node to the input of the *register* node. 
 * Drag a *debug* node from the *input* group and drop it above the *mqtt* node, then connect
   the output of the *register* node to it. The *register* node will now have two outbound connections. 
   (See the diagram below to make sure your flow looks similar)
 
 Double-click on the *register* node to open the edit dialog, then
-click the pen icon next to the *Configuration* entry to edit the SiteWhere 
+click the <i class="fa fa-pencil"></i> icon next to the *Configuration* entry to edit the SiteWhere 
 configuration that will be shared between all SiteWhere nodes in this flow.
 Leave the default values and click *Add* at the bottom to save the configuration.
 Click *Ok* to save the changes.
