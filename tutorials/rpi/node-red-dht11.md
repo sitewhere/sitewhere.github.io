@@ -31,6 +31,7 @@ at http://localhost:1880).
 
 ## Add Device Registration
 Starting from an empty flow: 
+
 * Drag a SiteWhere *register* node from the palette at the left and drop it on the canvas. 
 * Drag an *mqtt* node from the *output* group in the palette and drop it next to the *register* node. 
   Connect the outbound port of the *register* node to the inbound port on the *mqtt* node. 
