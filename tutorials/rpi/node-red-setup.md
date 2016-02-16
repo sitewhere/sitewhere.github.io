@@ -79,6 +79,7 @@ the module, the BCM2835 library and node packages must be installed. The instruc
 will build the BCM2835 library:
 
 {% highlight bash %}
+mkdir bcm2835
 cd bcm2835
 wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.49.tar.gz
 tar zxvf bcm2835-1.49.tar.gz
