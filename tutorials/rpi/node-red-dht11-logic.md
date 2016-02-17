@@ -71,7 +71,7 @@ changes to the script are immediately reflected in SiteWhere processing. There i
 shut down the tenant or server to make changes. Edit the content of the script to contain
 the following logic:
 
-{% highlight java %}
+{% highlight groovy %}
 if (event.hasMeasurement('humidity')) {
 	Double humidity = event.getMeasurement('humidity');
 	
@@ -84,3 +84,8 @@ if (event.hasMeasurement('humidity')) {
 }
 {% endhighlight %}
 
+Depending on your local environment, the humidity may be high enough to start generating alerts
+immediately. If not, you can blow on the sensor to raise the humidity and generate an alert.
+Note that the logic is creating a new alert which is stored just as other event data. It will
+show up in the tabular data for the assignment. It is also processed by the event pipeline
+just like any other alert, so it can be sent via Hazelcast or fed to Siddhi CEP processing.
