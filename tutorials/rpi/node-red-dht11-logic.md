@@ -157,5 +157,35 @@ output for each command coming out of the switch.
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-switch-node.png"/>
 </a>
 
+Note that the switch property is **sw:command** which is set in the SiteWhere command parser node.
+
+### Update Trigger Node
+The trigger node is used to send a high signal followed by a low signal at a future time. We will use
+it to trigger the LED to flash. When the *flashLed* command is received from SiteWhere it will keep the
+signal high for 750ms, then set it low again. If multiple messages are received, the interval will be 
+extended. Set the configuration as shown below:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-trigger-led.png" data-lightbox="rpi" title="Trigger Node">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-trigger-led.png"/>
+</a>
+
+### Update GPIO Node
+The GPIO node interacts with the pin on the Raspberry Pi to set its values. In this case, we are setting
+GPIO pin 17 to flash the LED. Set the configuration as shown below:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-gpio-led.png" data-lightbox="rpi" title="Trigger Node">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-gpio-led.png"/>
+</a>
+
+### Apply the Changes and Test
+Click the *Apply* button in the upper-right corner of the web application to commit the changes made
+to the flow. Now the flow is ready to handle commands from SiteWhere. To test the configuration, raise
+the humidity to an alert level by blowing on the sensor. An alert will show up in SiteWhere and the 
+LED blinks to indicate the condition.
+
+
+
+
+
 
 
