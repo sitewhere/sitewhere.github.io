@@ -75,8 +75,7 @@ the following logic:
 if (event.hasMeasurement('humidity')) {
 	Double humidity = event.getMeasurement('humidity');
 	
-	// Create a new alert event if humidity > 50.
-	if (humidity > 50) {
+	if (humidity > 50) { // Create a new alert event if humidity > 50.
 		logger.info "Humidity is ${humidity} (> 50%). Generating alert."
 		def newAlert = eventBuilder.newAlert 'high.humidity', 'Humidity is high!' warning() trackState()
 		eventBuilder.forSameAssignmentAs event persist newAlert
