@@ -128,6 +128,12 @@ stabilizes the data output.
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit.png"/>
 </a>
 
+The finished circuit will look something like the one below:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit-wired.jpg" data-lightbox="rpi" title="Build Circuit">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit-wired.jpg"/>
+</a>
+
 ## Add Measurement Nodes
 Now that the circuit is wired, the flow needs to be updated to pull measurements from the 
 DHT11 and send them to SiteWhere. Take a look at the diagram below to see the general 
@@ -141,5 +147,31 @@ delivery.
 <a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mx-nodes.png" data-lightbox="rpi" title="Add Measurement Nodes">
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mx-nodes.png"/>
 </a>
+
+Starting with the flow from the previous steps:
+
+* Add an *inject* node below the previous nodes and at the left edge.
+* Add an *rpi-dh22* node from the *Raspberry Pi* group. Place it to the right of the *inject*
+  node and connect the nodes.
+* Add a *function* node from the *function* group. Place it to the right of the *rpi-dh22* 
+  node and connect the nodes.
+* Add a *measurements* node from the *SiteWhere* group. Place it to the right of the *function*
+  node and connect the nodes.
+* Connect the *measurements* node to the *mqtt* node from the registration logic.
+* Connect the *measurements* node to the *debug* node from the registration logic. There will be
+  two outputs from the *measurements* node.
+  
+### Configure Trigger Node
+Double-click on the *inject* node and update its name to *Trigger*, then click *Ok* to save 
+the changes.
+
+### Configure the RPI-DHT Node
+Double-click the *rpi-dht22* node and update the settings as shown in the image below. We choose
+the DHT11 on pin 4 based on the sensor and how it is connected.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-config.png" data-lightbox="rpi" title="Configure DHT11 Sensor">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-config.png"/>
+</a>
+
 
 
