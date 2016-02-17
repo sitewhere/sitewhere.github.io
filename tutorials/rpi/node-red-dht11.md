@@ -75,9 +75,23 @@ the device is *connected* to the MQTT broker.
 Test the registration by clicking the button at the left side of the *Trigger* node. It will
 send a trigger message that causes the *Register* node to create a JSON registration message
 which is sent out via the MQTT connection. The *debug* node will log the JSON to the debugger
-panel at the right side of the application. If the message was sent successfully, SiteWhere will
-register the device and send back a registration success message. For the sake of brevity, we
-will not add processing for the response in this tutorial. Open the SiteWhere administrative
+panel at the right side of the application. The content will look resemble the JSON below:
+
+{% highlight json %}
+{
+	"hardwareId": "123-TEST-4567890",
+	"type": "RegisterDevice",
+	"request": {
+		"hardwareId": "123-TEST-4567890",
+		"specificationToken": "964e7613-dab3-4fb3-8919-266a91370884",
+		"siteToken": "bb105f8d-3150-41f5-b9d1-db04965668d3"
+	}
+}
+{% endhighlight %}
+
+If the message was sent successfully, SiteWhere will register the device and send 
+back a registration success message. For the sake of brevity, we will not add 
+processing for the response in this tutorial. Open the SiteWhere administrative
 console, click on the default site, and you should see a new assignment for a Node-RED device
 that was dynamically registered. If not, make sure that Node-RED was able to connect via MQTT
 to the broker SiteWhere is using. If using Docker, verify that the 1883 port is being forwarded
