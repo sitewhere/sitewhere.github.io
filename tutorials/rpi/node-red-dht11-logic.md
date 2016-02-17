@@ -11,7 +11,8 @@ nextTitle: Raspberry Pi Tutorials
 # {{page.title}}
 This tutorial uses temperature/humidity data from a DHT11 sensor and adds
 SiteWhere server logic processing to dynamically generate alerts and
-forward data to [InitialState.com](http://www.initialstate.com) for visualization.
+issue commands back to the device to flash an LED when alert conditions
+exist.
 
 ## Getting Started
 This tutorial builds on a Node-RED flow created in a previous tutorial. To build
@@ -177,11 +178,16 @@ GPIO pin 17 to flash the LED. Set the configuration as shown below:
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-gpio-led.png"/>
 </a>
 
-### Apply the Changes and Test
-Click the *Apply* button in the upper-right corner of the web application to commit the changes made
+### Deploy the Changes and Test
+Click the *Deploy* button in the upper-right corner of the web application to commit the changes made
 to the flow. Now the flow is ready to handle commands from SiteWhere. To test the configuration, raise
 the humidity to an alert level by blowing on the sensor. An alert will show up in SiteWhere and the 
 LED blinks to indicate the condition.
+
+## Conclusion
+We now have a complete round-trip flow that can register a device with SiteWhere, send temperature/humidity
+data, and receive commands based on logic processed on the server. Based on conditional logic in a Groovy 
+script, we are able to generate device alerts and issue commands back to the device to take action.
 
 
 
