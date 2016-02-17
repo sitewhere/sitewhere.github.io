@@ -89,7 +89,7 @@ Note that the logic is creating a new alert which is stored just as other event 
 show up in the tabular data for the assignment. It is also processed by the event pipeline
 just like any other alert, so it can be sent via Hazelcast or fed to Siddhi CEP processing.
 
-### Add Command for Flashing an LED
+## Send Device a Command from SiteWhere
 It often makes sense to issue a command to a device when an alert condition is encountered.
 For instance, if a water level sensor is triggered on a pool, a command could be sent to
 turn off water flow. In this example, we want to flash an LED on the Raspberry Pi if 
@@ -106,7 +106,7 @@ that uses the *Node-RED* specification.
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-command1.png"/>
 </a>
 
-### Add LED to Existing Circuit
+### Add an LED to the Existing Circuit
 To show the command being executed on the Raspberry Pi, we will add an LED to the breadboard
 and trigger it using GPIO pin 17. Below is the updated circuit diagram:
 
@@ -128,11 +128,34 @@ SiteWhere:
 
 Rename the nodes as shown below:
 
-<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-cmd-nodes.png" data-lightbox="rpi" title="Circuit with LED">
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-cmd-nodes.png" data-lightbox="rpi" title="Command Processing Nodes">
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-cmd-nodes.png"/>
 </a>
 
+### Update MQTT Inbound Command Node
+The inbound MQTT command node will listen on an MQTT topic (as defined in the SiteWhere tenant configuration)
+for commands for the device. Note that the topic name includes the device hardware id. Enter the same information
+as shown below:
 
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mqtt-in-cmd.png" data-lightbox="rpi" title="MQTT Input Node">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mqtt-in-cmd.png"/>
+</a>
+
+The node will listen on the topic and relay the JSON command payload from SiteWhere.
+
+### SiteWhere Command Parser Node
+This node does not require configuration. It strips away many of the extra details included in the command
+message from SiteWhere and arranges the data so that other nodes can use it.
+
+### Update Command Switch Node
+Since many different commands can be delivered by SiteWhere, we need a switch that chooses an 
+output route based on the command name. Configure the node as shown below so that the *flashLed* command
+is routed to the next connected node. If multiple commands were being processed, there would be an
+output for each command coming out of the switch.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-switch-node.png" data-lightbox="rpi" title="Switch Node">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-switch-node.png"/>
+</a>
 
 
 
