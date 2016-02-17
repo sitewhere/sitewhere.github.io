@@ -182,6 +182,14 @@ node will find them.
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-function.png"/>
 </a>
 
+Copy the following as the script content:
+
+{% highlight javascript %}
+msg['mx:temperature'] = msg.payload;
+msg['mx:humidity'] = msg.humidity;
+return msg;
+{% endhighlight %}
+
 ### Configure the Measurements Node
 Double-click the *measurements* node and update the settings as shown in the image below. The 
 name and value are a placeholder and will be overwritten by values coming from the DHT11. The
