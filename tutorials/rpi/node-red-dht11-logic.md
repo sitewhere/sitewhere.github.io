@@ -118,8 +118,8 @@ and trigger it using GPIO pin 17. Below is the updated circuit diagram:
 Now signaling pin 17 will turn on the LED.
 
 ### Update Logic to Send Command
-Update the existing **dht11-logic.groovy** with the following content which will both
-create an alert and issue a *flashLed* command if the humidity level exceeds 
+Update the existing **dht11-logic.groovy** script with the following content which 
+will both create an alert and issue a *flashLed* command if the humidity level exceeds 
 the threshold.
 
 {% highlight groovy %}
