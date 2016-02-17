@@ -120,6 +120,10 @@ td {
 	padding-right: 15px;
 }
 
+figure {
+    margin: 30px 0px;
+}
+
 #toc {
 	max-height: 375px;
 	overflow-y: auto;
