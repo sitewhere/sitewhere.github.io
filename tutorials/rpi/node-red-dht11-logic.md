@@ -88,3 +88,22 @@ immediately. If not, you can blow on the sensor to raise the humidity and genera
 Note that the logic is creating a new alert which is stored just as other event data. It will
 show up in the tabular data for the assignment. It is also processed by the event pipeline
 just like any other alert, so it can be sent via Hazelcast or fed to Siddhi CEP processing.
+
+### Send a Command Based on Logic
+It often makes sense to issue a command to a device when an alert condition is encountered.
+For instance, if a water level sensor is triggered on a pool, a command could be sent to
+turn off water flow. In this example, we want to flash an LED on the Raspberry Pi if 
+humidity is above a given threshold. First, we need to add a command to flash the LED.
+In the SiteWhere administrative application, click on *Devices > Specifications**
+and open the *Node-RED* specification from the list. Under the *Commands* tab, click the
+*Add New Command* button. Enter **flashLed** as the name, **http://rpi.namespace** as the
+namespace, and **Flash the device LED** as the description. We will not use any parameters
+or metadata for this example, but parameters can easily be passed along with the commands.
+Click *Create* to create the new command. SiteWhere can now send this command to any device
+that uses the *Node-RED* specification.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-command1.png" data-lightbox="rpi" title="Create a Command">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-command1.png"/>
+</a>
+
+
