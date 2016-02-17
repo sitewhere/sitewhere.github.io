@@ -223,5 +223,20 @@ data. It should reflect the new data that was just added.
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-sw-mx-data.png"/>
 </a>
 
+### Send Measurements at an Interval
+Rather than having a user click on a button to send measurements, the flow can be configured
+to read and send measurements at a given time interval. Open the *inject* node named *Trigger*
+at the bottom-left and change the settings as shown below to send an update every three
+seconds:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-interval.png" data-lightbox="rpi" title="Sending at an Interval">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-interval.png"/>
+</a>
+
+Deploy the flow again and you will see debug messages at a three-second interval. If you open
+the SiteWhere administrative console, you will see that the measurements are being stored.
+
+
+
 
 
