@@ -124,8 +124,22 @@ that you can connect the DHT11 directly to the pins on the RPi, but it limits th
 ability to expand on the circuit and does not include a pull-down resistor, which
 stabilizes the data output.
 
-<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit.png" data-lightbox="rpi" title="Add Registration Nodes">
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit.png" data-lightbox="rpi" title="Build Circuit">
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit.png"/>
+</a>
+
+## Add Measurement Nodes
+Now that the circuit is wired, the flow needs to be updated to pull measurements from the 
+DHT11 and send them to SiteWhere. Take a look at the diagram below to see the general 
+arrangement used to collect the data. A trigger node will cause the *rpi-dh22* node to 
+read the temperature and humidity. The values are passed into a JavaScript function that
+places the values into fields SiteWhere will find (prefixing the field names with **mx:**).
+The SiteWhere *measurements* node takes the fields from the message payload and creates
+the JSON needed to inform SiteWhere of the data and forwards it to the *mqtt* node for
+delivery.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mx-nodes.png" data-lightbox="rpi" title="Add Measurement Nodes">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mx-nodes.png"/>
 </a>
 
 
