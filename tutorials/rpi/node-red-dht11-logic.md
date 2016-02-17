@@ -117,6 +117,26 @@ and trigger it using GPIO pin 17. Below is the updated circuit diagram:
 
 Now signaling pin 17 will turn on the LED.
 
+### Update Logic to Send Command
+Update the existing **dht11-logic.groovy** with the following content which will both
+create an alert and issue a *flashLed* command if the humidity level exceeds 
+the threshold.
+
+{% highlight groovy %}
+if (event.hasMeasurement('humidity')) {
+	Double humidity = event.getMeasurement('humidity');
+	
+	if (humidity > 50) {
+		logger.info "Humidity is ${humidity} (> 50%). Generating alert."
+		def newAlert = eventBuilder.newAlert 'high.humidity', 'Humidity is high!' warning() trackState()
+		eventBuilder.forSameAssignmentAs event persist newAlert
+		
+		def cmd = eventBuilder.newCommandInvocation "flashLed", assignment.token
+		eventBuilder.forSameAssignmentAs event persist cmd
+	}
+}
+{% endhighlight %}
+
 ### Add Nodes to Execute Command
 A few new nodes need to be added to the Node-RED flow to handle the inbound command from
 SiteWhere:
