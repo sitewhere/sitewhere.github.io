@@ -111,3 +111,21 @@ similar to the one below:
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-device-added.png"/>
 </a>
 
+## Wire the Circuit
+The circuit needed to capture data from the DHT11 requires the following components:
+
+* 1 Raspberry Pi 2
+* 1 breadboard
+* 1 DHT11 sensor (with included 10k resistor)
+* An RPi starter kit with IDE cable and various wires
+
+Assemble the circuit by connecting the components as shown in the diagram below. Note
+that you can connect the DHT11 directly to the pins on the RPi, but it limits the 
+ability to expand on the circuit and does not include a pull-down resistor, which
+stabilizes the data output.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit.png" data-lightbox="rpi" title="Add Registration Nodes">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit.png"/>
+</a>
+
+
