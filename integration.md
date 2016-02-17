@@ -10,7 +10,7 @@ SiteWhere provides a lot of functionality out of the box, but one of its most po
 is ease of integration with other platforms. Rather than reinventing the wheel, SiteWhere 
 leverages other proven systems to expand its abilities.
 
-## Development Kits for Device Platforms
+## Support for Popular Device Platforms
 SiteWhere provides software development kits for quickly integrating devices
 from popular hardware platforms. This allows users to focus on building applications
 rather than struggling with infrastructure.
