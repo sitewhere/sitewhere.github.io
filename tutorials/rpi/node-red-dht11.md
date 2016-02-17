@@ -52,9 +52,13 @@ Double-click the *mqtt* node to open the edit dialog, then click the
 broker SiteWhere is connected to and leave the other entries as the default
 values. Click *Add* at the bottom to save the configuration. This configuration
 can be reused in other MQTT nodes in the flow to prevent having to enter the
-same information multiple times. Now enter the MQTT SiteWhere is listening on,
+same information multiple times. Now enter the MQTT topic SiteWhere is listening on,
 which by default is **SiteWhere/input/json**. For the *Name* field, enter 
 *To SiteWhere*. Click *Ok* to save the changes.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mqtt-config.png" data-lightbox="rpi" title="Configure MQTT">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mqtt-config.png"/>
+</a>
 
 Double-click the *inject* node to open the edit dialog. Change the *Name* field
 to *Trigger* and click *Ok* to save the changes.
