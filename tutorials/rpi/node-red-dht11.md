@@ -192,4 +192,36 @@ assignment so they can be queried even if the device is offline.
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mxs.png"/>
 </a>
 
+### Deploy the Updates
+Click **Deploy** in the upper right corner of the application to update the running configuration
+to include the new nodes. To query the sensor and send the data to SiteWhere, click the button
+at the left of the trigger node on the bottom series of nodes. You should see output in the debug
+pane indicating the values that were sent:
+
+{% highlight json %}
+{
+    "hardwareId": "123-TEST-4567890",
+    "type": "DeviceMeasurements",
+    "request": {
+        "measurements": { 
+        	"temperatuure": "22.00",
+        	"humidity": "31.00"
+        },
+        "updateState": true,
+        "eventDate": "2016-02-10T19:40:03.391Z"
+     }
+}
+{% endhighlight %}
+
+### View the Measurements in SiteWhere
+Open the SiteWhere administrative console, navigate to the default site, and look in
+the *Assignments* tab. Click the green arrow next to the *Node-RED* device that was 
+added in the registration process. Click on the measurements tab to view the latest
+data. It should reflect the new data that was just added.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-sw-mx-data.png" data-lightbox="rpi" title="SiteWhere Measurement Data">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-sw-mx-data.png"/>
+</a>
+
+
 
