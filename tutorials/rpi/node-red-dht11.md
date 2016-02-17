@@ -4,8 +4,8 @@ layout: default
 sidebar: sidebar.html
 prevLink: tutorials/rpi/node-red-setup.html
 prevTitle: Node-RED Installation
-nextLink: tutorials/raspberry-pi.html
-nextTitle: Raspberry Pi Tutorials
+nextLink: tutorials/rpi/node-red-dht11-logic.html
+nextTitle: Node-RED DHT11 Server Logic
 ---
 
 # {{page.title}}
