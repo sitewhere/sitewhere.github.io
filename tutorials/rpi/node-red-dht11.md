@@ -236,6 +236,14 @@ seconds:
 Deploy the flow again and you will see debug messages at a three-second interval. If you open
 the SiteWhere administrative console, you will see that the measurements are being stored.
 
+## Conclusion
+Using Node-RED, we have quickly assembled a flow that allows a Raspberry Pi to be registered
+with SiteWhere. It then reads temperature and humidity from a DHT11, and sends the data to SiteWhere
+via JSON over MQTT. Since Node-RED offers nodes for interacting with many other 
+sensors and actuators, the possibilities are limitless. With the data integrated 
+into SiteWhere, we can process the sensor readings to perform actions such as 
+generating alerts and forwarding data to integrate it with other technologies.
+
 
 
 
