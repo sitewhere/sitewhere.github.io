@@ -4,8 +4,8 @@ layout: default
 sidebar: sidebar.html
 prevLink: tutorials/raspberry-pi.html
 prevTitle: Raspberry Pi Tutorials
-nextLink: integration.html
-nextTitle: Integration Tutorials
+nextLink: node-red-dht11.html
+nextTitle: Node-RED DHT11 Sensor Tutorial
 ---
 
 # {{page.title}}
