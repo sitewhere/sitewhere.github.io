@@ -89,12 +89,12 @@ Note that the logic is creating a new alert which is stored just as other event 
 show up in the tabular data for the assignment. It is also processed by the event pipeline
 just like any other alert, so it can be sent via Hazelcast or fed to Siddhi CEP processing.
 
-### Send a Command Based on Logic
+### Add Command for Flashing an LED
 It often makes sense to issue a command to a device when an alert condition is encountered.
 For instance, if a water level sensor is triggered on a pool, a command could be sent to
 turn off water flow. In this example, we want to flash an LED on the Raspberry Pi if 
 humidity is above a given threshold. First, we need to add a command to flash the LED.
-In the SiteWhere administrative application, click on *Devices > Specifications**
+In the SiteWhere administrative application, click on *Devices > Specifications*
 and open the *Node-RED* specification from the list. Under the *Commands* tab, click the
 *Add New Command* button. Enter **flashLed** as the name, **http://rpi.namespace** as the
 namespace, and **Flash the device LED** as the description. We will not use any parameters
@@ -105,5 +105,34 @@ that uses the *Node-RED* specification.
 <a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-command1.png" data-lightbox="rpi" title="Create a Command">
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-command1.png"/>
 </a>
+
+### Add LED to Existing Circuit
+To show the command being executed on the Raspberry Pi, we will add an LED to the breadboard
+and trigger it using GPIO pin 17. Below is the updated circuit diagram:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit-led.png" data-lightbox="rpi" title="Circuit with LED">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-circuit-led.png"/>
+</a>
+
+Now signaling pin 17 will turn on the LED.
+
+### Add Nodes to Execute Command
+A few new nodes need to be added to the Node-RED flow to handle the inbound command from
+SiteWhere:
+
+* Drag an *mqtt* node from the *inbound* group and drop it at the bottom-left side of the canvas.
+* Drag a *command* node from the *sitewhere* group and drop it next to the *mqtt* node, then connect them.
+* Drag a *switch* node from the *function* group and drop it next to the *command* node, then connect them.
+* Drag a *trigger* node from the *function* group and drop it next to the *switch* node, then connect them.
+* Drag a *rpi-gpio* (out) node from the *Raspberry_Pi* group and drop it next to the *trigger* node, then connect them.
+
+Rename the nodes as shown below:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-cmd-nodes.png" data-lightbox="rpi" title="Circuit with LED">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-cmd-nodes.png"/>
+</a>
+
+
+
 
 
