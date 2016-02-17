@@ -24,6 +24,6 @@ to SiteWhere at an interval.
 
 ## [Node-RED DHT11 Server Logic Tutorial]({{ site.url }}/tutorials/rpi/node-red-dht11-logic.html)
 This tutorial builds on the Node-RED DHT11 tutorial and illustrates how to use
-logic in the outbound processing pipeline to dyamically create alerts and issue
+logic in the outbound processing pipeline to dynamically create alerts and issue
 commands to a device. The flow detects humidity levels above a threshold, generates 
-and alert, then issues a command to the Raspberry Pi to flash an LED indicator.
+an alert, then issues a command to the Raspberry Pi to flash an LED indicator.
