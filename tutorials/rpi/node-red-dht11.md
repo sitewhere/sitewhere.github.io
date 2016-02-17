@@ -41,12 +41,14 @@ Starting from an empty flow:
   the output of the *register* node to it. The *register* node will now have two outbound connections. 
   (See the diagram below to make sure your flow looks similar)
 
+### Configure SiteWhere Device Information
 Double-click on the *register* node to open the edit dialog, then
 click the <i class="fa fa-pencil"></i> icon next to the *Configuration* entry to edit the SiteWhere 
 configuration that will be shared between all SiteWhere nodes in this flow.
 Leave the default values and click *Add* at the bottom to save the configuration.
 Click *Ok* to save the changes.
 
+### Configure MQTT Outbound
 Double-click the *mqtt* node to open the edit dialog, then click the
 <i class="fa fa-pencil"></i> icon next to the *Server* entry. Enter the name or IP address of the MQTT
 broker SiteWhere is connected to and leave the other entries as the default
@@ -60,9 +62,12 @@ which by default is **SiteWhere/input/json**. For the *Name* field, enter
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mqtt-config.png"/>
 </a>
 
+### Add a Trigger
 Double-click the *inject* node to open the edit dialog. Change the *Name* field
-to *Trigger* and click *Ok* to save the changes.
+to *Trigger* and click *Ok* to save the changes. This button attached to this node
+will act as a trigger for registering the device.
 
+### Deploy the Flow
 After completing the previous steps, your flow should look similar to the image
 below. Click **Deploy** in the upper-right corner of the page to deploy what 
 you have so far. The status indicator beneath the MQTT node should reflect that
@@ -72,10 +77,11 @@ the device is *connected* to the MQTT broker.
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-register.png"/>
 </a>
 
+### Test Registration
 Test the registration by clicking the button at the left side of the *Trigger* node. It will
 send a trigger message that causes the *Register* node to create a JSON registration message
 which is sent out via the MQTT connection. The *debug* node will log the JSON to the debugger
-panel at the right side of the application. The content will look resemble the JSON below:
+panel at the right side of the application. The content will resemble the message below:
 
 {% highlight json %}
 {
@@ -91,9 +97,12 @@ panel at the right side of the application. The content will look resemble the J
 
 If the message was sent successfully, SiteWhere will register the device and send 
 back a registration success message. For the sake of brevity, we will not add 
-processing for the response in this tutorial. Open the SiteWhere administrative
-console, click on the default site, and you should see a new assignment for a Node-RED device
-that was dynamically registered. If not, make sure that Node-RED was able to connect via MQTT
+processing for the response in this tutorial. 
+
+### View the New Device in SiteWhere
+Open the SiteWhere administrative console, click on the default site, 
+and you should see a new assignment for a Node-RED device that was 
+dynamically registered. If not, make sure that Node-RED was able to connect via MQTT
 to the broker SiteWhere is using. If using Docker, verify that the 1883 port is being forwarded
 so that external clients can access it. The assignments page for the default site will look
 similar to the one below:
