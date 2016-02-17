@@ -1,0 +1,43 @@
+---
+title: Raspberry Pi DHT11 Server Logic
+layout: default
+sidebar: sidebar.html
+prevLink: tutorials/rpi/node-red-dht11.html
+prevTitle: Node-RED DHT11 Tutorial
+nextLink: tutorials/raspberry-pi.html
+nextTitle: Raspberry Pi Tutorials
+---
+
+# {{page.title}}
+This tutorial uses temperature/humidity data from a DHT11 sensor and adds
+SiteWhere server logic processing to dynamically generate alerts and
+forward data to InitialState.com for visualization.
+
+## Getting Started
+This tutorial builds on a Node-RED flow created in a previous tutorial. To build
+the initial flow step-by-step, follow the tutorial [here](node-red-dht11.html).
+You can also get started by importing the flow by opening the Node-RED web
+application, choosing the toolbar in the top-right corner, choosing import,
+and copying the content below via the clipboard. After placing the nodes, the 
+flow is ready to work with.
+
+{% highlight json %}
+[{"id":"2e1bee06.d1e412","type":"mqtt-broker","z":"ff588a38.00a778","broker":"192.168.1.7","port":"1883","clientid":"","usetls":false,"verifyservercert":true,"compatmode":true,"keepalive":"15","cleansession":true,"willTopic":"","willQos":"0","willRetain":"false","willPayload":"","birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":""},{"id":"84f9e0b4.7b062","type":"sw-config","z":"ff588a38.00a778","name":"Default","hwid":"123-TEST-4567890","specification":"964e7613-dab3-4fb3-8919-266a91370884","site":"bb105f8d-3150-41f5-b9d1-db04965668d3"},{"id":"4c5716e.fb3a8e8","type":"sw-register","z":"ff588a38.00a778","name":"Register","config":"84f9e0b4.7b062","x":652,"y":206,"wires":[["f0bfe849.0f4018","6a3b45ca.95c4bc"]]},{"id":"f0bfe849.0f4018","type":"mqtt out","z":"ff588a38.00a778","name":"To SiteWhere","topic":"SiteWhere/input/json","qos":"","retain":"","broker":"2e1bee06.d1e412","x":887,"y":235,"wires":[]},{"id":"6989852e.96767c","type":"inject","z":"ff588a38.00a778","name":"Trigger","topic":"","payload":"","payloadType":"date","repeat":"","crontab":"","once":false,"x":475,"y":206,"wires":[["4c5716e.fb3a8e8"]]},{"id":"6a3b45ca.95c4bc","type":"debug","z":"ff588a38.00a778","name":"","active":true,"console":"false","complete":"false","x":887,"y":160,"wires":[]},{"id":"95128c46.6aed7","type":"rpi-dht22","z":"ff588a38.00a778","name":"Measure","topic":"rpi-dht22","dht":"11","pintype":"0","pin":4,"x":338,"y":386,"wires":[["70a14363.8f5ebc"]]},{"id":"70a14363.8f5ebc","type":"function","z":"ff588a38.00a778","name":"Capture Data","func":"msg['mx:temperature'] = msg.payload;\nmsg['mx:humidity'] = msg.humidity;\nreturn msg;","outputs":1,"noerr":0,"x":506,"y":329,"wires":[["985f6255.67a0a"]]},{"id":"985f6255.67a0a","type":"sw-send-measurements","z":"ff588a38.00a778","name":"Build JSON","mxname":"temperature","mxvalue":"0","updstate":true,"config":"84f9e0b4.7b062","x":670,"y":382,"wires":[["f0bfe849.0f4018","6a3b45ca.95c4bc"]]},{"id":"4fb0ec68.b04f14","type":"inject","z":"ff588a38.00a778","name":"Interval","topic":"","payload":"","payloadType":"date","repeat":"3","crontab":"","once":true,"x":168,"y":330,"wires":[["95128c46.6aed7"]]}]
+{% endhighlight %}
+
+## Adding Server Processing Logic
+As of SiteWhere 1.6.1, server processing logic is supported directly via Groovy scripts
+that run in the outbound processing pipeline. Older SiteWhere versions were able to forward events
+to other frameworks such as Mule Anypoint for logic processing, but logic was not directly
+supported in the SiteWhere pipeline. 
+
+To add processing logic to the pipeline for your tenant, open the SiteWhere administrative 
+appliation and choose *Manage Tenants* (make sure your user has tenant admin privileges). Click
+on the tenant that will be using the new processing logic to open the tenant configuration
+editor as shown below:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-tenant-edit.png" data-lightbox="rpi" title="Edit the Tenant Configuration">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-tenant-edit.png"/>
+</a>
+
+
