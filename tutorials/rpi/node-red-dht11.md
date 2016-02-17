@@ -173,5 +173,23 @@ the DHT11 on pin 4 based on the sensor and how it is connected.
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-config.png"/>
 </a>
 
+### Configure the Function Node
+Double-click the *function* node and update the settings as shown in the image below. The script 
+copies the values from where the RPI-DHT22 node places them into locations where the SiteWhere
+node will find them.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-function.png" data-lightbox="rpi" title="Configure Function Node">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-function.png"/>
+</a>
+
+### Configure the Measurements Node
+Double-click the *measurements* node and update the settings as shown in the image below. The 
+name and value are a placeholder and will be overwritten by values coming from the DHT11. The
+checkbox for *Update state* indicates that SiteWhere should keep the latest values in the device
+assignment so they can be queried even if the device is offline.
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mxs.png" data-lightbox="rpi" title="Configure Function Node">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-mxs.png"/>
+</a>
 
 
