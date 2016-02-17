@@ -11,12 +11,12 @@ nextTitle: Raspberry Pi Tutorials
 # {{page.title}}
 This tutorial uses temperature/humidity data from a DHT11 sensor and adds
 SiteWhere server logic processing to dynamically generate alerts and
-forward data to InitialState.com for visualization.
+forward data to [InitialState.com](http://www.initialstate.com) for visualization.
 
 ## Getting Started
 This tutorial builds on a Node-RED flow created in a previous tutorial. To build
 the initial flow step-by-step, follow the tutorial [here](node-red-dht11.html).
-You can also get started by importing the flow by opening the Node-RED web
+You can also take a shortcut and import the flow by opening the Node-RED web
 application, choosing the toolbar in the top-right corner, choosing import,
 and copying the content below via the clipboard. After placing the nodes, the 
 flow is ready to work with.
@@ -26,8 +26,9 @@ flow is ready to work with.
 {% endhighlight %}
 
 ## Adding Server Processing Logic
-As of SiteWhere 1.6.1, server processing logic is supported directly via Groovy scripts
-that run in the outbound processing pipeline. Older SiteWhere versions were able to forward events
+As of SiteWhere 1.6.1, server processing logic is supported directly via 
+[Groovy](http://www.groovy-lang.org/) scripts that run in the outbound 
+processing pipeline. Older SiteWhere versions were able to forward events
 to other frameworks such as Mule Anypoint for logic processing, but logic was not directly
 supported in the SiteWhere pipeline. 
 
@@ -40,4 +41,46 @@ editor as shown below:
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-tenant-edit.png"/>
 </a>
 
+### Add a Groovy Processor
+Scroll down and click on the *Event Processing* catetgory, then click on *Outbound Processors*.
+Add a Groovy event processor to the pipeline by clicking the *Add Component* dropdown and
+choosing *Groovy Processor* from the list. Enter **dht11-logic.groovy** for the script path
+and click *Create* to add the processor. The new processor will be added to the end of the 
+processing chain. The resulting list will look similar to the one below:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-groovy.png" data-lightbox="rpi" title="Edit the Tenant Configuration">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-groovy.png"/>
+</a>
+
+To apply the updates to the tenant, click *Stage Updates*, *Ok* the updates, then click the
+stop button on the right side of the banner to shut down the tenant. After it shuts down,
+click the start button to restart it. The tenant will now send all events to though the
+Groovy script for processing. Note that you can also add filters to the processor to limit
+which events are sent to it. If you have the flow already running in Node-RED, you will see
+error messages in the SiteWhere console indicating it can not find the Groovy script.
+
+### Add Logic to the Groovy Script
+In your SiteWhere installation, navigate to the *conf/sitewhere/global/scripts/groovy* folder.
+This is the default root path for Groovy scripts. It is also possible to override the path
+for a given tenant so that the tenant's scripts are isolated rather than global. Create a new
+file named **dht11-logic.groovy**. 
+
+The error messages in the SiteWhere console will stop since
+there is now a file where it expects it. Note that, because Groovy is compiled dynamically, 
+changes to the script are immediately reflected in SiteWhere processing. There is no need to
+shut down the tenant or server to make changes. Edit the content of the script to contain
+the following logic:
+
+{% highlight java %}
+if (event.hasMeasurement('humidity')) {
+	Double humidity = event.getMeasurement('humidity');
+	
+	// Create a new alert event if humidity > 50.
+	if (humidity > 50) {
+		logger.info "Humidity is ${humidity} (> 50%). Generating alert."
+		def newAlert = eventBuilder.newAlert 'high.humidity', 'Humidity is high!' warning() trackState()
+		eventBuilder.forSameAssignmentAs event persist newAlert
+	}
+}
+{% endhighlight %}
 
