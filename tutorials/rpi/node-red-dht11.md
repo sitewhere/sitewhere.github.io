@@ -48,7 +48,7 @@ Leave the default values and click *Add* at the bottom to save the configuration
 Click *Ok* to save the changes.
 
 Double-click the *mqtt* node to open the edit dialog, then click the
-pen icon next to the *Server* entry. Enter the name or IP address of the MQTT
+<i class="fa fa-pencil"></i> icon next to the *Server* entry. Enter the name or IP address of the MQTT
 broker SiteWhere is connected to and leave the other entries as the default
 values. Click *Add* at the bottom to save the configuration. This configuration
 can be reused in other MQTT nodes in the flow to prevent having to enter the
@@ -61,8 +61,26 @@ to *Trigger* and click *Ok* to save the changes.
 
 After completing the previous steps, your flow should look similar to the image
 below. Click **Deploy** in the upper-right corner of the page to deploy what 
-you have so far.
+you have so far. The status indicator beneath the MQTT node should reflect that
+the device is *connected* to the MQTT broker.
 
 <a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-register.png" data-lightbox="rpi" title="Add Registration Nodes">
 	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-register.png"/>
 </a>
+
+Test the registration by clicking the button at the left side of the *Trigger* node. It will
+send a trigger message that causes the *Register* node to create a JSON registration message
+which is sent out via the MQTT connection. The *debug* node will log the JSON to the debugger
+panel at the right side of the application. If the message was sent successfully, SiteWhere will
+register the device and send back a registration success message. For the sake of brevity, we
+will not add processing for the response in this tutorial. Open the SiteWhere administrative
+console, click on the default site, and you should see a new assignment for a Node-RED device
+that was dynamically registered. If not, make sure that Node-RED was able to connect via MQTT
+to the broker SiteWhere is using. If using Docker, verify that the 1883 port is being forwarded
+so that external clients can access it. The assignments page for the default site will look
+similar to the one below:
+
+<a href="{{ site.url }}/images/tutorials/rpi/dht11/dht11-device-added.png" data-lightbox="rpi" title="Add Registration Nodes">
+	<img src="{{ site.url }}/images/tutorials/rpi/dht11/dht11-device-added.png"/>
+</a>
+
