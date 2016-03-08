@@ -67,3 +67,18 @@ from a SiteWhere instance via Hazelcast. The event stream can then be manipulate
 Spark Streaming APIs and used as the input for [machine learning](http://spark.apache.org/mllib/) 
 and [graph processing](http://spark.apache.org/graphx/) modules available in Spark. See the complete
 [tutorial]({{ site.url }}/integration/spark.html) for an example application.
+
+## Data Storage and Visualization
+SiteWhere can be configured as to persist data in many different types of storage
+engines. By using visualization technologies that support the engines, SiteWhere
+data can be graphed or visualized in other ways.
+
+### [InfluxDB/Grafana]({{ site.url }}/tutorials/influxdb/setup-with-grafana.html)
+SiteWhere supports persisting event data to [InfluxDB](https://influxdata.com/) which
+provides a scalable solution for handling time series data for device events. Once the
+data has been stored in InfluxDB, [Grafana](http://grafana.org/) can be used to 
+visualize the data. See the complete
+[tutorial]({{ site.url }}/tutorials/influxdb/setup-with-grafana.html) for an example
+of sending SiteWhere data to InfluxDB and visualizing it in Grafana.
+
+
