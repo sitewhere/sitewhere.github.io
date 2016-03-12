@@ -92,4 +92,29 @@ see the updates to the script.
 {% include tutorials/socket/http/decodeOSS.groovy %}
 {% endhighlight %}
 
+## Test Script and View Data
+Before sending data to SiteWhere, a device and assignment should be created so that the data
+can be recorded. Create a gateway device with a hardware id that matches the **id** field
+being passed in the JSON payload. Create an assignment for the device so it can start
+receiving events.
+
+To test the HTTP processing script, use the JUnit test from earlier in the tutorial to send
+a sample payload to the socket. In the SiteWhere logs, there will be messages indicating that
+the JSON payload has been parsed and RSSI and SNR have been extracted.
+
+Open the SiteWhere administrative application, choose the default site, and open the assignment
+that corresponds to the gateway device you created previouusly. Clicking on the **measurements**
+tab will show the data that has been parsed from the HTTP request.
+
+<a href="{{ site.url }}/images/tutorials/socket/http/data-in-sitewhere.png" data-lightbox="architecture" title="Data in SiteWhere">
+	<img src="{{ site.url }}/images/tutorials/socket/http/data-in-sitewhere.png"/>
+</a>
+
+## Conclusion
+This techique can be used to post data directly from devices or external systems to SiteWhere.
+Depending on the amount of inbound traffic on the port, it may be advisable to increase the 
+number of threads dedicated to processing. By using a Groovy script for the processing of data,
+any form of data can be interpreted. For example, payloads in custom binary formats can be 
+interpreted by changing the script to expect the given data format.
+
 
