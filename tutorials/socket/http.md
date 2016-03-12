@@ -64,6 +64,17 @@ script name, choose **decodeOSS.groovy** as shown below:
 	<img src="{{ site.url }}/images/tutorials/socket/http/http-groovy-script.png"/>
 </a>
 
+The next step is to apply the changes we have made to the configuration so that the tenant will start
+using the new event source. Click **Stage Updates** at the bottom of the editor to stage the configuration changes. 
+Click the <i style="color: #c00" class="fa fa-power-off fa-white"></i> icon to stop the tenant. After it stops, 
+click the <i style="color: #090" class="fa fa-power-off fa-white"></i> icon to start it with the updated configuration.
+SiteWhere is now listening for HTTP requests on the port specified in the configuration.
+
+## Send Sample Data to the Socket
+For this example, we will send an example JSON payload to the socket we have configured. The code included
+below will use the Spring REST template and Jackson libraries to send a sample payload using the HTTP
+protocol. The example is constructed as a JUnit test so that it can be dynamically executed from an IDE
+such as Eclipse.
 
 {% highlight java %}
 {% include tutorials/socket/http/LoraTests.java %}
