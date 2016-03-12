@@ -15,7 +15,7 @@ a [socket event source](http://documentation.sitewhere.org/userguide/tenant/devi
 combined with an HTTP socket interaction handler to properly parse the HTTP request and
 send a **200 OK** HTTP response to the caller.
 
-## Configuring the Socket Event Source
+## Configure the Socket Event Source
 To accept HTTP requests, a socket event source must be configured for the tenant that
 will receive the data. Open the SiteWhere administrative application and choose
 **Manage Tenants** from the user dropdown in the top-right corner (note that the 
@@ -71,7 +71,7 @@ click the <i style="color: #090" class="fa fa-power-off fa-white"></i> icon to s
 SiteWhere is now listening for HTTP requests on the port specified in the configuration.
 
 ## Send Sample Data to the Socket
-For this example, we will send an example JSON payload to the socket we have configured. The code included
+To illustrate processing, we will send a sample JSON payload to the socket we have configured. The code included
 below will use the Spring REST template and Jackson libraries to send a sample payload using the HTTP
 protocol. The example is constructed as a JUnit test so that it can be dynamically executed from an IDE
 such as Eclipse.
@@ -79,3 +79,17 @@ such as Eclipse.
 {% highlight java %}
 {% include tutorials/socket/http/LoraTests.java %}
 {% endhighlight %}
+
+## Process HTTP Payload Using Groovy
+We assigned a Groovy binary decoder to the socket event source, so the payload of the HTTP request will
+be forwarded to a Groovy script for processing. The script will parse the binary data by unmarhaling 
+the JSON payload and extracting the fields we are interested in using for SiteWhere events. Copy 
+the contents of the script below into a new file **conf/global/scripts/groovy/decodeOSS.groovy** and
+save the changes. Since Groovy is dynamically recompiled, we do not have to restart the tenant to
+see the updates to the script.
+
+{% highlight java %}
+{% include tutorials/socket/http/decodeOSS.groovy %}
+{% endhighlight %}
+
+
