@@ -52,7 +52,7 @@ div.toc-h2 a {
 	margin-left: 12px;
 }
 
-div.highlight {
+figure.highlight pre {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	max-height: 400px;
