@@ -51,9 +51,20 @@ HTTP interaction handler will be chosen. In the **Add Component** dropdown, choo
 
 To parse the HTTP payload into SiteWhere events, a binary event decoder will need to be assigned to
 the event source. In this case, the HTTP payload will be parsed by a Groovy script so choose
-**Add Component** in the binary decoder block and choose **Groovy Binary Decoder** as shown below:
+**Add Component** in the binary decoder block and choose **Groovy Binary Event Decoder** as shown below:
 
 <a href="{{ site.url }}/images/tutorials/socket/http/http-groovy.png" data-lightbox="architecture" title="Groovy Decoder">
 	<img src="{{ site.url }}/images/tutorials/socket/http/http-groovy.png"/>
 </a>
 
+The Groovy script will be loaded from the **conf/global/scripts/groovy** folder by default. For the 
+script name, choose **decodeOSS.groovy** as shown below:
+
+<a href="{{ site.url }}/images/tutorials/socket/http/http-groovy-script.png" data-lightbox="architecture" title="Groovy Script">
+	<img src="{{ site.url }}/images/tutorials/socket/http/http-groovy-script.png"/>
+</a>
+
+
+{% highlight java %}
+{% include tutorials/socket/http/LoraTests.java %}
+{% endhighlight %}
