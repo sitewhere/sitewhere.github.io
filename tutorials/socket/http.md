@@ -49,3 +49,11 @@ HTTP interaction handler will be chosen. In the **Add Component** dropdown, choo
 	<img src="{{ site.url }}/images/tutorials/socket/http/http-config.png"/>
 </a>
 
+To parse the HTTP payload into SiteWhere events, a binary event decoder will need to be assigned to
+the event source. In this case, the HTTP payload will be parsed by a Groovy script so choose
+**Add Component** in the binary decoder block and choose **Groovy Binary Decoder** as shown below:
+
+<a href="{{ site.url }}/images/tutorials/socket/http/http-groovy.png" data-lightbox="architecture" title="Groovy Decoder">
+	<img src="{{ site.url }}/images/tutorials/socket/http/http-groovy.png"/>
+</a>
+
