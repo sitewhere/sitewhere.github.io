@@ -40,3 +40,12 @@ threads can be used to process the socket requests in parallel. An example confi
 	<img src="{{ site.url }}/images/tutorials/socket/http/socket-config.png"/>
 </a>
 
+Once the socket has been configured, an interaction handler should be assigned in order to control
+the way SiteWhere interacts with the socket data. In this case, the interaction uses HTTP, so the
+HTTP interaction handler will be chosen. In the **Add Component** dropdown, choose 
+**HTTP Socket Interaction Factory** as shown below:
+
+<a href="{{ site.url }}/images/tutorials/socket/http/http-config.png" data-lightbox="architecture" title="HTTP Configuration">
+	<img src="{{ site.url }}/images/tutorials/socket/http/http-config.png"/>
+</a>
+
