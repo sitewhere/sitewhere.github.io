@@ -68,12 +68,11 @@ install it locally.
 
 {% highlight bash %}
 cd /opt
-wget https://s3.amazonaws.com/sitewhere/sitewhere-server-1.6.0.tgz
-tar -zxvf sitewhere-server-1.6.0.tgz
-mv sitewhere-server-1.6.0 /opt/sitewhere
-export CATALINA_HOME=/opt/sitewhere
+wget https://s3.amazonaws.com/sitewhere/sitewhere-server-1.7.0.tgz
+tar -zxvf sitewhere-server-1.7.0.tgz
+mv sitewhere-server-1.7.0 /opt/sitewhere
+export SITEWHERE_HOME=/opt/sitewhere
 cd /opt/sitewhere/bin
-chmod +x *.sh
 sh startup.sh
 {% endhighlight %}
 
