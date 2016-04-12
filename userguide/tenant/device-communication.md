@@ -143,8 +143,7 @@ can be configured to make a call to the external REST service at a given interva
 parse the resulting data into payloads for decoding. The event source configures a base URL
 used to access the REST services as well as a script for controlling the requests
 to the service. The Groovy script is called at an interval, makes the REST call,
-then returns the list of payloads for decoding. Since the response is a list of payloads,
-a single REST response can generate multiple payloads. Each payload is then passed to a 
+then returns the list of payloads for decoding. Each payload is then passed to a 
 decoder as with any other event source. The configuration looks as follows:
 
 {% highlight xml %}
