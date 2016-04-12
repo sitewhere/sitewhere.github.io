@@ -136,6 +136,72 @@ The following attributes may be specified for the **socket-event-source** elemen
 | numThreads           | required | Queue that external clients post events to.                       
 | numConsumers         | required | Number of threads used to process client requests. Defaults to *5*.     
 
+### Polling REST Event Source
+Many systems do not offer the option of streaming data in real-time, but do offer
+REST services for accessing their data. In this case, a **polling-rest-event-source** 
+can be configured to make a call to the external REST service at a given interval and 
+parse the resulting data into device events. The event source configures a base URL
+used to access the REST services as well as a script for controlling the requests
+to the service. The Groovy script is called at an interval, makes the REST call,
+then returns the payload. The payload is then passed to a decoder as with any other
+event source. The configuration looks as follows:
+
+{% highlight xml %}
+<sw:device-communication>
+   
+	<!-- Inbound event sources -->
+	<sw:event-sources>
+
+		<!-- Event source for polling an external REST service -->
+		<sw:polling-rest-event-source baseUrl="http://rest.example.com/service" 
+			username="admin" password="password" pollIntervalMs="10000" 
+			scriptPath="parseREST.groovy" sourceId="rest" />
+{% endhighlight %}
+
+In the configuration above, SiteWhere will call the *parseREST.groovy* script
+(which should be located in the *conf/globals/scripts/groovy* folder every
+10 seconds. One of the variables, *rest* passed to the Groovy script is a handle
+to a [helper class](https://github.com/sitewhere/sitewhere/blob/master/sitewhere-groovy/src/main/java/com/sitewhere/groovy/device/communication/rest/RestHelper.java)
+that contains a [Spring RestTemplate](http://www.baeldung.com/rest-template) that has 
+been initialized with the base URL. By accessing the *getJsonNode* method of the *rest*
+object with the subpath to be added to the base URL, the REST call is made and a
+[JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.2.0/com/fasterxml/jackson/databind/JsonNode.html)
+is returned. After using the JsonNode to parse the JSON response, the payload should be
+added to the *payloads* variable, which contains a list of payloads that will be passed
+to the decoder to generate SiteWhere events.
+
+{% highlight groovy %}
+import com.fasterxml.jackson.databind.*
+import com.fasterxml.jackson.databind.node.*
+
+def nodes = rest.getJsonNode "nodes"
+
+for (JsonNode node : nodes) {
+	def deveui = node.get("deveui")
+	if (deveui != null) {
+		deveui = deveui.asText()
+		def entries = rest.getJsonNode "nodes/${deveui}/payloads/ul"
+		
+		for (JsonNode entry : entries) {
+			((ObjectNode) entry).put('id', deveui)
+			def payload = entry.toString().getBytes()
+			payloads.add payload
+		}
+	}
+}
+{% endhighlight %}
+
+The following attributes may be specified for the **polling-rest-event-source** element.
+
+| Attribute            | Required | Description                                      
+|----------------------|----------|--------------------------------------------------
+| sourceId             | required | Unique event source id.                          
+| pollIntervalMs       | required | Interval (in milliseconds) to wait between polling requests.     
+| scriptPath           | required | Path to a Groovy script that executes logic needed to generate REST request and parse response.                       
+| baseUrl              | required | Base URL used for REST requests. Within Groovy script, any REST calls are assumed relative to this base value.                       
+| username             | required | Username if REST services requires authentication.                       
+| password             | required | Password if REST services requires authentication.                       
+
 ### WebSocket Event Source
 A common connectivity option for IoT applications is interaction with a remote 
 [WebSocket](http://en.wikipedia.org/wiki/WebSocket). 
