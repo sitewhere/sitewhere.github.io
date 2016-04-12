@@ -140,11 +140,12 @@ The following attributes may be specified for the **socket-event-source** elemen
 Many systems do not offer the option of streaming data in real-time, but do offer
 REST services for accessing their data. In this case, a **polling-rest-event-source** 
 can be configured to make a call to the external REST service at a given interval and 
-parse the resulting data into device events. The event source configures a base URL
+parse the resulting data into payloads for decoding. The event source configures a base URL
 used to access the REST services as well as a script for controlling the requests
 to the service. The Groovy script is called at an interval, makes the REST call,
-then returns the payload. The payload is then passed to a decoder as with any other
-event source. The configuration looks as follows:
+then returns the list of payloads for decoding. Since the response is a list of payloads,
+a single REST response can generate multiple payloads. Each payload is then passed to a 
+decoder as with any other event source. The configuration looks as follows:
 
 {% highlight xml %}
 <sw:device-communication>
@@ -159,7 +160,7 @@ event source. The configuration looks as follows:
 {% endhighlight %}
 
 In the configuration above, SiteWhere will call the *parseREST.groovy* script
-(which should be located in the *conf/globals/scripts/groovy* folder every
+(which should be located in the *conf/globals/scripts/groovy* folder) every
 10 seconds. One of the variables, *rest* passed to the Groovy script is a handle
 to a [helper class](https://github.com/sitewhere/sitewhere/blob/master/sitewhere-groovy/src/main/java/com/sitewhere/groovy/device/communication/rest/RestHelper.java)
 that contains a [Spring RestTemplate](http://www.baeldung.com/rest-template) that has 
