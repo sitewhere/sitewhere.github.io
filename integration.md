@@ -68,6 +68,13 @@ Spark Streaming APIs and used as the input for [machine learning](http://spark.a
 and [graph processing](http://spark.apache.org/graphx/) modules available in Spark. See the complete
 [tutorial]({{ site.url }}/integration/spark.html) for an example application.
 
+### [HTTP Requests]({{ site.url }}/tutorials/socket/http.html)
+SiteWhere can be configured to accept HTTP requests from external platforms and parse the
+HTTP payload into device events. This [tutorial]({{ site.url }}/tutorials/socket/http.html) walks
+through an example where data is posted via HTTP and parsed using a Groovy script to 
+ingest the data into SiteWhere. This model can be used to implement web hooks and similar 
+strategies for relaying external data in non-standard formats.
+
 ## Data Storage and Visualization
 SiteWhere can be configured as to persist data in many different types of storage
 engines. By using visualization technologies that support the engines, SiteWhere
