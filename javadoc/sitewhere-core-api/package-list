@@ -31,6 +31,9 @@ com.sitewhere.rest.model.search.external
 com.sitewhere.rest.model.search.tenant
 com.sitewhere.rest.model.search.user
 com.sitewhere.rest.model.system
+com.sitewhere.rest.model.tenant
+com.sitewhere.rest.model.tenant.request
+com.sitewhere.rest.model.tenant.request.scripting
 com.sitewhere.rest.model.user
 com.sitewhere.rest.model.user.request
 com.sitewhere.spi
