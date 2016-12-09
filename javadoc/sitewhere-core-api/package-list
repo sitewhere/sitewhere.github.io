@@ -2,6 +2,7 @@ com.sitewhere.rest
 com.sitewhere.rest.model
 com.sitewhere.rest.model.asset
 com.sitewhere.rest.model.asset.request
+com.sitewhere.rest.model.asset.request.scripting
 com.sitewhere.rest.model.cache
 com.sitewhere.rest.model.command
 com.sitewhere.rest.model.common
@@ -23,8 +24,12 @@ com.sitewhere.rest.model.device.request
 com.sitewhere.rest.model.device.request.scripting
 com.sitewhere.rest.model.device.streaming
 com.sitewhere.rest.model.device.support
+com.sitewhere.rest.model.monitoring
+com.sitewhere.rest.model.resource
+com.sitewhere.rest.model.resource.request
 com.sitewhere.rest.model.scheduling
 com.sitewhere.rest.model.scheduling.request
+com.sitewhere.rest.model.scheduling.request.scripting
 com.sitewhere.rest.model.search
 com.sitewhere.rest.model.search.device
 com.sitewhere.rest.model.search.external
@@ -42,6 +47,7 @@ com.sitewhere.spi.asset.request
 com.sitewhere.spi.cache
 com.sitewhere.spi.command
 com.sitewhere.spi.common
+com.sitewhere.spi.configuration
 com.sitewhere.spi.device
 com.sitewhere.spi.device.asset
 com.sitewhere.spi.device.batch
@@ -64,6 +70,9 @@ com.sitewhere.spi.device.symbology
 com.sitewhere.spi.device.util
 com.sitewhere.spi.error
 com.sitewhere.spi.geospatial
+com.sitewhere.spi.monitoring
+com.sitewhere.spi.resource
+com.sitewhere.spi.resource.request
 com.sitewhere.spi.scheduling
 com.sitewhere.spi.scheduling.request
 com.sitewhere.spi.search
