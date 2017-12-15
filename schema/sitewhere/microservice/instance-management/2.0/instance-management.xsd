@@ -21,14 +21,29 @@
 	<!-- Top-level instance management elements -->
 	<xsd:complexType name="instanceManagementType">
 		<xsd:all>
-			<xsd:element ref="abstract-datastore-configuration">
+			<xsd:element name="persistence-configurations" type="persistenceConfigurationsType">
+				<xsd:annotation>
+					<xsd:documentation>
+						Captures reusable configuration information that
+						can be used by tenants to access common datastores.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+
+	<!-- Persistence configurations -->
+	<xsd:complexType name="persistenceConfigurationsType">
+		<xsd:sequence>
+			<xsd:element ref="abstract-datastore-configuration"
+				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>
 						Provides global datastore configuration.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-		</xsd:all>
+		</xsd:sequence>
 	</xsd:complexType>
 
 	<!-- Used as a placeholder for datastore configurations to allow substitutionGroups -->
