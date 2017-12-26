@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SiteWhere Server Configuration &mdash; SiteWhere 2.0.EA1 Community Edition documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/sitewhere.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="SiteWhere 2.0.EA1 Community Edition documentation" href="../../index.html"/>
+        <link rel="up" title="SiteWhere User Guide" href="../index.html"/>
+        <link rel="prev" title="SiteWhere User Guide" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SiteWhere
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.EA1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/index.html">SiteWhere Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">SiteWhere User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SiteWhere Server Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SiteWhere</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">SiteWhere User Guide</a> &raquo;</li>
+        
+      <li>SiteWhere Server Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sitewhere-server-configuration">
+<h1>SiteWhere Server Configuration<a class="headerlink" href="#sitewhere-server-configuration" title="Permalink to this headline">¶</a></h1>
+<p>When a SiteWhere server starts, it bootstraps using an XML configuration file
+which contains settings for various aspects such as the database location. Note
+that these settings are for the server as a whole and not the same ones used
+to configure individual tenants. Most users rarely (if ever) update the base server
+configuration. The server configuration file is located in the SiteWhere home
+directory in the <strong>conf</strong> folder and is named <strong>sitewhere-server.xml</strong>. Below
+is an example of the XML content.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
+	<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
+	<span class="na">xmlns:sw=</span><span class="s">&quot;http://www.sitewhere.com/schema/sitewhere/ce&quot;</span>
+	<span class="na">xsi:schemaLocation=</span><span class="s">&quot;</span>
+<span class="s">           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</span>
+<span class="s">           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd</span>
+<span class="s">           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd</span>
+<span class="s">           http://www.sitewhere.com/schema/sitewhere/ce http://www.sitewhere.org/schema/sitewhere/ce/current/sitewhere.xsd&quot;</span><span class="nt">&gt;</span>
+
+	<span class="c">&lt;!-- Load property values for substitution --&gt;</span>
+	<span class="nt">&lt;context:property-placeholder</span>
+		<span class="na">location=</span><span class="s">&quot;file:${sitewhere.home}/conf/sitewhere.properties&quot;</span>
+		<span class="na">ignore-resource-not-found=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+
+	<span class="c">&lt;!-- ########################### --&gt;</span>
+	<span class="c">&lt;!-- # SITEWHERE CONFIGURATION # --&gt;</span>
+	<span class="c">&lt;!-- ########################### --&gt;</span>
+	<span class="nt">&lt;sw:configuration</span> <span class="na">enableVersionCheck=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+
+		<span class="c">&lt;!-- ################################# --&gt;</span>
+		<span class="c">&lt;!-- # GLOBAL SERVICES CONFIGURATION # --&gt;</span>
+		<span class="c">&lt;!-- ################################# --&gt;</span>
+		<span class="nt">&lt;sw:globals&gt;</span>
+			<span class="nt">&lt;sw:hazelcast-configuration</span>
+				<span class="na">configFileLocation=</span><span class="s">&quot;${sitewhere.home}/conf/hazelcast.xml&quot;</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;sw:solr-configuration</span> <span class="na">solrServerUrl=</span><span class="s">&quot;http://localhost:8983/solr/SiteWhere&quot;</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;sw:groovy-configuration</span> <span class="na">debug=</span><span class="s">&quot;true&quot;</span>
+				<span class="na">verbose=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;/sw:globals&gt;</span>
+
+		<span class="c">&lt;!-- ################################## --&gt;</span>
+		<span class="c">&lt;!-- # GLOBAL DATASTORE CONFIGURATION # --&gt;</span>
+		<span class="c">&lt;!-- ################################## --&gt;</span>
+		<span class="nt">&lt;sw:datastore&gt;</span>
+
+			<span class="c">&lt;!-- MongoDB datastore used for global data model --&gt;</span>
+			<span class="nt">&lt;sw:mongo-datastore</span> <span class="na">hostname=</span><span class="s">&quot;${datastore.host}&quot;</span>
+				<span class="na">port=</span><span class="s">&quot;${datastore.port}&quot;</span> <span class="na">databaseName=</span><span class="s">&quot;${datastore.database}&quot;</span>
+				<span class="na">replicaSetName=</span><span class="s">&quot;${datastore.replicaset}&quot;</span> <span class="nt">/&gt;</span>
+
+			<span class="c">&lt;!-- Default HBase Datastore --&gt;</span>
+			<span class="c">&lt;!-- &lt;sw:hbase-datastore quorum=&quot;sandbox.hortonworks.com&quot; zookeeperZnodeParent=&quot;/hbase-unsecure&quot;/&gt; --&gt;</span>
+
+			<span class="c">&lt;!-- Initializes user model from Groovy script --&gt;</span>
+			<span class="nt">&lt;sw:groovy-user-model-initializer</span>
+				<span class="na">scriptPath=</span><span class="s">&quot;initializer/userModel.groovy&quot;</span> <span class="na">enabled=</span><span class="s">&quot;${user.init.enabled}&quot;</span> <span class="nt">/&gt;</span>
+
+			<span class="c">&lt;!-- Initializes tenant model from Groovy script --&gt;</span>
+			<span class="nt">&lt;sw:groovy-tenant-model-initializer</span>
+				<span class="na">scriptPath=</span><span class="s">&quot;initializer/tenantModel.groovy&quot;</span> <span class="na">enabled=</span><span class="s">&quot;${tenant.init.enabled}&quot;</span> <span class="nt">/&gt;</span>
+
+		<span class="nt">&lt;/sw:datastore&gt;</span>
+
+	<span class="nt">&lt;/sw:configuration&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span>
+</pre></div>
+</div>
+<p>This is text after the xml.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="SiteWhere User Guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SiteWhere LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.0.EA1 Community Edition',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

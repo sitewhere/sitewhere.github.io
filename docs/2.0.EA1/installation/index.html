@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SiteWhere Installation Guide &mdash; SiteWhere 2.0.EA1 Community Edition documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/sitewhere.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SiteWhere 2.0.EA1 Community Edition documentation" href="../index.html"/>
+        <link rel="next" title="SiteWhere User Guide" href="../userguide/index.html"/>
+        <link rel="prev" title="SiteWhere 2.0.EA1 CE Documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SiteWhere
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.EA1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SiteWhere Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#external-dependencies">External Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-mongodb">Install MongoDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-hivemq">Install HiveMQ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/index.html">SiteWhere User Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SiteWhere</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>SiteWhere Installation Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a class="reference internal image-reference" href="../_images/sitewhere-with-tagline.png"><img alt="SiteWhere" class="align-center" src="../_images/sitewhere-with-tagline.png" style="width: 560.0px; height: 177.1px;" /></a>
+<hr class="docutils" />
+<div class="section" id="sitewhere-installation-guide">
+<h1>SiteWhere Installation Guide<a class="headerlink" href="#sitewhere-installation-guide" title="Permalink to this headline">¶</a></h1>
+<p>This guide will help you install SiteWhere, whether you want to download an image directly
+from the SiteWhere downloads page, install an image via our public Docker repository, or
+build the project from source code.</p>
+<div class="section" id="external-dependencies">
+<h2>External Dependencies<a class="headerlink" href="#external-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>In its default configuration, SiteWhere expects some external services to be configured
+before the server is started. In particular, you need to have a database available to
+store device management and event data. The default tenant configuration also assumes
+an external MQTT broker is available so that there is a channel for sending data into
+the system.</p>
+<div class="section" id="install-mongodb">
+<h3>Install MongoDB<a class="headerlink" href="#install-mongodb" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="../_images/mongodb.png"><img alt="Device Management" src="../_images/mongodb.png" style="width: 120.0px; height: 39.9px;" /></a>
+</div>
+<p><a class="reference external" href="https://www.mongodb.com/">MongoDB</a> is a popular NoSQL database that is easy to install
+and delivers great performance for most SiteWhere installations. Based on the defult
+tenant configuration, SiteWhere will attempt to connect to a local MongoDB instance when
+the server bootstraps. MongoDB can be downloaded from the following link:</p>
+
+<p class="button-wrapper">
+<a href="https://www.mongodb.com/download-center#community" target="blank"><span class="button">Download MongoDB Community Edition</span></a>
+</p><p>After downloading MongoDB, follow the steps in the installation guide to install it on
+your SiteWhere server:</p>
+
+<p class="button-wrapper">
+<a href="https://docs.mongodb.com/manual/administration/install-community" target="blank"><span class="button">Install MongoDB Community Edition</span></a>
+</p><p>SiteWhere assumes that MongoDB is running on <em>localhost</em> on the default port (27017). If that is not
+the case, you will need to edit the <a class="reference internal" href="../userguide/configuration/server.html"><span class="doc">server configuration</span></a> file and update
+the hostname, port, and any other attributes.</p>
+</div>
+<div class="section" id="install-hivemq">
+<h3>Install HiveMQ<a class="headerlink" href="#install-hivemq" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../userguide/index.html" class="btn btn-neutral float-right" title="SiteWhere User Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="SiteWhere 2.0.EA1 CE Documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SiteWhere LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.0.EA1 Community Edition',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
