@@ -7,7 +7,7 @@ includeNavigation: false
 
 # {{page.title}}
 
-## Getting Started
+## Getting Started with SiteWhere
 
 [System Overview]({{ site.url }}/overview.html) - A high-level overview of what SiteWhere does
 and the technologies it uses.
