@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SiteWhere Deployment Guide &mdash; SiteWhere 2.0.EA1 Community Edition documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/sitewhere.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SiteWhere 2.0.EA1 Community Edition documentation" href="../index.html"/>
+        <link rel="next" title="SiteWhere User Guide" href="../userguide/index.html"/>
+        <link rel="prev" title="SiteWhere Architecture" href="../architecture/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SiteWhere
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.EA1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">SiteWhere Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SiteWhere Deployment Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-docker-and-docker-compose">Installing Docker and Docker Compose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-sitewhere-recipes-to-build-an-instance">Using SiteWhere Recipes to Build an Instance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/index.html">SiteWhere User Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SiteWhere</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>SiteWhere Deployment Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a class="reference internal image-reference" href="../_images/sitewhere-with-tagline.png"><img alt="SiteWhere" class="align-center" src="../_images/sitewhere-with-tagline.png" style="width: 560.0px; height: 177.1px;" /></a>
+<hr class="docutils" />
+<div class="section" id="sitewhere-deployment-guide">
+<h1>SiteWhere Deployment Guide<a class="headerlink" href="#sitewhere-deployment-guide" title="Permalink to this headline">¶</a></h1>
+<p>This guide will cover the SiteWhere 2.0 deployment process which has changed
+significantly from the one used for SiteWhere 1.x. While previous versions
+of SiteWhere were deployed as a single server node, the SiteWhere 2.0
+architecture is based on many microservices which are deployed to a
+<a class="reference external" href="https://www.docker.com/">Docker</a> infrastructure.</p>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Because SiteWhere 2.0 uses a microservices architecture, the number of
+processes running concurrently has increased, which in turn requires
+more memory and processing power. The minimum hardware specifications
+for a single machine running a SiteWhere instance is:</p>
+<ul class="simple">
+<li>16GB RAM</li>
+<li>2 CPUs</li>
+<li>80GB Hard disk/SSD</li>
+</ul>
+<p>When distributing microservices across multiple machines using
+<a class="reference external" href="https://github.com/docker/swarm">Docker Swarm</a> or other orchestration
+technologies, the per-machine requirements can be lower since the load
+is distributed.</p>
+<p>Another consideration in deploying SiteWhere is whether the
+<a class="reference external" href="https://kafka.apache.org/">Apache Kafka</a> and
+<a class="reference external" href="https://zookeeper.apache.org/">Apache ZooKeeper</a> instances are running
+in Docker or managed separately. In production environments, Kafka and
+ZooKeeper clusters should be managed externally from the SiteWhere instance
+using best practices defined by the individual technologies. The SiteWhere
+team will release more information on preferred topologies as the 2.0
+architecture nears general availability.</p>
+</div>
+<div class="section" id="installing-docker-and-docker-compose">
+<h2>Installing Docker and Docker Compose<a class="headerlink" href="#installing-docker-and-docker-compose" title="Permalink to this headline">¶</a></h2>
+<p>SiteWhere 2.0 uses Docker as the core deployment model since the technology
+is supported in all major cloud environments in addition to being easy to
+use for on-premise installations. For single-machine installations, Docker
+Engine can be installed based on the process detailed in the link below:</p>
+
+<p class="button-wrapper">
+<a href="https://docs.docker.com/engine/installation/" target="blank"><span class="button">Install Docker Engine</span></a>
+</p><p>In Addition to Docker Engine, some form of orchestration engine should be installed
+to allow for many Docker services to be deployed at once rather than manually
+deploying them individually. <a class="reference external" href="https://docs.docker.com/compose/install/">Docker Compose</a>
+provides a simple methodology for deploying many services at once, so it is the
+preferred deployment model for bootstrapping a local SiteWhere instance. Start by
+downloading and installing Docker Compose as detailed below:</p>
+
+<p class="button-wrapper">
+<a href="https://docs.docker.com/compose/install/" target="blank"><span class="button">Install Docker Compose</span></a>
+</p></div>
+<div class="section" id="using-sitewhere-recipes-to-build-an-instance">
+<h2>Using SiteWhere Recipes to Build an Instance<a class="headerlink" href="#using-sitewhere-recipes-to-build-an-instance" title="Permalink to this headline">¶</a></h2>
+<p>Since the architecture and system configuration for SiteWhere allow for many
+different combinations of components for developing custom systems, the
+SiteWhere team provides a list of common recipes for common system configurations
+that acts as a starting point for building instances. The repository for
+SiteWhere 2.0 recipes can be accessed via the link below:</p>
+
+<p class="button-wrapper">
+<a href="https://github.com/sitewhere/sitewhere-recipes" target="blank"><span class="button">SiteWhere Recipes Repository</span></a>
+</p><p>Start by cloning the recipes repository to the machine where you have the
+Docker environment configured. The repository can be cloned with the following
+command:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>git clone https://github.com/sitewhere/sitewhere-recipes.git
+</pre></div>
+</div>
+<p>Once the repository has been cloned, navigate into the <strong>sitewhere-recipes/docker-compose</strong>
+subdirectory. This directory contains sample configurations for many common SiteWhere
+deployment scenarios. As an example, navigate to the <strong>simple-debug/sitewhere</strong> subdirectory
+then execute the following command which will start a SiteWhere instance based on the
+configuration outlined in the <strong>docker-compose.yml</strong> file.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>docker-compose up
+</pre></div>
+</div>
+<p>Docker compose will begin launching the SiteWhere microservices and all of the dependencies
+such as ZooKeeper, Kafka, and MongoDB. The log output is a combination of the output for all
+of the individual microservices and supporting technologies.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../userguide/index.html" class="btn btn-neutral float-right" title="SiteWhere User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../architecture/index.html" class="btn btn-neutral" title="SiteWhere Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SiteWhere LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.0.EA1 Community Edition',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
