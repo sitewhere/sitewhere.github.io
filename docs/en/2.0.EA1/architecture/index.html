@@ -97,18 +97,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#microservices">Microservices</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#separation-of-concerns">Separation of Concerns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scale-what-you-need-leave-out-what-you-don-t">Scale What You Need. Leave Out What You Don’t</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#global-vs-multitenant-microservices">Global vs. Multitenant Microservices</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#instance-management">Instance Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-management-with-apache-zookeeper">Configuration Management with Apache ZooKeeper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#event-processing-with-apache-kafka">Event Processing with Apache Kafka</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inter-microservice-communication-with-grpc">Inter-Microservice Communication with GRPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#common-data-model-and-apis">Common Data Model and APIs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#grpc-model-and-services">GRPC Model and Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#distributed-multitenancy">Distributed Multitenancy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-microservices">Global Microservices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multitenant-microservices">Multitenant Microservices</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#data-persistence-abstraction">Data Persistence Abstraction</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">SiteWhere Installation Guide</a></li>
@@ -208,15 +207,11 @@ system and should continue to pay dividends as more features are added.</p>
 </div>
 <div class="section" id="scale-what-you-need-leave-out-what-you-don-t">
 <h3>Scale What You Need. Leave Out What You Don’t<a class="headerlink" href="#scale-what-you-need-leave-out-what-you-don-t" title="Permalink to this headline">¶</a></h3>
-<p>The 2.0 architecture allows individual functional areas of the system to be scaled
+<p>The microservice architecture allows individual functional areas of the system to be scaled
 independently or left out completely. In use cases where REST processing tends to
-be a bottleneck, multiple REST services can be run concurrently to handle the load.
-Conversely, services such as presence management may not be needed and can be left
+be a bottleneck, multiple REST microservices can be run concurrently to handle the load.
+Conversely, services such as presence management that may not be required can be left
 out so that processing power can be dedicated to other aspects of the system.</p>
-</div>
-<div class="section" id="global-vs-multitenant-microservices">
-<h3>Global vs. Multitenant Microservices<a class="headerlink" href="#global-vs-multitenant-microservices" title="Permalink to this headline">¶</a></h3>
-<p>SiteWhere implements two types of microservices.</p>
 </div>
 </div>
 <div class="section" id="instance-management">
@@ -230,7 +225,7 @@ can be spread across tens or hundreds of machines using technologies such as
 </div>
 <div class="section" id="configuration-management-with-apache-zookeeper">
 <h2>Configuration Management with Apache ZooKeeper<a class="headerlink" href="#configuration-management-with-apache-zookeeper" title="Permalink to this headline">¶</a></h2>
-<p>SiteWhere 2.0 has moved system configuration from the filesystem into
+<p>SiteWhere 2.0 moves system configuration from the filesystem into
 <a class="reference external" href="https://zookeeper.apache.org/">Apache ZooKeeper</a> to allow for a centralized,
 coordinated approach to configuration management. ZooKeeper contains a
 hierarchical structure which represents the configuration for a SiteWhere instance
@@ -244,23 +239,74 @@ keeping services in sync as system configuration is updated.</p>
 </div>
 <div class="section" id="event-processing-with-apache-kafka">
 <h2>Event Processing with Apache Kafka<a class="headerlink" href="#event-processing-with-apache-kafka" title="Permalink to this headline">¶</a></h2>
-<p>SiteWhere microservices are connected using Apache Kafka.</p>
+<p>The event processing pipeline in SiteWhere 2.0 has been completely redesigned and uses
+<a class="reference external" href="https://kafka.apache.org/">Apache Kafka</a> to provide a resilient, high-performance
+mechanism for progressively processing device event data. Each microservice plugs into
+key points in the event processing pipeline, reading data from well-known inbound topics,
+processing data, then sending data to well-known outbound topics. External entites that
+are interested in data at any point in the pipeline can act as consumers of the SiteWhere
+topics to use the data as it move through the system.</p>
+<p>In the SiteWhere 1.x architecture, the pipeline for outbound processing used a blocking
+approach which meant that any single outbound processor could block the outbound pipeline.
+In SiteWhere 2.0, each outbound consumer is a true Kafka consumer with its own offset
+marker into the event stream. This mechanism allows for outbound processors to process data
+at their own pace without slowing down other processors.</p>
+<p>Using Kafka also has other advantages that are leveraged by SiteWhere. Since all data for
+the distributed log is stored on disk, it is possible to “replay” the event stream based
+on previously gathered data. This is extremely valuable for aspects such as debugging
+processing logic or load testing the system.</p>
 </div>
 <div class="section" id="inter-microservice-communication-with-grpc">
 <h2>Inter-Microservice Communication with GRPC<a class="headerlink" href="#inter-microservice-communication-with-grpc" title="Permalink to this headline">¶</a></h2>
-<p>Microservices communicate directly with each other via high-performance GRPC pipes.</p>
+<p>While device event data generally flows in a pipeline from microservice to microservice on
+Kafka topics, there are some operations that need to occur directly between microservices.
+For instance, device management and event management persistence are each contained in
+separate microservices, so as new events come in to the system, the inbound processing microservice
+has to connect with the event persistence microservice to store the events. SiteWhere 2.0
+uses <a class="reference external" href="https://grpc.io/">GRPC</a> to establish a long-lived connection between microservices
+that need to communicate with each other. Since GRPC uses persistent HTTP2 connections,
+the overhead for interactions is greatly reduced, allowing for decoupling without a
+significant performance penalty.</p>
+<p>The entire SiteWhere data model has been captured in
+<a class="reference external" href="https://developers.google.com/protocol-buffers/">Google Protocol Buffers</a> format so that
+it can be used within GRPC services. All of the SiteWhere APIs are now exposed directly as
+GRPC services as well, allowing for high-performance, low-latency access to what was previously
+only accessible via REST. The REST APIs are still made available via the Web/REST microservice,
+but they use the GRPC APIs underneath to provide a consistent approach to accessing data.</p>
+<p>Since the number of instances of a given microservice can change over time as the service is
+scaled up or down, SiteWhere automatically handles the process of connecting/disconnecting the
+GRPC pipes between microservices. Each outbound GRPC client is demulitplexed across the pool
+of services that can satisfy the requests, allowing the requests to be processed in parallel.</p>
 </div>
-<div class="section" id="common-data-model-and-apis">
-<h2>Common Data Model and APIs<a class="headerlink" href="#common-data-model-and-apis" title="Permalink to this headline">¶</a></h2>
-<p>SiteWhere provides a common object model for IoT entities such as devices and
-events.</p>
-<div class="section" id="grpc-model-and-services">
-<h3>GRPC Model and Services<a class="headerlink" href="#grpc-model-and-services" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="distributed-multitenancy">
+<h2>Distributed Multitenancy<a class="headerlink" href="#distributed-multitenancy" title="Permalink to this headline">¶</a></h2>
+<p>The SiteWhere 1.x approach to multitenancy was to use a separate “tenant engine” for each tenant.
+The engine supported all tenant-specific tasks such as data persistence, event processing, etc.
+Since SiteWhere 2.0 has moved to a microservices architecture, the multitenant model has been
+distributed as well. SiteWhere supports two types of microservices: global and multitenant.</p>
+<div class="section" id="global-microservices">
+<h3>Global Microservices<a class="headerlink" href="#global-microservices" title="Permalink to this headline">¶</a></h3>
+<p>Global microservices do not handle tenant-specific tasks. These services handle aspects such
+as instance-wide user management and tenant management that are not specific to individual
+system tenants. The Web/REST microservice that supports the administrative application and
+REST services is a global service, since supporting a separate web container for each tenant
+would be cumbersome and would break existing SiteWhere 1.x applications. There is also a
+global instance management microservice that monitors various aspects of the entire instance
+and reports updates to the individual microservces via Kafka.</p>
 </div>
+<div class="section" id="multitenant-microservices">
+<h3>Multitenant Microservices<a class="headerlink" href="#multitenant-microservices" title="Permalink to this headline">¶</a></h3>
+<p>Most of the SiteWhere 2.0 services are multitenant microservices which delegate traffic
+to tenant engines that do the actual processing. For instance, the inbound processing microservice
+actually consists of many inbound processing tenant engines, each of which is configured separately
+and can be started/stopped/reconfigured without affecting other tenant engines.</p>
+<p>The new approach to tenant engines changes the dynamics of SiteWhere event processing. It is now
+possible to stop a single tenant engine without the need for stopping tenant engines running in
+other microservices. For instance, inbound processing for a tenant can be stopped
+and reconfigured while the rest of the tenant pipeline continues processing.
+Since new events can be allowed to stack up in Kafka, the tenant engine can be stopped, reconfigured,
+and restarted, then resume where it left off with no data loss.</p>
 </div>
-<div class="section" id="data-persistence-abstraction">
-<h2>Data Persistence Abstraction<a class="headerlink" href="#data-persistence-abstraction" title="Permalink to this headline">¶</a></h2>
-<p>Data can be persisted into multiple backends.</p>
 </div>
 </div>
 
