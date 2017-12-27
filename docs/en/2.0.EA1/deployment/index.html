@@ -177,11 +177,23 @@ architecture is based on many microservices which are deployed to a
 processes running concurrently has increased, which in turn requires
 more memory and processing power. The minimum hardware specifications
 for a single machine running a SiteWhere instance is:</p>
-<ul class="simple">
-<li>16GB RAM</li>
-<li>2 CPUs</li>
-<li>80GB Hard disk/SSD</li>
-</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Memory</td>
+<td>16GB RAM</td>
+</tr>
+<tr class="row-even"><td>CPU</td>
+<td>2 CPUs</td>
+</tr>
+<tr class="row-odd"><td>Hard Disk/SSD</td>
+<td>80GB</td>
+</tr>
+</tbody>
+</table>
 <p>When distributing microservices across multiple machines using
 <a class="reference external" href="https://github.com/docker/swarm">Docker Swarm</a> or other orchestration
 technologies, the per-machine requirements can be lower since the load
