@@ -153,7 +153,7 @@
 	</xsd:complexType>
 
 	<!-- Configuration data for Solr services -->
-	<xsd:element name="solr-configuration" type="solrConfigurationType"
+	<xsd:element name="solr-configurations" type="solrConfigurationType"
 		substitutionGroup="abstract-connector-configuration">
 		<xsd:annotation>
 			<xsd:documentation>Global configuration settings for Apache Solr.
@@ -163,10 +163,57 @@
 	<xsd:complexType name="solrConfigurationType">
 		<xsd:complexContent>
 			<xsd:extension base="abstractConnectorConfigurationType">
-				<xsd:attribute name="solrServerUrl" type="xsd:string"
-					use="optional">
+				<xsd:sequence>
+					<xsd:element name="default-solr-configuration" type="defaultSolrConfigurationType"
+						minOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Default configuration settings for Apache Solr
+								connectors.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="alternate-solr-configuration" type="alternateSolrConfigurationType"
+						minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Alternate configuration settings for Apache
+								Solr connectors.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<!-- Base configuration settings for Apache Solr connectors -->
+	<xsd:complexType name="solrConfigurationBase">
+		<xsd:attribute name="solrServerUrl" type="xsd:string"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>URL used by Solr client to access server.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<!-- Default configuration for Solr connector -->
+	<xsd:complexType name="defaultSolrConfigurationType">
+		<xsd:complexContent>
+			<xsd:extension base="solrConfigurationBase">
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<!-- Alternate configuration for Solr connector -->
+	<xsd:complexType name="alternateSolrConfigurationType">
+		<xsd:complexContent>
+			<xsd:extension base="solrConfigurationBase">
+				<xsd:attribute name="id" type="xsd:string">
 					<xsd:annotation>
-						<xsd:documentation>URL used by Solr client to access server.
+						<xsd:documentation>
+							Unique id for Solr configuration.
 						</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
