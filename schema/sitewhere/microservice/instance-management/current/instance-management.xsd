@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema
 	xmlns="http://sitewhere.io/schema/sitewhere/microservice/instance-management"
-	xmlns:sw="http://sitewhere.io/schema/sitewhere/microservice/common"
+	xmlns:ds="http://sitewhere.io/schema/sitewhere/microservice/common/datastore"
+	xmlns:cn="http://sitewhere.io/schema/sitewhere/microservice/common/connector"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://sitewhere.io/schema/sitewhere/microservice/instance-management"
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<xsd:import namespace="http://sitewhere.io/schema/sitewhere/microservice/common"
-		schemaLocation="http://sitewhere.io/schema/sitewhere/microservice/common/current/microservice-common.xsd" />
+	<xsd:import
+		namespace="http://sitewhere.io/schema/sitewhere/microservice/common/datastore"
+		schemaLocation="http://sitewhere.io/schema/sitewhere/microservice/common/current/datastore-common.xsd" />
+	<xsd:import
+		namespace="http://sitewhere.io/schema/sitewhere/microservice/common/connector"
+		schemaLocation="http://sitewhere.io/schema/sitewhere/microservice/common/current/connector-common.xsd" />
 
 	<xsd:element name="instance-management" type="instanceManagementType">
 		<xsd:annotation>
@@ -108,7 +113,7 @@
 
 	<!-- Default MongoDB datastore configuration -->
 	<xsd:complexType name="defaultMongoDatastoreConfigurationType">
-		<xsd:attributeGroup ref="sw:mongo-attributes" />
+		<xsd:attributeGroup ref="ds:mongo-attributes" />
 	</xsd:complexType>
 
 	<!-- Alternate MongoDB datastore configuration -->
@@ -120,7 +125,7 @@
 				</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attributeGroup ref="sw:mongo-attributes" />
+		<xsd:attributeGroup ref="ds:mongo-attributes" />
 	</xsd:complexType>
 
 	<!-- Connector configurations -->
@@ -187,37 +192,20 @@
 		</xsd:complexContent>
 	</xsd:complexType>
 
-	<!-- Base configuration settings for Apache Solr connectors -->
-	<xsd:complexType name="solrConfigurationBase">
-		<xsd:attribute name="solrServerUrl" type="xsd:string"
-			use="optional">
-			<xsd:annotation>
-				<xsd:documentation>URL used by Solr client to access server.
-				</xsd:documentation>
-			</xsd:annotation>
-		</xsd:attribute>
-	</xsd:complexType>
-
 	<!-- Default configuration for Solr connector -->
 	<xsd:complexType name="defaultSolrConfigurationType">
-		<xsd:complexContent>
-			<xsd:extension base="solrConfigurationBase">
-			</xsd:extension>
-		</xsd:complexContent>
+		<xsd:attributeGroup ref="cn:solr-attributes" />
 	</xsd:complexType>
 
 	<!-- Alternate configuration for Solr connector -->
 	<xsd:complexType name="alternateSolrConfigurationType">
-		<xsd:complexContent>
-			<xsd:extension base="solrConfigurationBase">
-				<xsd:attribute name="id" type="xsd:string">
-					<xsd:annotation>
-						<xsd:documentation>
-							Unique id for Solr configuration.
-						</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:extension>
-		</xsd:complexContent>
+		<xsd:attribute name="id" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					Unique id for Solr configuration.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attributeGroup ref="cn:solr-attributes" />
 	</xsd:complexType>
 </xsd:schema>
