@@ -40,6 +40,30 @@
 	<xsd:complexType name="abstractRuleProcessorType">
 	</xsd:complexType>
 
+	<!-- Common rule processor element information -->
+	<xsd:complexType name="abstractRuleProcessorType">
+		<xsd:attributeGroup ref="rule-processor-attributes" />
+	</xsd:complexType>
+
+	<!-- Attributes common to all rule processors -->
+	<xsd:attributeGroup name="rule-processor-attributes">
+		<xsd:attribute name="processorId" type="xsd:token" use="required">
+			<xsd:annotation>
+				<xsd:documentation>
+					Unique identifier for rule processor.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="numProcessingThreads" type="xsd:int">
+			<xsd:annotation>
+				<xsd:documentation>
+					Number of processing threads used to pull events
+					from Kafka and into rule processor.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+
 	<!-- Zone test processor -->
 	<xsd:element name="zone-test-processor" type="zoneTestProcessorType"
 		substitutionGroup="abstract-rule-processor">
