@@ -40,8 +40,8 @@
 	<xsd:complexType name="abstractRuleProcessorType">
 	</xsd:complexType>
 
-	<!-- Zone test rule processor -->
-	<xsd:element name="zone-test-rule-processor" type="zoneTestRuleProcessorType"
+	<!-- Zone test processor -->
+	<xsd:element name="zone-test-processor" type="zoneTestProcessorType"
 		substitutionGroup="abstract-rule-processor">
 		<xsd:annotation>
 			<xsd:documentation>
@@ -52,7 +52,7 @@
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
-	<xsd:complexType name="zoneTestRuleProcessorType">
+	<xsd:complexType name="zoneTestProcessorType">
 		<xsd:complexContent>
 			<xsd:extension base="abstractRuleProcessorType">
 				<xsd:sequence>
