@@ -38,10 +38,6 @@
 
 	<!-- Common rule processor element information -->
 	<xsd:complexType name="abstractRuleProcessorType">
-	</xsd:complexType>
-
-	<!-- Common rule processor element information -->
-	<xsd:complexType name="abstractRuleProcessorType">
 		<xsd:attributeGroup ref="rule-processor-attributes" />
 	</xsd:complexType>
 
