@@ -269,22 +269,23 @@ repository can be added as an override by adding the following lines the
 </div>
 <p>SiteWhere includes Gradle <a class="reference external" href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Wrapper</a>
 artifacts, so that there is no need to install Gradle independently. To build all of the core
-libraries, package the microservices into Docker images, then push them into your local
+libraries, package the microservices into Docker images and push them into your local
 repository, execute the following command.</p>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>gradlew clean dockerImage
 </pre></div>
 </div>
-<p>The first time the build executes will take longer since Gradle must download all of the
-dependencies and cache them for later use. When the build script completes, execute the
-following command to view the list of Docker images which should now include images for
-all of the SiteWhere microservices:</p>
+<p>The first time the build executes will take significantly longer since Gradle
+must download all of the dependencies and cache them for later use. When
+the build script completes, execute the following command to view the
+list of Docker images which should now include images for all of the
+SiteWhere microservices:</p>
 <img alt="../_images/docker-image-list.png" src="../_images/docker-image-list.png" />
 </div>
 </div>
 <div class="section" id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>Now that Docker images have been generated for the microservices, follow the steps in the
-deployment guide to use SiteWhere recipes to assemble the microservices into a working
+deployment guide to use SiteWhere recipes that assemble the microservices into a working
 instance.</p>
 </div>
 </div>
