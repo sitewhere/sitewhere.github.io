@@ -89,7 +89,7 @@
 			<xsd:extension base="abstractPersistenceConfigurationType">
 				<xsd:sequence>
 					<xsd:element name="mongodb-configuration" type="mongoDatastoreConfigurationType"
-						minOccurs="0">
+						minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
 							<xsd:documentation>
 								Configuration data for MongoDB datastores.
@@ -128,7 +128,7 @@
 			<xsd:extension base="abstractPersistenceConfigurationType">
 				<xsd:sequence>
 					<xsd:element name="influxdb-configuration" type="influxDatastoreConfigurationType"
-						minOccurs="0">
+						minOccurs="0" maxOccurs="unbounded">
 						<xsd:annotation>
 							<xsd:documentation>
 								Configuration data for MongoDB datastores.
