@@ -128,6 +128,60 @@
 		<xsd:attributeGroup ref="ds:mongo-attributes" />
 	</xsd:complexType>
 
+	<!-- InfluxDB persistence configuration elements -->
+	<xsd:element name="influxdb-configurations" type="influxConfigurationsType"
+		substitutionGroup="abstract-persistence-configuration">
+		<xsd:annotation>
+			<xsd:documentation>
+				Provides global datastore configuration using
+				MongoDB for persistence.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="influxConfigurationsType">
+		<xsd:complexContent>
+			<xsd:extension base="abstractPersistenceConfigurationType">
+				<xsd:sequence>
+					<xsd:element name="default-influxdb-configuration"
+						type="defaultInfluxDatastoreConfigurationType" minOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>
+								Default configuration data for InfluxDB
+								datastores.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="alternate-influxdb-configuration"
+						type="alternateInfluxDatastoreConfigurationType" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Alternate configuration data for MongoDB
+								datastores.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<!-- Default InfluxDB datastore configuration -->
+	<xsd:complexType name="defaultInfluxDatastoreConfigurationType">
+		<xsd:attributeGroup ref="ds:influx-attributes" />
+	</xsd:complexType>
+
+	<!-- Alternate InfluxDB datastore configuration -->
+	<xsd:complexType name="alternateInfluxDatastoreConfigurationType">
+		<xsd:attribute name="id" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					Unique id for datastore configuration.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attributeGroup ref="ds:influx-attributes" />
+	</xsd:complexType>
+
 	<!-- Connector configurations -->
 	<xsd:complexType name="connectorConfigurationsType">
 		<xsd:sequence>
