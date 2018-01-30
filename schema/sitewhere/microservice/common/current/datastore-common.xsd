@@ -21,6 +21,28 @@
 	<!-- Common datastore information -->
 	<xsd:complexType name="abstractDatastoreType" />
 
+	<!-- Choices for potential device management datastores -->
+	<xsd:element name="device-management-datastore">
+		<xsd:complexType>
+			<xsd:choice>
+				<xsd:element ref="mongodb-datastore" />
+				<xsd:element ref="mongodb-datastore-reference" />
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- Choices for potential event management datastores -->
+	<xsd:element name="event-management-datastore">
+		<xsd:complexType>
+			<xsd:choice>
+				<xsd:element ref="mongodb-datastore" />
+				<xsd:element ref="mongodb-datastore-reference" />
+				<xsd:element ref="influxdb-datastore" />
+				<xsd:element ref="influxdb-datastore-reference" />
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+
 	<!-- Alternate MongoDB datastore reference -->
 	<xsd:element name="mongodb-datastore-reference" type="mongoDatastoreReferenceType"
 		substitutionGroup="abstract-datastore">
