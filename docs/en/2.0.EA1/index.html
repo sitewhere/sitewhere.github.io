@@ -170,20 +170,53 @@ and dynamic scalability using technologies such as Apache Kafka and Docker.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="platform/index.html">SiteWhere Platform Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="platform/architecture.html">SiteWhere Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="platform/features.html">New Platform 2.0 Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform/architecture.html">SiteWhere Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="platform/architecture.html#microservices">Microservices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="platform/architecture.html#instance-management">Instance Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="platform/architecture.html#configuration-management-with-apache-zookeeper">Configuration Management with Apache ZooKeeper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="platform/architecture.html#event-processing-with-apache-kafka">Event Processing with Apache Kafka</a></li>
+<li class="toctree-l3"><a class="reference internal" href="platform/architecture.html#inter-microservice-communication-with-grpc">Inter-Microservice Communication with GRPC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="platform/architecture.html#distributed-multitenancy">Distributed Multitenancy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="platform/features.html">New Platform 2.0 Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="platform/features.html#centralized-configuration-management">Centralized Configuration Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="platform/features.html#improved-administrative-user-interface">Improved Administrative User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="platform/features.html#security">Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="platform/features.html#data-model">Data Model</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development/index.html">SiteWhere Development Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="development/index.html#accessing-source-code-on-github">Accessing Source Code on GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development/index.html#building-from-source">Building from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development/index.html#accessing-source-code-on-github">Accessing Source Code on GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="development/index.html#branch-structure-for-repository">Branch Structure for Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development/index.html#pulling-source-code-from-github">Pulling Source Code From GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="development/index.html#building-from-source">Building from Source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="development/index.html#install-java-8">Install Java 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development/index.html#install-docker-engine">Install Docker Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development/index.html#execute-gradle-build-script">Execute Gradle Build Script</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="development/index.html#next-steps">Next Steps</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="deployment/index.html">SiteWhere Deployment Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="deployment/index.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment/index.html#installing-docker-and-docker-compose">Installing Docker and Docker Compose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment/index.html#using-sitewhere-recipes-to-build-an-instance">Using SiteWhere Recipes to Build an Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/index.html#installing-docker-and-docker-compose">Installing Docker and Docker Compose</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="deployment/index.html#install-docker-compose">Install Docker Compose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deployment/index.html#enable-swarm-mode">Enable Swarm Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/index.html#using-sitewhere-recipes-to-build-an-instance">Using SiteWhere Recipes to Build an Instance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="deployment/index.html#clone-the-recipes-repository">Clone the Recipes Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deployment/index.html#start-infrastructure-recipe">Start Infrastructure Recipe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deployment/index.html#start-sitewhere-microservices">Start SiteWhere Microservices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deployment/index.html#system-log-output">System Log Output</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="userguide/index.html">SiteWhere User Guide</a><ul>
