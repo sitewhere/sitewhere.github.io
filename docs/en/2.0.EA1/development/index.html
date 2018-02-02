@@ -252,6 +252,10 @@ a local copy of Docker Engine as explained below:</p>
 </p><p>Verify that Docker Engine has been installed successfully by running the command
 below:</p>
 <img alt="../_images/docker-engine-version.png" src="../_images/docker-engine-version.png" />
+<p>Configure the Docker daemon is to listen on TCP port 2375. This is the default API
+port, but most installations do not enable the port by default. An example of the
+required update for Ubuntu 16.04 can be found
+<a class="reference external" href="https://www.ivankrizsan.se/2016/05/18/enabling-docker-remote-api-on-ubuntu-16-04/">here</a>.</p>
 </div>
 <div class="section" id="execute-gradle-build-script">
 <h3>Execute Gradle Build Script<a class="headerlink" href="#execute-gradle-build-script" title="Permalink to this headline">¶</a></h3>
@@ -260,7 +264,7 @@ script (<em>build.gradle</em>) that compiles the Java code, packages it into Doc
 the images to a Docker repository. By default, the Gradle script will attempt to
 push the images to a repository running on <em>localhost</em>. Information for another
 repository can be added as an override by adding the following lines the
-<em>gradle.properties</em> file in your default user directory:</p>
+<em>gradle.properties</em> (or <em>~/.gradle</em> on Unix) file in your default user directory:</p>
 <div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">dockerProtocol</span><span class="o">=</span><span class="s">tcp</span>
 <span class="na">dockerHostname</span><span class="o">=</span><span class="s">192.168.171.100</span>
 <span class="na">dockerPort</span><span class="o">=</span><span class="s">2375</span>
