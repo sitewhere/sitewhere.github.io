@@ -108,7 +108,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#tenant-management-workflow-improvements">Tenant Management Workflow Improvements</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#security">Security</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#improved-scripting-support">Improved Scripting Support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#script-storage-and-metadata">Script Storage and Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#script-versioning">Script Versioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scripting-user-interface">Scripting User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#security-improvements">Security Improvements</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#json-web-token">JSON Web Token</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#updated-security-headers">Updated Security Headers</a></li>
 </ul>
@@ -257,25 +263,89 @@ failed to start.</p>
 <img alt="../_images/tenant-management.png" src="../_images/tenant-management.png" />
 </div>
 </div>
-<div class="section" id="security">
-<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
-<p>Security features added</p>
+<div class="section" id="improved-scripting-support">
+<h2>Improved Scripting Support<a class="headerlink" href="#improved-scripting-support" title="Permalink to this headline">¶</a></h2>
+<p>Many aspects of the SiteWhere platform rely on pluggable scripts
+to allow for customized processing behaviors. In SiteWhere 1.x,
+scripts were stored on the filesystem and were not managed as first
+class entities. SiteWhere 2.0 provides much more comprehensive
+support for scripting and adds many new script management features.
+A library of customized scripts can be quickly developed directly
+from within the SiteWhere administrative application and shared
+across the entire distributed system without any manual intervention.</p>
+<div class="section" id="script-storage-and-metadata">
+<h3>Script Storage and Metadata<a class="headerlink" href="#script-storage-and-metadata" title="Permalink to this headline">¶</a></h3>
+<p>In SiteWhere 2.0, scripts are stored in the central ZooKeeper tree,
+which allows for a publish/subscribe strategy where nodes can listen
+for script updates they are interested in. In addition to the script
+content, a metadata structure has been added so that other aspects
+such as a human-readable name, description, script language, and
+other attributes may be captured. New APIs have been added, allowing
+scripts to be managed remotely without the need for direct interactions
+with ZooKeeper.</p>
+</div>
+<div class="section" id="script-versioning">
+<h3>Script Versioning<a class="headerlink" href="#script-versioning" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the core metadata for a script, SiteWhere 2.0 now tracks
+versioning for scripts as updates are made over time. New versions can
+be added via the APIs, then activated so that they are broadcast to
+interested parties. The new versioning mechanism allows scripts to be
+rolled back to previous versions if an update causes errors.</p>
+</div>
+<div class="section" id="scripting-user-interface">
+<h3>Scripting User Interface<a class="headerlink" href="#scripting-user-interface" title="Permalink to this headline">¶</a></h3>
+<p>The admistrative user interface now fully supports script management.
+Both metadata and content for new scripts can be added via the user
+interface, which supports syntax highlighting and many other features
+via the <a class="reference external" href="https://codemirror.net/">CodeMirror</a> editor. New versions
+may be added and activated via the user interface.</p>
+<img alt="../_images/scripting-ui.png" src="../_images/scripting-ui.png" />
+</div>
+</div>
+<div class="section" id="security-improvements">
+<h2>Security Improvements<a class="headerlink" href="#security-improvements" title="Permalink to this headline">¶</a></h2>
+<p>System security is always a high priority for SiteWhere and the
+2.0 release contains a number of updates that bolster the
+existing infrastructure.</p>
 <div class="section" id="json-web-token">
 <h3>JSON Web Token<a class="headerlink" href="#json-web-token" title="Permalink to this headline">¶</a></h3>
-<p>All REST APIs now use JWT rather than basic auth.</p>
+<p>The SiteWhere REST APIs have moved from HTTP basic authentication
+to using <a class="reference external" href="https://jwt.io/introduction/">JWT</a> to provide identity
+information. A separate REST API is now available that allows an
+application/user to obtain a time-limited token based on their
+system credentials. All REST calls must now contain the JWT to
+provide authentication information. The JWT is passed between microservices
+so that all nested calls may be authenticated as well. As such, any
+direct access via gRPC channels must also provide a valid JWT.</p>
 </div>
 <div class="section" id="updated-security-headers">
 <h3>Updated Security Headers<a class="headerlink" href="#updated-security-headers" title="Permalink to this headline">¶</a></h3>
-<p>Both tenant id and auth token now used.</p>
+<p>SiteWhere 1.x required a tenant authentication token to be passed in
+the headers for REST calls. Since this was used to determine the tenant id
+requested from the caller, there was the potential for problems if
+tokens were the same for multiple tenants. SiteWhere 2.0 requires two headers
+to be passed: one for the tenant id and a second for the authentication token.
+Changing the authentication token on a regular basis may be used as a strategy
+for preventing unauthorized devices from registering with the system.</p>
 </div>
 </div>
 <div class="section" id="data-model">
 <h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
-<p>Core data model has been made more consistent.</p>
+<p>A number of changes will be made to the core data model to accomodate new
+functionality. Some of them will involve renaming existing entites. For instance,
+<em>device specifications</em> will be renamed to <em>device types</em> to better reflect
+their role in the system. Other areas of the model will be expanding. For instance
+the existing asset model will be expanded to differentiate between <em>assets</em> and
+<em>asset types</em> since the existing model is ambiguous. A new entity for <em>asset hierarchy</em>
+will also be added so that assets can be grouped hierarchically.</p>
 <div class="section" id="new-id-management-structure">
 <h3>New Id Management Structure<a class="headerlink" href="#new-id-management-structure" title="Permalink to this headline">¶</a></h3>
-<p>Core objects now have a UUID in addition to user-facing ids so that device hardware
-ids, assignment tokens, etc can be updated without breaking linked data such as events.</p>
+<p>A common complaint with the SiteWhere 1.x data model was that the unique ids for
+objects (e.g. hardware id for a device) could not be changed after initial creation.
+In 2.0, all core objects now have a UUID in addition to user-facing ids so that
+user-facing identifiers may be changed without violating data integrity. With the
+update, device hardware ids, assignment tokens, etc may be updated without breaking
+referential integrity.</p>
 </div>
 </div>
 </div>
