@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>New Platform 2.0 Features &mdash; SiteWhere 2.0.EA3 Community Edition documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/sitewhere.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SiteWhere 2.0.EA3 Community Edition documentation" href="../index.html"/>
+        <link rel="up" title="SiteWhere Platform Introduction" href="index.html"/>
+        <link rel="next" title="SiteWhere Development Guide" href="../development/index.html"/>
+        <link rel="prev" title="Microservices Overview" href="microservices.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SiteWhere
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.EA3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">SiteWhere Platform Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">SiteWhere Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="microservices.html">Microservices Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">New Platform 2.0 Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#centralized-configuration-management">Centralized Configuration Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#persistence-configurations">Persistence Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variable-replacement-in-datastore-configuration">Variable Replacement in Datastore Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#influxdb-improvements">InfluxDB Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#improved-administrative-user-interface">Improved Administrative User Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tenant-management-workflow-improvements">Tenant Management Workflow Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#improved-scripting-support">Improved Scripting Support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#script-storage-and-metadata">Script Storage and Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#script-versioning">Script Versioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scripting-user-interface">Scripting User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#security-improvements">Security Improvements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#json-web-token">JSON Web Token</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updated-security-headers">Updated Security Headers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-model">Data Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#new-id-management-structure">New Id Management Structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">SiteWhere Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">SiteWhere Deployment Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/index.html">SiteWhere User Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SiteWhere</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">SiteWhere Platform Introduction</a> &raquo;</li>
+        
+      <li>New Platform 2.0 Features</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a class="reference internal image-reference" href="../_images/sitewhere-with-tagline.png"><img alt="SiteWhere" class="align-center" src="../_images/sitewhere-with-tagline.png" style="width: 560.0px; height: 177.1px;" /></a>
+<hr class="docutils" />
+<div class="section" id="new-platform-2-0-features">
+<h1>New Platform 2.0 Features<a class="headerlink" href="#new-platform-2-0-features" title="Permalink to this headline">¶</a></h1>
+<p>Beyond the core architectural changes, the SiteWhere 2.0 platform introduces
+a number of new features intended to make it easier to use while improving
+security and streamlining the system management workflow.</p>
+<div class="section" id="centralized-configuration-management">
+<h2>Centralized Configuration Management<a class="headerlink" href="#centralized-configuration-management" title="Permalink to this headline">¶</a></h2>
+<p>In SiteWhere 1.x, most of the configuration was done at the tenant level with
+no concept of system-wide settings. With the introduction of the concept of
+a SiteWhere instance in 2.x, many settings can now be configured at a global
+level and referenced by tenants, allowing for centralized management.</p>
+<div class="section" id="persistence-configurations">
+<h3>Persistence Configurations<a class="headerlink" href="#persistence-configurations" title="Permalink to this headline">¶</a></h3>
+<p>Configuration settings for data persistence are now available at the instance level,
+allowing database details to be specified globally and reused in tenants. The
+tenants can reference the configurations by id and are automatically updated
+if changes are made globally. There is still the option of configuring database
+settings locally for tenants if global configuration is not needed. The
+microservices architecture also allows persistence settings to be controlled
+at a finer level (e.g. different databases for tenant device management and
+asset management) if desired.</p>
+<img alt="../_images/persistence-configurations.png" src="../_images/persistence-configurations.png" />
+</div>
+<div class="section" id="variable-replacement-in-datastore-configuration">
+<h3>Variable Replacement in Datastore Configuration<a class="headerlink" href="#variable-replacement-in-datastore-configuration" title="Permalink to this headline">¶</a></h3>
+<p>When configuring database connectivity settings such as hostname and database
+name, SiteWhere now allows for the use of variable substitution in names,
+allowing for per-tenant settings that are derived from a global expression.
+For instance, this supports the existing approach of using a database per
+tenant when configuring MongoDB, but also supports other approaches such as
+having a separate MongoDB instance for each tenant by using variable substitution
+in the hostname.</p>
+<p>The user interface also now directly supports the mapping of system environment
+variables to override configuration settings. Using this approach, the microservice
+can be configured externally (in the Docker compose file) to pass variables to
+configure SiteWhere components.</p>
+<img alt="../_images/db-variable-substitution.png" src="../_images/db-variable-substitution.png" />
+</div>
+<div class="section" id="influxdb-improvements">
+<h3>InfluxDB Improvements<a class="headerlink" href="#influxdb-improvements" title="Permalink to this headline">¶</a></h3>
+<p>The 1.x implementation of InfluxDB for event management did not fully support
+multitenancy. In the 2.0 platform, InfluxDB may be configured globally using
+variable substitution so that each tenant has its own InfluxDB database. The
+updates also include an upgrade to the latest version of the InfluxDB Java
+client to support that latest bug fixes and performance improvements.</p>
+</div>
+</div>
+<div class="section" id="improved-administrative-user-interface">
+<h2>Improved Administrative User Interface<a class="headerlink" href="#improved-administrative-user-interface" title="Permalink to this headline">¶</a></h2>
+<p>SiteWhere 2.0 features a new administrative user interface based on
+<a class="reference external" href="https://vuejs.org/">Vue</a> along with <a class="reference external" href="https://vuetifyjs.com/">Vuetify</a>
+for a look that is more consistent with Google <a class="reference external" href="https://material.io/">Material Design</a>
+guidelines. The interface is built in a component-oriented fashion for a
+more efficient development workflow. The longer-term plan is to release
+reusable component libraries so that SiteWhere UI/API components can easily
+be used in other Vue projects.</p>
+<img alt="../_images/vue-user-interface.png" src="../_images/vue-user-interface.png" />
+<div class="section" id="tenant-management-workflow-improvements">
+<h3>Tenant Management Workflow Improvements<a class="headerlink" href="#tenant-management-workflow-improvements" title="Permalink to this headline">¶</a></h3>
+<p>A common complaint with the 1.x user interface was the non-intuitive workflow
+for managing tenants. SiteWhere 2.0 moves tenant management and other aspects
+of global configuration to the landing page after login. Tenants may be easily
+added and configured without the need to log out of the application as before.
+The new approach also fixes issues with being unable to reconfigure tenants that
+failed to start.</p>
+<img alt="../_images/tenant-management.png" src="../_images/tenant-management.png" />
+</div>
+</div>
+<div class="section" id="improved-scripting-support">
+<h2>Improved Scripting Support<a class="headerlink" href="#improved-scripting-support" title="Permalink to this headline">¶</a></h2>
+<p>Many aspects of the SiteWhere platform rely on pluggable scripts
+to allow for customized processing behaviors. In SiteWhere 1.x,
+scripts were stored on the filesystem and were not managed as first
+class entities. SiteWhere 2.0 provides much more comprehensive
+support for scripting and adds many new script management features.
+A library of customized scripts can be quickly developed directly
+from within the SiteWhere administrative application and shared
+across the entire distributed system without any manual intervention.</p>
+<div class="section" id="script-storage-and-metadata">
+<h3>Script Storage and Metadata<a class="headerlink" href="#script-storage-and-metadata" title="Permalink to this headline">¶</a></h3>
+<p>In SiteWhere 2.0, scripts are stored in the central ZooKeeper tree,
+which allows for a publish/subscribe strategy where nodes can listen
+for script updates they are interested in. In addition to the script
+content, a metadata structure has been added so that other aspects
+such as a human-readable name, description, script language, and
+other attributes may be captured. New APIs have been added, allowing
+scripts to be managed remotely without the need for direct interactions
+with ZooKeeper.</p>
+</div>
+<div class="section" id="script-versioning">
+<h3>Script Versioning<a class="headerlink" href="#script-versioning" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the core metadata for a script, SiteWhere 2.0 now tracks
+versioning for scripts as updates are made over time. New versions can
+be added via the APIs, then activated so that they are broadcast to
+interested parties. The new versioning mechanism allows scripts to be
+rolled back to previous versions if an update causes errors.</p>
+</div>
+<div class="section" id="scripting-user-interface">
+<h3>Scripting User Interface<a class="headerlink" href="#scripting-user-interface" title="Permalink to this headline">¶</a></h3>
+<p>The admistrative user interface now fully supports script management.
+Both metadata and content for new scripts can be added via the user
+interface, which supports syntax highlighting and many other features
+via the <a class="reference external" href="https://codemirror.net/">CodeMirror</a> editor. New versions
+may be added and activated via the user interface.</p>
+<img alt="../_images/scripting-ui.png" src="../_images/scripting-ui.png" />
+</div>
+</div>
+<div class="section" id="security-improvements">
+<h2>Security Improvements<a class="headerlink" href="#security-improvements" title="Permalink to this headline">¶</a></h2>
+<p>System security is always a high priority for SiteWhere and the
+2.0 release contains a number of updates that bolster the
+existing infrastructure.</p>
+<div class="section" id="json-web-token">
+<h3>JSON Web Token<a class="headerlink" href="#json-web-token" title="Permalink to this headline">¶</a></h3>
+<p>The SiteWhere REST APIs have moved from HTTP basic authentication
+to using <a class="reference external" href="https://jwt.io/introduction/">JWT</a> to provide identity
+information. A separate REST API is now available that allows an
+application/user to obtain a time-limited token based on their
+system credentials. All REST calls must now contain the JWT to
+provide authentication information. The JWT is passed between microservices
+so that all nested calls may be authenticated as well. As such, any
+direct access via gRPC channels must also provide a valid JWT.</p>
+</div>
+<div class="section" id="updated-security-headers">
+<h3>Updated Security Headers<a class="headerlink" href="#updated-security-headers" title="Permalink to this headline">¶</a></h3>
+<p>SiteWhere 1.x required a tenant authentication token to be passed in
+the headers for REST calls. Since this was used to determine the tenant id
+requested from the caller, there was the potential for problems if
+tokens were the same for multiple tenants. SiteWhere 2.0 requires two headers
+to be passed: one for the tenant id and a second for the authentication token.
+Changing the authentication token on a regular basis may be used as a strategy
+for preventing unauthorized devices from registering with the system.</p>
+</div>
+</div>
+<div class="section" id="data-model">
+<h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
+<p>A number of changes will be made to the core data model to accomodate new
+functionality. Some of them will involve renaming existing entites. For instance,
+<em>device specifications</em> will be renamed to <em>device types</em> to better reflect
+their role in the system. Other areas of the model will be expanding. For instance
+the existing asset model will be expanded to differentiate between <em>assets</em> and
+<em>asset types</em> since the existing model is ambiguous. A new entity for <em>asset hierarchy</em>
+will also be added so that assets can be grouped hierarchically.</p>
+<div class="section" id="new-id-management-structure">
+<h3>New Id Management Structure<a class="headerlink" href="#new-id-management-structure" title="Permalink to this headline">¶</a></h3>
+<p>A common complaint with the SiteWhere 1.x data model was that the unique ids for
+objects (e.g. hardware id for a device) could not be changed after initial creation.
+In 2.0, all core objects now have a UUID in addition to user-facing ids so that
+user-facing identifiers may be changed without violating data integrity. With the
+update, device hardware ids, assignment tokens, etc may be updated without breaking
+referential integrity.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../development/index.html" class="btn btn-neutral float-right" title="SiteWhere Development Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="microservices.html" class="btn btn-neutral" title="Microservices Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SiteWhere LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.0.EA3 Community Edition',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
