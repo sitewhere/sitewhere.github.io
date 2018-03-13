@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SiteWhere Development Guide &mdash; SiteWhere ewhere-2.0.EA2 Community Edition documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/sitewhere.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SiteWhere ewhere-2.0.EA2 Community Edition documentation" href="../index.html"/>
+        <link rel="next" title="SiteWhere Deployment Guide" href="../deployment/index.html"/>
+        <link rel="prev" title="New Platform 2.0 Features" href="../platform/features.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SiteWhere
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                ewhere-2.0.EA2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../platform/index.html">SiteWhere Platform Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SiteWhere Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-source-code-on-github">Accessing Source Code on GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#branch-structure-for-repository">Branch Structure for Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pulling-source-code-from-github">Pulling Source Code From GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source">Building from Source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-java-8">Install Java 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-docker-engine">Install Docker Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execute-gradle-build-script">Execute Gradle Build Script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">SiteWhere Deployment Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/index.html">SiteWhere User Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SiteWhere</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>SiteWhere Development Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a class="reference internal image-reference" href="../_images/sitewhere-with-tagline.png"><img alt="SiteWhere" class="align-center" src="../_images/sitewhere-with-tagline.png" style="width: 560.0px; height: 177.1px;" /></a>
+<hr class="docutils" />
+<div class="section" id="sitewhere-development-guide">
+<h1>SiteWhere Development Guide<a class="headerlink" href="#sitewhere-development-guide" title="Permalink to this headline">¶</a></h1>
+<p>This guide provides information intended for developers interested
+in building SiteWhere components from source code. It provides details
+about downloading the source code, installing the required build tools,
+then building Docker images that can be used to deploy an instance.</p>
+<div class="section" id="accessing-source-code-on-github">
+<h2>Accessing Source Code on GitHub<a class="headerlink" href="#accessing-source-code-on-github" title="Permalink to this headline">¶</a></h2>
+<p>The source code for SiteWhere is available on <a class="reference external" href="https://github.com/">GitHub</a>
+at the following location:</p>
+
+<p class="button-wrapper">
+<a href="https://github.com/sitewhere/sitewhere" target="blank"><span class="button">SiteWhere Core Repository</span></a>
+</p><p>The repository includes source code as well as issue tracking and other
+aspects of the development ecosystem.</p>
+<div class="section" id="branch-structure-for-repository">
+<h3>Branch Structure for Repository<a class="headerlink" href="#branch-structure-for-repository" title="Permalink to this headline">¶</a></h3>
+<p>Source code checked in to the <em>master</em> branch is always from the
+latest released version of SiteWhere. Each release is tagged and may be
+accessed by downloading an archive from the
+<a class="reference external" href="https://github.com/sitewhere/sitewhere/releases">releases</a> page or
+by cloning the repository and checking out the branch corresponding to
+the release. The branch for the upcoming SiteWhere 2.0 release is available
+at the location below:</p>
+
+<p class="button-wrapper">
+<a href="https://github.com/sitewhere/sitewhere/tree/sitewhere-2.0.ea2" target="blank"><span class="button">SiteWhere 2.0.EA2 Branch</span></a>
+</p><p>New functionality is always developed in a separate branch and is
+eventually merged to <em>master</em> as part of the release cycle.</p>
+</div>
+<div class="section" id="pulling-source-code-from-github">
+<h3>Pulling Source Code From GitHub<a class="headerlink" href="#pulling-source-code-from-github" title="Permalink to this headline">¶</a></h3>
+<p>In order to work with the code, it will need to be cloned from GitHub onto
+your local machine. The following link covers a few options for installing
+a Git client for accesing the repository:</p>
+
+<p class="button-wrapper">
+<a href="https://help.github.com/articles/set-up-git/" target="blank"><span class="button">Install a Git Client</span></a>
+</p><p>With a Git client installed, start by cloning the SiteWhere core repository.
+If using the command line client you can execute the following
+commands to clone the repository and change to the current branch:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>git clone https://github.com/sitewhere/sitewhere.git
+<span class="nb">cd</span> sitewhere
+git checkout --force sitewhere-2.0.ea2
+</pre></div>
+</div>
+<p>The result of the commands should look similar to the output below:</p>
+<img alt="../_images/git-command-line-clone.png" src="../_images/git-command-line-clone.png" />
+</div>
+</div>
+<div class="section" id="building-from-source">
+<h2>Building from Source<a class="headerlink" href="#building-from-source" title="Permalink to this headline">¶</a></h2>
+<p>SiteWhere includes build scripts that make it easy to build deployable
+artifacts from the source code. Before building the code, there are a couple
+of tools that must be installed.</p>
+<div class="section" id="install-java-8">
+<h3>Install Java 8<a class="headerlink" href="#install-java-8" title="Permalink to this headline">¶</a></h3>
+<p>All of the core source code is written in Java, so a Java compiler is required.
+Recent versions of SiteWhere use features of Java 8, so the JDK or JRE must
+be 1.8 or above.</p>
+
+<p class="button-wrapper">
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="blank"><span class="button">Download and Install Java</span></a>
+</p><p>Once installed, the version can be verified as shown below:</p>
+<img alt="../_images/java-version-check.png" src="../_images/java-version-check.png" />
+</div>
+<div class="section" id="install-docker-engine">
+<h3>Install Docker Engine<a class="headerlink" href="#install-docker-engine" title="Permalink to this headline">¶</a></h3>
+<p>SiteWhere 2.0 uses Docker as the core deployment model, so the deployment
+artifacts from the build process are Docker images. In order to have a local
+repository and APIs available for the build scripts to interact with, install
+a local copy of Docker Engine as explained below:</p>
+
+<p class="button-wrapper">
+<a href="https://docs.docker.com/engine/installation/" target="blank"><span class="button">Install Docker Engine</span></a>
+</p><p>Verify that Docker Engine has been installed successfully by running the command
+below:</p>
+<img alt="../_images/docker-engine-version.png" src="../_images/docker-engine-version.png" />
+<p>Configure the Docker daemon is to listen on TCP port 2375. This is the default API
+port, but most installations do not enable the port by default. An example of the
+required update for Ubuntu 16.04 can be found
+<a class="reference external" href="https://www.ivankrizsan.se/2016/05/18/enabling-docker-remote-api-on-ubuntu-16-04/">here</a>.</p>
+</div>
+<div class="section" id="execute-gradle-build-script">
+<h3>Execute Gradle Build Script<a class="headerlink" href="#execute-gradle-build-script" title="Permalink to this headline">¶</a></h3>
+<p>The root folder of the source code contains a <a class="reference external" href="https://gradle.org/">Gradle</a> build
+script (<em>build.gradle</em>) that compiles the Java code, packages it into Docker images, then pushes
+the images to a Docker repository. By default, the Gradle script will attempt to
+push the images to a repository running on <em>localhost</em>. Information for another
+repository can be added as an override by adding the following lines the
+<em>gradle.properties</em> (or <em>~/.gradle</em> on Unix) file in your default user directory:</p>
+<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">dockerProtocol</span><span class="o">=</span><span class="s">tcp</span>
+<span class="na">dockerHostname</span><span class="o">=</span><span class="s">192.168.171.100</span>
+<span class="na">dockerPort</span><span class="o">=</span><span class="s">2375</span>
+<span class="na">dockerRepository</span><span class="o">=</span><span class="s">docker.io</span>
+</pre></div>
+</div>
+<p>SiteWhere includes Gradle <a class="reference external" href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">Wrapper</a>
+artifacts, so that there is no need to install Gradle independently. To build all of the core
+libraries, package the microservices into Docker images and push them into your local
+repository, execute the following command.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>gradlew clean dockerImage
+</pre></div>
+</div>
+<p>The first time the build executes will take significantly longer since Gradle
+must download all of the dependencies and cache them for later use. When
+the build script completes, execute the following command to view the
+list of Docker images which should now include images for all of the
+SiteWhere microservices:</p>
+<img alt="../_images/docker-image-list.png" src="../_images/docker-image-list.png" />
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Now that Docker images have been generated for the microservices, follow the steps in the
+deployment guide to use SiteWhere recipes that assemble the microservices into a working
+instance.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../deployment/index.html" class="btn btn-neutral float-right" title="SiteWhere Deployment Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../platform/features.html" class="btn btn-neutral" title="New Platform 2.0 Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SiteWhere LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'ewhere-2.0.EA2 Community Edition',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
