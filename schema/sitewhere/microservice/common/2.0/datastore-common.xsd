@@ -35,10 +35,12 @@
 	<xsd:element name="event-management-datastore">
 		<xsd:complexType>
 			<xsd:choice>
-				<xsd:element ref="mongodb-datastore" />
-				<xsd:element ref="mongodb-datastore-reference" />
+				<xsd:element ref="cassandra-datastore" />
+				<xsd:element ref="cassandra-datastore-reference" />
 				<xsd:element ref="influxdb-datastore" />
 				<xsd:element ref="influxdb-datastore-reference" />
+				<xsd:element ref="mongodb-datastore" />
+				<xsd:element ref="mongodb-datastore-reference" />
 			</xsd:choice>
 		</xsd:complexType>
 	</xsd:element>
