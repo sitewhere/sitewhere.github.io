@@ -23,7 +23,7 @@
 		<xsd:sequence>
 		</xsd:sequence>
 		<xsd:attribute name="processingThreadCount" type="sw:substitutableInt"
-			use="optional">
+			use="required">
 			<xsd:annotation>
 				<xsd:documentation>
 					Number of threads dedicated to parallel
