@@ -1,0 +1,589 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Microservices Overview &mdash; SiteWhere 2.0.EA4 Community Edition documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/sitewhere.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SiteWhere 2.0.EA4 Community Edition documentation" href="../index.html"/>
+        <link rel="up" title="SiteWhere Platform Introduction" href="index.html"/>
+        <link rel="next" title="New Platform 2.0 Features" href="features.html"/>
+        <link rel="prev" title="SiteWhere Architecture" href="architecture.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SiteWhere
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.EA4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">SiteWhere Platform Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">SiteWhere Architecture</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Microservices Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#infrastructure-components">Infrastructure Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#infrastructure-recipes">Infrastructure Recipes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#production-deployments">Production Deployments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#microservice-deployment-model">Microservice Deployment Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#system-resource-usage">System Resource Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#inter-microservice-connectivity">Inter-Microservice Connectivity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#api-demultiplexors">API Demultiplexors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#distributed-cache-support">Distributed Cache Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-core-microservices">List of Core Microservices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#instance-management">Instance Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-management">User Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tenant-management">Tenant Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#web-rest">Web/REST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#device-management">Device Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-management">Event Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#asset-management">Asset Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#schedule-management">Schedule Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#batch-operations">Batch Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-sources">Event Sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inbound-processing">Inbound Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#device-registration">Device Registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rule-processing">Rule Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command-delivery">Command Delivery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#outbound-connectors">Outbound Connectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#presence-management">Presence Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-search">Event Search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#streaming-media">Streaming Media</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#label-generation">Label Generation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="features.html">New Platform 2.0 Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">SiteWhere Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">SiteWhere Deployment Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/index.html">SiteWhere User Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SiteWhere</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">SiteWhere Platform Introduction</a> &raquo;</li>
+        
+      <li>Microservices Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a class="reference internal image-reference" href="../_images/sitewhere-with-tagline.png"><img alt="SiteWhere" class="align-center" src="../_images/sitewhere-with-tagline.png" style="width: 560.0px; height: 177.1px;" /></a>
+<hr class="docutils" />
+<div class="section" id="microservices-overview">
+<h1>Microservices Overview<a class="headerlink" href="#microservices-overview" title="Permalink to this headline">¶</a></h1>
+<p>The transition from a monilithic architecture to one based on microservices is
+a key feature of the SiteWhere 2.0 architecture. Each microservice handles a
+specific subset of functionality that is clearly defined and delineated from
+the work done by other microservices. This allows parts of the system to be scaled
+independently while allowing some pieces to be left out completely if not used. The
+microservices approach also decouples the code so that it is easier to understand
+and manage from a development perspective. The diagram below shows the microservices
+and the general flow of data between them:</p>
+<img alt="../_images/microservices-diagram.png" src="../_images/microservices-diagram.png" />
+<div class="section" id="infrastructure-components">
+<h2>Infrastructure Components<a class="headerlink" href="#infrastructure-components" title="Permalink to this headline">¶</a></h2>
+<p>SiteWhere microservices make a few assumptions about the underlying infrastructure
+that they are running on. At a minimum, instances of Apache ZooKeeper
+and Apache Kafka must be available in order for the system to function properly.
+By default, SiteWhere also produces distributed tracing data via the
+<a class="reference external" href="http://opentracing.io/">open tracing</a> standard for runtime performance analysis.
+A server backend that supports the API may be configured to store and analyze the data.</p>
+<div class="section" id="infrastructure-recipes">
+<h3>Infrastructure Recipes<a class="headerlink" href="#infrastructure-recipes" title="Permalink to this headline">¶</a></h3>
+<p>When launching from Docker Compose or Swarm, there are
+<a class="reference external" href="https://github.com/sitewhere/sitewhere-recipes">recipes</a> available that
+may be used to provide the expected infrastructure components. The recipes include
+the required components such as ZooKeeper and Kafka as well as other supporting components
+such as <a class="reference external" href="https://github.com/jaegertracing/jaeger">Jaeger</a> for tracing support
+and <a class="reference external" href="https://github.com/elkozmon/zoonavigator">ZooNavigator</a> for introspecting
+the ZooKeeper store.</p>
+</div>
+<div class="section" id="production-deployments">
+<h3>Production Deployments<a class="headerlink" href="#production-deployments" title="Permalink to this headline">¶</a></h3>
+<p>In a production scenario, ZooKeeper and Kafka should be configured outside
+of Docker and properly scaled to account for fault tolerance and availability.
+The SiteWhere team will offer more details about best practices as we approach
+the 2.0 GA release.</p>
+</div>
+</div>
+<div class="section" id="microservice-deployment-model">
+<h2>Microservice Deployment Model<a class="headerlink" href="#microservice-deployment-model" title="Permalink to this headline">¶</a></h2>
+<p>Each microservice is packaged as a Spring Boot application and deployed as an
+independent Docker image. Since each microservice runs in a separate Docker container,
+each accounts for a separate Java process as opposed to all services running within
+the same process in 1.x.</p>
+<div class="section" id="system-resource-usage">
+<h3>System Resource Usage<a class="headerlink" href="#system-resource-usage" title="Permalink to this headline">¶</a></h3>
+<p>SiteWhere 2.0 currently uses around 20 microservices, so the underlying hardware should be
+able to support running 20 concurrent Java processes, each with a footprint of around
+750MB. As such, the hardware requirements for 2.0 are higher than 1.x, though most
+modern desktop computers can easily run a complete system. The intent for SiteWhere 2.0
+is to make use of orchestration engines such as Docker Swarm to distribute the microservices
+across a cluster of machines, which lowers the hardware requirements for a single node.
+In the end, though SiteWhere 2.0 has a larger footprint, the architecture supports
+much more scalable systems that can leverage large clusters of hardware and scale dynamically.</p>
+</div>
+</div>
+<div class="section" id="inter-microservice-connectivity">
+<h2>Inter-Microservice Connectivity<a class="headerlink" href="#inter-microservice-connectivity" title="Permalink to this headline">¶</a></h2>
+<p>Microservices do not operate in a vacuum and, as such, a high-performance RPC mechanism
+is needed to allow the services to communicate. SiteWhere leverages <a class="reference external" href="https://grpc.io/">gRPC</a>
+for moving data between microservices and offering performant binary APIs to external consumers.
+All API calls and data entities have been made available to gRPC via the Google
+Protocol Buffers data format. Using gRPC rather than REST for communication can increase API
+performance by more than 10x.</p>
+<div class="section" id="api-demultiplexors">
+<h3>API Demultiplexors<a class="headerlink" href="#api-demultiplexors" title="Permalink to this headline">¶</a></h3>
+<p>Connections between microservices are not always one-to-one. For instance, if a SiteWhere instance
+has a single Web/REST microservice and three instances of the Device Management microservice, the
+REST microservice should be able to demultiplex calls across all three Device Management instances
+for scalability and fault tolerance. SiteWhere 2.0 introduces the concept of an API demulitplexor
+which is able to introspect the current instance topology and add/remove connections to other
+microservices dynamically. As the number of services is scaled up/down SiteWhere automatically
+connects/disconnects the piping between them. All inter-microservice communication happens via
+this mechanism.</p>
+</div>
+</div>
+<div class="section" id="distributed-cache-support">
+<h2>Distributed Cache Support<a class="headerlink" href="#distributed-cache-support" title="Permalink to this headline">¶</a></h2>
+<p>Even with the high performance of gRPC, requesting commonly used data repeatedly across
+the network connection has a significant cost. Master information for entites such as devices,
+assignments, and assets is rarely updated and may be cached within an in-memory data grid
+rather than incurring the cost of reading from the database. SiteWhere 2.0 uses a Hazelcast in-memory
+grid to provide a distributed cache of a subset of master data. This cache is queried before
+falling back to a database request.</p>
+</div>
+<div class="section" id="list-of-core-microservices">
+<h2>List of Core Microservices<a class="headerlink" href="#list-of-core-microservices" title="Permalink to this headline">¶</a></h2>
+<p>Below is a list of the core microservices included in SiteWhere 2.0. As we move toward
+general availability, more information will be released regarding the configuration schemas,
+Kafka interactions, etc. for each microservice.</p>
+<div class="section" id="instance-management">
+<h3>Instance Management<a class="headerlink" href="#instance-management" title="Permalink to this headline">¶</a></h3>
+<p>The instance management microservice is used to bootstrap a SiteWhere instance.
+This includes verifying that the root ZooKeeper node and base configuration hierarchy
+have been created. This baseline configuration is required before anything else can be
+done with the system. As such, all other microservices look for a <em>bootstrapped</em> indicator
+which is created by this microservice to know when the system has been successfully initialized.</p>
+<p>An <em>instance template</em> is used to choose the scripts that will be used to populate the
+default users and tenants for the instance. Instance management waits for user/tenant management
+microservices to start before running the scripts to push data via the respective APIs. Once
+the initialization scripts have run, the instance is considered to be initialized.
+After initialization, instance management does not serve any other role in the system
+and may be shut down to conserve resources.</p>
+</div>
+<div class="section" id="user-management">
+<h3>User Management<a class="headerlink" href="#user-management" title="Permalink to this headline">¶</a></h3>
+<p>The global user management microservice provides the core APIs and data persistence used
+to manage system users. It is initially used by the instance management microservice
+to bootstrap the system with base users. Afterward, it is called by the Web/REST
+microservice to allow the list of users to be managed.</p>
+</div>
+<div class="section" id="tenant-management">
+<h3>Tenant Management<a class="headerlink" href="#tenant-management" title="Permalink to this headline">¶</a></h3>
+<p>The global tenant management microservice provides the core APIs and data persistence for
+managing system tenants. It is initially used by the instance management microservice
+to bootstrap the system with base tenants. Afterward, it is called by the Web/REST
+microservice to allow the list of system tenants to be managed.</p>
+<p>When a tenant is added/updated/deleted, the tenant data is pushed to a Kafka topic
+so that other interested listeners can act on the update. By default, a listener is
+registered to boostrap newly created tenants by adding the expected tenant configuration
+hierarchy in ZooKeeper. This process includes copying the per-microservice XML configuration
+files from the tenant template into ZooKeeper, then executing the list of initialization
+scripts included with the template. Once this process is complete, the tenant configuration
+is marked as boostrapped so that other microservices can react to the added tenant. For
+instance, the device management microservice will notice that a new tenant has been configured
+and will wait for the bootstrapped indicator, then will load the device-management.xml
+configuration file to initialize a new device management tenant engine for the added tenant.
+Any time that files within a tenant are changed, the changes are broadcast to tenant engines
+running on all other microservices so they can react to the changes. In the previous example,
+if multiple device management microservices are running (scale &gt; 1), each microservice will
+detect the updates and reload the tenant engines to reflect the updates.</p>
+</div>
+<div class="section" id="web-rest">
+<h3>Web/REST<a class="headerlink" href="#web-rest" title="Permalink to this headline">¶</a></h3>
+<p>The global Web/REST microservice includes a Tomcat container that hosts the administrative web
+application and provides infrastructure for all of the core REST services (including Swagger
+user interfaces). This microservice is usually connected to all other microservices in the
+system so that API calls may be delegated to the microservices that implement
+the functionality. For instance, querying for a device via the REST APIs
+results in a gRPC request (potentially cached via Hazelcast) to the appropriate
+device management tenant engine on one of the device management microservices.</p>
+<p>There may be cases where the microservice required to complete a request is not available.
+In this case, a <em>ServiceNotAvailable</em> exception is thrown and passed back as an error to
+the user/application that made the request. Using this approach, areas of the system may
+be shut down to conserve resources while not affecting the functionality if the system as
+a whole. Callers to the REST services should be prepared to handle cases where the
+subsystem they are calling may be shut down.</p>
+</div>
+<div class="section" id="device-management">
+<h3>Device Management<a class="headerlink" href="#device-management" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant device management microservice provides the core APIs and data persistence
+for managing the device model (sites, specifications, devices, groups, etc.) for each tenant
+in a SiteWhere instance. The device model is initially populated based on the scripts included
+in the tenant template used when creating the tenant. For instance, the “Construction” template
+will populate the data model with devices appropriate for a construction site. If using the
+“Empty” template, no device management data will be populated.</p>
+</div>
+<div class="section" id="event-management">
+<h3>Event Management<a class="headerlink" href="#event-management" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant event management microservice provides the core APIs and data persistence
+for managing device events (locations, measurements, alerts, command invocations, etc) for
+each tenant in a SiteWhere instance. The device event model is initially populated based on
+the scripts included in the tenant template used when creating the tenant. For instance, the
+“Construction” template populates example location, measurement and alert data relevant to
+machines at a construction site. If using the “Empty” template, no event management data
+will be populated.</p>
+</div>
+<div class="section" id="asset-management">
+<h3>Asset Management<a class="headerlink" href="#asset-management" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant asset management microservice provides the core APIs and data persistence
+for managing assets for each tenant in a SiteWhere instance. The asset model is initially
+populated based on the scripts included in the tenant template used when creating the tenant.
+For instance, the “Construction” template populates assets such as heavy equipment, storage
+trailers, and various types of tracking devices. If using the “Empty” template, no asset
+management data will be populated.</p>
+</div>
+<div class="section" id="schedule-management">
+<h3>Schedule Management<a class="headerlink" href="#schedule-management" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant schedule management microservice provides the core APIs and data persistence
+for managing schedules for each tenant in a SiteWhere instance. The schedule model is initially
+populated based on the scripts included in the tenant template used when creating the tenant.
+Most tenant templates include a few example schedules. If using the “Empty” template, no schedule
+management data will be populated.</p>
+</div>
+<div class="section" id="batch-operations">
+<h3>Batch Operations<a class="headerlink" href="#batch-operations" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant batch operations microservice provides the core APIs and data persistence
+for managing batch operations for each tenant in a SiteWhere instance. The batch operations
+model is empty upon tenant initialization, but may be populated by invoking APIs that
+produce batch operations (such as batch command invocations).</p>
+<p>Each batch operations tenant engine also contains a batch operation manager that may
+be configured to process batch operations that are created via the APIs. The batch operation
+manager will turn the batch request into many smaller operations to achieve the batch goal.</p>
+<p><strong>For the 2.0.ea1 release, the batch operation manager is disabled due to refactoring of
+the original 1.x version to use the new Kafka pipeline as well as managing batch operation
+managers running on scaled microservices where contention may be an issue.</strong></p>
+</div>
+<div class="section" id="event-sources">
+<h3>Event Sources<a class="headerlink" href="#event-sources" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant event sources microservice hosts tenant engines that may be configured
+to ingest data from many types of data producers. Some examples include consuming data
+from MQTT topics, CoAP requests, direct TCP/IP socket connections, WebSockets, REST calls
+via push or pull models, and many other potential sources. After events are ingested,
+they are decoded into a standardized data model and pushed to a tenant-specific Kafka
+topic for further processing. Kafka topics are also registered for events that can not
+be parsed or are detected as duplicates by deduplication processing.</p>
+</div>
+<div class="section" id="inbound-processing">
+<h3>Inbound Processing<a class="headerlink" href="#inbound-processing" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant inbound processing microservice ingests data that was produced by the
+event sources microservice (after decoding and deduplication has completed). This microservice
+validates the inbound data by interacting with the device management microservice to
+verify that the inbound event relates to a registered device. The inbound payload is enriched
+with device/assignment data so the information may be used by subsequent processing steps
+without the need to look it up again. If the device is not registered, the payload is
+passed to the device registration microservice for additional processing. If the device becomes
+registered as a result, the event is pushed onto a re-processing topic so that it may be
+processed again with the newly registered device.</p>
+<p>Once the inbound event has been enriched, it is forwarded to the event management
+microservice for persistence. The persisted event is eventually (asynchronously) returned
+to inbound processing where it is added to a topic for pre-processed events that may
+in turn be consumed by other microservices such a rule processing and outbound
+connectors.</p>
+</div>
+<div class="section" id="device-registration">
+<h3>Device Registration<a class="headerlink" href="#device-registration" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant device registration microservice ingests data from a Kafka topic
+populated by the inbound processing microservice when events reference a hardware id
+for a device that is not currently registered in the system. Each tenant engine has
+a device registration manager which may be configured to indicate how unregistered
+devices are to be treated. The device registration manager processes each inbound
+event and can potentially register the device automatically before adding the event
+to a re-processing topic to have it processed by the inbound processing microservice.</p>
+<p>Events that do not result in auto-registration of a device are pushed to a “dead letter”
+topic in Kafka so that they can be tracked or processed out-of-band by external processors.</p>
+<p><strong>This microservice is not fully implemented in 2.0.ea1 and will undergo a number of updates
+before general availability. In the short term, new device auto-registration is turned off.</strong></p>
+</div>
+<div class="section" id="rule-processing">
+<h3>Rule Processing<a class="headerlink" href="#rule-processing" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant rule processing microservice ingests data from the Kafka topic containing
+pre-processed events and applies conditional logic to further process the events. Tenant engines
+can use embedded complex event processing (WSO2 Siddhi) to detect patterns in the event
+stream and fire new events as the result.</p>
+<p><strong>This microservice is not fully implemented in 2.0.ea1 and will undergo a number of updates
+before general availability. The Siddhi engine is being updated to the latest version which
+changes the dependencies and APIs, so there will be some migration work involved. There are
+also plans for more out-of-the-box rule processing options before GA is released</strong></p>
+</div>
+<div class="section" id="command-delivery">
+<h3>Command Delivery<a class="headerlink" href="#command-delivery" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant command delivery microservice ingests data from the Kafka topic containing
+pre-processed events and, for command invocations, handles command processing. This includes
+using configured routing constraints and command destinations that indicate how the command
+is to be encoded, which transport is to be used, and where the command is to be delivered.</p>
+<p><strong>This microservice is not fully implemented in 2.0.ea1 and will undergo a number of updates
+before general availability. In the short term, command delivery is turned off.</strong></p>
+</div>
+<div class="section" id="outbound-connectors">
+<h3>Outbound Connectors<a class="headerlink" href="#outbound-connectors" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant outbound connectors microservice ingests data from the Kafka topic containing
+pre-processed events and allows the event data to be forwarded to other integration points
+asynchronously. Each outbound connector is a Kafka consumer that has its own pointer into
+the events topic, so the system is not blocked by connectors that occasionally process at
+slower rates than the rest of the system. Connectors are available for common use cases such
+as forwarding events to a well-known MQTT topic or indexing events in Apache Solr.</p>
+<p><strong>This microservice is implemented in 2.0.ea1 but some of the connectors have not been converted yet
+and are not shown in the tenant configuration panel or have bugs. Upon general availablility,
+all SiteWhere 1.x connectors (and potentially a few new ones) will be available.</strong></p>
+</div>
+<div class="section" id="presence-management">
+<h3>Presence Management<a class="headerlink" href="#presence-management" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant presence management microservice ingests data from the Kafka topic containing
+pre-processed events and uses the event data to update device presence state. Each tenant engine
+has a device presence manager that is responsible for determining when devices are no longer
+present and firing state change events that can be used to trigger actions based on a device
+becoming present or not present.</p>
+<p><strong>This microservice is not fully implemented in 2.0.ea1.</strong></p>
+</div>
+<div class="section" id="event-search">
+<h3>Event Search<a class="headerlink" href="#event-search" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant event search microservice provides an API for searching external data sources
+that contain SiteWhere event information in a non-standard format. For instance, when events
+are indexed into Apache Solr via an outbound connector, there may be a need to query Solr directly
+to do complex faceted queries that can not be generically supported via the SiteWhere APIs. The
+tenant engines for this microservice may be configured to proxy queries to the underlying service
+and return the results to the Web/REST microservice for use by external clients.</p>
+<p><strong>This microservice is not fully implemented in 2.0.ea1.</strong></p>
+</div>
+<div class="section" id="streaming-media">
+<h3>Streaming Media<a class="headerlink" href="#streaming-media" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant streaming media microservice is intended to allow streaming storage of binary
+data such as audio and video streams. Some basic APIs for streaming were available in SiteWhere 1.x,
+but were not documented or considered production quality. SiteWhere 2.0 will formalize the
+streaming media APIs, though integration with various encoding/decoding technologies may
+extend beyond the 2.0 GA release cycle.</p>
+<p><strong>This microservice is not fully implemented in 2.0.ea1.</strong></p>
+</div>
+<div class="section" id="label-generation">
+<h3>Label Generation<a class="headerlink" href="#label-generation" title="Permalink to this headline">¶</a></h3>
+<p>The multitenant label generation microservice responds to API requests for label resources such
+as QR codes, bar codes, or custom device labels. Each tenant engine has a symbol generation
+manager that may be customized to generate specific types of output unique to the tenant.</p>
+<p><strong>This microservice is not fully implemented in 2.0.ea1.</strong></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="features.html" class="btn btn-neutral float-right" title="New Platform 2.0 Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architecture.html" class="btn btn-neutral" title="SiteWhere Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SiteWhere LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.0.EA4 Community Edition',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
