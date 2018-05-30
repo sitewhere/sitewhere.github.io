@@ -104,6 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#install-java-8">Install Java 8</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-docker-engine">Install Docker Engine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#execute-gradle-build-script">Execute Gradle Build Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-debug-images">Creating Debug Images</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
@@ -284,6 +285,20 @@ the build script completes, execute the following command to view the
 list of Docker images which should now include images for all of the
 SiteWhere microservices:</p>
 <img alt="../_images/docker-image-list.png" src="../_images/docker-image-list.png" />
+</div>
+<div class="section" id="creating-debug-images">
+<h3>Creating Debug Images<a class="headerlink" href="#creating-debug-images" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the standard microservice images, the Gradle build may be parameterized
+to generate debug images which expose a port for remote Java debugging. In order to
+generate debug images, execute the following command:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>gradlew clean dockerImage -Pdebug
+</pre></div>
+</div>
+<p>The debug images use a version identifier prefixed with <em>debug-</em> to prevent confusing
+them with non-debug images. Note that there is a separate SiteWhere recipe for running
+the debug Docker images since the debug port for each microservice must be remapped
+to a different port. Using the debug images allows you to connect from a remote debugger
+(such as the one in Eclipse) and set breakpoints in the running microservices.</p>
 </div>
 </div>
 <div class="section" id="next-steps">
