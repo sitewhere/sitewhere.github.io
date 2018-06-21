@@ -270,7 +270,8 @@
 
 	<!-- Configuration for Solr connector -->
 	<xsd:complexType name="solrConfigurationType">
-		<xsd:attribute name="id" type="xsd:string">
+		<xsd:attribute name="id" type="xsd:string"
+			use="required">
 			<xsd:annotation>
 				<xsd:documentation>
 					Unique id for Solr configuration.
