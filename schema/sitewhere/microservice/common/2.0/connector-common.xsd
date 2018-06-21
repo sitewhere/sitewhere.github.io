@@ -123,7 +123,7 @@
 	</xsd:attributeGroup>
 
 	<!-- Choices for potential Solr configuration choices -->
-	<xsd:element name="solr-configuiration-choice">
+	<xsd:element name="solr-configuration-choice">
 		<xsd:complexType>
 			<xsd:choice>
 				<xsd:element ref="solr-configuration-reference" />
