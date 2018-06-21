@@ -464,7 +464,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="filteredOutboundConnectorType">
 				<xsd:sequence>
-					<xsd:element ref="cn:solr-configuiration-choice" />
+					<xsd:element ref="cn:solr-configuration-choice" />
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
