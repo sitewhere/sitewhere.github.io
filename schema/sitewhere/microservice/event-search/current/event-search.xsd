@@ -60,8 +60,7 @@
 				</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="name" type="xsd:string"
-			use="required">
+		<xsd:attribute name="name" type="xsd:string">
 			<xsd:annotation>
 				<xsd:documentation>
 					Name shown in user interface for search provider.
