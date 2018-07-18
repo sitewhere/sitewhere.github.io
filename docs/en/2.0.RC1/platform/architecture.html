@@ -98,7 +98,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">SiteWhere Architecture</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#microservices">Microservices</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#separation-of-concerns">Separation of Concerns</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#scale-what-you-need-leave-out-what-you-don-t">Scale What You Need. Leave Out What You Don&#8217;t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scale-what-you-need-leave-out-what-you-don-t">Scale What You Need. Leave Out What You Don’t</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#instance-management">Instance Management</a></li>
@@ -215,7 +215,7 @@ transition has already resulted in a more understandable and maintainable
 system and should continue to pay dividends as more features are added.</p>
 </div>
 <div class="section" id="scale-what-you-need-leave-out-what-you-don-t">
-<h3>Scale What You Need. Leave Out What You Don&#8217;t<a class="headerlink" href="#scale-what-you-need-leave-out-what-you-don-t" title="Permalink to this headline">¶</a></h3>
+<h3>Scale What You Need. Leave Out What You Don’t<a class="headerlink" href="#scale-what-you-need-leave-out-what-you-don-t" title="Permalink to this headline">¶</a></h3>
 <p>The microservice architecture allows individual functional areas of the system to be scaled
 independently or left out completely. In use cases where REST processing tends to
 be a bottleneck, multiple REST microservices can be run concurrently to handle the load.
@@ -261,7 +261,7 @@ In SiteWhere 2.0, each outbound connector is a true Kafka consumer with its own 
 marker into the event stream. This mechanism allows for outbound processors to process data
 at their own pace without slowing down other processors.</p>
 <p>Using Kafka also has other advantages that are leveraged by SiteWhere. Since all data for
-the distributed log is stored on disk, it is possible to &#8220;replay&#8221; the event stream based
+the distributed log is stored on disk, it is possible to “replay” the event stream based
 on previously gathered data. This is extremely valuable for aspects such as debugging
 processing logic or load testing the system.</p>
 </div>
@@ -289,7 +289,7 @@ of services that can satisfy the requests, allowing the requests to be processed
 </div>
 <div class="section" id="distributed-multitenancy">
 <h2>Distributed Multitenancy<a class="headerlink" href="#distributed-multitenancy" title="Permalink to this headline">¶</a></h2>
-<p>The SiteWhere 1.x approach to multitenancy was to use a separate &#8220;tenant engine&#8221; for each tenant.
+<p>The SiteWhere 1.x approach to multitenancy was to use a separate “tenant engine” for each tenant.
 The engine supported all tenant-specific tasks such as data persistence, event processing, etc.
 Since SiteWhere 2.0 has moved to a microservices architecture, the multitenant model has been
 distributed as well. SiteWhere supports two types of microservices: global and multitenant.</p>

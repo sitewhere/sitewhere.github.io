@@ -358,9 +358,9 @@ subsystem they are calling may be shut down.</p>
 <p>The multitenant device management microservice provides the core APIs and data persistence
 for managing the device model (sites, specifications, devices, groups, etc.) for each tenant
 in a SiteWhere instance. The device model is initially populated based on the scripts included
-in the tenant template used when creating the tenant. For instance, the &#8220;Construction&#8221; template
+in the tenant template used when creating the tenant. For instance, the “Construction” template
 will populate the data model with devices appropriate for a construction site. If using the
-&#8220;Empty&#8221; template, no device management data will be populated.</p>
+“Empty” template, no device management data will be populated.</p>
 </div>
 <div class="section" id="event-management">
 <h3>Event Management<a class="headerlink" href="#event-management" title="Permalink to this headline">¶</a></h3>
@@ -368,8 +368,8 @@ will populate the data model with devices appropriate for a construction site. I
 for managing device events (locations, measurements, alerts, command invocations, etc) for
 each tenant in a SiteWhere instance. The device event model is initially populated based on
 the scripts included in the tenant template used when creating the tenant. For instance, the
-&#8220;Construction&#8221; template populates example location, measurement and alert data relevant to
-machines at a construction site. If using the &#8220;Empty&#8221; template, no event management data
+“Construction” template populates example location, measurement and alert data relevant to
+machines at a construction site. If using the “Empty” template, no event management data
 will be populated.</p>
 </div>
 <div class="section" id="asset-management">
@@ -377,8 +377,8 @@ will be populated.</p>
 <p>The multitenant asset management microservice provides the core APIs and data persistence
 for managing assets for each tenant in a SiteWhere instance. The asset model is initially
 populated based on the scripts included in the tenant template used when creating the tenant.
-For instance, the &#8220;Construction&#8221; template populates assets such as heavy equipment, storage
-trailers, and various types of tracking devices. If using the &#8220;Empty&#8221; template, no asset
+For instance, the “Construction” template populates assets such as heavy equipment, storage
+trailers, and various types of tracking devices. If using the “Empty” template, no asset
 management data will be populated.</p>
 </div>
 <div class="section" id="schedule-management">
@@ -386,7 +386,7 @@ management data will be populated.</p>
 <p>The multitenant schedule management microservice provides the core APIs and data persistence
 for managing schedules for each tenant in a SiteWhere instance. The schedule model is initially
 populated based on the scripts included in the tenant template used when creating the tenant.
-Most tenant templates include a few example schedules. If using the &#8220;Empty&#8221; template, no schedule
+Most tenant templates include a few example schedules. If using the “Empty” template, no schedule
 management data will be populated.</p>
 </div>
 <div class="section" id="batch-operations">
@@ -438,7 +438,7 @@ a device registration manager which may be configured to indicate how unregister
 devices are to be treated. The device registration manager processes each inbound
 event and can potentially register the device automatically before adding the event
 to a re-processing topic to have it processed by the inbound processing microservice.</p>
-<p>Events that do not result in auto-registration of a device are pushed to a &#8220;dead letter&#8221;
+<p>Events that do not result in auto-registration of a device are pushed to a “dead letter”
 topic in Kafka so that they can be tracked or processed out-of-band by external processors.</p>
 <p><strong>This microservice is not fully implemented in 2.0.ea1 and will undergo a number of updates
 before general availability. In the short term, new device auto-registration is turned off.</strong></p>
