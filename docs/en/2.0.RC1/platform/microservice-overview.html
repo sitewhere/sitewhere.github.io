@@ -38,9 +38,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SiteWhere 2.0.RC1 Community Edition documentation" href="../index.html"/>
-        <link rel="up" title="SiteWhere Platform Introduction" href="index.html"/>
-        <link rel="next" title="New Platform 2.0 Features" href="features.html"/>
-        <link rel="prev" title="SiteWhere Architecture" href="architecture.html"/> 
+        <link rel="up" title="SiteWhere Platform" href="index.html"/>
+        <link rel="next" title="Microservice Runtime Guide" href="microservices/index.html"/>
+        <link rel="prev" title="New Platform 2.0 Features" href="features.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -94,8 +94,9 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">SiteWhere Platform Introduction</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">SiteWhere Platform</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">SiteWhere Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html">New Platform 2.0 Features</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Microservices Overview</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#infrastructure-components">Infrastructure Components</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#infrastructure-recipes">Infrastructure Recipes</a></li>
@@ -135,7 +136,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="features.html">New Platform 2.0 Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="microservices/index.html">Microservice Runtime Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../development/index.html">SiteWhere Development Guide</a></li>
@@ -185,7 +186,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">SiteWhere Platform Introduction</a> &raquo;</li>
+          <li><a href="index.html">SiteWhere Platform</a> &raquo;</li>
         
       <li>Microservices Overview</li>
     
@@ -216,7 +217,6 @@ independently while allowing some pieces to be left out completely if not used. 
 microservices approach also decouples the code so that it is easier to understand
 and manage from a development perspective. The diagram below shows the microservices
 and the general flow of data between them:</p>
-<img alt="../_images/microservices-diagram.png" src="../_images/microservices-diagram.png" />
 <div class="section" id="infrastructure-components">
 <h2>Infrastructure Components<a class="headerlink" href="#infrastructure-components" title="Permalink to this headline">¶</a></h2>
 <p>SiteWhere microservices make a few assumptions about the underlying infrastructure
@@ -292,22 +292,21 @@ falling back to a database request.</p>
 </div>
 <div class="section" id="list-of-core-microservices">
 <h2>List of Core Microservices<a class="headerlink" href="#list-of-core-microservices" title="Permalink to this headline">¶</a></h2>
-<p>Below is a list of the core microservices included in SiteWhere 2.0. As we move toward
-general availability, more information will be released regarding the configuration schemas,
-Kafka interactions, etc. for each microservice.</p>
+<p>Below is a list of the core microservices included in SiteWhere 2.0. Each service handles
+a specific area of system functionality and is independent of other microservices in terms of
+runtime processing, data storage and configuration. Some microservices do, however, have
+dependencies on the APIs offered by other services and can not run in isolation. Below is a
+high-level overview of the individual services along with links to more detailed
+explanations of each service.</p>
 <div class="section" id="instance-management">
 <h3>Instance Management<a class="headerlink" href="#instance-management" title="Permalink to this headline">¶</a></h3>
-<p>The instance management microservice is used to bootstrap a SiteWhere instance.
-This includes verifying that the root ZooKeeper node and base configuration hierarchy
-have been created. This baseline configuration is required before anything else can be
-done with the system. As such, all other microservices look for a <em>bootstrapped</em> indicator
-which is created by this microservice to know when the system has been successfully initialized.</p>
-<p>An <em>instance template</em> is used to choose the scripts that will be used to populate the
-default users and tenants for the instance. Instance management waits for user/tenant management
-microservices to start before running the scripts to push data via the respective APIs. Once
-the initialization scripts have run, the instance is considered to be initialized.
-After initialization, instance management does not serve any other role in the system
-and may be shut down to conserve resources.</p>
+<p>The instance management microservice is used to bootstrap a SiteWhere instance with
+the initial Zookeeper configuration structure required by the other microservices.
+All other microservices wait for the Zookeeper data to be initialized before
+starting, so the instance management microservice must be present in an uninitialized
+SiteWhere instance or all other microservices will fail to start.</p>
+<p>See the instance management <a class="reference external" href="./microservices/instance-management.html">runtime guide</a>
+for more details.</p>
 </div>
 <div class="section" id="user-management">
 <h3>User Management<a class="headerlink" href="#user-management" title="Permalink to this headline">¶</a></h3>
@@ -523,10 +522,10 @@ manager that may be customized to generate specific types of output unique to th
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="features.html" class="btn btn-neutral float-right" title="New Platform 2.0 Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="microservices/index.html" class="btn btn-neutral float-right" title="Microservice Runtime Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="architecture.html" class="btn btn-neutral" title="SiteWhere Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="features.html" class="btn btn-neutral" title="New Platform 2.0 Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
