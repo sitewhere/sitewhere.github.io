@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SiteWhere Platform &mdash; SiteWhere 2.0.RC1 Community Edition documentation</title>
+  <title>Apache Kafka Configuration &mdash; SiteWhere 2.0.RC1 Community Edition documentation</title>
   
 
   
@@ -38,8 +38,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SiteWhere 2.0.RC1 Community Edition documentation" href="../index.html"/>
-        <link rel="next" title="SiteWhere Architecture" href="architecture.html"/>
-        <link rel="prev" title="SiteWhere 2.0.RC1 CE Documentation" href="../index.html"/> 
+        <link rel="up" title="SiteWhere User Guide" href="index.html"/>
+        <link rel="next" title="Microservice Guides" href="microservices/index.html"/>
+        <link rel="prev" title="Apache Zookeeper Configuration" href="zookeeper-configuration.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -93,15 +94,19 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">SiteWhere Platform</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html">SiteWhere Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html">New Platform 2.0 Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microservice-overview.html">Microservices Overview</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/index.html">SiteWhere Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development/index.html">SiteWhere Development Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">SiteWhere Deployment Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../userguide/index.html">SiteWhere User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">SiteWhere User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="zookeeper-configuration.html">Apache Zookeeper Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Apache Kafka Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kafka-connectivity">Kafka Connectivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kafka-data-persistence">Kafka Data Persistence</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="microservices/index.html">Microservice Guides</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -146,7 +151,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>SiteWhere Platform</li>
+          <li><a href="index.html">SiteWhere User Guide</a> &raquo;</li>
+        
+      <li>Apache Kafka Configuration</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -165,42 +172,48 @@
             
   <a class="reference internal image-reference" href="../_images/sitewhere-with-tagline.png"><img alt="SiteWhere" class="align-center" src="../_images/sitewhere-with-tagline.png" style="width: 560.0px; height: 177.1px;" /></a>
 <hr class="docutils" />
-<div class="section" id="sitewhere-platform">
-<h1>SiteWhere Platform<a class="headerlink" href="#sitewhere-platform" title="Permalink to this headline">¶</a></h1>
-<p>The SiteWhere 2.x platform introduces an entirely redesigned architecture based
-on a modern microservices approach. It has been designed from the ground up for reliable,
-high throughput, low latency processing and dynamic scalability using technologies
-such as Apache Kafka and Docker. The intent is to continue to support most of the
-data model and APIs from the 1.x platform, but to do so in a more modular fashion
-that embraces modern development and deployment workflows.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">SiteWhere Architecture</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#microservices">Microservices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#instance-management">Instance Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#configuration-management-with-apache-zookeeper">Configuration Management with Apache ZooKeeper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#event-processing-with-apache-kafka">Event Processing with Apache Kafka</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#inter-microservice-communication-with-grpc">Inter-Microservice Communication with GRPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#distributed-multitenancy">Distributed Multitenancy</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="features.html">New Platform 2.0 Features</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="features.html#centralized-configuration-management">Centralized Configuration Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html#improved-administrative-user-interface">Improved Administrative User Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html#improved-scripting-support">Improved Scripting Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html#security-improvements">Security Improvements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html#data-model">Data Model</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="microservice-overview.html">Microservices Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="microservice-overview.html#infrastructure-components">Infrastructure Components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microservice-overview.html#microservice-deployment-model">Microservice Deployment Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microservice-overview.html#inter-microservice-connectivity">Inter-Microservice Connectivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microservice-overview.html#distributed-cache-support">Distributed Cache Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microservice-overview.html#list-of-core-microservices">List of Core Microservices</a></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="apache-kafka-configuration">
+<h1>Apache Kafka Configuration<a class="headerlink" href="#apache-kafka-configuration" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://kafka.apache.org/">Apache Kafka</a> is used by SiteWhere to provide a
+high-performance data processing pipeline between microservices. Kafka relies
+on Apache Zookeeper for saving its state and is generally configured to share
+the same Zookeeper instance used for storing SiteWhere configuration data.</p>
+<div class="section" id="kafka-connectivity">
+<h2>Kafka Connectivity<a class="headerlink" href="#kafka-connectivity" title="Permalink to this headline">¶</a></h2>
+<p>All SiteWhere microservices have some level of reliance on Kafka and must
+be configured to access a shared Kafka cluster. The microservices use the
+following environment variables and default values for connecting to Kafka:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="47%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Setting</th>
+<th class="head">Environment Variable</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Kafka Bootstrap Servers</td>
+<td>sitewhere.kafka.bootstrap.servers</td>
+<td>kafka:9092</td>
+</tr>
+</tbody>
+</table>
+<p>The information Kafka uses to connect to Zookeeper is configured in the Docker
+Compose file service descriptor (or in the Kafka configuration if not running
+Kafka within Docker).</p>
+</div>
+<div class="section" id="kafka-data-persistence">
+<h2>Kafka Data Persistence<a class="headerlink" href="#kafka-data-persistence" title="Permalink to this headline">¶</a></h2>
+<p>If using Kafka within a Docker Compose configuration, the Kafka data folder
+should be mapped to a local volume so that it is not lost when the service is
+stopped. The SiteWhere infrastructure recipes have a common shared data volume
+that is used to store persistent data from all services such as Zookeeper,
+Kafka, and various databases. The data volume may be deleted in order to start
+with a “clean” system.</p>
 </div>
 </div>
 
@@ -214,10 +227,10 @@ that embraces modern development and deployment workflows.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="architecture.html" class="btn btn-neutral float-right" title="SiteWhere Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="microservices/index.html" class="btn btn-neutral float-right" title="Microservice Guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="SiteWhere 2.0.RC1 CE Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="zookeeper-configuration.html" class="btn btn-neutral" title="Apache Zookeeper Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

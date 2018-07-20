@@ -104,7 +104,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#using-sitewhere-recipes-to-build-an-instance">Using SiteWhere Recipes to Build an Instance</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#clone-the-recipes-repository">Clone the Recipes Repository</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#start-infrastructure-recipe">Start Infrastructure Recipe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-infrastructure-services">Start Infrastructure Services</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#start-sitewhere-microservices">Start SiteWhere Microservices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#system-log-output">System Log Output</a></li>
 </ul>
@@ -274,13 +274,15 @@ with the following command:</p>
 subdirectory. This directory contains sample configurations for many common SiteWhere
 deployment scenarios.</p>
 </div>
-<div class="section" id="start-infrastructure-recipe">
-<h3>Start Infrastructure Recipe<a class="headerlink" href="#start-infrastructure-recipe" title="Permalink to this headline">¶</a></h3>
-<p>To better emulate a production environment, a separate recipe is
-used for infrastructure services such as Apache ZooKeeper and Apache Kafka. To start
-the infrastructure containers, navigate to the <strong>sitewhere-recipes/docker-compose/infrastructure</strong>
-subdirectory. Execute the following command which will start the infrastructure based on the
-configuration outlined in the <strong>docker-compose.yml</strong> file.</p>
+<div class="section" id="start-infrastructure-services">
+<h3>Start Infrastructure Services<a class="headerlink" href="#start-infrastructure-services" title="Permalink to this headline">¶</a></h3>
+<p>To better emulate a production environment, separate recipes are provided for
+infrastructure services such as Apache ZooKeeper, Kafka, MQTT brokers, databases, and
+other non-SiteWhere components. To start the infrastructure containers, navigate to the
+<strong>sitewhere-recipes/docker-compose/infrastructure_default</strong> subdirectory (or one of the other
+recipes depending on which components should be loaded). Execute the following command which
+will start the infrastructure based on the configuration outlined in the
+<strong>docker-compose.yml</strong> file.</p>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>docker-compose up
 </pre></div>
 </div>
@@ -288,9 +290,9 @@ configuration outlined in the <strong>docker-compose.yml</strong> file.</p>
 <div class="section" id="start-sitewhere-microservices">
 <h3>Start SiteWhere Microservices<a class="headerlink" href="#start-sitewhere-microservices" title="Permalink to this headline">¶</a></h3>
 <p>In a separate terminal, navigate to the <strong>sitewhere-recipes/docker-compose/default</strong>
-subdirectory. This recipe contains all of the SiteWhere microservices along with
-dependencies such as MongoDB and Mosquitto. As with the infrastructure recipe, run
-the following command to start SiteWhere:</p>
+subdirectory. This recipe contains all of the SiteWhere microservices and expects
+other infrastructure services to already be running. As with the infrastructure recipe,
+run the following command to start SiteWhere:</p>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>docker-compose up
 </pre></div>
 </div>

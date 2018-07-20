@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Apache Zookeeper Configuration &mdash; SiteWhere 2.0.RC1 Community Edition documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/sitewhere.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SiteWhere 2.0.RC1 Community Edition documentation" href="../index.html"/>
+        <link rel="up" title="SiteWhere User Guide" href="index.html"/>
+        <link rel="next" title="Apache Kafka Configuration" href="kafka-configuration.html"/>
+        <link rel="prev" title="SiteWhere User Guide" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SiteWhere
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.RC1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../platform/index.html">SiteWhere Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">SiteWhere Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">SiteWhere Deployment Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">SiteWhere User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Apache Zookeeper Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zookeeper-connectivity">Zookeeper Connectivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zookeeper-tree-structure">Zookeeper Tree Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zookeeper-data-persistence">Zookeeper Data Persistence</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafka-configuration.html">Apache Kafka Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="microservices/index.html">Microservice Guides</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SiteWhere</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">SiteWhere User Guide</a> &raquo;</li>
+        
+      <li>Apache Zookeeper Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a class="reference internal image-reference" href="../_images/sitewhere-with-tagline.png"><img alt="SiteWhere" class="align-center" src="../_images/sitewhere-with-tagline.png" style="width: 560.0px; height: 177.1px;" /></a>
+<hr class="docutils" />
+<div class="section" id="apache-zookeeper-configuration">
+<h1>Apache Zookeeper Configuration<a class="headerlink" href="#apache-zookeeper-configuration" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://zookeeper.apache.org/">Apache ZooKeeper</a> is used for centralized configuration
+management in SiteWhere microservices. It supports storage of configuration data in a
+high-performance, reliable tree structure and may be clustered to offer high availability
+and reliability.</p>
+<div class="section" id="zookeeper-connectivity">
+<h2>Zookeeper Connectivity<a class="headerlink" href="#zookeeper-connectivity" title="Permalink to this headline">¶</a></h2>
+<p>All SiteWhere microservices rely on Zookeeper to provide configuration information
+at runtime. The microservices use the following environment variables and default
+values for connecting to Zookeeper:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="46%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Setting</th>
+<th class="head">Environment Variable</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Zookeeper Host</td>
+<td>sitewhere.zookeeper.host</td>
+<td>localhost</td>
+</tr>
+<tr class="row-odd"><td>Zookeeper Port</td>
+<td>sitewhere.zookeeper.port</td>
+<td>2181</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Docker Compose configuration should pass a Zookeeper hostname that can be resolved
+on the Docker network that the microservices are attached to. Note that the Zookeeper
+environment variables must be passed for every microservice.</p>
+</div>
+</div>
+<div class="section" id="zookeeper-tree-structure">
+<h2>Zookeeper Tree Structure<a class="headerlink" href="#zookeeper-tree-structure" title="Permalink to this headline">¶</a></h2>
+<p>Once connected to Zookeeper, the instance management microservice is responsible
+for creating the base of the instance Zookeeper tree based on the following
+variables and default values:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="45%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Setting</th>
+<th class="head">Environment Variable</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Product Id</td>
+<td>sitewhere.product.id</td>
+<td>sitewhere</td>
+</tr>
+<tr class="row-odd"><td>Instance Id</td>
+<td>sitewhere.instance.id</td>
+<td>sitewhere1</td>
+</tr>
+</tbody>
+</table>
+<p>For the default system values, the Zookeeper tree will be rooted at <code class="docutils literal"><span class="pre">sitewhere/sitewhere1</span></code>
+and all other instance configuration data will be located relative to that root. If
+multiple instances of SiteWhere are to be run concurrently using the same Zookeeper cluster,
+they should provide different values for <code class="docutils literal"><span class="pre">sitewhere.instance.id</span></code> so that the configuration data
+does not overlap. This can be accomplished by setting the <code class="docutils literal"><span class="pre">sitewhere.instance.id</span></code>
+environment variable via the Docker Compose configuration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All of the microservices intended to run in the same instance should use the same
+values for <code class="docutils literal"><span class="pre">sitewhere.product.id</span></code> and <code class="docutils literal"><span class="pre">sitewhere.instance.id</span></code>.</p>
+</div>
+</div>
+<div class="section" id="zookeeper-data-persistence">
+<h2>Zookeeper Data Persistence<a class="headerlink" href="#zookeeper-data-persistence" title="Permalink to this headline">¶</a></h2>
+<p>If using Zookeeper within a Docker Compose configuration, the Zookeeper data folder
+should be mapped to a local volume so that it is not lost when the service is
+stopped. The SiteWhere infrastructure recipes have a common shared data volume
+that is used to store persistent data from all services such as Zookeeper,
+Kafka, and various databases. The data volume may be deleted in order to start
+with a “clean” system.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="kafka-configuration.html" class="btn btn-neutral float-right" title="Apache Kafka Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="SiteWhere User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SiteWhere LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.0.RC1 Community Edition',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -114,7 +114,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="features.html">New Platform 2.0 Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="microservice-overview.html">Microservices Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="microservices/index.html">Microservice Runtime Guide</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../development/index.html">SiteWhere Development Guide</a></li>
@@ -236,14 +235,13 @@ can be spread across tens or hundreds of machines using technologies such as
 <div class="section" id="configuration-management-with-apache-zookeeper">
 <h2>Configuration Management with Apache ZooKeeper<a class="headerlink" href="#configuration-management-with-apache-zookeeper" title="Permalink to this headline">¶</a></h2>
 <p>SiteWhere 2.0 moves system configuration from the filesystem into
-<a class="reference external" href="https://zookeeper.apache.org/">Apache ZooKeeper</a> to allow for a centralized,
-coordinated approach to configuration management. ZooKeeper contains a
-hierarchical structure which represents the configuration for a SiteWhere instance
-and all of the microservices that are used to realize it.</p>
+<a class="reference external" href="https://zookeeper.apache.org/">Apache ZooKeeper</a> to allow for a centralized
+approach to configuration management. ZooKeeper contains a hierarchical structure
+which represents the configuration for one or more SiteWhere instances
+and all of the microservices that are used to realize them.</p>
 <p>Each microservice has a direct connection to ZooKeeper and uses the
-hierarchy to determine information such as the instance it belongs to
-and the configuration it should use. Microservices listen for changes to
-the configuration data and react dynamically to updates. No configuration
+hierarchy to determine its configuration at runtime. Microservices listen for changes
+to the configuration data and react dynamically to updates. No configuration
 is stored locally within the microservice, which prevents problems with
 keeping services in sync as system configuration is updated.</p>
 </div>
