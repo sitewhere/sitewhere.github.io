@@ -7,41 +7,40 @@ const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 // Routes to render.
 var routes = [ '/', '/contact' ]
 
-// Webpack rules.
-var rules = [
-  {
-    test: /\.vue$/,
-    loader: 'vue-loader',
-    options: {
-        loaders: {
-          i18n: '@kazupon/vue-i18n-loader'
-        }
-      }
-  },
-  {
-    test: /\.js$/,
-    loader: 'babel-loader',
-    exclude: /node_modules/
-  },
-  {
-    test: /\.(png|jpg|gif|svg)$/,
-    loader: 'file-loader',
-    options: {
-      name: '[name].[ext]?[hash]'
-    }
-  }
-]
-
 // Create a configuration per locale.
 module.exports = (env) => ({
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, '../' + env.locale),
-    publicPath: 'https://sitewhere.io/en',
+    publicPath: '/',
     filename: 'build.js'
   },
   module: {
-    rules: rules
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+            loaders: {
+              i18n: '@kazupon/vue-i18n-loader'
+            }
+          }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'images/[name].[ext]',
+          publicPath: '/' + env.locale
+        }
+      }
+    ]
   },
   resolve: {
     alias: {
@@ -79,7 +78,7 @@ module.exports = (env) => ({
 	      return renderedRoute
 	    },
 	    renderer: new Renderer({
-  		  headless: false,
+  		  headless: true,
   		  renderAfterDocumentEvent: 'render-event'
     	})
 	  })
