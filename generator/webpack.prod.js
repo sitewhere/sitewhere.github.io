@@ -12,7 +12,7 @@ module.exports = (env) => ({
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, '../' + env.locale),
-    publicPath: '/',
+    publicPath: '/' + env.locale,
     filename: 'build.js'
   },
   module: {
@@ -65,7 +65,7 @@ module.exports = (env) => ({
 	    favicon: 'favicon.ico'
 	  }),
 	  new PrerenderSPAPlugin({
-	    staticDir: path.join(__dirname, '../' + env.locale),
+	    staticDir: path.join(__dirname, '../'),
 	    indexPath: path.join(__dirname, '../' + env.locale, 'vue.html'),
 	    outputDir: path.join(__dirname, '../' + env.locale),
 	    routes: routes,
