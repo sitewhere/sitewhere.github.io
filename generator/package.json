@@ -9,9 +9,11 @@
     "i18n-ja": "cross-env NODE_ENV=production webpack -p --config webpack.prod.js --env.locale ja --progress --hide-modules"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
+    "material-design-lite": "^1.3.0",
     "vue": "^2.5.11",
-    "vue-router": "^3.0.1",
-    "vue-i18n": "^8.0.0"
+    "vue-i18n": "^8.0.0",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.3.0",
@@ -23,7 +25,9 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
     "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.9.2",
     "prerender-spa-plugin": "^3.2.1",
+    "sass-loader": "^7.0.3",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.6.0",

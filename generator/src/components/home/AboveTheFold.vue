@@ -1,0 +1,164 @@
+<i18n>
+{
+  "en": {
+    "slogan": "The Open Platform for the Internet of Things",
+    "btn-documentation": "Documentation",
+    "btn-github": "View on GitHub",
+    "btn-discord": "Community",
+    "btn-get-started": "Get Started"
+  },
+  "ja": {
+    "slogan": "インターネットのためのオープンプラットフォーム",
+    "btn-documentation": "ドキュメンテーション",
+    "btn-on-github": "GitHubで表示",
+    "btn-discord": "コミュニティ",
+    "btn-get-started": "開始する"
+  }
+}
+</i18n>
+
+<template>
+  <div>
+    <img class="top-dark-curve" src="../../assets/top-dark-curve.svg"></img>
+    <img class="top-under-curve" src="../../assets/top-under-curve.svg"></img>
+    <img class="facets" src="../../assets/facets.jpg"></img>
+    <img class="top-overlay" src="../../assets/top-overlay.svg"></img>
+    <img class="main-logo" src="../../assets/sitewhere-logo.svg"></img>
+    <img class="logo-symbol" src="../../assets/sitewhere-symbol.svg"></img>
+    <h1 class="slogan">{{ $t('slogan') }}</h1>
+    <button class="view-docs-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <i class="fa fa-book"></i>
+      {{ $t('btn-documentation') }}
+    </button>
+    <button class="view-github-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <i class="fab fa-github"></i>
+      {{ $t('btn-github') }}
+    </button>
+    <button class="view-discord-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <i class="fab fa-discord"></i>
+      {{ $t('btn-discord') }}
+    </button>
+    <button class="get-started-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      {{ $t('btn-get-started') }}
+    </button>
+  </div>
+</template>
+
+<script>
+export default {
+  data: () => ({
+  })
+}
+</script>
+
+<style>
+.main-logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  height: 60px;
+}
+.logo-symbol {
+  position: absolute;
+  top: 180px;
+  left: 50px;
+  height: 280px;
+}
+.facets {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 800px;
+  opacity: 0.4;
+}
+.slogan {
+  position: absolute;
+  top: 210px;
+  left: 300px;
+  width: 500px;
+  font-size: 40px;
+}
+.top-overlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 600px;
+}
+.top-dark-curve {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 600px;
+}
+.top-under-curve {
+  position: absolute;
+  top: 599px;
+  width: 100%;
+  height: 200px;
+}
+.top-button {
+  background-color: #fff;
+  border-radius: 5px;
+  opacity: 0.7;
+}
+.top-button:hover {
+  background-color: #fff;
+  opacity: 1.0;
+}
+i.fab {
+  font-size: 14pt;
+  margin-right: 4px;
+  margin-left: -3px;
+  vertical-align: middle;
+  padding-bottom: 3px;
+}
+i.fa {
+  font-size: 14pt;
+  margin-right: 4px;
+  margin-left: -3px;
+  vertical-align: middle;
+  padding-bottom: 3px;
+}
+.view-docs-btn {
+  position: absolute;
+  top: 20px;
+  right: 510px;
+  width: 200px;
+}
+.view-github-btn {
+  position: absolute;
+  top: 20px;
+  right: 280px;
+  width: 200px;
+}
+.view-discord-btn {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 200px;
+}
+.get-started-btn {
+  position: absolute;
+  top: 360px;
+  left: 300px;
+  width: 220px;
+  height: 40px;
+  background-color: #dc0000;
+  color: #fff;
+  font-size: 16pt;
+  border-radius: 5px;
+  opacity: 1.0;
+}
+.get-started-btn:hover {
+  position: absolute;
+  top: 360px;
+  left: 300px;
+  width: 220px;
+  height: 40px;
+  background-color: #ed0000;
+  color: #fff;
+  font-size: 16pt;
+  border-radius: 5px;
+  opacity: 1.0;
+}
+</style>

@@ -1,24 +1,19 @@
-<i18n>
-{
-  "en": {
-    "hello": "hello world!"
-  },
-  "ja": {
-    "hello": "こんにちは、世界！"
-  }
-}
-</i18n>
-
 <template>
   <div>
-    <h1>{{ $t('hello') }}</h1>
+    <above-the-fold></above-the-fold>
   </div>
 </template>
 
 <script>
+import AboveTheFold from './home/AboveTheFold'
+
 export default {
   data: () => ({
-  })
+  }),
+
+  components: {
+    AboveTheFold
+  }
 }
 </script>
 
