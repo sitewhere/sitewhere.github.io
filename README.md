@@ -1,2 +1,2 @@
-# SiteWhere Documentation
-This project contains documentation for the SiteWhere platform.
+# SiteWhere Developer Website
+This project contains the SiteWhere developer website.
