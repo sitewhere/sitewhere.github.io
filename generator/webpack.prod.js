@@ -37,7 +37,7 @@ module.exports = (env) => ({
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, '../' + env.locale),
-    publicPath: '/',
+    publicPath: 'https://sitewhere.io/en',
     filename: 'build.js'
   },
   module: {
@@ -47,7 +47,7 @@ module.exports = (env) => ({
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['*', '.js', '.vue', '.json']  
+    extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
     historyApiFallback: true,
@@ -79,8 +79,8 @@ module.exports = (env) => ({
 	      return renderedRoute
 	    },
 	    renderer: new Renderer({
-		  headless: true,
-		  renderAfterDocumentEvent: 'render-event'
+  		  headless: false,
+  		  renderAfterDocumentEvent: 'render-event'
     	})
 	  })
 	]
