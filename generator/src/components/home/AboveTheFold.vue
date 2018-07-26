@@ -27,15 +27,15 @@
     <img class="logo-symbol" src="../../assets/sitewhere-symbol.svg"></img>
     <h1 class="slogan">{{ $t('slogan') }}</h1>
     <button class="view-docs-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      <i class="fa fa-book"></i>
+      <font-awesome-icon icon="book" size="lg" />
       {{ $t('btn-documentation') }}
     </button>
     <button class="view-github-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      <i class="fab fa-github"></i>
+      <font-awesome-icon :icon="['fab', 'github']" size="lg" />
       {{ $t('btn-github') }}
     </button>
     <button class="view-discord-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      <i class="fab fa-discord"></i>
+      <font-awesome-icon :icon="['fab', 'discord']" size="lg" />
       {{ $t('btn-discord') }}
     </button>
     <button class="get-started-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
@@ -105,19 +105,10 @@ export default {
   background-color: #fff;
   opacity: 1.0;
 }
-i.fab {
-  font-size: 14pt;
+.svg-inline--fa {
   margin-right: 4px;
   margin-left: -3px;
   vertical-align: middle;
-  padding-bottom: 3px;
-}
-i.fa {
-  font-size: 14pt;
-  margin-right: 4px;
-  margin-left: -3px;
-  vertical-align: middle;
-  padding-bottom: 3px;
 }
 .view-docs-btn {
   position: absolute;

@@ -1,6 +1,8 @@
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
@@ -25,6 +27,13 @@ module.exports = (env) => ({
               i18n: '@kazupon/vue-i18n-loader'
             }
           }
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       },
       {
         test: /\.js$/,
@@ -59,6 +68,14 @@ module.exports = (env) => ({
 	      LOCALE: JSON.stringify(env.locale)
 	    }
 	  }),
+    new ExtractTextPlugin({
+      filename: 'css/[name].[contenthash].css'
+    }),
+    new OptimizeCSSPlugin ({
+      cssProcessorOptions: {
+        safe: true
+      }
+    }),
 	  new HtmlWebpackPlugin({
 	    template: 'index.html',
 	    filename: path.resolve(__dirname, '../' + env.locale + '/vue.html'),
