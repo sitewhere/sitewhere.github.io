@@ -10,7 +10,7 @@
   "ja": {
     "slogan": "インターネットのためのオープンプラットフォーム",
     "btn-documentation": "ドキュメンテーション",
-    "btn-on-github": "GitHubで表示",
+    "btn-github": "GitHubで表示",
     "btn-discord": "コミュニティ",
     "btn-get-started": "開始する"
   }
