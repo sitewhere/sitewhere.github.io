@@ -30,7 +30,7 @@ const i18n = new VueI18n({
   }
 })
 
-new Vue({
+const root = new Vue({
   el: '#app',
   i18n,
   router,
