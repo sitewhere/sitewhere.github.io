@@ -43,3 +43,7 @@ new Vue({
     document.dispatchEvent(new Event('render-event'))
   }
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+  root.$mount('#app')
+})

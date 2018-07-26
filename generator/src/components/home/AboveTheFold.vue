@@ -26,15 +26,18 @@
     <img class="main-logo" src="../../assets/sitewhere-logo.svg"></img>
     <img class="logo-symbol" src="../../assets/sitewhere-symbol.svg"></img>
     <h1 class="slogan">{{ $t('slogan') }}</h1>
-    <button @click="openDocumentation" class="view-docs-btn top-button mdl-button mdl-button--raised">
+    <button onclick="openDocumentation()"
+      class="view-docs-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon icon="book" size="lg" />
       {{ $t('btn-documentation') }}
     </button>
-    <button @click="openGitHub" class="view-github-btn top-button mdl-button mdl-button--raised">
+    <button @click="openGitHub"
+      class="view-github-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon :icon="['fab', 'github']" size="lg" />
       {{ $t('btn-github') }}
     </button>
-    <button @click="openDiscord" class="view-discord-btn top-button mdl-button mdl-button--raised">
+    <button @click="openDiscord"
+      class="view-discord-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon :icon="['fab', 'discord']" size="lg" />
       {{ $t('btn-discord') }}
     </button>
@@ -51,6 +54,7 @@ export default {
 
   methods: {
     openDocumentation: function (event) {
+      console.log('made it')
       window.open('https://sitewhere.io/docs/en/2.0.RC1/index.html', '_blank');
     },
     openGitHub: function (event) {
