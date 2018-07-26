@@ -26,19 +26,19 @@
     <img class="main-logo" src="../../assets/sitewhere-logo.svg"></img>
     <img class="logo-symbol" src="../../assets/sitewhere-symbol.svg"></img>
     <h1 class="slogan">{{ $t('slogan') }}</h1>
-    <button class="view-docs-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    <button class="view-docs-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon icon="book" size="lg" />
       {{ $t('btn-documentation') }}
     </button>
-    <button class="view-github-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    <button class="view-github-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon :icon="['fab', 'github']" size="lg" />
       {{ $t('btn-github') }}
     </button>
-    <button class="view-discord-btn top-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    <button class="view-discord-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon :icon="['fab', 'discord']" size="lg" />
       {{ $t('btn-discord') }}
     </button>
-    <button class="get-started-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    <button class="get-started-btn mdl-button mdl-button--raised">
       {{ $t('btn-get-started') }}
     </button>
   </div>
@@ -51,7 +51,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .main-logo {
   position: absolute;
   top: 20px;
@@ -98,12 +98,14 @@ export default {
 }
 .top-button {
   background-color: #fff;
-  border-radius: 5px;
   opacity: 0.7;
 }
 .top-button:hover {
-  background-color: #fff;
   opacity: 1.0;
+}
+.top-button:focus {
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 .svg-inline--fa {
   margin-right: 4px;
@@ -134,22 +136,16 @@ export default {
   left: 300px;
   width: 220px;
   height: 40px;
-  background-color: #dc0000;
-  color: #fff;
-  font-size: 16pt;
-  border-radius: 5px;
-  opacity: 1.0;
-}
-.get-started-btn:hover {
-  position: absolute;
-  top: 360px;
-  left: 300px;
-  width: 220px;
-  height: 40px;
   background-color: #ed0000;
   color: #fff;
   font-size: 16pt;
-  border-radius: 5px;
+  opacity: 0.8;
+}
+.get-started-btn:hover {
   opacity: 1.0;
+}
+.get-started-btn:focus {
+  background-color: #ed0000;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 </style>
