@@ -26,15 +26,15 @@
     <img class="main-logo" src="../../assets/sitewhere-logo.svg"></img>
     <img class="logo-symbol" src="../../assets/sitewhere-symbol.svg"></img>
     <h1 class="slogan">{{ $t('slogan') }}</h1>
-    <button class="view-docs-btn top-button mdl-button mdl-button--raised">
+    <button @click="openDocumentation" class="view-docs-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon icon="book" size="lg" />
       {{ $t('btn-documentation') }}
     </button>
-    <button class="view-github-btn top-button mdl-button mdl-button--raised">
+    <button @click="openGitHub" class="view-github-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon :icon="['fab', 'github']" size="lg" />
       {{ $t('btn-github') }}
     </button>
-    <button class="view-discord-btn top-button mdl-button mdl-button--raised">
+    <button @click="openDiscord" class="view-discord-btn top-button mdl-button mdl-button--raised">
       <font-awesome-icon :icon="['fab', 'discord']" size="lg" />
       {{ $t('btn-discord') }}
     </button>
@@ -47,7 +47,19 @@
 <script>
 export default {
   data: () => ({
-  })
+  }),
+
+  methods: {
+    openDocumentation: function (event) {
+      window.open('https://sitewhere.io/docs/en/2.0.RC1/index.html', '_blank');
+    },
+    openGitHub: function (event) {
+      window.open('https://github.com/sitewhere/sitewhere', '_blank');
+    },
+    openDiscord: function (event) {
+      window.open('https://discord.gg/sq7sH7B', '_blank');
+    }
+  }
 }
 </script>
 
