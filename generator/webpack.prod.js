@@ -31,7 +31,6 @@ module.exports = (env) => ({
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
           use: "css-loader"
         })
       },
@@ -69,7 +68,7 @@ module.exports = (env) => ({
 	    }
 	  }),
     new ExtractTextPlugin({
-      filename: 'css/[name].[contenthash].css'
+      filename: 'css/[name].css'
     }),
     new OptimizeCSSPlugin ({
       cssProcessorOptions: {

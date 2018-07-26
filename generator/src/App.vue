@@ -11,8 +11,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import '~material-design-lite/material.min.css';
-@import '~material-design-lite/dist/material.grey-red.min.css';
-</style>

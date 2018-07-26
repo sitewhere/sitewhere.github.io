@@ -1,6 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var rules = [
   {
@@ -11,6 +12,12 @@ var rules = [
           i18n: '@kazupon/vue-i18n-loader'
         }
       }
+  },
+  {
+    test: /\.css$/,
+    use: ExtractTextPlugin.extract({
+      use: "css-loader"
+    })
   },
   {
     test: /\.js$/,
@@ -40,7 +47,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['*', '.js', '.vue', '.json']  
+    extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
     historyApiFallback: true,
@@ -54,6 +61,9 @@ module.exports = {
 		  LOCALE: '"en"'
 	    }
 	}),
+  new ExtractTextPlugin({
+    filename: 'css/[name].[contenthash].css'
+  }),
 	new HtmlWebpackPlugin({
 	  template: 'index.html',
 	  filename: 'index.html',
