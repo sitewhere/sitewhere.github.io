@@ -949,14 +949,6 @@
 	<xsd:complexType name="coapServerEventSourceType">
 		<xsd:complexContent>
 			<xsd:extension base="abstractEventSourceType">
-				<xsd:attribute name="hostname" type="xsd:string"
-					use="optional">
-					<xsd:annotation>
-						<xsd:documentation>
-							Hostname used when binding CoAP server socket.
-						</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
 				<xsd:attribute name="port" type="sw:substitutableInt"
 					use="optional">
 					<xsd:annotation>
