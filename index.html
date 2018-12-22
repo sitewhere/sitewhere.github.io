@@ -5,14 +5,19 @@
     <script>
       var language = navigator.language || navigator.browserLanguage; //for IE
       if (language.indexOf('es') > -1) {
+    	console.log("Routing to Spanish translation. " + language);
         window.location.href = "/es/";
       } else if (language.indexOf('fr') > -1) {
+      	console.log("Routing to French translation. " + language);
         window.location.href = "/fr/";
       } else if (language.indexOf('cn') > -1) {
+      	console.log("Routing to Chinese translation. " + language);
         window.location.href = "/cn/";
       } else if (language.indexOf('ja') > -1) {
+      	console.log("Routing to Japanese translation. " + language);
         window.location.href = "/ja/";
       } else {
+      	console.log("Defaulting to English translation. " + language);
         window.location.href = "/en/";
       }
     </script>
