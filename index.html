@@ -1,27 +1,31 @@
 <html>
-  <head>
-    <title>Redirecting to SiteWhere Documentation</title>
-    <meta name="google-site-verification" content="_toH0jMl-zSgM3y_Hqo3Y-ehcIFMyxqwd55Kc462yrM" />
-    <script>
-      var language = navigator.language || navigator.browserLanguage; //for IE
-      if (language.indexOf('es') > -1) {
-    	console.log("Routing to Spanish translation. " + language);
-        window.location.href = "/es/";
-      } else if (language.indexOf('fr') > -1) {
-      	console.log("Routing to French translation. " + language);
-        window.location.href = "/fr/";
-      } else if (language.indexOf('zh') > -1) {
-      	console.log("Routing to Chinese translation. " + language);
-        window.location.href = "/cn/";
-      } else if (language.indexOf('ja') > -1) {
-      	console.log("Routing to Japanese translation. " + language);
-        window.location.href = "/ja/";
-      } else {
-      	console.log("Defaulting to English translation. " + language);
-        window.location.href = "/en/";
-      }
-    </script>
-  </head>
-  <body>
-  </body>
+<head>
+<title>Redirecting to SiteWhere Documentation</title>
+<meta name="google-site-verification"
+	content="_toH0jMl-zSgM3y_Hqo3Y-ehcIFMyxqwd55Kc462yrM" />
+<script>
+	var language = navigator.language || navigator.browserLanguage; //for IE
+	if (language.indexOf('es') > -1) {
+		console.log("Routing to Spanish translation. " + language);
+		window.location.href = "/es/";
+	} else if (language.indexOf('fr') > -1) {
+		console.log("Routing to French translation. " + language);
+		window.location.href = "/fr/";
+	} else if (language.indexOf('zh') > -1) {
+		console.log("Routing to Chinese translation. " + language);
+		window.location.href = "/cn/";
+	} else if (language.indexOf('ja') > -1) {
+		console.log("Routing to Japanese translation. " + language);
+		window.location.href = "/ja/";
+	} else if (language.indexOf('vn') > -1) {
+		console.log("Routing to Vietnamese translation. " + language);
+		window.location.href = "/vn/";
+	} else {
+		console.log("Defaulting to English translation. " + language);
+		window.location.href = "/en/";
+	}
+</script>
+</head>
+<body>
+</body>
 </html>
