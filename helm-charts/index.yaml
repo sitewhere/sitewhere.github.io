@@ -2,15 +2,15 @@ apiVersion: v1
 entries:
   sitewhere:
   - apiVersion: v1
-    appVersion: 2.0.0
-    created: 2018-12-28T20:11:15.524254881Z
+    appVersion: 2.0.1
+    created: 2018-12-29T16:55:41.830616188Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: 8591992a785bbcdde0da893c6a835174d79c6affa5fad819a14e8c1be8eb570e
+    digest: e4eff15a1c0cfd01b37ad7a56c89501278453f86cfb639087bf592506d56217a
     home: http://www.sitewhere.org/
-    icon: http://sitewhere.io/docs/2.0.0-rc2/images/favicon.png
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
     - sitewhere
     - internet-of-things
@@ -39,6 +39,6 @@ entries:
       name: Jorge Villaverde
     name: sitewhere
     urls:
-    - https://sitewhere.io/helm-charts/sitewhere-0.1.0.tgz
-    version: 0.1.0
-generated: 2018-12-28T20:11:15.519026856Z
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.1.tgz
+    version: 0.1.1
+generated: 2018-12-29T16:55:41.826472007Z
