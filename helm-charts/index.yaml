@@ -3,7 +3,7 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2018-12-15T01:10:40.580889919Z
+    created: 2019-01-01T11:34:40.5111733-05:00
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -39,6 +39,41 @@ entries:
       name: Jorge Villaverde
     name: sitewhere
     urls:
-    - https://sitewhere.io/helm-charts/sitewhere-0.1.0.tgz
+    - sitewhere-0.1.0.tgz
     version: 0.1.0
-generated: 2018-12-15T01:10:40.578024675Z
+  sitewhere-infra-core:
+  - apiVersion: v1
+    appVersion: 2.0.1
+    created: 2019-01-01T11:34:40.5141374-05:00
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 47b1fd6184cd443480d2d02fb6991291b1158d259c1b9eb9e3beccd42c0e5331
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - sitewhere-infra-core-0.1.0.tgz
+    version: 0.1.0
+generated: 2019-01-01T11:34:40.5071385-05:00
