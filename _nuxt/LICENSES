@@ -169,6 +169,8 @@
 
 /*! ./mixins/app-theme */
 
+/*! ../../mixins/themeable */
+
 /*! ../../directives/resize */
 
 /*!**************************************!*\
@@ -184,8 +186,6 @@
   \*************************************************/
 
 /*! exports provided: default */
-
-/*! ../../../util/colorUtils */
 
 /*! ../../../util/theme */
 
@@ -273,6 +273,8 @@
 
 /*! ../../mixins/colorable */
 
+/*! ../../mixins/themeable */
+
 /*! ../../util/mixins */
 
 /*!********************************************!*\
@@ -302,30 +304,42 @@
 /*! ./VBottomSheet */
 
 /*!*****************************************************!*\
-  !*** ./src/components/VBreadcrumbs/VBreadcrumbs.js ***!
+  !*** ./src/components/VBreadcrumbs/VBreadcrumbs.ts ***!
   \*****************************************************/
 
 /*! exports provided: default */
 
 /*! ../../stylus/components/_breadcrumbs.styl */
 
+/*! . */
+
+/*! ../../mixins/themeable */
+
+/*! ../../util/console */
+
+/*! ../../util/mixins */
+
 /*!*********************************************************!*\
-  !*** ./src/components/VBreadcrumbs/VBreadcrumbsItem.js ***!
+  !*** ./src/components/VBreadcrumbs/VBreadcrumbsItem.ts ***!
   \*********************************************************/
 
 /*! exports provided: default */
 
 /*! ../../mixins/routable */
 
+/*! ../../util/mixins */
+
 /*!**********************************************!*\
-  !*** ./src/components/VBreadcrumbs/index.js ***!
+  !*** ./src/components/VBreadcrumbs/index.ts ***!
   \**********************************************/
 
-/*! exports provided: VBreadcrumbs, VBreadcrumbsItem, default */
+/*! exports provided: VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, default */
 
 /*! ./VBreadcrumbs */
 
 /*! ./VBreadcrumbsItem */
+
+/*! ../../util/helpers */
 
 /*!*************************************!*\
   !*** ./src/components/VBtn/VBtn.ts ***!
@@ -341,6 +355,8 @@
 
 /*! ../../mixins/colorable */
 
+/*! ../../mixins/groupable */
+
 /*! ../../mixins/positionable */
 
 /*! ../../mixins/routable */
@@ -349,7 +365,7 @@
 
 /*! ../../mixins/toggleable */
 
-/*! ../../mixins/registrable */
+/*! ../../util/helpers */
 
 /*!**************************************!*\
   !*** ./src/components/VBtn/index.ts ***!
@@ -367,13 +383,7 @@
 
 /*! ../../stylus/components/_button-toggle.styl */
 
-/*! ../../util/mixins */
-
 /*! ../../mixins/button-group */
-
-/*! ../../mixins/themeable */
-
-/*! ../../util/console */
 
 /*!********************************************!*\
   !*** ./src/components/VBtnToggle/index.ts ***!
@@ -391,13 +401,9 @@
 
 /*! ../../stylus/components/_cards.styl */
 
-/*! ../../mixins/colorable */
+/*! ../VSheet */
 
 /*! ../../mixins/routable */
-
-/*! ../../mixins/themeable */
-
-/*! ../../util/helpers */
 
 /*! ../../util/mixins */
 
@@ -407,9 +413,9 @@
 
 /*! exports provided: default */
 
-/*! ../../util/helpers */
+/*! ../VImg/VImg */
 
-/*! vue */
+/*! ../../util/console */
 
 /*!********************************************!*\
   !*** ./src/components/VCard/VCardTitle.ts ***!
@@ -433,40 +439,38 @@
 
 /*! ./VCardTitle */
 
-/*! vue */
-
 /*!***********************************************!*\
-  !*** ./src/components/VCarousel/VCarousel.js ***!
+  !*** ./src/components/VCarousel/VCarousel.ts ***!
   \***********************************************/
 
 /*! exports provided: default */
 
 /*! ../../stylus/components/_carousel.styl */
 
+/*! ../VWindow/VWindow */
+
 /*! ../VBtn */
 
 /*! ../VIcon */
 
-/*! ../../mixins/bootable */
+/*! ../../mixins/button-group */
 
-/*! ../../mixins/themeable */
+/*! ../../util/helpers */
 
-/*! ../../mixins/registrable */
-
-/*! ../../directives/touch */
+/*! ../../util/console */
 
 /*!***************************************************!*\
-  !*** ./src/components/VCarousel/VCarouselItem.js ***!
+  !*** ./src/components/VCarousel/VCarouselItem.ts ***!
   \***************************************************/
 
 /*! exports provided: default */
 
-/*! ../VJumbotron */
+/*! ../VWindow/VWindowItem */
 
-/*! ../../mixins/registrable */
+/*! ../VImg */
 
 /*!*******************************************!*\
-  !*** ./src/components/VCarousel/index.js ***!
+  !*** ./src/components/VCarousel/index.ts ***!
   \*******************************************/
 
 /*! exports provided: VCarousel, VCarouselItem, default */
@@ -611,6 +615,8 @@
 
 /*! ../../mixins/returnable */
 
+/*! ../../mixins/themeable */
+
 /*! ../../util/helpers */
 
 /*! ../VBtn */
@@ -636,6 +642,8 @@
 /*! exports provided: default */
 
 /*! ../../transitions/expand-transition */
+
+/*! ../../../util/helpers */
 
 /*!**************************************************!*\
   !*** ./src/components/VDataTable/mixins/foot.js ***!
@@ -682,6 +690,8 @@
 /*! ./util */
 
 /*! ./util/isDateAllowed */
+
+/*! ../../util/console */
 
 /*!************************************************************!*\
   !*** ./src/components/VDatePicker/VDatePickerDateTable.js ***!
@@ -849,6 +859,8 @@
 
 /*! ../../util/helpers */
 
+/*! ../../util/ThemeProvider */
+
 /*!*****************************************!*\
   !*** ./src/components/VDialog/index.js ***!
   \*****************************************/
@@ -864,8 +876,6 @@
 /*! exports provided: default */
 
 /*! ../../stylus/components/_dividers.styl */
-
-/*! vue */
 
 /*! ../../mixins/themeable */
 
@@ -1017,13 +1027,35 @@
 
 /*! ../../util/helpers */
 
-/*! ./VContent */
-
 /*! ./VContainer */
+
+/*! ./VContent */
 
 /*! ./VFlex */
 
 /*! ./VLayout */
+
+/*!*****************************************!*\
+  !*** ./src/components/VHover/VHover.ts ***!
+  \*****************************************/
+
+/*! exports provided: default */
+
+/*! ../../mixins/delayable */
+
+/*! ../../mixins/toggleable */
+
+/*! ../../util/mixins */
+
+/*! ../../util/console */
+
+/*!****************************************!*\
+  !*** ./src/components/VHover/index.ts ***!
+  \****************************************/
+
+/*! exports provided: VHover, default */
+
+/*! ./VHover */
 
 /*!***************************************!*\
   !*** ./src/components/VIcon/VIcon.ts ***!
@@ -1033,11 +1065,15 @@
 
 /*! ../../stylus/components/_icons.styl */
 
-/*! ../../mixins/themeable */
-
 /*! ../../mixins/colorable */
 
+/*! ../../mixins/sizeable */
+
+/*! ../../mixins/themeable */
+
 /*! ../../util/helpers */
+
+/*! vue */
 
 /*! ../../util/mixins */
 
@@ -1049,8 +1085,28 @@
 
 /*! ./VIcon */
 
+/*!*************************************!*\
+  !*** ./src/components/VImg/VImg.ts ***!
+  \*************************************/
+
+/*! exports provided: default */
+
+/*! ../../stylus/components/_images.styl */
+
+/*! ../VResponsive */
+
+/*! ../../util/console */
+
+/*!**************************************!*\
+  !*** ./src/components/VImg/index.ts ***!
+  \**************************************/
+
+/*! exports provided: VImg, default */
+
+/*! ./VImg */
+
 /*!*****************************************!*\
-  !*** ./src/components/VInput/VInput.js ***!
+  !*** ./src/components/VInput/VInput.ts ***!
   \*****************************************/
 
 /*! exports provided: default */
@@ -1065,8 +1121,6 @@
 
 /*! ../../mixins/colorable */
 
-/*! ../../mixins/loadable */
-
 /*! ../../mixins/themeable */
 
 /*! ../../mixins/validatable */
@@ -1075,13 +1129,53 @@
 
 /*! ../../util/console */
 
+/*! ../../util/mixins */
+
 /*!****************************************!*\
-  !*** ./src/components/VInput/index.js ***!
+  !*** ./src/components/VInput/index.ts ***!
   \****************************************/
 
 /*! exports provided: VInput, default */
 
 /*! ./VInput */
+
+/*!********************************************!*\
+  !*** ./src/components/VItemGroup/VItem.ts ***!
+  \********************************************/
+
+/*! exports provided: default */
+
+/*! ../../mixins/groupable */
+
+/*! ../../util/mixins */
+
+/*! ../../util/console */
+
+/*!*************************************************!*\
+  !*** ./src/components/VItemGroup/VItemGroup.ts ***!
+  \*************************************************/
+
+/*! exports provided: BaseItemGroup, default */
+
+/*! ../../stylus/components/_item-group.styl */
+
+/*! ../../mixins/proxyable */
+
+/*! ../../mixins/themeable */
+
+/*! ../../util/mixins */
+
+/*! ../../util/console */
+
+/*!********************************************!*\
+  !*** ./src/components/VItemGroup/index.ts ***!
+  \********************************************/
+
+/*! exports provided: VItem, VItemGroup, default */
+
+/*! ./VItem */
+
+/*! ./VItemGroup */
 
 /*!*************************************************!*\
   !*** ./src/components/VJumbotron/VJumbotron.js ***!
@@ -1096,6 +1190,8 @@
 /*! ../../mixins/routable */
 
 /*! ../../mixins/themeable */
+
+/*! ../../util/console */
 
 /*!********************************************!*\
   !*** ./src/components/VJumbotron/index.js ***!
@@ -1167,6 +1263,8 @@
 
 /*! ../../mixins/toggleable */
 
+/*! ../../mixins/themeable */
+
 /*! ../../directives/ripple */
 
 /*!*************************************************!*\
@@ -1209,6 +1307,8 @@
 
 /*! ../../stylus/components/_menus.styl */
 
+/*! vue */
+
 /*! ../../mixins/delayable */
 
 /*! ../../mixins/dependent */
@@ -1220,6 +1320,8 @@
 /*! ../../mixins/returnable */
 
 /*! ../../mixins/toggleable */
+
+/*! ../../mixins/themeable */
 
 /*! ./mixins/menu-activator */
 
@@ -1234,6 +1336,8 @@
 /*! ../../directives/resize */
 
 /*! ../../util/helpers */
+
+/*! ../../util/ThemeProvider */
 
 /*!***************************************!*\
   !*** ./src/components/VMenu/index.js ***!
@@ -1299,6 +1403,8 @@
 
 /*! ../../mixins/applicationable */
 
+/*! ../../mixins/dependent */
+
 /*! ../../mixins/overlayable */
 
 /*! ../../mixins/ssr-bootable */
@@ -1348,7 +1454,7 @@
 /*! ./VOverflowBtn */
 
 /*!***************************************************!*\
-  !*** ./src/components/VPagination/VPagination.js ***!
+  !*** ./src/components/VPagination/VPagination.ts ***!
   \***************************************************/
 
 /*! exports provided: default */
@@ -1359,10 +1465,14 @@
 
 /*! ../../directives/resize */
 
+/*! ../../util/mixins */
+
 /*! ../../mixins/colorable */
 
+/*! ../../mixins/themeable */
+
 /*!*********************************************!*\
-  !*** ./src/components/VPagination/index.js ***!
+  !*** ./src/components/VPagination/index.ts ***!
   \*********************************************/
 
 /*! exports provided: VPagination, default */
@@ -1402,6 +1512,8 @@
 /*! ../../mixins/colorable */
 
 /*! ../../mixins/themeable */
+
+/*! ../../util/helpers */
 
 /*!*****************************************!*\
   !*** ./src/components/VPicker/index.js ***!
@@ -1473,9 +1585,9 @@
 
 /*! ../../mixins/themeable */
 
-/*! ../../mixins/registrable */
+/*! ../../mixins/selectable */
 
-/*! ../../util/helpers */
+/*! ../../mixins/registrable */
 
 /*!***************************************************!*\
   !*** ./src/components/VRadioGroup/VRadioGroup.js ***!
@@ -1524,10 +1636,62 @@
 /*! ./VRangeSlider */
 
 /*!*******************************************!*\
-  !*** ./src/components/VSelect/VSelect.js ***!
+  !*** ./src/components/VRating/VRating.ts ***!
   \*******************************************/
 
 /*! exports provided: default */
+
+/*! ../../stylus/components/_rating.styl */
+
+/*! ../VIcon */
+
+/*! ../../mixins/colorable */
+
+/*! ../../mixins/delayable */
+
+/*! ../../mixins/sizeable */
+
+/*! ../../mixins/rippleable */
+
+/*! ../../mixins/themeable */
+
+/*! ../../util/helpers */
+
+/*! ../../util/mixins */
+
+/*!*****************************************!*\
+  !*** ./src/components/VRating/index.ts ***!
+  \*****************************************/
+
+/*! exports provided: VRating, default */
+
+/*! ./VRating */
+
+/*!***************************************************!*\
+  !*** ./src/components/VResponsive/VResponsive.ts ***!
+  \***************************************************/
+
+/*! exports provided: default */
+
+/*! ../../stylus/components/_responsive.styl */
+
+/*! ../../mixins/measurable */
+
+/*! ../../util/mixins */
+
+/*!*********************************************!*\
+  !*** ./src/components/VResponsive/index.ts ***!
+  \*********************************************/
+
+/*! exports provided: VResponsive, default */
+
+/*! ./VResponsive */
+
+/*!*******************************************!*\
+  !*** ./src/components/VSelect/VSelect.js ***!
+  \*******************************************/
+
+/*! exports provided: defaultMenuProps, default */
 
 /*! ../../stylus/components/_text-fields.styl */
 
@@ -1544,8 +1708,6 @@
 /*! ../../mixins/comparable */
 
 /*! ../../mixins/filterable */
-
-/*! ../../mixins/menuable */
 
 /*! ../../directives/click-outside */
 
@@ -1591,7 +1753,35 @@
 
 /*! ../../util/rebuildFunctionalSlots */
 
+/*! ../../util/dedupeModelListeners */
+
 /*! ../../util/console */
+
+/*!*****************************************!*\
+  !*** ./src/components/VSheet/VSheet.ts ***!
+  \*****************************************/
+
+/*! exports provided: default */
+
+/*! ../../stylus/components/_sheet.styl */
+
+/*! ../../mixins/colorable */
+
+/*! ../../mixins/elevatable */
+
+/*! ../../mixins/measurable */
+
+/*! ../../mixins/themeable */
+
+/*! ../../util/mixins */
+
+/*!****************************************!*\
+  !*** ./src/components/VSheet/index.ts ***!
+  \****************************************/
+
+/*! exports provided: VSheet, default */
+
+/*! ./VSheet */
 
 /*!*******************************************!*\
   !*** ./src/components/VSlider/VSlider.js ***!
@@ -1610,6 +1800,8 @@
 /*! ../../util/helpers */
 
 /*! ../../util/console */
+
+/*! ../../mixins/loadable */
 
 /*!*****************************************!*\
   !*** ./src/components/VSlider/index.js ***!
@@ -1644,6 +1836,48 @@
 /*! ./VSnackbar */
 
 /*!*************************************************!*\
+  !*** ./src/components/VSparkline/VSparkline.ts ***!
+  \*************************************************/
+
+/*! exports provided: default */
+
+/*! ../../mixins/colorable */
+
+/*! ../../util/mixins */
+
+/*! ./helpers/core */
+
+/*! ./helpers/path */
+
+/*!***************************************************!*\
+  !*** ./src/components/VSparkline/helpers/core.ts ***!
+  \***************************************************/
+
+/*! exports provided: genPoints */
+
+/*!***************************************************!*\
+  !*** ./src/components/VSparkline/helpers/math.ts ***!
+  \***************************************************/
+
+/*! exports provided: checkCollinear, getDistance, moveTo */
+
+/*!***************************************************!*\
+  !*** ./src/components/VSparkline/helpers/path.ts ***!
+  \***************************************************/
+
+/*! exports provided: genPath */
+
+/*! ./math */
+
+/*!********************************************!*\
+  !*** ./src/components/VSparkline/index.ts ***!
+  \********************************************/
+
+/*! exports provided: VSparkline, default */
+
+/*! ./VSparkline */
+
+/*!*************************************************!*\
   !*** ./src/components/VSpeedDial/VSpeedDial.js ***!
   \*************************************************/
 
@@ -1675,6 +1909,8 @@
 
 /*! ../../stylus/components/_steppers.styl */
 
+/*! ../../mixins/registrable */
+
 /*! ../../mixins/themeable */
 
 /*!****************************************************!*\
@@ -1685,6 +1921,8 @@
 
 /*! ../transitions */
 
+/*! ../../mixins/registrable */
+
 /*! ../../util/helpers */
 
 /*!*************************************************!*\
@@ -1694,6 +1932,10 @@
 /*! exports provided: default */
 
 /*! ../VIcon */
+
+/*! ../../mixins/colorable */
+
+/*! ../../mixins/registrable */
 
 /*! ../../directives/ripple */
 
@@ -1743,6 +1985,12 @@
 
 /*! ../../directives/touch */
 
+/*! ../transitions */
+
+/*! ../VProgressCircular/VProgressCircular */
+
+/*! ../../util/helpers */
+
 /*!*****************************************!*\
   !*** ./src/components/VSwitch/index.js ***!
   \*****************************************/
@@ -1779,9 +2027,11 @@
 
 /*! exports provided: default */
 
+/*! ../../mixins/groupable */
+
 /*! ../../mixins/routable */
 
-/*! ../../mixins/registrable */
+/*! ../../mixins/themeable */
 
 /*! ../../util/helpers */
 
@@ -1791,13 +2041,9 @@
 
 /*! exports provided: default */
 
-/*! ../../mixins/bootable */
+/*! ../VWindow/VWindowItem */
 
-/*! ../transitions */
-
-/*! ../../mixins/registrable */
-
-/*! ../../directives/touch */
+/*! ../../util/console */
 
 /*!***************************************!*\
   !*** ./src/components/VTabs/VTabs.js ***!
@@ -1806,6 +2052,8 @@
 /*! exports provided: default */
 
 /*! ../../stylus/components/_tabs.styl */
+
+/*! ../VItemGroup/VItemGroup */
 
 /*! ./mixins/tabs-computed */
 
@@ -1823,11 +2071,13 @@
 
 /*! ../../mixins/themeable */
 
-/*! ../../mixins/registrable */
-
 /*! ../../directives/resize */
 
 /*! ../../directives/touch */
+
+/*! ../../util/console */
+
+/*! ../../util/ThemeProvider */
 
 /*!********************************************!*\
   !*** ./src/components/VTabs/VTabsItems.js ***!
@@ -1835,9 +2085,7 @@
 
 /*! exports provided: default */
 
-/*! ../../mixins/registrable */
-
-/*! ../../directives/touch */
+/*! ../VWindow/VWindow */
 
 /*!*********************************************!*\
   !*** ./src/components/VTabs/VTabsSlider.js ***!
@@ -1851,7 +2099,7 @@
   !*** ./src/components/VTabs/index.js ***!
   \***************************************/
 
-/*! exports provided: VTabs, VTabItem, VTab, VTabsItems, VTabsSlider, default */
+/*! exports provided: VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, default */
 
 /*! ./VTabs */
 
@@ -1915,6 +2163,8 @@
 
 /*! ../../mixins/maskable */
 
+/*! ../../mixins/loadable */
+
 /*! ../../directives/ripple */
 
 /*! ../../util/helpers */
@@ -1932,6 +2182,8 @@
 /*! ../VTextarea/VTextarea */
 
 /*! ../../util/rebuildFunctionalSlots */
+
+/*! ../../util/dedupeModelListeners */
 
 /*! ../../util/console */
 
@@ -1956,10 +2208,10 @@
 /*! ./VTextarea */
 
 /*!***************************************************!*\
-  !*** ./src/components/VTimePicker/VTimePicker.js ***!
+  !*** ./src/components/VTimePicker/VTimePicker.ts ***!
   \***************************************************/
 
-/*! exports provided: default */
+/*! exports provided: selectingTimes, default */
 
 /*! ./VTimePickerTitle */
 
@@ -1971,8 +2223,10 @@
 
 /*! ../VDatePicker/util/pad */
 
+/*! ../../util/mixins */
+
 /*!********************************************************!*\
-  !*** ./src/components/VTimePicker/VTimePickerClock.js ***!
+  !*** ./src/components/VTimePicker/VTimePickerClock.ts ***!
   \********************************************************/
 
 /*! exports provided: default */
@@ -1983,8 +2237,10 @@
 
 /*! ../../mixins/themeable */
 
+/*! ../../util/mixins */
+
 /*!********************************************************!*\
-  !*** ./src/components/VTimePicker/VTimePickerTitle.js ***!
+  !*** ./src/components/VTimePicker/VTimePickerTitle.ts ***!
   \********************************************************/
 
 /*! exports provided: default */
@@ -1995,8 +2251,12 @@
 
 /*! ../VDatePicker/util */
 
+/*! ../../util/mixins */
+
+/*! ./VTimePicker */
+
 /*!*********************************************!*\
-  !*** ./src/components/VTimePicker/index.js ***!
+  !*** ./src/components/VTimePicker/index.ts ***!
   \*********************************************/
 
 /*! exports provided: VTimePicker, VTimePickerClock, VTimePickerTitle, default */
@@ -2006,6 +2266,42 @@
 /*! ./VTimePickerClock */
 
 /*! ./VTimePickerTitle */
+
+/*!***********************************************!*\
+  !*** ./src/components/VTimeline/VTimeline.ts ***!
+  \***********************************************/
+
+/*! exports provided: default */
+
+/*! ../../stylus/components/_timeline.styl */
+
+/*! ../../util/mixins */
+
+/*! ../../mixins/themeable */
+
+/*!***************************************************!*\
+  !*** ./src/components/VTimeline/VTimelineItem.ts ***!
+  \***************************************************/
+
+/*! exports provided: default */
+
+/*! ../../util/mixins */
+
+/*! ../VIcon */
+
+/*! ../../mixins/themeable */
+
+/*! ../../mixins/colorable */
+
+/*!*******************************************!*\
+  !*** ./src/components/VTimeline/index.ts ***!
+  \*******************************************/
+
+/*! exports provided: VTimeline, VTimelineItem, default */
+
+/*! ./VTimeline */
+
+/*! ./VTimelineItem */
 
 /*!*********************************************!*\
   !*** ./src/components/VToolbar/VToolbar.js ***!
@@ -2024,6 +2320,8 @@
 /*! ../../mixins/ssr-bootable */
 
 /*! ../../directives/scroll */
+
+/*! ../../util/console */
 
 /*!*****************************************************!*\
   !*** ./src/components/VToolbar/VToolbarSideIcon.js ***!
@@ -2077,11 +2375,99 @@
 
 /*! ./VTooltip */
 
+/*!***********************************************!*\
+  !*** ./src/components/VTreeview/VTreeview.ts ***!
+  \***********************************************/
+
+/*! exports provided: default */
+
+/*! ../../stylus/components/_treeview.styl */
+
+/*! ./VTreeviewNode */
+
+/*! ../../mixins/themeable */
+
+/*! ../../mixins/registrable */
+
+/*! ../../util/helpers */
+
+/*! ../../util/mixins */
+
+/*! ../../util/console */
+
+/*!***************************************************!*\
+  !*** ./src/components/VTreeview/VTreeviewNode.ts ***!
+  \***************************************************/
+
+/*! exports provided: VTreeviewNodeProps, default */
+
+/*! ../transitions */
+
+/*! ../VIcon */
+
+/*! ./VTreeviewNode */
+
+/*! ../../mixins/registrable */
+
+/*! ../../util/mixins */
+
+/*! ../../util/helpers */
+
+/*!*******************************************!*\
+  !*** ./src/components/VTreeview/index.ts ***!
+  \*******************************************/
+
+/*! exports provided: VTreeview, VTreeviewNode, default */
+
+/*! ./VTreeview */
+
+/*! ./VTreeviewNode */
+
+/*!*******************************************!*\
+  !*** ./src/components/VWindow/VWindow.ts ***!
+  \*******************************************/
+
+/*! exports provided: default */
+
+/*! ../../stylus/components/_windows.styl */
+
+/*! ../VItemGroup/VItemGroup */
+
+/*! ../../directives/touch */
+
+/*!***********************************************!*\
+  !*** ./src/components/VWindow/VWindowItem.ts ***!
+  \***********************************************/
+
+/*! exports provided: default */
+
+/*! ../../mixins/bootable */
+
+/*! ../../mixins/groupable */
+
+/*! ../../directives/touch */
+
+/*! ../../util/helpers */
+
+/*! ../../util/mixins */
+
+/*!*****************************************!*\
+  !*** ./src/components/VWindow/index.ts ***!
+  \*****************************************/
+
+/*! exports provided: VWindow, VWindowItem, default */
+
+/*! ./VWindow */
+
+/*! ./VWindowItem */
+
 /*!*****************************************!*\
   !*** ./src/components/Vuetify/index.ts ***!
   \*****************************************/
 
 /*! exports provided: checkVueVersion, default */
+
+/*! vue */
 
 /*! ./mixins/application */
 
@@ -2095,9 +2481,9 @@
 
 /*! ./mixins/lang */
 
-/*! ../../util/console */
-
 /*! ./util/goTo */
+
+/*! ../../util/console */
 
 /*!******************************************************!*\
   !*** ./src/components/Vuetify/mixins/application.ts ***!
@@ -2114,10 +2500,10 @@
 /*! vue */
 
 /*!************************************************!*\
-  !*** ./src/components/Vuetify/mixins/icons.js ***!
+  !*** ./src/components/Vuetify/mixins/icons.ts ***!
   \************************************************/
 
-/*! exports provided: default */
+/*! exports provided: convertToComponentDeclarations, default */
 
 /*!***********************************************!*\
   !*** ./src/components/Vuetify/mixins/lang.ts ***!
@@ -2152,12 +2538,10 @@
 /*! ../../../util/easing-patterns */
 
 /*!*********************************!*\
-  !*** ./src/components/index.js ***!
+  !*** ./src/components/index.ts ***!
   \*********************************/
 
-/*! exports provided: Vuetify, VApp, VAlert, VAutocomplete, VAvatar, VBadge, VBottomNav, VBottomSheet, VBreadcrumbs, VBtn, VBtnToggle, VCard, VCarousel, VCheckbox, VChip, VCombobox, VCounter, VDataIterator, VDataTable, VDatePicker, VDialog, VDivider, VExpansionPanel, VFooter, VForm, VGrid, VIcon, VInput, VJumbotron, VLabel, VList, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VPagination, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRangeSlider, VSelect, VSlider, VSnackbar, VSpeedDial, VStepper, VSubheader, VSwitch, VSystemBar, VTabs, VTextarea, VTextField, VTimePicker, VToolbar, VTooltip, Transitions */
-
-/*! ./Vuetify */
+/*! exports provided: VApp, VAlert, VAutocomplete, VAvatar, VBadge, VBottomNav, VBottomSheet, VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, VBtn, VBtnToggle, VCard, VCardMedia, VCardTitle, VCardActions, VCardText, VCarousel, VCarouselItem, VCheckbox, VChip, VCombobox, VCounter, VDataIterator, VDataTable, VEditDialog, VTableOverflow, VDatePicker, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, VDialog, VDivider, VExpansionPanel, VExpansionPanelContent, VFooter, VForm, VContainer, VContent, VFlex, VLayout, VSpacer, VHover, VIcon, VImg, VInput, VItem, VItemGroup, VJumbotron, VLabel, VList, VListGroup, VListTile, VListTileAction, VListTileAvatar, VListTileActionText, VListTileContent, VListTileTitle, VListTileSubTitle, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VPagination, VSheet, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRadio, VRangeSlider, VRating, VResponsive, VSelect, VSlider, VSnackbar, VSparkline, VSpeedDial, VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, VSubheader, VSwitch, VSystemBar, VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, VTextarea, VTextField, VTimeline, VTimelineItem, VTimePicker, VTimePickerClock, VTimePickerTitle, VToolbar, VToolbarSideIcon, VToolbarTitle, VToolbarItems, VTooltip, VTreeview, VTreeviewNode, VWindow, VWindowItem, VBottomSheetTransition, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VRowExpandTransition */
 
 /*! ./VApp */
 
@@ -2209,9 +2593,15 @@
 
 /*! ./VGrid */
 
+/*! ./VHover */
+
 /*! ./VIcon */
 
+/*! ./VImg */
+
 /*! ./VInput */
+
+/*! ./VItemGroup */
 
 /*! ./VJumbotron */
 
@@ -2229,6 +2619,8 @@
 
 /*! ./VPagination */
 
+/*! ./VSheet */
+
 /*! ./VParallax */
 
 /*! ./VPicker */
@@ -2241,11 +2633,17 @@
 
 /*! ./VRangeSlider */
 
+/*! ./VRating */
+
+/*! ./VResponsive */
+
 /*! ./VSelect */
 
 /*! ./VSlider */
 
 /*! ./VSnackbar */
+
+/*! ./VSparkline */
 
 /*! ./VSpeedDial */
 
@@ -2263,11 +2661,17 @@
 
 /*! ./VTextField */
 
+/*! ./VTimeline */
+
 /*! ./VTimePicker */
 
 /*! ./VToolbar */
 
 /*! ./VTooltip */
+
+/*! ./VTreeview */
+
+/*! ./VWindow */
 
 /*! ./transitions */
 
@@ -2277,13 +2681,11 @@
 
 /*! exports provided: default */
 
-/*! ../../util/helpers */
-
 /*!*********************************************!*\
   !*** ./src/components/transitions/index.js ***!
   \*********************************************/
 
-/*! exports provided: VBottomSheetTransition, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VFadeTransition, VScaleTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VRowExpandTransition, default */
+/*! exports provided: VBottomSheetTransition, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VRowExpandTransition, default */
 
 /*! ../../util/helpers */
 
@@ -2296,7 +2698,7 @@
 /*! exports provided: default */
 
 /*!*********************************!*\
-  !*** ./src/directives/index.js ***!
+  !*** ./src/directives/index.ts ***!
   \*********************************/
 
 /*! exports provided: ClickOutside, Ripple, Resize, Scroll, Touch, default */
@@ -2345,12 +2747,14 @@
 
 /*! ./stylus/app.styl */
 
+/*! ./components/Vuetify */
+
 /*! ./components */
 
 /*! ./directives */
 
 /*!**************************!*\
-  !*** ./src/locale/en.js ***!
+  !*** ./src/locale/en.ts ***!
   \**************************/
 
 /*! exports provided: default */
@@ -2379,11 +2783,7 @@
 
 /*! exports provided: default */
 
-/*! ../util/mixins */
-
-/*! ./registrable */
-
-/*! ../util/console */
+/*! ../components/VItemGroup/VItemGroup */
 
 /*!*********************************!*\
   !*** ./src/mixins/colorable.ts ***!
@@ -2434,10 +2834,12 @@
 /*! vue */
 
 /*!*********************************!*\
-  !*** ./src/mixins/dependent.js ***!
+  !*** ./src/mixins/dependent.ts ***!
   \*********************************/
 
 /*! exports provided: default */
+
+/*! ../util/mixins */
 
 /*!**********************************!*\
   !*** ./src/mixins/detachable.js ***!
@@ -2450,10 +2852,28 @@
 /*! ../util/console */
 
 /*!**********************************!*\
-  !*** ./src/mixins/filterable.js ***!
+  !*** ./src/mixins/elevatable.ts ***!
   \**********************************/
 
 /*! exports provided: default */
+
+/*! vue */
+
+/*!**********************************!*\
+  !*** ./src/mixins/filterable.ts ***!
+  \**********************************/
+
+/*! exports provided: default */
+
+/*! vue */
+
+/*!*********************************!*\
+  !*** ./src/mixins/groupable.ts ***!
+  \*********************************/
+
+/*! exports provided: factory, default */
+
+/*! ./registrable */
 
 /*!********************************!*\
   !*** ./src/mixins/loadable.ts ***!
@@ -2473,17 +2893,29 @@
 
 /*! ../util/mask */
 
+/*!**********************************!*\
+  !*** ./src/mixins/measurable.ts ***!
+  \**********************************/
+
+/*! exports provided: default */
+
+/*! ../util/helpers */
+
+/*! vue */
+
 /*!********************************!*\
   !*** ./src/mixins/menuable.js ***!
   \********************************/
 
 /*! exports provided: default */
 
+/*! vue */
+
 /*! ./positionable */
 
 /*! ./stackable */
 
-/*! ./themeable */
+/*! ../util/console */
 
 /*!***********************************!*\
   !*** ./src/mixins/overlayable.js ***!
@@ -2496,13 +2928,17 @@
 /*! ../util/helpers */
 
 /*!*************************************!*\
-  !*** ./src/mixins/picker-button.js ***!
+  !*** ./src/mixins/picker-button.ts ***!
   \*************************************/
 
 /*! exports provided: default */
 
+/*! ./colorable */
+
+/*! ../util/mixins */
+
 /*!******************************!*\
-  !*** ./src/mixins/picker.js ***!
+  !*** ./src/mixins/picker.ts ***!
   \******************************/
 
 /*! exports provided: default */
@@ -2513,6 +2949,8 @@
 
 /*! ./themeable */
 
+/*! ../util/mixins */
+
 /*!************************************!*\
   !*** ./src/mixins/positionable.ts ***!
   \************************************/
@@ -2522,6 +2960,14 @@
 /*! vue */
 
 /*! ../util/helpers */
+
+/*!*********************************!*\
+  !*** ./src/mixins/proxyable.ts ***!
+  \*********************************/
+
+/*! exports provided: factory, default */
+
+/*! vue */
 
 /*!***********************************!*\
   !*** ./src/mixins/registrable.ts ***!
@@ -2534,10 +2980,12 @@
 /*! ../util/console */
 
 /*!**********************************!*\
-  !*** ./src/mixins/returnable.js ***!
+  !*** ./src/mixins/returnable.ts ***!
   \**********************************/
 
 /*! exports provided: default */
+
+/*! vue */
 
 /*!**********************************!*\
   !*** ./src/mixins/rippleable.ts ***!
@@ -2571,7 +3019,13 @@
 
 /*! ./comparable */
 
-/*! ../util/helpers */
+/*!********************************!*\
+  !*** ./src/mixins/sizeable.ts ***!
+  \********************************/
+
+/*! exports provided: default */
+
+/*! vue */
 
 /*!************************************!*\
   !*** ./src/mixins/ssr-bootable.ts ***!
@@ -2593,7 +3047,7 @@
   !*** ./src/mixins/themeable.ts ***!
   \*********************************/
 
-/*! exports provided: default */
+/*! exports provided: functionalThemeClasses, default */
 
 /*! vue */
 
@@ -2622,18 +3076,20 @@
 /*! vue */
 
 /*!***********************************!*\
-  !*** ./src/mixins/validatable.js ***!
+  !*** ./src/mixins/validatable.ts ***!
   \***********************************/
 
 /*! exports provided: default */
 
-/*! ../util/helpers */
+/*! ./colorable */
 
 /*! ./registrable */
 
+/*! ../util/helpers */
+
 /*! ../util/console */
 
-/*! ./colorable */
+/*! ../util/mixins */
 
 /*!*****************************!*\
   !*** ./src/stylus/app.styl ***!
@@ -2810,8 +3266,20 @@
 /*! no static exports found */
 
 /*!********************************************!*\
+  !*** ./src/stylus/components/_images.styl ***!
+  \********************************************/
+
+/*! no static exports found */
+
+/*!********************************************!*\
   !*** ./src/stylus/components/_inputs.styl ***!
   \********************************************/
+
+/*! no static exports found */
+
+/*!************************************************!*\
+  !*** ./src/stylus/components/_item-group.styl ***!
+  \************************************************/
 
 /*! no static exports found */
 
@@ -2912,6 +3380,18 @@
 /*! no static exports found */
 
 /*!********************************************!*\
+  !*** ./src/stylus/components/_rating.styl ***!
+  \********************************************/
+
+/*! no static exports found */
+
+/*!************************************************!*\
+  !*** ./src/stylus/components/_responsive.styl ***!
+  \************************************************/
+
+/*! no static exports found */
+
+/*!********************************************!*\
   !*** ./src/stylus/components/_select.styl ***!
   \********************************************/
 
@@ -2920,6 +3400,12 @@
 /*!********************************************************!*\
   !*** ./src/stylus/components/_selection-controls.styl ***!
   \********************************************************/
+
+/*! no static exports found */
+
+/*!*******************************************!*\
+  !*** ./src/stylus/components/_sheet.styl ***!
+  \*******************************************/
 
 /*! no static exports found */
 
@@ -3007,6 +3493,12 @@
 
 /*! no static exports found */
 
+/*!**********************************************!*\
+  !*** ./src/stylus/components/_timeline.styl ***!
+  \**********************************************/
+
+/*! no static exports found */
+
 /*!*********************************************!*\
   !*** ./src/stylus/components/_toolbar.styl ***!
   \*********************************************/
@@ -3018,6 +3510,28 @@
   \**********************************************/
 
 /*! no static exports found */
+
+/*!**********************************************!*\
+  !*** ./src/stylus/components/_treeview.styl ***!
+  \**********************************************/
+
+/*! no static exports found */
+
+/*!*********************************************!*\
+  !*** ./src/stylus/components/_windows.styl ***!
+  \*********************************************/
+
+/*! no static exports found */
+
+/*!***********************************!*\
+  !*** ./src/util/ThemeProvider.ts ***!
+  \***********************************/
+
+/*! exports provided: default */
+
+/*! ../mixins/themeable */
+
+/*! ./mixins */
 
 /*!*******************************************!*\
   !*** ./src/util/color/transformCIELAB.ts ***!
@@ -3035,7 +3549,7 @@
   !*** ./src/util/colorUtils.ts ***!
   \********************************/
 
-/*! exports provided: colorToInt, intToHex */
+/*! exports provided: colorToInt, intToHex, colorToHex */
 
 /*! ./console */
 
@@ -3044,6 +3558,12 @@
   \*****************************/
 
 /*! exports provided: consoleInfo, consoleWarn, consoleError, deprecate */
+
+/*!******************************************!*\
+  !*** ./src/util/dedupeModelListeners.ts ***!
+  \******************************************/
+
+/*! exports provided: default */
 
 /*!*************************************!*\
   !*** ./src/util/easing-patterns.js ***!
@@ -3055,7 +3575,9 @@
   !*** ./src/util/helpers.ts ***!
   \*****************************/
 
-/*! exports provided: createSimpleFunctional, createSimpleTransition, createJavaScriptTransition, directiveConfig, addOnceEventListener, getNestedValue, deepEqual, getObjectValueByPath, getPropertyFromItem, createRange, getZIndex, escapeHTML, filterObjectOnKeys, filterChildren, convertToUnit, kebabCase, isObject, keyCodes, keys */
+/*! exports provided: createSimpleFunctional, createSimpleTransition, createJavaScriptTransition, directiveConfig, addOnceEventListener, getNestedValue, deepEqual, getObjectValueByPath, getPropertyFromItem, createRange, getZIndex, escapeHTML, filterObjectOnKeys, filterChildren, convertToUnit, kebabCase, isObject, keyCodes, remapInternalIcon, keys, camelize */
+
+/*! vue */
 
 /*!**************************!*\
   !*** ./src/util/mask.js ***!
@@ -3081,7 +3603,7 @@
   !*** ./src/util/theme.ts ***!
   \***************************/
 
-/*! exports provided: parse, genBaseColor, genVariantColor, genVariations */
+/*! exports provided: parse, genStyles, genVariations */
 
 /*! ./colorUtils */
 
