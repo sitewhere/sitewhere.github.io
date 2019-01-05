@@ -2,6 +2,46 @@ apiVersion: v1
 entries:
   sitewhere:
   - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-01-02T14:11:55.972734-03:00
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 32f52742720ae8104753857104617a220312f7475647ca4a1aad68a036d11184
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0-rc2/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
     appVersion: 2.0.1
     created: 2019-01-01T11:36:57.9591902-05:00
     description: SiteWhere is an industrial strength open-source application enablement
@@ -41,12 +81,52 @@ entries:
     urls:
     - sitewhere-0.1.1.tgz
     version: 0.1.1
+  - apiVersion: v1
+    appVersion: 2.0.0
+    created: 2019-01-02T14:00:47.408859-03:00
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 0ab866e5fdadc3072d35bcc59621a03c0ae95e0b636786327debe81503faf4f2
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0-rc2/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.0.tgz
+    version: 0.1.0
   sitewhere-infra-core:
   - apiVersion: v1
-    appVersion: 2.0.1
-    created: 2019-01-01T11:36:57.9612306-05:00
+    appVersion: 2.0.2
+    created: 2019-01-02T14:05:12.68842-03:00
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 47b1fd6184cd443480d2d02fb6991291b1158d259c1b9eb9e3beccd42c0e5331
+    digest: b97f1a4c99b81e0e3b1e95c3c84f11ad00669e985a8748b39a832670648f4b2f
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -74,6 +154,93 @@ entries:
       name: Jorge Villaverde
     name: sitewhere-infra-core
     urls:
-    - sitewhere-infra-core-0.1.0.tgz
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: 2.0.1
+    created: 2019-01-02T14:00:47.417502-03:00
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 216a8cd7c914e7937cbcfe4bea7fe9b6e9c964c08889502dc677432e184164c8
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.1.0.tgz
     version: 0.1.0
-generated: 2019-01-01T11:36:57.9561947-05:00
+  sitewhere-infra-database:
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-01-02T14:05:12.692885-03:00
+    description: Helm chart for SiteWhere core Database components
+    digest: b21663d3c5ba3e497713209220bb7a862ba6dcfc1ddb271c7062b10d0de65d1b
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: 2.0.1
+    created: 2019-01-02T14:00:47.421306-03:00
+    description: Helm chart for SiteWhere core Database components
+    digest: e9df2be8575c590ba215b392e21bfc31479ef0ce3b19aa1694f29ade850ac7a6
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.0.tgz
+    version: 0.1.0
+generated: 2019-01-02T14:11:55.966724-03:00
