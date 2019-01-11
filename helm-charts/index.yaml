@@ -3,9 +3,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-01-11T02:57:52.916878265Z
+    created: 2019-01-11T04:51:10.125766132Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: f0a46eb9b12f05f8336f6c13732c8964dd915f8e2fdb88ddab0168c1f9f738ed
+    digest: fee5e28c1a72cc9129d197305513d9177819425c3db65f46d95250fa380e4da3
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -38,9 +38,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-01-11T02:57:52.919470994Z
+    created: 2019-01-11T04:51:10.128810895Z
     description: Helm chart for SiteWhere core Database components
-    digest: e8369e4a805ec67209a292327a159552d1524cbcd23b8a506cc2a70431ae7481
+    digest: c403c2338985fb26a10068921b170cfefb8fe3c2f22d52ed8005c1e6b1640161
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -62,4 +62,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-01-11T02:57:52.908741791Z
+generated: 2019-01-11T04:51:10.120627311Z
