@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Domain Object Model | SiteWhere</title>
+    <meta name="description" content="SiteWhere CE 2.0.0 Documentation">
+    <link rel="icon" href="/docs/2.0.0/images/favicon.ico">
+    <link rel='canonical' href='https://sitewhere.io/docs/2.0.0/platform/objectmodel.html'>
+    
+    <link rel="preload" href="/docs/2.0.0/assets/css/0.styles.bf0c8a6a.css" as="style"><link rel="preload" href="/docs/2.0.0/assets/js/app.5a9f108a.js" as="script"><link rel="preload" href="/docs/2.0.0/assets/js/75.72013f4f.js" as="script"><link rel="preload" href="/docs/2.0.0/assets/js/6.e758b7c6.js" as="script"><link rel="prefetch" href="/docs/2.0.0/assets/js/26.f4b11960.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/2.b7022358.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/3.9c3ab5ce.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/4.f1b2303e.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/5.29e74c08.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/7.e5d617ac.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/8.17cbaafc.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/9.92d19ffe.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/10.3bd7620a.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/11.a5e0f41e.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/12.f058f0be.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/13.31981707.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/14.a12901d5.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/15.15b3f7f5.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/16.81268de4.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/17.da83992e.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/18.58321f38.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/19.dcf33aa4.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/20.cee4bfb6.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/21.102083fc.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/22.bad0a566.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/23.2f3ec0b6.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/24.798336b9.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/25.5b2dc9bc.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/27.0d066a35.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/28.e53b9788.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/29.ebd3304f.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/30.9065226b.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/31.7b192f8f.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/32.a9202c34.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/33.5f69f69a.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/34.7da3d636.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/35.9ce105c4.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/36.e6684004.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/37.e687b92c.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/38.f3f821d3.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/39.eb0f4713.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/40.2e49caf6.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/41.26bfeb6e.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/42.87a0aea3.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/43.773a69dd.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/44.808d8349.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/45.6050b5ee.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/46.7215f89a.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/47.71205ad6.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/48.09d79ca1.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/49.78ec7510.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/50.6229c0cd.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/51.cb0900b6.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/52.08ed9617.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/53.5c2d4dc1.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/54.a7597c56.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/55.a586339a.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/56.5db8cdac.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/57.4a3d674e.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/58.ee63a962.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/59.e45e73ee.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/60.6796720b.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/61.44bcd5a7.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/62.0b22380e.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/63.697da4bf.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/64.1f419f98.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/65.b5619516.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/66.b5a10be7.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/67.baef42c7.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/68.88a01078.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/69.7765142f.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/70.8ac494be.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/71.78e4180a.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/72.eda4d849.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/73.b89a705e.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/74.3ff12ef5.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/76.4409c49c.js"><link rel="prefetch" href="/docs/2.0.0/assets/js/77.a9817d69.js">
+    <link rel="stylesheet" href="/docs/2.0.0/assets/css/0.styles.bf0c8a6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/2.0.0/" class="home-link router-link-active"><img src="/docs/2.0.0/images/logo.svg" alt="SiteWhere" class="logo"></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/2.0.0/platform/" class="nav-link router-link-active">Platform</a></div><div class="nav-item"><a href="/docs/2.0.0/guide/" class="nav-link">User Guides</a></div><div class="nav-item"><a href="/docs/2.0.0/deployment/" class="nav-link">Deployment</a></div><div class="nav-item"><a href="/docs/2.0.0/development/" class="nav-link">Development</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/2.0.0/platform/objectmodel.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----> <a href="/docs/2.0.0/es/" class="nav-link">Español</a></li></ul></div></div> <a href="https://github.com/sitewhere/sitewhere-documentation" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/2.0.0/platform/" class="nav-link router-link-active">Platform</a></div><div class="nav-item"><a href="/docs/2.0.0/guide/" class="nav-link">User Guides</a></div><div class="nav-item"><a href="/docs/2.0.0/deployment/" class="nav-link">Deployment</a></div><div class="nav-item"><a href="/docs/2.0.0/development/" class="nav-link">Development</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/2.0.0/platform/objectmodel.html" class="nav-link router-link-exact-active router-link-active">English</a></li><li class="dropdown-item"><!----> <a href="/docs/2.0.0/es/" class="nav-link">Español</a></li></ul></div></div> <a href="https://github.com/sitewhere/sitewhere-documentation" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/docs/2.0.0/platform/" class="sidebar-link">SiteWhere Platform</a></li><li><a href="/docs/2.0.0/platform/architecture.html" class="sidebar-link">System Architecture</a></li><li><a href="/docs/2.0.0/platform/objectmodel.html" class="active sidebar-link">Domain Object Model</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/2.0.0/platform/objectmodel.html#entity-identification" class="sidebar-link">Entity Identification</a></li><li class="sidebar-sub-header"><a href="/docs/2.0.0/platform/objectmodel.html#device-management-model" class="sidebar-link">Device Management Model</a></li><li class="sidebar-sub-header"><a href="/docs/2.0.0/platform/objectmodel.html#asset-management-model" class="sidebar-link">Asset Management Model</a></li></ul></li><li><a href="/docs/2.0.0/platform/features.html" class="sidebar-link">New Features</a></li><li><a href="/docs/2.0.0/platform/microservice-overview.html" class="sidebar-link">Microservices Overview</a></li><li><a href="/docs/2.0.0/platform/twelve-factor.html" class="sidebar-link">SiteWhere as a Twelve-Factor App</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="domain-object-model"><a href="#domain-object-model" aria-hidden="true" class="header-anchor">#</a> Domain Object Model</h1> <span></span> <p>SiteWhere includes a comprehensive object model which contains
+a hierarchy of entities intended to represent real-world objects
+that interact with IoT applications. Many of the concepts remain
+fairly generic so that a variety of potential vertical markets may
+be represented by the same model.</p> <h2 id="entity-identification"><a href="#entity-identification" aria-hidden="true" class="header-anchor">#</a> Entity Identification</h2> <p>Most SiteWhere entities have two separate unique identifiers. The
+primary identifier is a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener noreferrer">UUID<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+which is assigned by the system when the entity is created and
+does not change over the lifetime of the entity. A second identifier,
+which is unique within the entity type, is a <em>token</em> which is a
+string assigned via the APIs and updated at any time. This approach
+allows the token for an entity to change over time if needed
+without the need to update the identifier in relations that reference
+the entity. All API operations act on the entity token, while all
+internal references between entities use the internal UUID.</p> <h2 id="device-management-model"><a href="#device-management-model" aria-hidden="true" class="header-anchor">#</a> Device Management Model</h2> <p>One of the primary functions of an IoT platform is to represent
+the devices that the platform interacts with. SiteWhere provides
+a comprehensive model for capturing information about the devices
+managed by the system and for organizing them so that context is
+provided around the data generated by the devices.</p> <h3 id="device-types"><a href="#device-types" aria-hidden="true" class="header-anchor">#</a> Device Types</h3> <p>The platform may interact with many types of devices, each with its own
+characteristics. These include aspects such as device hardware, configuration
+options, status indicators, and available commands. SiteWhere <em>device types</em>
+are used to capture information about a class of devices with
+similar characteristics.</p> <div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>SiteWhere 2.0 <em>device types</em> correspond to SiteWhere 1.x
+<em>device specifications</em>. All of the features from the previous
+model remain in 2.0.</p></div> <h4 id="device-commands"><a href="#device-commands" aria-hidden="true" class="header-anchor">#</a> Device Commands</h4> <p>Each device type may contain a list of commands that are accepted by
+the device. The commands are identified by a namespace and unique
+name, along with a list of strongly-typed, named parameters.
+External actors may issue device command invocation events which
+in turn communicate with devices to transmit a command payload
+to the device.</p> <h4 id="device-statuses"><a href="#device-statuses" aria-hidden="true" class="header-anchor">#</a> Device Statuses</h4> <p>Each device type may have many potential status values that reflect
+the internal state of a device. A device status contains information
+such as a unique code, icon, display text, and color information that
+may be used to render the status indicator in applications that use
+the SiteWhere APIs.</p> <h3 id="devices"><a href="#devices" aria-hidden="true" class="header-anchor">#</a> Devices</h3> <p>Devices represent real-world instances of a device type that may
+interact with the system. Each device has a unique <em>device token</em>
+which is used when registering, updating, or associating data with
+the device.</p> <h3 id="device-assignments"><a href="#device-assignments" aria-hidden="true" class="header-anchor">#</a> Device Assignments</h3> <p>Devices may be associated with various entities over their lifetime in
+order to provide context for the device at a given point of time. The entity
+that captures these associations is called a <em>device assignment</em>. Examples
+of device assignment associations include customer ownership, geospatial
+location, and association with various assets. A device assignment is
+effective for a given amount of time while it is considered <em>active</em> and
+may be marked as <em>released</em> when no longer in effect. The list of device
+assignments over time provide a historical record for the device. Associations
+from the current device assignment are stored with device events in order
+to provide context when querying the event data.</p> <h3 id="customer-associations"><a href="#customer-associations" aria-hidden="true" class="header-anchor">#</a> Customer Associations</h3> <p>The concept of a customer is used to infer ownership of a device.
+A given device may be assigned to many different customers over its lifetime.
+When events are recorded for a device, the events include a reference
+to the customer assigned to the device at the time of the event.</p> <h4 id="customer-types"><a href="#customer-types" aria-hidden="true" class="header-anchor">#</a> Customer Types</h4> <p>Customer types are used to group related types of customers. They are
+hierarchical in nature, so customer types may be parents or children of
+other customer types. For example, in the construction vertical, the
+customer type hierarchy might be <strong>Division</strong> &gt; <strong>Municipality</strong> &gt; <strong>Site</strong>.
+Extra metadata and branding information may be attached to each customer type in order
+to provide more context.</p> <h4 id="customers"><a href="#customers" aria-hidden="true" class="header-anchor">#</a> Customers</h4> <p>Customers are instances of customer types which represent real-world entites
+that reflect ownership of devices. Each customer may have a parent customer
+and any number of child customers based on the hierarchy established in the
+customer types. An example of customers based on the customer type hierarchy
+above would be <strong>Commercial Division</strong> &gt; <strong>Atlanta</strong> &gt; <strong>777 Peachtree Site</strong>.</p> <h3 id="area-associations"><a href="#area-associations" aria-hidden="true" class="header-anchor">#</a> Area Associations</h3> <p>The concept of an area is used to establish geospatial context for a device.
+A given device may be assigned to many areas over its lifetime. When events
+are recorded for a device, they include a reference to the area assigned to
+the device at the time of the event.</p> <div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>SiteWhere 2.0 <em>areas</em> correspond to SiteWhere 1.x <em>sites</em>. Most of the features
+from the previous model remain in 2.0, but areas now define a bounding polygon
+rather than just the central lat/long used in 1.x.</p></div> <h4 id="area-types"><a href="#area-types" aria-hidden="true" class="header-anchor">#</a> Area Types</h4> <p>Area types provide context for areas and are arranged in a parent-child
+hierarchy. In general, parent area types are intended to be containers for
+the child types. For instance, in a hotel vertical, the area type hierarchy
+might be <strong>Region</strong> &gt; <strong>Hotel</strong> &gt; <strong>Floor</strong> &gt; <strong>Room</strong>. Extra metadata and
+branding information may be attached to each area type in order to provide
+more context.</p> <h4 id="areas"><a href="#areas" aria-hidden="true" class="header-anchor">#</a> Areas</h4> <p>Areas are instances of areas types which represent real-world geospatial
+locations that provide context for devices. An area has a bounding polygon
+of lat/longs which defines the borders of the entity. An example of areas
+that conform to the area type hierarchy above would be <strong>Southeast Region</strong> &gt;
+<strong>Mariott Marquis</strong> &gt; <strong>Floor 20</strong> &gt; <strong>Room 2001</strong>.</p> <h4 id="zones"><a href="#zones" aria-hidden="true" class="header-anchor">#</a> Zones</h4> <p>Zones are bounded geospatial entities which have areas as parents. An area may
+contain any number of zones, which are used to signify a portion of the area
+that has particular significance. For instance, if modeling an airport as an
+area, restricted access sections could be marked as zones. When processing events
+from a device located in the airport, alert events might be generated when
+entering restricted zones. Along with the bounding lat/longs for a zone, a
+background color, border color, and opacity are stored so that zones may be
+rendered on top of maps or floorplans dynamically based on the stored metadata.</p> <h2 id="asset-management-model"><a href="#asset-management-model" aria-hidden="true" class="header-anchor">#</a> Asset Management Model</h2> <p>Devices are often deployed in association with real-world assets which derive
+some service from the device. Use cases include:</p> <ul><li>a tracking device associated with an automobile in the fleet-tracking vertical</li> <li>a badge associated with a person in the security vertical</li> <li>a heart monitor associated with a bed in a healthcare veritcal</li></ul> <p>SiteWhere provides an asset management model for storing assets that may be
+associated with system devices. External asset management systems may be
+provided based on the same set of APIs in cases where assets need to be
+managed externally.</p> <h3 id="asset-types"><a href="#asset-types" aria-hidden="true" class="header-anchor">#</a> Asset Types</h3> <p>Asset types represent a class of assets that may be used in the system. These
+generally correspond to entries in a product catalog and would be identified
+with a SKU rather than a serial number. Asset types capture common metadata
+for assets such as weight, dimensions, or other facets that apply across all
+assets of the type.</p> <h3 id="assets"><a href="#assets" aria-hidden="true" class="header-anchor">#</a> Assets</h3> <p>Assets are instances of asset types and generally correspond to real-world
+entites that might have a unique serial number. Assets may be associated with
+one or more devices based on device assignments and these assignments may
+change over time. The device assignment history reflects the list of associated
+assets over time. For instance, a temporary security badge that is associated
+with person assets will have a history of every person the badge was assigned
+to. All events for the badge would also be tied to the assignments and could
+be filtered based on the person the badge was assigned to.</p></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/sitewhere/sitewhere-documentation/edit/sitewhere-2.0.0/docs/platform/objectmodel.md" target="_blank" rel="noopener noreferrer">Edit this page on GitHub</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">1/12/2019, 10:55:59 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/2.0.0/platform/architecture.html" class="prev">
+          System Architecture
+        </a></span> <span class="next"><a href="/docs/2.0.0/platform/features.html">
+          New Features
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/docs/2.0.0/assets/js/75.72013f4f.js" defer></script><script src="/docs/2.0.0/assets/js/6.e758b7c6.js" defer></script><script src="/docs/2.0.0/assets/js/app.5a9f108a.js" defer></script>
+  </body>
+</html>
