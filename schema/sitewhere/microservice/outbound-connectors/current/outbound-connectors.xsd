@@ -587,6 +587,14 @@
 		</xsd:complexContent>
 	</xsd:complexType>
 
+	<!-- HTTP connector method types -->
+	<xsd:simpleType name="httpMethodTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="post" />
+			<xsd:enumeration value="put" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
 	<!-- HTTP outbound connector -->
 	<xsd:element name="http-connector" type="httpConnectorType"
 		substitutionGroup="abstract-outbound-connector">
@@ -602,8 +610,17 @@
 			<xsd:extension base="filteredOutboundConnectorType">
 				<xsd:sequence>
 					<xsd:element minOccurs="0" ref="abstract-uri-builder" />
-					<xsd:element minOccurs="0" ref="abstract-payload-builder" />
+					<xsd:element minOccurs="0"
+						ref="abstract-payload-builder" />
 				</xsd:sequence>
+				<xsd:attribute name="method" type="httpMethodTypes"
+					use="optional">
+					<xsd:annotation>
+						<xsd:documentation>
+							HTTP method used to deliver payload.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
