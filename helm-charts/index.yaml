@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-01-25T03:24:14.661554038Z
+    created: 2019-01-25T14:18:31.490241998Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: b3acec6b157507daeda2bf43b292ae45f22c5531dae47e5c491ab8d08de0ddfb
+    digest: 02b69db69b66132cb53ae734c2ee76b192f3073c2e8f2b68ec08e1f8babac717
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -84,9 +84,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-01-25T03:24:14.664689115Z
+    created: 2019-01-25T14:18:31.493380636Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 6d48cc46f4e13a4b6af30e2ab5b6988bcbd1cc5a949d75dacb458529e0bde3da
+    digest: af7238c8547f884086190be169facbcc85f6cb80bfdbb83cd97d4004efe55c6f
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -119,9 +119,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-01-25T03:24:14.667640546Z
+    created: 2019-01-25T14:18:31.496270847Z
     description: Helm chart for SiteWhere core Database components
-    digest: be4ff3a837ccbbcaddaeb60894dce8bf176fe109841b021a4cb3dd249658414e
+    digest: 768b3b52bc9e668528c30e181cd569582bd0dc2aa9b4d3c505bdce2baa089e6c
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -169,4 +169,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-01-25T03:24:14.652194796Z
+generated: 2019-01-25T14:18:31.482209141Z
