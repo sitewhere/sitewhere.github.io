@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-02-19T12:39:48.04193362Z
+    created: 2019-03-04T13:31:57.455235013Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: 149d5737c91e5abdbf1587b3ea7923b22a004e7b789118d718a638e950295f44
+    digest: 23c1b44500a34e056468a5772c7e3b9cd84233640912c0459a6d5d9a88ded506
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -164,9 +164,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-02-19T12:39:48.044953432Z
+    created: 2019-03-04T13:31:57.45830237Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: dd59ab5011fe13b2a18a9b82af92ad222449f8d0f60be4f9aad2c047a4b18f71
+    digest: 6564504289782078374f554a3c0ec93c576198c28966730bf56b15f60f8e3d63
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -267,9 +267,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-02-19T12:39:48.047657417Z
+    created: 2019-03-04T13:31:57.461141907Z
     description: Helm chart for SiteWhere core Database components
-    digest: 451d6efec30466c5a1df09da5a64ba6d2f5dc126ed81744b2968d88f26a3848b
+    digest: 111cb0fb249f51cc2f24328cafe2b63aa64ebae13a0b8f91f1262eb9a5429ef2
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -343,4 +343,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-02-19T12:39:48.032377305Z
+generated: 2019-03-04T13:31:57.44553309Z
