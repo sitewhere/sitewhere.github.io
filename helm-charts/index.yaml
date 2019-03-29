@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-03-04T13:31:57.455235013Z
+    created: 2019-03-29T11:11:10.630804847Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: 23c1b44500a34e056468a5772c7e3b9cd84233640912c0459a6d5d9a88ded506
+    digest: c04393aaf170e3a25fbe30f19c9623c245ffae6104c498e3d4d7f781947c3efd
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -164,9 +164,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-03-04T13:31:57.45830237Z
+    created: 2019-03-29T11:11:10.633795547Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 6564504289782078374f554a3c0ec93c576198c28966730bf56b15f60f8e3d63
+    digest: 6a46db7132dafb871dc546f97fe06aa67d36717f7c98354d314624bf6796d3f5
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -267,9 +267,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-03-04T13:31:57.461141907Z
+    created: 2019-03-29T11:11:10.636606702Z
     description: Helm chart for SiteWhere core Database components
-    digest: 111cb0fb249f51cc2f24328cafe2b63aa64ebae13a0b8f91f1262eb9a5429ef2
+    digest: bfa1e378f13f839731d2be98b2f97c767e6ff5e6ff38c879d3af45431f590678
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -343,4 +343,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-03-04T13:31:57.44553309Z
+generated: 2019-03-29T11:11:10.622183601Z
