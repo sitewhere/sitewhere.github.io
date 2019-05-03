@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-05-03T13:48:18.911414285Z
+    created: 2019-05-03T14:58:08.322432209Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: e1088d93778c5d006495745990038e305726ef0e7beb46fe5fa4296edf68b45e
+    digest: c5d757d98ef129e410ef42efe753b3e3f7d23a04a752416d4ea8ba309bcae526
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -204,9 +204,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-05-03T13:48:18.914415304Z
+    created: 2019-05-03T14:58:08.32536104Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 2857d7e40ae887655dd857527af66855754161d73fd3182170a48839c7e18249
+    digest: 154d7df79f20ba1f2757f2d4c328fe1ca6e91192ba39d49a36fc9587295b0cc8
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -375,9 +375,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-05-03T13:48:18.917134481Z
+    created: 2019-05-03T14:58:08.328063019Z
     description: Helm chart for SiteWhere core Database components
-    digest: 5566ae6a9289231f35316fef02c96bcc67db8f6df2eccf4b633cba371680c3f3
+    digest: c57f7e9388d8c430afb18a2c2c8afe957add52a032b6626d7fb70d7f2d4bd847
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -503,4 +503,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-05-03T13:48:18.90149954Z
+generated: 2019-05-03T14:58:08.314795602Z
