@@ -314,7 +314,7 @@ entries:
       name: Jorge Villaverde
     name: sitewhere-infra-core
     urls:
-    - https://sitewhere.io/helm-charts/index.yaml/sitewhere-infra-core-0.2.0.tgz
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
     appVersion: 2.0.2
@@ -511,7 +511,7 @@ entries:
       name: Jorge Villaverde
     name: sitewhere-infra-database
     urls:
-    - https://sitewhere.io/helm-charts/index.yaml/sitewhere-infra-database-0.2.0.tgz
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
     appVersion: 2.0.3
