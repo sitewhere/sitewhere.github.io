@@ -321,15 +321,14 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-0.1.3.tgz
     version: 0.1.3
-  sitewhere-ee:
   - apiVersion: v1
     appVersion: 2.0 EE
-    created: 2019-06-28T09:31:31.636732-03:00
+    created: 2019-06-28T11:57:01.200255-03:00
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: dc656bf5849554cb4b4689b951fed7b4188a166743df88b446ada8c8d6de927f
+    digest: 9f764f33d6bfbae2e15723efb50810052fc025a14d5ef46df7dfe1d8dc405adb
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -358,49 +357,9 @@ entries:
       name: Derek Adams
     - email: jorge.villaverde@sitewhere.com
       name: Jorge Villaverde
-    name: sitewhere-ee
+    name: sitewhere
     urls:
-    - https://sitewhere.io/helm-charts/sitewhere-ee-0.0.6.tgz
-    version: 0.0.6
-  - apiVersion: v1
-    appVersion: 2.0 EE
-    created: 2019-06-28T11:12:54.220572-03:00
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
-    digest: 907fd71c3f3e98a218e375526275e4af4a6db573bb6073a50b325a80c39c2e1f
-    home: http://www.sitewhere.org/
-    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
-    keywords:
-    - sitewhere
-    - internet-of-things
-    - integration
-    - device-management
-    - iot
-    - iot-platform
-    - platform
-    - mqtt
-    - iot-framework
-    - java
-    - arduino
-    - raspberry-pi
-    - android
-    - m2x
-    - hbase
-    - open-source
-    - aws
-    - kafka
-    - zookeeper
-    - microservices
-    maintainers:
-    - email: derek.adams@sitewhere.com
-      name: Derek Adams
-    - email: jorge.villaverde@sitewhere.com
-      name: Jorge Villaverde
-    name: sitewhere-ee
-    urls:
-    - https://sitewhere.io/helm-charts/sitewhere-ee-0.0.4.tgz
+    - https://sitewhere.io/helm-charts/sitewhere-0.0.4.tgz
     version: 0.0.4
   sitewhere-infra-core:
   - apiVersion: v1
@@ -832,4 +791,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-06-28T14:19:31.414987368Z
+generated: 2019-06-28T11:57:01.194351-03:00
