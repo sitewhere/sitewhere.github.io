@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-07-03T23:23:39.067782745Z
+    created: 2019-07-03T23:28:17.41695738Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: 8223711b5dd2b7c7cc1b944c8e1fb00d259bc2e7dd48a6fad127e51caa5f282a
+    digest: aace8c9b5abf5dec5189ca036759e479cd50ad33eb9fde5e96bcf14fbe0301e3
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -404,9 +404,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-03T23:23:39.071092182Z
+    created: 2019-07-03T23:28:17.420008838Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: f977c06cb063f672e74c144cbdb3fd80dcb94006f401c8dc90c3a3b47a964324
+    digest: 9fb72440917644e141fb379e6eae9c7b86c6e4a021aa4b4ca923a301db5ec481
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -711,9 +711,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-03T23:23:39.07384661Z
+    created: 2019-07-03T23:28:17.422705952Z
     description: Helm chart for SiteWhere core Database components
-    digest: 9fe3fa60526966efe977172fab09ba316b23a322e3afa10bd3184ca496a3ad73
+    digest: 0f66780acce47b4a583ddfc567cd2ce6506fc56affd68a5feac5c0bc648760af
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -865,4 +865,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-07-03T23:23:39.057765726Z
+generated: 2019-07-03T23:28:17.408420172Z
