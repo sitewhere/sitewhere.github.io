@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-07-03T23:10:55.443849419Z
+    created: 2019-07-03T23:23:39.067782745Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: 5ec87260b8ac6f4bfc80709ab78e556ee52cb16688ef7ffa9781cce1d413667a
+    digest: 8223711b5dd2b7c7cc1b944c8e1fb00d259bc2e7dd48a6fad127e51caa5f282a
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -404,9 +404,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-03T23:10:55.447313947Z
+    created: 2019-07-03T23:23:39.071092182Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: acadd0d869fb0c6cff4cd2ef4f1de714b9f0e41f833720bba21df31f21b1e205
+    digest: f977c06cb063f672e74c144cbdb3fd80dcb94006f401c8dc90c3a3b47a964324
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -711,9 +711,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-03T23:10:55.450651662Z
+    created: 2019-07-03T23:23:39.07384661Z
     description: Helm chart for SiteWhere core Database components
-    digest: bfd02e8cb39c1760c400476e07303925b192a839f6216516f250ee9186563f5a
+    digest: 9fe3fa60526966efe977172fab09ba316b23a322e3afa10bd3184ca496a3ad73
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -865,4 +865,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-07-03T23:10:55.429697815Z
+generated: 2019-07-03T23:23:39.057765726Z
