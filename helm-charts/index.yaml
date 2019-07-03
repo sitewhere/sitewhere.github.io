@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-07-03T23:28:17.41695738Z
+    created: 2019-07-03T23:35:35.186009306Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: aace8c9b5abf5dec5189ca036759e479cd50ad33eb9fde5e96bcf14fbe0301e3
+    digest: 43ef449bab06f6998d5a288347ad4d5a060d86663ee4bbecf2f3da906e85630f
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -404,9 +404,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-03T23:28:17.420008838Z
+    created: 2019-07-03T23:35:35.189194807Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 9fb72440917644e141fb379e6eae9c7b86c6e4a021aa4b4ca923a301db5ec481
+    digest: 8d7796233b5f0913b3803e60eb02999005a5597ee1779e51763213f6a2aab17f
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -711,9 +711,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-03T23:28:17.422705952Z
+    created: 2019-07-03T23:35:35.191843311Z
     description: Helm chart for SiteWhere core Database components
-    digest: 0f66780acce47b4a583ddfc567cd2ce6506fc56affd68a5feac5c0bc648760af
+    digest: c0696e4b32bd345b19bb77b2b5588272fc9c713153ce199c979cd5216a5c9396
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -865,4 +865,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-07-03T23:28:17.408420172Z
+generated: 2019-07-03T23:35:35.175979982Z
