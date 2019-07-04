@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-07-03T23:35:35.186009306Z
+    created: 2019-07-04T11:49:52.594497883Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: 43ef449bab06f6998d5a288347ad4d5a060d86663ee4bbecf2f3da906e85630f
+    digest: 99d161571ff2be6e58417792e1cced5ab0afcd9272fd291dd19b075043d237ca
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -404,9 +404,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-03T23:35:35.189194807Z
+    created: 2019-07-04T11:49:52.597542076Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 8d7796233b5f0913b3803e60eb02999005a5597ee1779e51763213f6a2aab17f
+    digest: bb41c6c0460a64a61a0c1b0bedec90cda6dc6f9e548294c73c7e926cff0f4185
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -711,9 +711,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-03T23:35:35.191843311Z
+    created: 2019-07-04T11:49:52.60029525Z
     description: Helm chart for SiteWhere core Database components
-    digest: c0696e4b32bd345b19bb77b2b5588272fc9c713153ce199c979cd5216a5c9396
+    digest: da5dc3fb1282da3c97fcdb98fd406120441d2ec06a2741c4c53e1c26b38534a4
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -865,4 +865,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-07-03T23:35:35.175979982Z
+generated: 2019-07-04T11:49:52.585568795Z
