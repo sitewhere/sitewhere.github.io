@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-07-25T17:06:51.737654363Z
+    created: 2019-07-28T14:10:52.027380645Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: c0e6110b84b80fc6da5941ce48f2da96ff22303186b229970bfca659fed0e950
+    digest: 328b50f980dd5c3591434350c2f75f4c64cc3329c220b771371ebf5e51632a10
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -444,9 +444,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-25T17:06:51.740910575Z
+    created: 2019-07-28T14:10:52.030532821Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 552e8877c0aa4bfa996276c1be42f2737f7f2ac6ed45eab0ebe9eab6fbfdedbb
+    digest: c105f1290152a6033645ef8cb31317716414b8ca73304bb8dbe2239a9003a54a
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -751,9 +751,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-07-25T17:06:51.743709239Z
+    created: 2019-07-28T14:10:52.033407082Z
     description: Helm chart for SiteWhere core Database components
-    digest: cd760310ee15a2e730152e44081582b730e4e724e75d868485e9ea1bdb614240
+    digest: b895f952294c709af08ab47d6e5ec5d30a4a3cc4fe103c3a021f937c8427feb1
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -905,4 +905,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-07-25T17:06:51.727863146Z
+generated: 2019-07-28T14:10:52.017904092Z
