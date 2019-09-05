@@ -1,0 +1,1022 @@
+apiVersion: v1
+entries:
+  sitewhere:
+  - apiVersion: v1
+    appVersion: "2.1"
+    created: 2019-08-14T23:58:41.220411046Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 0a4438becbfd794aa823b451b55497b836a7d87787f7c96d0bae962a043d8dfa
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v1
+    appVersion: "2.1"
+    created: 2019-08-14T19:43:29.773664207Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 10998e6355e88a306ac2714ec49037f03f1c8ecbbef5ae3981c4eb82a7937ebf
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v1
+    appVersion: "2.1"
+    created: 2019-07-28T14:10:52.027380645Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 328b50f980dd5c3591434350c2f75f4c64cc3329c220b771371ebf5e51632a10
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v1
+    appVersion: "2.1"
+    created: 2019-07-04T11:49:52.594497883Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 99d161571ff2be6e58417792e1cced5ab0afcd9272fd291dd19b075043d237ca
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v1
+    appVersion: "2.0"
+    created: 2019-06-28T14:19:31.423505365Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 79539287b0ffa2ea57ee6201a2636c6b1b06712be5ac471ddbaf2590e932c1fc
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: "2.0"
+    created: 2019-06-28T12:22:03.471069-03:00
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: cbc8aab26913c2efd8f9c0d9317ab79e94ea6e82ee77bd5f08e806adeeb83083
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v1
+    appVersion: "2.0"
+    created: 2019-05-04T14:34:18.248216185Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: b4b5eeb4cf8bd02e9fcea542288d639fd59086381c16c8e3b19a50f694de4255
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v1
+    appVersion: "2.0"
+    created: 2019-05-03T14:58:08.322432209Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: c5d757d98ef129e410ef42efe753b3e3f7d23a04a752416d4ea8ba309bcae526
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v1
+    appVersion: "2.0"
+    created: 2019-03-29T11:11:10.630804847Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: c04393aaf170e3a25fbe30f19c9623c245ffae6104c498e3d4d7f781947c3efd
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    appVersion: "2.0"
+    created: 2019-02-13T21:58:40.124711267Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 780fecc6f9527d764d3ce8649b4d301398129d2ffd76516a46e64358d943aac6
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: 2.0.3
+    created: 2019-01-25T14:18:31.490241998Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 02b69db69b66132cb53ae734c2ee76b192f3073c2e8f2b68ec08e1f8babac717
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-01-15T14:33:00.411199185Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 41a86bb31199f711f93d31937f6d3c233dbb4f62819d5dc26071c6e2523c83d4
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    appVersion: 2.0 EE
+    created: 2019-06-28T11:57:01.200255-03:00
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 9f764f33d6bfbae2e15723efb50810052fc025a14d5ef46df7dfe1d8dc405adb
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.0.4.tgz
+    version: 0.0.4
+  sitewhere-infra-core:
+  - apiVersion: v1
+    appVersion: 2.1.0
+    created: 2019-08-14T23:58:41.223766372Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 2b12da30e39b67c60129a5666412ba742a7390cfd5e0ed07dc01879e565d9833
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v1
+    appVersion: 2.1.0
+    created: 2019-08-14T19:43:29.776851767Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 4bbac2a45fc5b30c6a8ec99fa7f725b930c235bd3bf3b06f39b9c8de9b2b6b4a
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v1
+    appVersion: 2.1.0
+    created: 2019-06-28T14:19:31.428026549Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: c2635f764d5599dd0955cbdf07f9594badcc5ec47dcb42c7f3800ec42ca31f69
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v1
+    appVersion: 2.1.0
+    created: 2019-06-06T19:55:47.350884-03:00
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 4372be21dd6b9adcce83c8fa4c31cbc7c9a4d2746d3bca0d737107d44046dd6c
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-06-06T16:48:38.684887-03:00
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 9c75a1a67ea6f589933684de4e30e98f836d624f7dd3059201d59a14d9095153
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-05-16T20:52:55.034029112Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: dfea0bba3c01f13fe560129d1d01db0b0704a5ec0560038b1e65f90b11fca288
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-05-02T23:09:56.168272396Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: c1447afb7892850d827469db21b704b43ff53222986defe97577002d5211c0c7
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-03-29T11:11:10.633795547Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 6a46db7132dafb871dc546f97fe06aa67d36717f7c98354d314624bf6796d3f5
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-02-13T21:58:40.127906667Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: c594b11028eb4402c8ec6a08e5ad31e5f76040e99bcd86ca72e274f8aba5e870
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-02-08T11:23:29.462905974Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 933ebace7d2a478b56e512d2a4d9f650bbb07a9d23b4312d795535e749c7d59c
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.1.3.tgz
+    version: 0.1.3
+  sitewhere-infra-database:
+  - apiVersion: v1
+    appVersion: 2.1.0
+    created: 2019-08-14T23:58:41.226520876Z
+    description: Helm chart for SiteWhere core Database components
+    digest: 05e99ad95896ac06c9e9f710a5d69198cc0f7b89d654b305459ca46f251a207b
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: 2.0.3
+    created: 2019-05-16T20:52:55.036846728Z
+    description: Helm chart for SiteWhere core Database components
+    digest: 5b43049c445e0836799dc0d14d4ac6cacb377b1c3d741b9bed9ba35a61c156ba
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v1
+    appVersion: 2.0.3
+    created: 2019-05-02T23:09:56.171021893Z
+    description: Helm chart for SiteWhere core Database components
+    digest: fc07c16548ed9dfb9cb82cdf59f79ddf08ffd97d9c04bf02f9711aef1982b950
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    appVersion: 2.0.3
+    created: 2019-05-02T23:04:21.262197865Z
+    description: Helm chart for SiteWhere core Database components
+    digest: 6063a9196fe1de591f662a1e30d89a9356104ad219fed796c1c08d725af6687b
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: 2.0.3
+    created: 2019-01-25T14:18:31.496270847Z
+    description: Helm chart for SiteWhere core Database components
+    digest: 768b3b52bc9e668528c30e181cd569582bd0dc2aa9b4d3c505bdce2baa089e6c
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v1
+    appVersion: 2.0.2
+    created: 2019-01-15T14:33:00.416978718Z
+    description: Helm chart for SiteWhere core Database components
+    digest: 7bc7962a023e654be1decd6806580b9ee085ae3029e48dd6a511a5ba1aeb56a4
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
+    version: 0.1.3
+generated: 2019-08-14T23:58:41.210449107Z
