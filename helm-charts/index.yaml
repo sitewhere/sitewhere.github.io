@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-08-14T23:58:41.220411046Z
+    created: 2019-10-01T10:39:59.990897255Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: 0a4438becbfd794aa823b451b55497b836a7d87787f7c96d0bae962a043d8dfa
+    digest: 92a49aa614018c4f490a814c18f64cde5bd895c8a7dabe4adc226f5a9f96364f
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -484,9 +484,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-08-14T23:58:41.223766372Z
+    created: 2019-10-01T10:39:59.994148412Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 2b12da30e39b67c60129a5666412ba742a7390cfd5e0ed07dc01879e565d9833
+    digest: 620a3e07a494dc5d380b53bfaade1ae2a24ff0949db4c6584d6f8ec521eba216
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -825,9 +825,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-08-14T23:58:41.226520876Z
+    created: 2019-10-01T10:39:59.996998209Z
     description: Helm chart for SiteWhere core Database components
-    digest: 05e99ad95896ac06c9e9f710a5d69198cc0f7b89d654b305459ca46f251a207b
+    digest: 02517a411f79db1f7961008cef27db41b9e713db8e10811ac08b64126402dc01
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -979,4 +979,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-08-14T23:58:41.210449107Z
+generated: 2019-10-01T10:39:59.98197412Z
