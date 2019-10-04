@@ -3,6 +3,46 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.1"
+    created: 2019-10-04T23:26:22.470136128Z
+    description: SiteWhere is an industrial strength open-source application enablement
+      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
+      infrastructure that includes device/asset management, data ingestion, big-data
+      storage, and integration through a modern, scalable architecture.
+    digest: 1fcaa934f6f84c1597fd4fd1a3efd5a06ce3140c817d3331a484922918b8028a
+    home: http://www.sitewhere.org/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - integration
+    - device-management
+    - iot
+    - iot-platform
+    - platform
+    - mqtt
+    - iot-framework
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - m2x
+    - hbase
+    - open-source
+    - aws
+    - kafka
+    - zookeeper
+    - microservices
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v1
+    appVersion: "2.1"
     created: 2019-10-01T10:39:59.990897255Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
@@ -484,9 +524,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-10-01T10:39:59.994148412Z
+    created: 2019-10-04T23:26:22.473181024Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 620a3e07a494dc5d380b53bfaade1ae2a24ff0949db4c6584d6f8ec521eba216
+    digest: 95f644e39d6daf4d53c1e2acb12846db6db1ec1438033b658cdf0facecb03286
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -825,9 +865,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-10-01T10:39:59.996998209Z
+    created: 2019-10-04T23:26:22.475930862Z
     description: Helm chart for SiteWhere core Database components
-    digest: 02517a411f79db1f7961008cef27db41b9e713db8e10811ac08b64126402dc01
+    digest: ad1e83d91aecd59f70e52ddfa90b07c18209606242892bfacf9613cc8a8c1408
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -979,4 +1019,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
-generated: 2019-10-01T10:39:59.98197412Z
+generated: 2019-10-04T23:26:22.461241631Z
