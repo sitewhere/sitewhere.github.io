@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-11-29T17:29:15.100799329Z
+    created: 2020-04-20T11:24:23.329715951Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: b922f8ff0eac9606c58079bcfb7bccea8cbf895ced3df6fb3efd85228cc9bb7c
+    digest: db535cac0c3c04d124194dc05b945b12785a8853635122332cd62fc0888fcf35
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -564,9 +564,9 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-29T17:29:15.104182105Z
+    created: 2020-04-20T11:24:23.332341612Z
     description: Helm chart for SiteWhere core infrastructure components
-    digest: 1e284dc54cfdbf4127de2ec204a3aa5e3f2f71e3959846eb8e06ad005cf4fcf8
+    digest: 9ec20b9cbad8f2f72e2f5793000885fe18e0b2808ebd7995e58373e4042b58bf
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -905,9 +905,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-29T17:29:15.112622384Z
+    created: 2020-04-20T11:24:23.338761304Z
     description: Helm chart for SiteWhere core Database components
-    digest: 11c0a6cda01d107fb65fcf930d03452aac43fe3fcb0a05ad5af24136db201d9e
+    digest: f1ad2733a90bb038e04e29b08370f941613441803ed324a1a572c2a37456daa8
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -1296,11 +1296,11 @@ entries:
   warp10:
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2019-11-29T17:29:15.113097755Z
+    created: 2020-04-20T11:24:23.339626055Z
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
-    digest: 023b0ebdada7767fa83974cc4857c630432c40b01f4e28cea47652602b735629
+    digest: c09a0dfe8ff8f012fb9559fbca8046c8526053b1b570da3d784be0e4635a7df5
     home: https://www.warp10.io
     keywords:
     - warp10
@@ -1441,4 +1441,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/warp10-0.1.0.tgz
     version: 0.1.0
-generated: 2019-11-29T17:29:15.089182329Z
+generated: 2020-04-20T11:24:23.319525734Z
