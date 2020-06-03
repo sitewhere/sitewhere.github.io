@@ -3,12 +3,12 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.2"
-    created: 2020-06-03T13:42:14.867743706Z
+    created: 2020-06-03T14:20:44.750691234Z
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: 5cef047ce81cd7ee5d93285d38426ee199eccfd55cbf4a72df853b13beec6dd8
+    digest: aaf5b91e09f1ac94a2be2b3396845e5978779f6c6af304faabae0c474a7ef269
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -604,6 +604,40 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v1
     appVersion: 2.2.0
+    created: 2020-06-03T14:20:44.753736998Z
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: 700cce01999b9001e23c39048965bc8a6c353b853a7dfc820eee62ca351a25bf
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v1
+    appVersion: 2.2.0
     created: 2020-06-03T13:42:14.870373352Z
     description: Helm chart for SiteWhere core infrastructure components
     digest: 07008cdc6854c995bcb131c8af3b9516021e1f4aa7fc03f2f49d9ec00fc8ac7e
@@ -979,9 +1013,9 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-03T13:42:14.877470637Z
+    created: 2020-06-03T14:20:44.760532686Z
     description: Helm chart for SiteWhere core Database components
-    digest: 167396cf007ce2a59dd784fba2fd16c20b3045c2c1218ddd792644ebe55c7d19
+    digest: 17b80cafccf5e1c0bf642ff3edc5744231db175bc011b1713e3f472182b26e71
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -1396,7 +1430,7 @@ entries:
   warp10:
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-03T13:42:14.877839622Z
+    created: 2020-06-03T14:20:44.760916822Z
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1541,4 +1575,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/warp10-0.1.0.tgz
     version: 0.1.0
-generated: 2020-06-03T13:42:14.856506286Z
+generated: 2020-06-03T14:20:44.740439184Z
