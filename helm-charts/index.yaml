@@ -1,22 +1,22 @@
 apiVersion: v1
 entries:
   sitewhere:
-  - apiVersion: v1
-    appVersion: "2.2"
-    created: "2020-10-12T14:25:50.086491486Z"
+  - apiVersion: v2
+    appVersion: 2.1.1
+    created: "2020-10-12T14:44:53.649996405Z"
     dependencies:
     - condition: sitewhere-infra-core.enabled
       name: sitewhere-infra-core
       repository: https://sitewhere.io/helm-charts
-      version: 0.2.7
+      version: 0.2.8
     - name: sitewhere-infra-database
       repository: https://sitewhere.io/helm-charts
-      version: 0.2.12
+      version: 0.2.13
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: c138e9c5ab4778e3f1488faad6b40d78b57f3bb4e1ab1992c3e6b0f0d2596ad3
+    digest: e04372333e00afdf9222e33db4d17534f42d3950098bcaa78e2ad1717b7dd2b7
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -692,14 +692,14 @@ entries:
   sitewhere-infra-core:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2020-10-12T14:25:50.090667677Z"
+    created: "2020-10-12T14:44:53.654299776Z"
     dependencies:
     - condition: sitewhere-infra-core.postgresql.enabled, postgresql.enabled
       name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
       version: 8.6.4
     description: Helm chart for SiteWhere core infrastructure components
-    digest: c3063c53dd29000af5ec5c4a5b6c66835d977dc8ee98d21d4ee7f92cbc75b06b
+    digest: d2cf64c0f765f4130e339a22033921df17a6d276c4de198ca6de805d0f573f7d
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -1174,7 +1174,7 @@ entries:
   sitewhere-infra-database:
   - apiVersion: v2
     appVersion: 2.1.1
-    created: "2020-10-12T14:25:50.09737801Z"
+    created: "2020-10-12T14:44:53.66103755Z"
     dependencies:
     - name: mongodb
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -1197,7 +1197,7 @@ entries:
       repository: https://kubernetes-charts.storage.googleapis.com
       version: 8.6.4
     description: Helm chart for SiteWhere core Database components
-    digest: b8c87165f5d183eca2c31049bec563cb79a81a9284ab756c643dc3c0285aead6
+    digest: 766c0a1b3c410f783a2a6bf0cd2b12f84f89e6eba08c1b097103425b9a63e091
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -1690,11 +1690,11 @@ entries:
   warp10:
   - apiVersion: v1
     appVersion: 2.2.0
-    created: "2020-10-12T14:25:50.099311879Z"
+    created: "2020-10-12T14:44:53.662603404Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
-    digest: 7a1ea399adc261ae831ba4c39b9c870eb3f03af542e7c254f4c0761d10420b3d
+    digest: fd0222d9969b219146417ed3e6665ffd5f2cd07a615e7bfbb0a6131736002ae4
     home: https://www.warp10.io
     keywords:
     - warp10
@@ -1877,4 +1877,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/warp10-0.1.0.tgz
     version: 0.1.0
-generated: "2020-10-12T14:25:50.067945665Z"
+generated: "2020-10-12T14:44:53.632379474Z"
