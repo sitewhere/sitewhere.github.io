@@ -3,12 +3,20 @@ entries:
   sitewhere:
   - apiVersion: v1
     appVersion: "2.2"
-    created: 2020-06-23T14:48:44.644934001Z
+    created: "2020-10-12T14:25:50.086491486Z"
+    dependencies:
+    - condition: sitewhere-infra-core.enabled
+      name: sitewhere-infra-core
+      repository: https://sitewhere.io/helm-charts
+      version: 0.2.7
+    - name: sitewhere-infra-database
+      repository: https://sitewhere.io/helm-charts
+      version: 0.2.12
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
       storage, and integration through a modern, scalable architecture.
-    digest: a90d46c0247ac021c99ca356f630725fefd649a649a8defed9fbaeb362094264
+    digest: c138e9c5ab4778e3f1488faad6b40d78b57f3bb4e1ab1992c3e6b0f0d2596ad3
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -43,7 +51,7 @@ entries:
     version: 0.2.9
   - apiVersion: v1
     appVersion: "2.2"
-    created: 2020-06-23T14:45:44.051435131Z
+    created: "2020-06-23T14:45:44.051435131Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -83,7 +91,7 @@ entries:
     version: 0.2.8
   - apiVersion: v1
     appVersion: "2.2"
-    created: 2020-06-23T14:04:42.218776987Z
+    created: "2020-06-23T14:04:42.218776987Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -123,7 +131,7 @@ entries:
     version: 0.2.7
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2020-04-20T11:24:23.329715951Z
+    created: "2020-04-20T11:24:23.329715951Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -163,7 +171,7 @@ entries:
     version: 0.2.6
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-10-04T23:26:22.470136128Z
+    created: "2019-10-04T23:26:22.470136128Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -203,7 +211,7 @@ entries:
     version: 0.2.5
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-10-01T10:39:59.990897255Z
+    created: "2019-10-01T10:39:59.990897255Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -243,7 +251,7 @@ entries:
     version: 0.2.4
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-08-14T19:43:29.773664207Z
+    created: "2019-08-14T19:43:29.773664207Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -283,7 +291,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-07-28T14:10:52.027380645Z
+    created: "2019-07-28T14:10:52.027380645Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -323,7 +331,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: "2.1"
-    created: 2019-07-04T11:49:52.594497883Z
+    created: "2019-07-04T11:49:52.594497883Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -363,7 +371,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-06-28T14:19:31.423505365Z
+    created: "2019-06-28T14:19:31.423505365Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -403,7 +411,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-06-28T12:22:03.471069-03:00
+    created: "2019-06-28T12:22:03.471069-03:00"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -443,7 +451,7 @@ entries:
     version: 0.1.9
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-05-04T14:34:18.248216185Z
+    created: "2019-05-04T14:34:18.248216185Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -483,7 +491,7 @@ entries:
     version: 0.1.8
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-05-03T14:58:08.322432209Z
+    created: "2019-05-03T14:58:08.322432209Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -523,7 +531,7 @@ entries:
     version: 0.1.7
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-03-29T11:11:10.630804847Z
+    created: "2019-03-29T11:11:10.630804847Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -563,7 +571,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: "2.0"
-    created: 2019-02-13T21:58:40.124711267Z
+    created: "2019-02-13T21:58:40.124711267Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -603,7 +611,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-01-25T14:18:31.490241998Z
+    created: "2019-01-25T14:18:31.490241998Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -643,7 +651,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-01-15T14:33:00.411199185Z
+    created: "2019-01-15T14:33:00.411199185Z"
     description: SiteWhere is an industrial strength open-source application enablement
       platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
       infrastructure that includes device/asset management, data ingestion, big-data
@@ -682,9 +690,48 @@ entries:
     - https://sitewhere.io/helm-charts/sitewhere-0.1.3.tgz
     version: 0.1.3
   sitewhere-infra-core:
+  - apiVersion: v2
+    appVersion: 2.1.1
+    created: "2020-10-12T14:25:50.090667677Z"
+    dependencies:
+    - condition: sitewhere-infra-core.postgresql.enabled, postgresql.enabled
+      name: postgresql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 8.6.4
+    description: Helm chart for SiteWhere core infrastructure components
+    digest: c3063c53dd29000af5ec5c4a5b6c66835d977dc8ee98d21d4ee7f92cbc75b06b
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-core
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.2.8.tgz
+    version: 0.2.8
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-23T14:48:44.64987865Z
+    created: "2020-06-23T14:48:44.64987865Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 8c8cee46e8a0f44380850f56d6db091aa121c84ddfedee9ce0aa751fec2e0650
     home: https://sitewhere.io/
@@ -718,7 +765,7 @@ entries:
     version: 0.2.7
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-03T14:20:44.753736998Z
+    created: "2020-06-03T14:20:44.753736998Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 700cce01999b9001e23c39048965bc8a6c353b853a7dfc820eee62ca351a25bf
     home: https://sitewhere.io/
@@ -752,7 +799,7 @@ entries:
     version: 0.2.6
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-03T13:42:14.870373352Z
+    created: "2020-06-03T13:42:14.870373352Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 07008cdc6854c995bcb131c8af3b9516021e1f4aa7fc03f2f49d9ec00fc8ac7e
     home: https://sitewhere.io/
@@ -786,7 +833,7 @@ entries:
     version: 0.2.5
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2020-04-20T11:24:23.332341612Z
+    created: "2020-04-20T11:24:23.332341612Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 9ec20b9cbad8f2f72e2f5793000885fe18e0b2808ebd7995e58373e4042b58bf
     home: https://sitewhere.io/
@@ -820,7 +867,7 @@ entries:
     version: 0.2.4
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-08-14T19:43:29.776851767Z
+    created: "2019-08-14T19:43:29.776851767Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 4bbac2a45fc5b30c6a8ec99fa7f725b930c235bd3bf3b06f39b9c8de9b2b6b4a
     home: https://sitewhere.io/
@@ -854,7 +901,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-06-28T14:19:31.428026549Z
+    created: "2019-06-28T14:19:31.428026549Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: c2635f764d5599dd0955cbdf07f9594badcc5ec47dcb42c7f3800ec42ca31f69
     home: https://sitewhere.io/
@@ -888,7 +935,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-06-06T19:55:47.350884-03:00
+    created: "2019-06-06T19:55:47.350884-03:00"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 4372be21dd6b9adcce83c8fa4c31cbc7c9a4d2746d3bca0d737107d44046dd6c
     home: https://sitewhere.io/
@@ -922,7 +969,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-06-06T16:48:38.684887-03:00
+    created: "2019-06-06T16:48:38.684887-03:00"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 9c75a1a67ea6f589933684de4e30e98f836d624f7dd3059201d59a14d9095153
     home: https://sitewhere.io/
@@ -956,7 +1003,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-05-16T20:52:55.034029112Z
+    created: "2019-05-16T20:52:55.034029112Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: dfea0bba3c01f13fe560129d1d01db0b0704a5ec0560038b1e65f90b11fca288
     home: https://sitewhere.io/
@@ -990,7 +1037,7 @@ entries:
     version: 0.1.7
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-05-02T23:09:56.168272396Z
+    created: "2019-05-02T23:09:56.168272396Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: c1447afb7892850d827469db21b704b43ff53222986defe97577002d5211c0c7
     home: https://sitewhere.io/
@@ -1024,7 +1071,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-03-29T11:11:10.633795547Z
+    created: "2019-03-29T11:11:10.633795547Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 6a46db7132dafb871dc546f97fe06aa67d36717f7c98354d314624bf6796d3f5
     home: https://sitewhere.io/
@@ -1058,7 +1105,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-02-13T21:58:40.127906667Z
+    created: "2019-02-13T21:58:40.127906667Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: c594b11028eb4402c8ec6a08e5ad31e5f76040e99bcd86ca72e274f8aba5e870
     home: https://sitewhere.io/
@@ -1092,7 +1139,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-02-08T11:23:29.462905974Z
+    created: "2019-02-08T11:23:29.462905974Z"
     description: Helm chart for SiteWhere core infrastructure components
     digest: 933ebace7d2a478b56e512d2a4d9f650bbb07a9d23b4312d795535e749c7d59c
     home: https://sitewhere.io/
@@ -1125,9 +1172,56 @@ entries:
     - https://sitewhere.io/helm-charts/sitewhere-infra-core-0.1.3.tgz
     version: 0.1.3
   sitewhere-infra-database:
+  - apiVersion: v2
+    appVersion: 2.1.1
+    created: "2020-10-12T14:25:50.09737801Z"
+    dependencies:
+    - name: mongodb
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 5.2.0
+    - condition: sitewhere-infra-database.cassandra.enabled, cassandra.enabled
+      name: cassandra
+      repository: https://kubernetes-charts-incubator.storage.googleapis.com
+      version: 0.10.1
+    - condition: sitewhere-infra-database.influxdb.enabled, influxdb.enabled
+      name: influxdb
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 3.0.2
+    - condition: sitewhere-infra-database.warp10.enabled, warp10.enabled
+      name: warp10
+      repository: https://sitewhere.io/helm-charts
+      version: 0.2.3
+    - alias: tenantsdb
+      condition: sitewhere-infra-database.tenantsdb.enabled, tenantsdb.enabled
+      name: postgresql
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 8.6.4
+    description: Helm chart for SiteWhere core Database components
+    digest: b8c87165f5d183eca2c31049bec563cb79a81a9284ab756c643dc3c0285aead6
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - mongodb
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infra-database
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.2.13.tgz
+    version: 0.2.13
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-23T14:48:44.655081499Z
+    created: "2020-06-23T14:48:44.655081499Z"
     description: Helm chart for SiteWhere core Database components
     digest: 91a11ba62cac22b43cc2a5b54b6734b9bf72dc358abcab08905fa76a33d6bdbf
     home: https://sitewhere.io/
@@ -1153,7 +1247,7 @@ entries:
     version: 0.2.12
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-23T14:40:54.965267355Z
+    created: "2020-06-23T14:40:54.965267355Z"
     description: Helm chart for SiteWhere core Database components
     digest: a5650141910aa976ea3a8dacd78e15f8e7362cace3d118a4375829060a0b24d9
     home: https://sitewhere.io/
@@ -1179,7 +1273,7 @@ entries:
     version: 0.2.11
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-23T13:59:14.727812051Z
+    created: "2020-06-23T13:59:14.727812051Z"
     description: Helm chart for SiteWhere core Database components
     digest: 90274bf12d0d5d52ab94cea1491730b94063462e91b9f1e83b559f436b734d0e
     home: https://sitewhere.io/
@@ -1205,7 +1299,7 @@ entries:
     version: 0.2.10
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-03T13:26:51.412794808Z
+    created: "2020-06-03T13:26:51.412794808Z"
     description: Helm chart for SiteWhere core Database components
     digest: 0eba4f16761bbb317e9e4e33990967b31085b05e7088432f3508a838d92e1d02
     home: https://sitewhere.io/
@@ -1231,7 +1325,7 @@ entries:
     version: 0.2.9
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-29T17:22:57.380503946Z
+    created: "2019-11-29T17:22:57.380503946Z"
     description: Helm chart for SiteWhere core Database components
     digest: fca1c37c06830e381be46dcf43c34871e01404b2a4a08428f8a84729ba330375
     home: https://sitewhere.io/
@@ -1257,7 +1351,7 @@ entries:
     version: 0.2.8
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-29T13:14:46.938155153Z
+    created: "2019-11-29T13:14:46.938155153Z"
     description: Helm chart for SiteWhere core Database components
     digest: a72c6d7909ae212b438a43ad197c07085f3c9fc8746524325cd999283f68e7ac
     home: https://sitewhere.io/
@@ -1283,7 +1377,7 @@ entries:
     version: 0.2.7
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-29T13:09:22.458832748Z
+    created: "2019-11-29T13:09:22.458832748Z"
     description: Helm chart for SiteWhere core Database components
     digest: 295562d128bb9648fa5d5079dcc35d45d7287d0c84a15865e571c09d3187aaa5
     home: https://sitewhere.io/
@@ -1309,7 +1403,7 @@ entries:
     version: 0.2.6
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-22T15:07:04.122055449Z
+    created: "2019-11-22T15:07:04.122055449Z"
     description: Helm chart for SiteWhere core Database components
     digest: a0986979d04a0a8aafc47d8c6a144c8e47e6891028abeac46b824646184d8159
     home: https://sitewhere.io/
@@ -1335,7 +1429,7 @@ entries:
     version: 0.2.5
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-11T16:16:45.622659951Z
+    created: "2019-11-11T16:16:45.622659951Z"
     description: Helm chart for SiteWhere core Database components
     digest: f90fd0eb93dc788db64b7fe9a0307c65f38988cda17cc1f4193440ecfac487bc
     home: https://sitewhere.io/
@@ -1361,7 +1455,7 @@ entries:
     version: 0.2.4
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-11T15:42:34.171415192Z
+    created: "2019-11-11T15:42:34.171415192Z"
     description: Helm chart for SiteWhere core Database components
     digest: 4da25f585f0cce326c1d2f4954193301792cd75d7bba3d8bc08406dfb024905b
     home: https://sitewhere.io/
@@ -1387,7 +1481,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-11T13:36:46.469250939Z
+    created: "2019-11-11T13:36:46.469250939Z"
     description: Helm chart for SiteWhere core Database components
     digest: 01729122181930ea68c2d339842f43742d3d7bc8ae99632a4cb003aee46ff69b
     home: https://sitewhere.io/
@@ -1413,7 +1507,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-11-11T13:09:00.864282458Z
+    created: "2019-11-11T13:09:00.864282458Z"
     description: Helm chart for SiteWhere core Database components
     digest: 6c1c53f9fe8d95e41e3afc6e9acd9ea24106a97591c9f12c3b5a2f527d70424a
     home: https://sitewhere.io/
@@ -1439,7 +1533,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 2.1.0
-    created: 2019-10-04T23:26:22.475930862Z
+    created: "2019-10-04T23:26:22.475930862Z"
     description: Helm chart for SiteWhere core Database components
     digest: ad1e83d91aecd59f70e52ddfa90b07c18209606242892bfacf9613cc8a8c1408
     home: https://sitewhere.io/
@@ -1465,7 +1559,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-05-16T20:52:55.036846728Z
+    created: "2019-05-16T20:52:55.036846728Z"
     description: Helm chart for SiteWhere core Database components
     digest: 5b43049c445e0836799dc0d14d4ac6cacb377b1c3d741b9bed9ba35a61c156ba
     home: https://sitewhere.io/
@@ -1491,7 +1585,7 @@ entries:
     version: 0.1.7
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-05-02T23:09:56.171021893Z
+    created: "2019-05-02T23:09:56.171021893Z"
     description: Helm chart for SiteWhere core Database components
     digest: fc07c16548ed9dfb9cb82cdf59f79ddf08ffd97d9c04bf02f9711aef1982b950
     home: https://sitewhere.io/
@@ -1517,7 +1611,7 @@ entries:
     version: 0.1.6
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-05-02T23:04:21.262197865Z
+    created: "2019-05-02T23:04:21.262197865Z"
     description: Helm chart for SiteWhere core Database components
     digest: 6063a9196fe1de591f662a1e30d89a9356104ad219fed796c1c08d725af6687b
     home: https://sitewhere.io/
@@ -1543,7 +1637,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: 2.0.3
-    created: 2019-01-25T14:18:31.496270847Z
+    created: "2019-01-25T14:18:31.496270847Z"
     description: Helm chart for SiteWhere core Database components
     digest: 768b3b52bc9e668528c30e181cd569582bd0dc2aa9b4d3c505bdce2baa089e6c
     home: https://sitewhere.io/
@@ -1569,7 +1663,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 2.0.2
-    created: 2019-01-15T14:33:00.416978718Z
+    created: "2019-01-15T14:33:00.416978718Z"
     description: Helm chart for SiteWhere core Database components
     digest: 7bc7962a023e654be1decd6806580b9ee085ae3029e48dd6a511a5ba1aeb56a4
     home: https://sitewhere.io/
@@ -1596,11 +1690,11 @@ entries:
   warp10:
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-23T14:48:44.65545776Z
+    created: "2020-10-12T14:25:50.099311879Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
-    digest: 43f59c04232859b66b54436f6ed7ab9aae84270b1c2c7d526b8f05e2e50de4d3
+    digest: 7a1ea399adc261ae831ba4c39b9c870eb3f03af542e7c254f4c0761d10420b3d
     home: https://www.warp10.io
     keywords:
     - warp10
@@ -1617,7 +1711,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-23T14:09:40.464916856Z
+    created: "2020-06-23T14:09:40.464916856Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1638,7 +1732,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2020-06-04T11:49:18.811046839Z
+    created: "2020-06-04T11:49:18.811046839Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1659,7 +1753,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2019-11-29T13:47:44.287873548Z
+    created: "2019-11-29T13:47:44.287873548Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1680,7 +1774,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2019-11-22T15:13:45.376177217Z
+    created: "2019-11-22T15:13:45.376177217Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1701,7 +1795,7 @@ entries:
     version: 0.1.4
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2019-11-11T16:23:20.555650961Z
+    created: "2019-11-11T16:23:20.555650961Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1722,7 +1816,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2019-11-11T15:49:22.057949099Z
+    created: "2019-11-11T15:49:22.057949099Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1743,7 +1837,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2019-11-11T13:39:59.584722008Z
+    created: "2019-11-11T13:39:59.584722008Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1764,7 +1858,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 2.2.0
-    created: 2019-10-11T10:54:39.98277772Z
+    created: "2019-10-11T10:54:39.98277772Z"
     description: Warp 10 is a platform designed to collect, store and analyze sensor
       and Time Series data. Warp 10™ is both a Time Series Database and an associated
       analytics environment.
@@ -1783,4 +1877,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/warp10-0.1.0.tgz
     version: 0.1.0
-generated: 2020-06-23T14:48:44.634499474Z
+generated: "2020-10-12T14:25:50.067945665Z"
