@@ -12,10 +12,7 @@ entries:
     - name: sitewhere-infra-database
       repository: https://sitewhere.io/helm-charts
       version: 0.2.13
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: c3ef0fd019f5bb480c5430e24019920c7700cc812b195985571837540b728860
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -52,10 +49,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.2"
     created: "2020-06-23T14:45:44.051435131Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: c3e98771341d3cc18e9b962a12ae3b7730921762ceae593187f3f2aca2fbda41
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -92,10 +86,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.2"
     created: "2020-06-23T14:04:42.218776987Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: b7f294bee160048a9d235d6eab44a7957720b4dee77ce91d108773bd51bb8762
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -132,10 +123,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.1"
     created: "2020-04-20T11:24:23.329715951Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: db535cac0c3c04d124194dc05b945b12785a8853635122332cd62fc0888fcf35
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -172,10 +160,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.1"
     created: "2019-10-04T23:26:22.470136128Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 1fcaa934f6f84c1597fd4fd1a3efd5a06ce3140c817d3331a484922918b8028a
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -212,10 +197,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.1"
     created: "2019-10-01T10:39:59.990897255Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 92a49aa614018c4f490a814c18f64cde5bd895c8a7dabe4adc226f5a9f96364f
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -252,10 +234,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.1"
     created: "2019-08-14T19:43:29.773664207Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 10998e6355e88a306ac2714ec49037f03f1c8ecbbef5ae3981c4eb82a7937ebf
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -292,10 +271,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.1"
     created: "2019-07-28T14:10:52.027380645Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 328b50f980dd5c3591434350c2f75f4c64cc3329c220b771371ebf5e51632a10
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -332,10 +308,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.1"
     created: "2019-07-04T11:49:52.594497883Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 99d161571ff2be6e58417792e1cced5ab0afcd9272fd291dd19b075043d237ca
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -372,10 +345,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.0"
     created: "2019-06-28T14:19:31.423505365Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 79539287b0ffa2ea57ee6201a2636c6b1b06712be5ac471ddbaf2590e932c1fc
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -412,10 +382,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.0"
     created: "2019-06-28T12:22:03.471069-03:00"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: cbc8aab26913c2efd8f9c0d9317ab79e94ea6e82ee77bd5f08e806adeeb83083
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -452,10 +419,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.0"
     created: "2019-05-04T14:34:18.248216185Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: b4b5eeb4cf8bd02e9fcea542288d639fd59086381c16c8e3b19a50f694de4255
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -492,10 +456,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.0"
     created: "2019-05-03T14:58:08.322432209Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: c5d757d98ef129e410ef42efe753b3e3f7d23a04a752416d4ea8ba309bcae526
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -532,10 +493,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.0"
     created: "2019-03-29T11:11:10.630804847Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: c04393aaf170e3a25fbe30f19c9623c245ffae6104c498e3d4d7f781947c3efd
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -572,10 +530,7 @@ entries:
   - apiVersion: v1
     appVersion: "2.0"
     created: "2019-02-13T21:58:40.124711267Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 780fecc6f9527d764d3ce8649b4d301398129d2ffd76516a46e64358d943aac6
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -612,10 +567,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.0.3
     created: "2019-01-25T14:18:31.490241998Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 02b69db69b66132cb53ae734c2ee76b192f3073c2e8f2b68ec08e1f8babac717
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -652,10 +604,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.0.2
     created: "2019-01-15T14:33:00.411199185Z"
-    description: SiteWhere is an industrial strength open-source application enablement
-      platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based
-      infrastructure that includes device/asset management, data ingestion, big-data
-      storage, and integration through a modern, scalable architecture.
+    description: SiteWhere is an industrial strength open-source application enablement platform for the Internet of Things (IoT). It provides a multi-tenant microservice-based infrastructure that includes device/asset management, data ingestion, big-data storage, and integration through a modern, scalable architecture.
     digest: 41a86bb31199f711f93d31937f6d3c233dbb4f62819d5dc26071c6e2523c83d4
     home: http://www.sitewhere.org/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
@@ -1687,13 +1636,76 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/sitewhere-infra-database-0.1.3.tgz
     version: 0.1.3
+  sitewhere-infrastructure:
+  - apiVersion: v2
+    appVersion: 3.0.0
+    created: "2021-01-18T22:08:02.573777807Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.1.1
+    - condition: influxdb.enabled
+      name: influxdb
+      repository: https://influxdata.github.io/helm-charts
+      version: 4.8.10
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts
+      version: 4.10.11
+    - condition: nifi.enabled
+      name: nifi
+      repository: https://cetic.github.io/helm-charts
+      version: 0.3.2
+    - condition: mosquitto.enabled
+      name: mosquitto
+      repository: https://k8s-at-home.com/charts/
+      version: 0.7.0
+    - condition: strimzi.enabled
+      name: strimzi-kafka-operator
+      repository: https://strimzi.io/charts/
+      version: 0.21.0
+    - condition: keycloak.enabled
+      name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 9.8.1
+    description: SiteWhere Infrastructure Helm Chart
+    digest: 745e83b419d5d93b294e3ff4163ee297f67f14e02e14a076cfec4d5239f98667
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infrastructure
+    type: application
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infrastructure-0.1.0.tgz
+    version: 0.1.0
   warp10:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2020-10-12T15:29:11.085991383Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: 72bbbcd172207682024b75244a94b8c7bd7616b7baa56892fd59235b06b788e5
     home: https://www.warp10.io
     keywords:
@@ -1712,9 +1724,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2020-06-23T14:09:40.464916856Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: 4d65346fec159dd05d998166beb9a8ff4f1b8ea4e8ca5129614879daf0cec098
     home: https://www.warp10.io
     keywords:
@@ -1733,9 +1743,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2020-06-04T11:49:18.811046839Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: c09a0dfe8ff8f012fb9559fbca8046c8526053b1b570da3d784be0e4635a7df5
     home: https://www.warp10.io
     keywords:
@@ -1754,9 +1762,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2019-11-29T13:47:44.287873548Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: 79e2388bf17b3198e6f69388ae44684580c422166a895137830bd7ba62bd8bf3
     home: https://www.warp10.io
     keywords:
@@ -1775,9 +1781,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2019-11-22T15:13:45.376177217Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: 8aaf517367c05bb932483adea85a8e293b741553b1301ed9ae995e9c3e53d7ae
     home: https://www.warp10.io
     keywords:
@@ -1796,9 +1800,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2019-11-11T16:23:20.555650961Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: f6db1d3c35fe12736829db12da565a129d041b9b4a8da87f9243c4a6451c7548
     home: https://www.warp10.io
     keywords:
@@ -1817,9 +1819,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2019-11-11T15:49:22.057949099Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: cbd4c3f0b62d78bb1f0e93fa7f98032dbfb1fc5c2e4eac23afda3fcf238076c1
     home: https://www.warp10.io
     keywords:
@@ -1838,9 +1838,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2019-11-11T13:39:59.584722008Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: 159f3fb28ae54de514cb94500bca4f1aece99290fdcc60717e452cfcf50a3533
     home: https://www.warp10.io
     keywords:
@@ -1859,9 +1857,7 @@ entries:
   - apiVersion: v1
     appVersion: 2.2.0
     created: "2019-10-11T10:54:39.98277772Z"
-    description: Warp 10 is a platform designed to collect, store and analyze sensor
-      and Time Series data. Warp 10™ is both a Time Series Database and an associated
-      analytics environment.
+    description: Warp 10 is a platform designed to collect, store and analyze sensor and Time Series data. Warp 10™ is both a Time Series Database and an associated analytics environment.
     digest: c557e9a192637e46514ba7b5d650bbff3f8edcaefee9e1857df514a0751c02e7
     home: https://www.warp10.io
     keywords:
@@ -1877,4 +1873,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/warp10-0.1.0.tgz
     version: 0.1.0
-generated: "2020-10-12T15:29:11.054060728Z"
+generated: "2021-01-18T22:08:02.550787591Z"
