@@ -1639,6 +1639,70 @@ entries:
   sitewhere-infrastructure:
   - apiVersion: v2
     appVersion: 3.0.0
+    created: "2021-01-20T12:28:33.483474748Z"
+    dependencies:
+    - condition: infrastructure.enabled,postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.1.1
+    - condition: infrastructure.enabled,influxdb.enabled
+      name: influxdb
+      repository: https://influxdata.github.io/helm-charts
+      version: 4.8.10
+    - condition: infrastructure.enabled,redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts
+      version: 4.10.11
+    - condition: infrastructure.enabled,nifi.enabled
+      name: nifi
+      repository: https://cetic.github.io/helm-charts
+      version: 0.3.2
+    - condition: infrastructure.enabled,mosquitto.enabled
+      name: mosquitto
+      repository: https://k8s-at-home.com/charts/
+      version: 0.7.0
+    - condition: infrastructure.enabled,strimzi.enabled
+      name: strimzi-kafka-operator
+      repository: https://strimzi.io/charts/
+      version: 0.21.0
+    - condition: infrastructure.enabled,keycloak.enabled
+      name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 9.8.1
+    description: SiteWhere Infrastructure Helm Chart
+    digest: 4fdd4dc8ecf43ded0020aabb81382798b7e329d49af4a92bc3f49dd3a04c4fe5
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infrastructure
+    type: application
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infrastructure-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 3.0.0
     created: "2021-01-18T22:38:48.721173911Z"
     dependencies:
     - condition: postgresql.enabled
@@ -1873,4 +1937,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/warp10-0.1.0.tgz
     version: 0.1.0
-generated: "2021-01-18T22:38:48.6991594Z"
+generated: "2021-01-20T12:28:33.461487206Z"
