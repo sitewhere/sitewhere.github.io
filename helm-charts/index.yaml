@@ -1639,7 +1639,7 @@ entries:
   sitewhere-infrastructure:
   - apiVersion: v2
     appVersion: 3.0.1
-    created: "2021-01-21T11:42:27.130503903Z"
+    created: "2021-01-21T12:45:53.034214952Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -1684,7 +1684,7 @@ entries:
       - infrastructure
       version: 9.8.1
     description: SiteWhere Infrastructure Helm Chart
-    digest: d595f2ddfb8c043994786e9440e711877da422921852c1dfaf47976935a837ff
+    digest: ab8d09cef7ff70842629d7d80bdd7dfeb234d407c536d442089f528060b8740b
     home: https://sitewhere.io/
     icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
     keywords:
@@ -2107,4 +2107,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/warp10-0.1.0.tgz
     version: 0.1.0
-generated: "2021-01-21T11:42:27.10696894Z"
+generated: "2021-01-21T12:45:53.007542679Z"
