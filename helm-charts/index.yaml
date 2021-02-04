@@ -1639,6 +1639,84 @@ entries:
   sitewhere-infrastructure:
   - apiVersion: v2
     appVersion: 3.0.2
+    created: "2021-02-04T18:27:57.841258901Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - infrastructure
+      version: 9.1.1
+    - condition: infrastructure.enabled,influxdb.enabled
+      name: influxdb
+      repository: https://influxdata.github.io/helm-charts
+      tags:
+      - infrastructure
+      version: 4.8.10
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - infrastructure
+      version: 12.6.2
+    - condition: nifi.enabled
+      name: nifi
+      repository: https://cetic.github.io/helm-charts
+      tags:
+      - infrastructure
+      version: 0.3.2
+    - condition: mosquitto.enabled
+      name: mosquitto
+      repository: https://k8s-at-home.com/charts/
+      tags:
+      - infrastructure
+      version: 0.7.0
+    - condition: strimzi.enabled
+      name: strimzi-kafka-operator
+      repository: https://strimzi.io/charts/
+      tags:
+      - infrastructure
+      version: 0.21.0
+    - condition: keycloak.enabled
+      name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      tags:
+      - infrastructure
+      version: 9.8.1
+    description: SiteWhere Infrastructure Helm Chart
+    digest: c131d8c767793f367390f5fb2ad65c5c7897f76e7690047665bc1c161aca274e
+    home: https://sitewhere.io/
+    icon: http://sitewhere.io/docs/2.0.0/images/favicon.png
+    keywords:
+    - sitewhere
+    - internet-of-things
+    - open-source
+    - iot
+    - iot-framework
+    - iot-platform
+    - platform
+    - integration
+    - microservices
+    - device-management
+    - mqtt
+    - java
+    - arduino
+    - raspberry-pi
+    - android
+    - kafka
+    - zookeeper
+    maintainers:
+    - email: derek.adams@sitewhere.com
+      name: Derek Adams
+    - email: jorge.villaverde@sitewhere.com
+      name: Jorge Villaverde
+    name: sitewhere-infrastructure
+    type: application
+    urls:
+    - https://sitewhere.io/helm-charts/sitewhere-infrastructure-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 3.0.2
     created: "2021-01-26T20:05:26.923950062Z"
     dependencies:
     - condition: postgresql.enabled
@@ -2341,4 +2419,4 @@ entries:
     urls:
     - https://sitewhere.io/helm-charts/warp10-0.1.0.tgz
     version: 0.1.0
-generated: "2021-01-26T20:05:26.899239054Z"
+generated: "2021-02-04T18:27:57.816957299Z"
